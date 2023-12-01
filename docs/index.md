@@ -2,13 +2,13 @@
 
 ![](media/3095ddd50f970bde24971d42e000cbc6.jpeg)
 
-## Description
+# Description
 
 As the rapid development of the Internet grows, various intelligent devices are gradually integrated into our daily life. For example, we can use RFID to open the door. In addition, the kitchen is equipped with a gas detection alarm, which alerts people to the danger when dangerous gas and large smoke are detected. When it detects rain, it can automatically collect clothes and close windows. All kinds of electrical equipment can be controlled by mobile phone, control lights, fans, air conditioning and so on.
 
 In this connection, we seek to launch this smart home product with ESP32 control, which has a host of sensors and modules as well as networking function, making the relevant knowledge of the Internet more accessible to you.
 
-## Features
+# Features
 
 1.  Elegant appearance
 2.  A host of sensor modules
@@ -18,7 +18,7 @@ In this connection, we seek to launch this smart home product with ESP32 control
 6.  RFID function
 7.  C language and MicroPython
 
-## Kit list
+# Kit list
 
 | \#   | Picture                                          | Name                                  | QTY               |
 | ---- | ------------------------------------------------ | ------------------------------------- | ----------------- |
