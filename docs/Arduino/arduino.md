@@ -1,4 +1,6 @@
-# Arduino
+# Arduino tutorial
+
+## Getting started with Arduino
 
 ### 1. ESP32 PLUS Development board
 
@@ -295,7 +297,7 @@ Import the library. You can find it in the include library list.
 | Installation Diagram                                         | ![](media/103f079c5a1bbdee286d00e98463fe89.png)              |
 | Prototype                                                    | ![](media/c70b59a621643bbc55f1b86e00e85702.png)              |
 
-# Arduino Projects
+## Arduino Projects
 
 Alright, let’s get straight to our projects. We will make you know the smart home deeply from the simple sensor.
 
@@ -1825,6 +1827,6 @@ Please refer to the sample code, as shown below:
 
 ![](media/a94cd80683c4eecb3c1bcabd4a60747d.png)
 
-## 5. Resources
+## Resources
 
 Download code, libraries and more details, please refer to the following link: https://fs.keyestudio.com/KS5009
