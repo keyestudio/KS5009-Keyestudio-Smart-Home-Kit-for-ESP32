@@ -90,7 +90,7 @@ In this connection, we seek to launch this smart home product with ESP32 control
 | Prototype                                                    | ![](media/60e168e21936ccdd39883ec5259a5dcf.png)              |
 | Step 7                                                       |                                                              |
 | Components Required                                          | ![](media/4842582f892bcb0ab270554ca1487c42.png)              |
-| Adjust the angle of the servo before installation            | We need to adjust the servo of the window to 0 degree before installation. |
+| Adjust the angle of the servo before installation            |  adjust the servo of the window to 0 degree  |
 | Installation (As shown in the picture)                       | ![](media/aa95521f86389ec884e71c5dc41fee57.png)              |
 | Prototype                                                    | ![](media/adfb7abbafd97f2eaf73ee05e6ef74ec.png)              |
 | Step 8                                                       |                                                              |
@@ -137,25 +137,25 @@ In this connection, we seek to launch this smart home product with ESP32 control
 | Components Required                                          | ![](media/f9ae11d160ca4fa1ab7a517bf538036b.png)              |
 | Installation Diagram                                         | ![](media/e50de39b9c9805b808933b266458eed4.png)              |
 | Prototype                                                    | ![](media/effcbfa998c83525095360f7c6a19676.png)              |
-| 安装19                                                       |                                                              |
+| Step 19                                                      |                                                              |
 | Components Required                                          | ![](media/e855c45671386c25affdfa67144fb66d.png)              |
 | Installation Diagram                                         | ![](media/9637cad77c563081c78bd014920d44d8.png)              |
 | Prototype                                                    | ![](media/85f68b8b0880c6834105a23c21c3ba00.png)              |
 | Wiring Part                                                  |                                                              |
-| Connect the temperature and humidity module to the io17 interface | ![](media/b20fffd8e6d99fdea58ac47ab4b339a5.png)              |
-| Connect the yellow led module to the io12 interface          | ![](media/8f254931280578d7829b16344a9e2bda.png)              |
-| Connect the steam sensor to the io34 interface               | ![](media/db35422182a8b02ed371bcecbf4640b8.png)              |
-| The wiring of the fan (IN- to io18，IN+ to io19） | ![](media/8688977d33afcb5fe1542b31e5cf0259.png)              |
-| Connect the PIR motion sensor to the io14 interface          | ![](media/6572ce6a6ddfc8bf17945fc71897d9fb.png)              |
-| Connect the left button module to the io16 interface         | ![](media/2d579eeb0aa3a6f71f1572e1579d153f.png)              |
-| Connect the right button module to the io27 interface        | ![](media/639ac8cf0b991c7c150a6b4be8cf8e93.png)              |
-| Connect the RFID module to the IIC interface                 | ![](media/142fd5fdd102aa25eb3f8406e257ccaf.png)              |
-| Connect the LCD1602 display to the IIC interface             | ![](media/518e6c496b5c22b7d4b0c4de40acc80e.png)              |
-| Connect the 6812RGB LED to the io26 interface                | ![](media/4edea8aa5ff83d17fa8cab9173760c12.png)              |
-| Connect the gas sensor to the io23 interface                 | ![](media/ed22723361dc2dc2bc0eb6b80c36ce28.png)              |
-| Connect the buzzer sensor to the io25 interface              | ![](media/77e7f24ef8d39732a6ae6a9150e86243.png)              |
-| Connect servo controlling windows to the io5 interface       | ![](media/4f4c7f0ea162c7de24f1263dafad9075.png)              |
-| Connect servo controlling doors to the io13 interface        | ![](media/c6334d6486a50808300936aef00a55e8.png)              |
+| temperature and humidity  to  io17                           | ![](media/b20fffd8e6d99fdea58ac47ab4b339a5.png)              |
+| yellow led module to io12                                    | ![](media/8f254931280578d7829b16344a9e2bda.png)              |
+|  steam sensor to the io34                                    | ![](media/db35422182a8b02ed371bcecbf4640b8.png)              |
+| The wiring of the fan (IN- to io18，IN+ to io19)             | ![](media/8688977d33afcb5fe1542b31e5cf0259.png)              |
+|  PIR motion sensor to the io14                               | ![](media/6572ce6a6ddfc8bf17945fc71897d9fb.png)              |
+|  left button module to the io16                              | ![](media/2d579eeb0aa3a6f71f1572e1579d153f.png)              |
+|  right button module to the io27                             | ![](media/639ac8cf0b991c7c150a6b4be8cf8e93.png)              |
+|  RFID module to the IIC                                      | ![](media/142fd5fdd102aa25eb3f8406e257ccaf.png)              |
+|  LCD1602 display to the IIC                                  | ![](media/518e6c496b5c22b7d4b0c4de40acc80e.png)              |
+|  6812RGB LED to the io26                                     | ![](media/4edea8aa5ff83d17fa8cab9173760c12.png)              |
+|  gas sensor to the io23                                      | ![](media/ed22723361dc2dc2bc0eb6b80c36ce28.png)              |
+|  buzzer sensor to the io25                                   | ![](media/77e7f24ef8d39732a6ae6a9150e86243.png)              |
+|  servo controlling windows to  io5                           | ![](media/4f4c7f0ea162c7de24f1263dafad9075.png)              |
+| servo controlling doors to the io13                          | ![](media/c6334d6486a50808300936aef00a55e8.png)              |
 | power wiring                                                 | ![](media/66217ef904b5256055eb20b2f8c95678.jpeg)             |
 | Step 20                                                      |                                                              |
 | Components Required                                          | ![](media/981c1d00ec6ffa26832828c3bb50cff2.png)              |
