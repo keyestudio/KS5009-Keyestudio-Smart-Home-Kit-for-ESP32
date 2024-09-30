@@ -93,7 +93,12 @@ In this connection, we seek to launch this smart home product with ESP32 control
  Components Required                                           ![](media/4842582f892bcb0ab270554ca1487c42.png)              
  Adjust the angle of the servo                                adjust servo of the window to 0 degree before installation    
  Installation (As shown in the picture)                        ![](media/aa95521f86389ec884e71c5dc41fee57.png)              
+                                                               ![](media/6e1caadec8b1ec99b0093200763607b6.jpg)
  Prototype Don't screw over the gear.
+
+
+
+
 
 
 ​    ![](media/adfb7abbafd97f2eaf73ee05e6ef74ec.png)              
