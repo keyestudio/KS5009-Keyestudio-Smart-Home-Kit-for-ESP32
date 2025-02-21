@@ -39,7 +39,7 @@ In this connection, we seek to launch this smart home product with ESP32 control
 | 15   | ![](media/9e333cb91eb0e585e50e21c6eb31aaca.png)  | I2C1602 LCD Module                    | 1                 |
 | 16   | ![](media/a6f94cd448d58a53f41b2a1fa2204863.png)  | 3P F-F 150 mm Dupont Wire             | 5                 |
 | 17   | ![](media/6fc873ea0e2d30ef6c65c48192777b2c.png)  | 3P F-F 200 mm Dupont Wire             | 4                 |
-| 18   | ![](media/8d8d7ecea527ea96266c5a30a23adc49.png)  | F-F 200 mm /40P/2.54 Wires            | 0.1 （4 strands） |
+| 18   | ![](media/8d8d7ecea527ea96266c5a30a23adc49.png)  | F-F 200 mm /2.54 Wires                | 4                 |
 | 19   | ![](media/4de60c3b32470ba75de2c6d2b39dfabb.png)  | 4P F-F 200 mm Splicing Dupont Wire    | 2                 |
 | 20   | ![](media/b05fb368afcc7f64143fd15972aa1fcc.png)  | M1.4\*6MM Round Head Screws           | 4                 |
 | 21   | ![](media/2921490c73e7ec456e68d03f26cd638d.png)  | M3 Nickle-plated Nut(self-locking)    | 5                 |
