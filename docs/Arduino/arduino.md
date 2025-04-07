@@ -10,7 +10,7 @@ The resource package contains code,libraries,and driver files.You must have this
 
 
 
-[Resource compression package](.Arduino.7z)
+[Resource compression package](./Arduino.7z)
 
 ## Getting started with Arduino
 
