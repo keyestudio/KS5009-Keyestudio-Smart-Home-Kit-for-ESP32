@@ -4,12 +4,6 @@
 
 The resource package contains code,libraries,and driver files.You must have this resourse to continue learing.
 
-
-
-![image-20250407164254762](media/image-20250407164254762.png)
-
-
-
 [Resource compression package](./Arduino.7z)
 
 ## Getting started with Arduino
