@@ -1,8 +1,8 @@
 from machine import Pin,PWM
 import time
 #Two pins of the motor
-INA =PWM(Pin(19,Pin.OUT),10000,0)#INA corresponds to IN+
-INB =PWM(Pin(18,Pin.OUT),10000,2)#INB corresponds to IN-
+INA =PWM(Pin(19,Pin.OUT),10000)#INA corresponds to IN+
+INB =PWM(Pin(18,Pin.OUT),10000)#INB corresponds to IN-
 button1 = Pin(16, Pin.IN, Pin.PULL_UP)
 count = 0
 
@@ -14,7 +14,7 @@ try:
             while(btnVal1 == 0):
                 btnVal1 = button1.value()
                 if(btnVal1 == 1):
-                    count = count + 1
+                    count=count + 1
                     print(count)
         val = count % 2
         if(val == 1):
@@ -28,4 +28,5 @@ except:
     INB.duty(0)
     INA.deinit()
     INB.deinit()
+
 

@@ -1,4 +1,3 @@
-#include <analogWrite.h>
 #define fanPin1 19
 #define fanPin2 18
 

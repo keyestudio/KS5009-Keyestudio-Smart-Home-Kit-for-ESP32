@@ -2,8 +2,8 @@ import time
 import network #Import network module
 
 #Enter correct router name and password
-ssidRouter     = 'ChinaNet-2.4G-0DF0' #Enter the router name
-passwordRouter = 'ChinaNet@233' #Enter the router password
+ssidRouter     = 'LieBaoWiFi359' #Enter the router name
+passwordRouter = 'wmbd315931' #Enter the router password
 
 def STA_Setup(ssidRouter,passwordRouter):
     print("Setup start")

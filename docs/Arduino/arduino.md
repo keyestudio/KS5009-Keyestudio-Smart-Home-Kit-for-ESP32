@@ -64,7 +64,7 @@ Check the serial port connection status again, as shown in the following figure,
 
 ![](media/789a5b530a3e6c44687099a219575666.png)
 
-#### 2.3 Add the ESP32 Environment
+#### 2.3 Add the ESP32 Environment(add version 3
 
 （1）Open the arduino IDE，click File \> Preferences，as shown below:
 
@@ -84,9 +84,9 @@ Check the serial port connection status again, as shown in the following figure,
 
 ![](media/dab13b40132ce5c687ca4726b75733f6.png)
 
-(6)  Find the ESP32 from the pop up Boards Manager and then click install.
+(6)  Find the ESP32 from the pop up Boards Manager and then click install.   <font color = "red">(add version 3.1.0)!!!Very important</font>
 
-![](media/a0648ffa412629fbfa97e2c39f91aac5.png)
+![](media/aa.png)
 
 (7)  Click Tools \> Board \>esp32 to choose the ESP32 Dev Module.
 
@@ -180,17 +180,15 @@ The built-in libraries and some of these additional libraries are listed in the 
 
 ### Add ZIP Libraries
 
-When you want to add a zip library, you need to download it as a ZIP file, put in the proper directory. The Libraries needed to run the mini tank can be found on：<https://fs.keyestudio.com/KS5009>
+When you want to add a zip library, you need to download it as a ZIP file, put in the proper directory. The Libraries needed to run the mini tank can be found on：
 
-![](media/45f91371f8410f19f6e8b65f78f87612.png)
-
-![](media/675e9a86252a9447a96f0f2462f74158.png)
+![](media/dd.png)
 
 Click Sketch----\>Include Library—\>Add.ZIP Library，then Then navigate to the library file you downloaded and click "open."
 
 ![](media/baef5ce61ba8567f4a18fec16a2e3dae.png)
 
-![](media/0adb835f264368ec6ab07101baf730a5.png)
+![image-20250329140352208](media/image-20250329140352208.png)
 
 Import the library. You can find it in the include library list.
 
@@ -270,20 +268,24 @@ We provide the PWM output library file \< analogwrite.h \> for ESP32, therefore 
 #### **2. Test Code**
 
 ```c
-#include <analogWrite.h>  //Import PWM output library files
-#define led_y 12    //Define LED pins  
+#include <Arduino.h>
+#define led_y 12    // Define LED pin
 
-void setup(){
-  pinMode(led_y, OUTPUT);  //Set pin to output mode
+void setup()
+{
+  pinMode(led_y, OUTPUT);  // Set pin as output mode
 }
 
-void loop(){
-  for(int i=0; i<255; i++)  //The for loop statement increments the value of variable i until it exits the loop at 255  
+void loop()
+{
+  for(int i = 0; i < 255; i++)  // For loop: increment variable i until it reaches 255
   {
-    analogWrite(led_y, i);  //PWM output, control LED brightness
+    analogWrite(led_y, i);  // PWM output to control LED brightness
     delay(3);
   }
-  for(int i=255; i>0; i--)  //The for loop statement continues to decrease the value of variable i until it exits the loop at 0
+  
+  for(int i = 255; i > 0; i--)  // For loop: decrement variable i until it reaches 0
+  {
     analogWrite(led_y, i);
     delay(3);
   }
@@ -361,42 +363,45 @@ Calculate the clicked button times and take the remainder of 2, you can get 0 or
 ```c
 #define btn1 16
 #define led_y 12
-int btn_count = 0; //Used to count the clicked button times 
+int btn_count = 0; // Counter for button presses
 
-void setup() {
-Serial.begin(9600);
-pinMode(btn1, INPUT);
-pinMode(led_y, OUTPUT);
+void setup() 
+{
+  Serial.begin(9600);
+  pinMode(btn1, INPUT);
+  pinMode(led_y, OUTPUT);
 }
 
-void loop() {
-boolean btn1_val = digitalRead(btn1);
-if(btn1_val == 0) //If the button is pressed
+void loop() 
 {
-    delay(10);  //Delay 10ms to eliminate button jitter
-    if(btn1_val == 0) //Make sure the button is pressed again  
+  boolean btn1_val = digitalRead(btn1);
+  if(btn1_val == 0) // If button is pressed
+  {
+    delay(10);  // 10ms delay for debouncing
+    if(btn1_val == 0) // Confirm button is still pressed
     {
-    boolean btn_state = 1;
-    while(btn_state == 1) //Loop indefinitely until the button is released
-    {
+      boolean btn_state = 1;
+      while(btn_state == 1) // Loop until button is released
+      {
         boolean btn_val = digitalRead(btn1);
-        if(btn_val == 1)  //If the button is released
+        if(btn_val == 1)  // If button is released
         {
-        btn_count++;    //Automatically increments by 1, account the  clicked button times
-        Serial.println(btn_count);
-        btn_state = 0;  //The button is released and exits the loop
+          btn_count++;    // Increment press counter
+          Serial.println(btn_count);
+          btn_state = 0;  // Exit loop
         }
+      }
     }
-    }
-    boolean value = btn_count % 2; //Take the remainder of the value, you will get 0 or 1
+    boolean value = btn_count % 2; // Modulo operation (0 or 1)
     if(value == 1)
     {
-    digitalWrite(led_y, HIGH);
+      digitalWrite(led_y, HIGH); // Turn LED on
     }
-    else{
-    digitalWrite(led_y, LOW);
+    else
+    {
+      digitalWrite(led_y, LOW); // Turn LED off
     }
-}
+  }
 }
 ```
 
@@ -434,15 +439,15 @@ We will print out the value of the PIR motion sensor through the serial monitor.
 #define pyroelectric 14
 
 void setup() {
-Serial.begin(9600);
-pinMode(pyroelectric, INPUT);
+  Serial.begin(9600);
+  pinMode(pyroelectric, INPUT);
 }
 
 void loop() {
-boolean pyroelectric_val = digitalRead(pyroelectric);
-Serial.print("pyroelectric value = ");
-Serial.println(pyroelectric_val);
-delay(200);
+  boolean pyroelectric_val = digitalRead(pyroelectric);
+  Serial.print("pyroelectric value = ");
+  Serial.println(pyroelectric_val);
+  delay(200);
 }
 ```
 
@@ -462,24 +467,32 @@ If someone moves in front of the sensor, the LED will light up.
 
 ```c
 #define pyroelectric 14
-#define led_y 12  //Define the yellow led pin to 12
-void setup() {
-Serial.begin(9600);
-pinMode(pyroelectric, INPUT);
-pinMode(led_y, OUTPUT);  //Set pin to output mode
+#define led_y 12  // Yellow LED pin definition
+
+void setup() 
+{
+  Serial.begin(9600);
+  pinMode(pyroelectric, INPUT);
+  pinMode(led_y, OUTPUT);  // Set pin as output mode
 }
 
-void loop() {
-boolean pyroelectric_val = digitalRead(pyroelectric);
-Serial.print("pyroelectric value = ");
-Serial.println(pyroelectric_val);
-delay(200);
-if(pyroelectric_val == 1)
+void loop() 
 {
-    digitalWrite(led_y, HIGH);
-}else{
-    digitalWrite(led_y, LOW);
-}
+  boolean pyroelectric_val = digitalRead(pyroelectric);
+  
+  Serial.print("pyroelectric value = ");
+  Serial.println(pyroelectric_val);
+  
+  delay(200);
+  
+  if(pyroelectric_val == 1)
+  {
+    digitalWrite(led_y, HIGH);  // Turn LED on when motion detected
+  }
+  else
+  {
+    digitalWrite(led_y, LOW);   // Turn LED off when no motion
+  }
 }
 ```
 
@@ -510,42 +523,46 @@ In this project, we will work to play a piece of music by using it.
 #### **4. Test Code**
 
 ```c
-#include <ESP32Tone.h>
-#define buzzer_pin 25
+#include <BuzzerESP32.h>
 
-void setup() {
-pinMode(buzzer_pin, OUTPUT);
-birthday();
-}
+BuzzerESP32 buzzer(25); // Initialize buzzer on GPIO25
 
-void loop() {
-
-}
-
-void birthday()
+void setup() 
 {
-tone(buzzer_pin,294,250,0);  //The four parameters are pin, frequency, delay and channel 
-tone(buzzer_pin,440,250,0);
-tone(buzzer_pin,392,250,0);
-tone(buzzer_pin,532,250,0);
-tone(buzzer_pin,494,250,0);
-tone(buzzer_pin,392,250,0);
-tone(buzzer_pin,440,250,0);
-tone(buzzer_pin,392,250,0);
-tone(buzzer_pin,587,250,0);
-tone(buzzer_pin,532,250,0);
-tone(buzzer_pin,392,250,0);
-tone(buzzer_pin,784,250,0);
-tone(buzzer_pin,659,250,0);
-tone(buzzer_pin,532,250,0);
-tone(buzzer_pin,494,250,0);
-tone(buzzer_pin,440,250,0);
-tone(buzzer_pin,698,250,0);
-tone(buzzer_pin,659,250,0);
-tone(buzzer_pin,532,250,0);
-tone(buzzer_pin,587,250,0);
-tone(buzzer_pin,532,500,0);
-noTone(buzzer_pin,0);  //Close
+  buzzer.setTimbre(30); // Set timbre (sound quality)
+  birthday();          // Play birthday melody
+}
+
+void loop() 
+{
+  // Empty loop as melody plays only once at startup
+}
+
+void birthday() 
+{
+  // Play birthday melody - parameters are (frequency, duration)
+  buzzer.playTone(294, 250);  // D4
+  buzzer.playTone(440, 250);  // A4
+  buzzer.playTone(392, 250);  // G4
+  buzzer.playTone(532, 250);  // C5 (slightly sharp)
+  buzzer.playTone(494, 250);  // B4
+  buzzer.playTone(392, 250);  // G4
+  buzzer.playTone(440, 250);  // A4
+  buzzer.playTone(392, 250);  // G4
+  buzzer.playTone(587, 250);  // D5
+  buzzer.playTone(532, 250);  // C5 (slightly sharp)
+  buzzer.playTone(392, 250);  // G4
+  buzzer.playTone(784, 250);  // G5
+  buzzer.playTone(659, 250);  // E5
+  buzzer.playTone(532, 250);  // C5 (slightly sharp)
+  buzzer.playTone(494, 250);  // B4
+  buzzer.playTone(440, 250);  // A4
+  buzzer.playTone(698, 250);  // F5
+  buzzer.playTone(659, 250);  // E5
+  buzzer.playTone(532, 250);  // C5 (slightly sharp)
+  buzzer.playTone(587, 250);  // D5
+  buzzer.playTone(532, 500);  // C5 (slightly sharp) - longer duration
+  buzzer.playTone(0, 0);      // Turn off buzzer
 }
 ```
 
@@ -560,56 +577,85 @@ we will make a music box and switch tunes by pressing buttons.
 #### **1. Test Code**
 
 ```c
-#include <ESP32Tone.h>
 #include <musicESP32_home.h>   
-music Music(25);
-#define btn1 16
-int btn_count = 0; //Used to count the clicked button times 
-boolean music_flag = 0;
+music Music(25);  // Initialize music player on GPIO25
+#define btn1 16    // Button pin
+int btn_count = 0; // Counter for button presses
+boolean music_flag = 0; // Flag to trigger music playback
 
-void setup() {
-Serial.begin(9600);
-pinMode(btn1, INPUT);
-pinMode(25, OUTPUT);
-//  Music.tetris();
-//  Music.birthday();
-//  Music.Ode_to_Joy();
-//  Music.christmas();
-//  Music.super_mario();
-//  Music.star_war_tone();
-}
-
-void loop() {
-boolean btn1_val = digitalRead(btn1);
-if(btn1_val == 0) //If the button is pressed
+void setup() 
 {
-    delay(10);  //Delay 10ms to eliminate button jitter
-    if(btn1_val == 0) //Make sure the button is pressed again  
-    {
-    boolean btn_state = 1;
-    while(btn_state == 1) //Loop indefinitely until the button is released
-    {
-        boolean btn_val = digitalRead(btn1);
-        if(btn_val == 1)  //If the button is released
-        {
-        music_flag = 1;
-        btn_count++;    //Automatically increments by 1 to count the number of times the button is clicked
-        Serial.println(btn_count);
-        if(btn_count == 4)
-        {
-            btn_count = 1;
-        }
-        switch(btn_count)
-        {
-            case 1: if(music_flag == 1){Music.Ode_to_Joy();music_flag=0;} break;
-            case 2: if(music_flag == 1){Music.christmas();music_flag=0;} break;
-            case 3: if(music_flag == 1){Music.tetris();music_flag=0;} break;
-        }
-        btn_state = 0;  //The button is released and exits the loop
-        }
-    }
-    }
+  Serial.begin(9600);
+  pinMode(btn1, INPUT);
+  // Available music options:
+  // Music.tetris();
+  // Music.birthday();
+  // Music.Ode_to_Joy();
+  // Music.christmas();
+  // Music.star_war_tone();
 }
+
+void loop() 
+{
+  boolean btn1_val = digitalRead(btn1);
+  
+  if(btn1_val == 0) // If button is pressed
+  {
+    delay(10);  // 10ms delay for debouncing
+    
+    if(btn1_val == 0) // Confirm button is still pressed
+    {
+      boolean btn_state = 1;
+      
+      while(btn_state == 1) // Wait until button is released
+      {
+        boolean btn_val = digitalRead(btn1);
+        
+        if(btn_val == 1)  // If button is released
+        {
+          music_flag = 1;
+          btn_count++;    // Increment press counter
+          Serial.println(btn_count);
+          
+          // Cycle through 1-3 count
+          if(btn_count == 4)
+          {
+            btn_count = 1;
+          }
+          
+          // Play different song based on press count
+          switch(btn_count)
+          {
+            case 1: 
+              if(music_flag == 1)
+              {
+                Music.Ode_to_Joy();
+                music_flag=0;
+              } 
+              break;
+              
+            case 2: 
+              if(music_flag == 1)
+              {
+                Music.christmas();
+                music_flag=0;
+              } 
+              break;
+              
+            case 3: 
+              if(music_flag == 1)
+              {
+                Music.tetris();
+                music_flag=0;
+              } 
+              break;
+          }
+          
+          btn_state = 0;  // Exit wait loop
+        }
+      }
+    }
+  }
 }
 ```
 
@@ -652,7 +698,7 @@ In general, servo has three lines in brown, red and orange. The brown wire is gr
 #### **4. Test Code**
 
 ```c
-#include <ESP32_Servo.h>
+#include <ESP32Servo.h>
 Servo myservo;  // create servo object to control a servo
                 // 16 servo objects can be created on the ESP32
                 
@@ -661,21 +707,32 @@ int pos = 0;    // variable to store the servo position
 int servoPin = 13;
                 
 void setup() {
-myservo.attach(servoPin);   // attaches the servo on pin 18 to the servo object
+	// Allow allocation of all timers
+	ESP32PWM::allocateTimer(0);
+	ESP32PWM::allocateTimer(1);
+	ESP32PWM::allocateTimer(2);
+	ESP32PWM::allocateTimer(3);
+	myservo.setPeriodHertz(50);    // standard 50 hz servo
+	myservo.attach(servoPin, 1000, 2000); // attaches the servo on pin 18 to the servo object
+	// using default min/max of 1000us and 2000us
+	// different servos may require different min/max settings
+	// for an accurate 0 to 180 sweep
 
 }
 
 void loop() {
-for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
-    // in steps of 1 degree
-    myservo.write(pos);              // tell servo to go to position in variable 'pos'
-    delay(15);                       // waits 15ms for the servo to reach the position
+	for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
+		// in steps of 1 degree
+		myservo.write(pos);    // tell servo to go to position in variable 'pos'
+		delay(15);             // waits 15ms for the servo to reach the position
+	}
+	for (pos = 180; pos >= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
+		myservo.write(pos);    // tell servo to go to position in variable 'pos'
+		delay(15);             // waits 15ms for the servo to reach the position
+	}
+
 }
-for (pos = 180; pos >= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
-    myservo.write(pos);              // tell servo to go to position in variable 'pos'
-    delay(15);                       // waits 15ms for the servo to reach the position
-}
-}
+
 ```
 
 #### **5. Test Result**
@@ -695,32 +752,44 @@ We will work to use a servo and a raindrop sensor to make an device closing wind
 #### **3. Test Code**
 
 ```c
-#include <ESP32_Servo.h>
-Servo myservo;
+#include <ESP32Servo.h>
+
 #define servoPin 5
 #define waterPin 34
+Servo myservo;
 
 
 void setup() {
-Serial.begin(9600);
-pinMode(waterPin, INPUT);
-myservo.attach(servoPin);
-myservo.write(176);
-delay(200);
+  Serial.begin(9600);
+  pinMode(waterPin, INPUT);
+
+	// Allow allocation of all timers
+	ESP32PWM::allocateTimer(0);
+	ESP32PWM::allocateTimer(1);
+	ESP32PWM::allocateTimer(2);
+	ESP32PWM::allocateTimer(3);
+	myservo.setPeriodHertz(50);    // standard 50 hz servo
+	myservo.attach(servoPin, 1000, 2000); // attaches the servo on pin 18 to the servo object
+	// using default min/max of 1000us and 2000us
+	// different servos may require different min/max settings
+	// for an accurate 0 to 180 sweep
+
+  delay(200);
 }
 
 void loop() {
-int water_val = analogRead(waterPin);
-Serial.println(water_val);
-if(water_val > 1500) {
+  int water_val = analogRead(waterPin);
+  Serial.println(water_val);
+  if(water_val > 1500) {
     myservo.write(0);
     delay(200);
-}
-else {
+  }
+  else {
     myservo.write(176);
     delay(200);
+  }
 }
-}
+
 ```
 
 #### **4. Test Result**
@@ -753,9 +822,88 @@ What’s more, the pixel point contains a data latch signal shaping amplifier dr
 
 #### **4. Test Code**
 
-Please open the provided test code pj6_1_SK6812, as shown in the image below:
+```
+#include <Adafruit_NeoPixel.h>
+#ifdef __AVR__
+ #include <avr/power.h>                              // Required for 16 MHz Adafruit Trinket
+#endif
+#define LED_PIN    26                                // Which pin on the Arduino is connected to the NeoPixels?
+#define LED_COUNT 4                                  // How many NeoPixels are attached to the Arduino?
+Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800); // Declare our NeoPixel strip object:
 
-![](media/b5485e8a24aebc8fee5ed77ed3f9108f.png)
+void setup() {
+#if defined(__AVR_ATtiny85__) && (F_CPU == 16000000)
+  clock_prescale_set(clock_div_1);                   // These lines are specifically to support the Adafruit Trinket 5V 16 MHz.
+#endif
+  strip.begin();                                     // INITIALIZE NeoPixel strip object (REQUIRED)
+  strip.show();                                      // Turn OFF all pixels ASAP
+  strip.setBrightness(50);                           // Set BRIGHTNESS to about 1/5 (max = 255)
+}
+
+void loop() {
+  colorWipe(strip.Color(255,   0,   0), 50);         // Red
+  colorWipe(strip.Color(  0, 255,   0), 50);         // Green
+  colorWipe(strip.Color(  0,   0, 255), 50);         // Blue
+
+  theaterChase(strip.Color(127, 127, 127), 50);      // White, half brightness
+  theaterChase(strip.Color(127,   0,   0), 50);      // Red, half brightness
+  theaterChase(strip.Color(  0,   0, 127), 50);      // Blue, half brightness
+
+  rainbow(10);                                       // Flowing rainbow cycle along the whole strip
+  theaterChaseRainbow(50);                           // Rainbow-enhanced theaterChase variant
+}
+
+void colorWipe(uint32_t color, int wait) {
+  for(int i=0; i<strip.numPixels(); i++) {           // For each pixel in strip...
+    strip.setPixelColor(i, color);                   // Set pixel's color (in RAM)
+    strip.show();                                    // Update strip to match
+    delay(wait);                                     // Pause for a moment
+  }
+}
+
+void theaterChase(uint32_t color, int wait) {
+  for(int a=0; a<10; a++) {                         // Repeat 10 times...
+    for(int b=0; b<3; b++) {                        // 'b' counts from 0 to 2...
+      strip.clear();                                // Set all pixels in RAM to 0 (off)
+      for(int c=b; c<strip.numPixels(); c += 3) {    // 'c' counts up from 'b' to end of strip in steps of 3...
+        strip.setPixelColor(c, color);               // Set pixel 'c' to value 'color'
+      }
+      strip.show();                                 // Update strip with new contents
+      delay(wait);                                  // Pause for a moment
+    }
+  }
+}
+
+void rainbow(int wait) {
+  for(long firstPixelHue = 0; firstPixelHue < 5*65536; firstPixelHue += 256) {
+    for(int i=0; i<strip.numPixels(); i++) {        // For each pixel in strip...
+      int pixelHue = firstPixelHue + (i * 65536L / strip.numPixels());
+      strip.setPixelColor(i, strip.gamma32(strip.ColorHSV(pixelHue)));
+    }
+    strip.show();                                   // Update strip with new contents
+    delay(wait);                                   // Pause for a moment
+  }
+}
+
+void theaterChaseRainbow(int wait) {
+  int firstPixelHue = 0;                           // First pixel starts at red (hue 0)
+  for(int a=0; a<30; a++) {                        // Repeat 30 times...
+    for(int b=0; b<3; b++) {                       // 'b' counts from 0 to 2...
+      strip.clear();                               // Set all pixels in RAM to 0 (off)
+      for(int c=b; c<strip.numPixels(); c += 3) {  // 'c' counts up from 'b' to end of strip in increments of 3...
+        int      hue   = firstPixelHue + c * 65536L / strip.numPixels();
+        uint32_t color = strip.gamma32(strip.ColorHSV(hue)); // hue -> RGB
+        strip.setPixelColor(c, color);             // Set pixel 'c' to value 'color'
+      }
+      strip.show();                               // Update strip with new contents
+      delay(wait);                               // Pause for a moment
+      firstPixelHue += 65536 / 90;               // One cycle of color wheel over 90 frames
+    }
+  }
+}
+```
+
+
 
 #### **5. Test Result**
 
@@ -769,9 +917,115 @@ There are two buttons to switch the color of the atmosphere lamp.
 
 #### **2. Test Code**
 
-Please open the provided test code pj6_2_btn_6812, as shown below:
+````
+#define btn1 16    // Button 1 pin
+#define btn2 27    // Button 2 pin
 
-![](media/0fdb94dd498f88a55cd57c7603fe43c6.png)
+#include <Adafruit_NeoPixel.h>
+#ifdef __AVR__
+ #include <avr/power.h> // Required for 16 MHz Adafruit Trinket
+#endif
+
+#define LED_PIN    26    // NeoPixel data pin
+#define LED_COUNT 4      // Number of NeoPixels
+Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
+
+int btn_count = 0; // Counter for button presses
+
+void setup() 
+{
+  Serial.begin(9600);
+  pinMode(btn1, INPUT);
+  pinMode(btn2, INPUT);
+  
+  #if defined(__AVR_ATtiny85__) && (F_CPU == 16000000)
+    clock_prescale_set(clock_div_1);
+  #endif
+
+  strip.begin();           // Initialize NeoPixel strip
+  strip.show();            // Turn off all pixels
+  strip.setBrightness(50); // Set brightness (max 255)
+}
+
+void loop() 
+{
+  boolean btn1_val = digitalRead(btn1);
+  boolean btn2_val = digitalRead(btn2);
+  
+  // Button 1 (Decrement) handling
+  if(btn1_val == 0) // If button is pressed
+  {
+    delay(10);  // Debounce delay
+    if(btn1_val == 0) // Confirm button press
+    {
+      boolean btn_state = 1;
+      while(btn_state == 1) // Wait for button release
+      {
+        boolean btn_val = digitalRead(btn1);
+        if(btn_val == 1)  // If button released
+        {
+          btn_count--;    // Decrement counter
+          if(btn_count <= 0) // Limit minimum value
+          {
+            btn_count = 0;
+          }
+          Serial.println(btn_count);
+          btn_state = 0;  // Exit loop
+        }
+      }
+    }
+  }
+    
+  // Button 2 (Increment) handling  
+  if(btn2_val == 0) // If button is pressed
+  {
+    delay(10);  // Debounce delay
+    if(btn2_val == 0) // Confirm button press
+    {
+      boolean btn_state2 = 1;
+      while(btn_state2 == 1) // Wait for button release
+      {
+        boolean btn2_val = digitalRead(btn2);
+        if(btn2_val == 1)  // If button released
+        {
+          btn_count++;    // Increment counter
+          if(btn_count >= 6) // Limit maximum value
+          {
+            btn_count = 6;
+          }
+          Serial.println(btn_count);
+          btn_state2 = 0;  // Exit loop
+        }
+      }
+    }
+  }
+
+  // Change LED color based on button count
+  switch(btn_count)
+  {
+    case 0: colorWipe(strip.Color(0,   0,   0), 50); break;    // Off
+    case 1: colorWipe(strip.Color(255,  0,   0), 50); break;   // Red
+    case 2: colorWipe(strip.Color(0,   255,   0), 50); break;  // Green
+    case 3: colorWipe(strip.Color(0,   0,   255), 50); break;  // Blue
+    case 4: colorWipe(strip.Color(255, 255,   0), 50); break;  // Yellow
+    case 5: colorWipe(strip.Color(255, 0,   255), 50); break;  // Magenta
+    case 6: colorWipe(strip.Color(255, 255, 255), 50); break;  // White
+  }
+}
+
+// Fill strip with one color
+void colorWipe(uint32_t color, int wait) 
+{
+  for(int i=0; i<strip.numPixels(); i++) 
+  { 
+    strip.setPixelColor(i, color); // Set pixel color
+    strip.show();                  // Update strip
+    delay(wait);                   // Pause
+  }
+}
+````
+
+
 
 #### **3. Test Result**
 
@@ -807,29 +1061,30 @@ Two pins are required to control the motor of the fan, one for INA and two for I
 #### **5. Test Code**
 
 ```c
-#include <analogWrite.h>
 #define fanPin1 19
 #define fanPin2 18
 
 void setup() {
-pinMode(fanPin1, OUTPUT);
-pinMode(fanPin2, OUTPUT);
+  pinMode(fanPin1, OUTPUT);
+  pinMode(fanPin2, OUTPUT);
 }
 
 void loop() {
-digitalWrite(fanPin1, LOW); //pwm = 0
-analogWrite(fanPin2, 180);
-delay(3000);
-digitalWrite(fanPin1, LOW);
-digitalWrite(fanPin2, LOW);
-delay(1000);
-digitalWrite(fanPin1, HIGH); //pwm = 255
-analogWrite(fanPin2, 210);
-delay(3000);
-digitalWrite(fanPin1, LOW);
-digitalWrite(fanPin2, LOW);
-delay(1000);
+  digitalWrite(fanPin1, LOW); //pwm = 0
+  analogWrite(fanPin2, 180);
+  delay(3000);
+  digitalWrite(fanPin1, LOW);
+  digitalWrite(fanPin2, LOW);
+  delay(1000);
+  digitalWrite(fanPin1, HIGH); //pwm = 255
+  analogWrite(fanPin2, 210);
+  delay(3000);
+  digitalWrite(fanPin1, LOW);
+  digitalWrite(fanPin2, LOW);
+  delay(1000);
+
 }
+
 ```
 
 #### **6. Test Result**
@@ -843,87 +1098,108 @@ One button switches the fan on and the other button controls the speed of the fa
 #### **1. Test Code**
 
 ```c
-#include <analogWrite.h>
-#define fanPin1 19
-#define fanPin2 18
-#define btn1 16
-int btn_count = 0; //Used to count the clicked button times 
-#define btn2 27
-int btn_count2 = 0;
-int speed_val = 130; //Define the speed variables
+#define fanPin1 19    // Fan control pin 1
+#define fanPin2 18    // Fan control pin 2
+#define btn1 16       // Button 1 pin
+#define btn2 27       // Button 2 pin
+
+int btn_count = 0;    // Counter for button 1 presses
+int btn_count2 = 0;   // Counter for button 2 presses
+int speed_val = 130;  // Initial fan speed (PWM value)
 
 void setup() {
-Serial.begin(9600);
-pinMode(btn1, INPUT);
-pinMode(btn2, INPUT);
-pinMode(fanPin1, OUTPUT);
-pinMode(fanPin2, OUTPUT);
+  Serial.begin(9600);
+  pinMode(btn1, INPUT);
+  pinMode(btn2, INPUT);
+  pinMode(fanPin1, OUTPUT);
+  pinMode(fanPin2, OUTPUT);
 }
 
 void loop() {
-boolean btn1_val = digitalRead(btn1);
-if(btn1_val == 0) //If the button is pressed
-{
-    delay(10);  //Delay 10ms to eliminate button jitter
-    if(btn1_val == 0) //Make sure the button is pressed again  
+  boolean btn1_val = digitalRead(btn1);
+  
+  // Button 1 (Power/Speed Control) handling
+  if(btn1_val == 0) // If button is pressed
+  {
+    delay(10);  // Debounce delay
+    if(btn1_val == 0) // Confirm button press
     {
-    boolean btn_state = 1;
-    while(btn_state == 1) //Loop indefinitely until the button is released
-    {
+      boolean btn_state = 1;
+      while(btn_state == 1) // Wait for button release
+      {
         boolean btn_val = digitalRead(btn1);
-        if(btn_val == 1)  //If the button is released
-        btn_count++;    //Automatically increments by 1 to count the clicked button times 
-        Serial.println(btn_count);
-        btn_state = 0;  //The button is released and exits the loop
+        if(btn_val == 1)  // If button released
+        {
+          btn_count++;    // Increment press counter
+          Serial.println(btn_count);
+          btn_state = 0;  // Exit loop
         }
+      }
     }
-    }
-    boolean value = btn_count % 2; //Take the remainder of the value, you will get 0 or 1
-    while(value == 1)
-    {
-    //Serial.println("on");
-    digitalWrite(fanPin1, LOW); //pwm = 0
-    analogWrite(fanPin2, speed_val);
     
-    boolean btn2_val = digitalRead(btn2);
-    if(btn2_val == 0)
+    boolean power_state = btn_count % 2; // Toggle power state (0 or 1)
+    
+    while(power_state == 1) // While fan is on
     {
-        delay(10);
-        if(btn2_val == 0)
+      digitalWrite(fanPin1, LOW);  // Set direction
+      analogWrite(fanPin2, speed_val); // Set speed
+      
+      // Button 2 (Speed Adjustment) handling
+      boolean btn2_val = digitalRead(btn2);
+      if(btn2_val == 0) // If speed button pressed
+      {
+        delay(10); // Debounce delay
+        if(btn2_val == 0) // Confirm press
         {
-        boolean btn_state2 = 1;
-        while(btn_state2 == 1)
-        {
+          boolean btn_state2 = 1;
+          while(btn_state2 == 1) // Wait for release
+          {
             boolean btn2_val = digitalRead(btn2);
-            if(btn2_val == 1)
+            if(btn2_val == 1) // If released
             {
-            btn_count2++;
-            if(btn_count2 > 3)
-            {
+              btn_count2++; // Increment speed level
+              if(btn_count2 > 3) // Cycle through 1-3
+              {
                 btn_count2 = 1;
+              }
+              
+              // Set speed based on count
+              switch(btn_count2)
+              {
+                case 1: 
+                  speed_val = 130; // Low speed
+                  Serial.println(speed_val);
+                  break;
+                case 2: 
+                  speed_val = 180; // Medium speed
+                  Serial.println(speed_val);
+                  break;
+                case 3: 
+                  speed_val = 230; // High speed
+                  Serial.println(speed_val);
+                  break;
+              }
+              btn_state2 = 0;
             }
-            switch(btn_count2)
-            {
-                case 1: speed_val = 130; Serial.println(speed_val);break;  //Adjust the speed
-                case 2: speed_val = 180; Serial.println(speed_val);break;
-                case 3: speed_val = 230; Serial.println(speed_val);break;
-            }
-            btn_state2 = 0;
-            }
+          }
         }
+      }
+      
+      // Check for power off
+      btn1_val = digitalRead(btn1);
+      if(btn1_val == 0) // If power button pressed
+      {
+        delay(10); // Debounce delay
+        if(btn1_val == 0) // Confirm press
+        {
+          digitalWrite(fanPin1, LOW); // Stop fan
+          analogWrite(fanPin2, 0);
+          power_state = 0;  // Exit fan control loop
         }
+      }
     }
-    boolean btn1_val = digitalRead(btn1);
-    if(btn1_val == 0) //If the button is pressed
-    {
-        digitalWrite(fanPin1, LOW); //pwm = 0
-        analogWrite(fanPin2, 0);
-        value = 0;  //Exit the loop 
-    }
-    
-    }
+  }
 }
-}  
 ```
 
 #### **2. Test Result**
@@ -953,21 +1229,21 @@ As we all know, screen is one of the best ways for people to interact with elect
 ```c
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
-
 LiquidCrystal_I2C mylcd(0x27,16,2);
 
 void setup(){
-mylcd.init();
-mylcd.backlight();
+  mylcd.init();
+  mylcd.backlight();
 }
 
 void loop(){
-mylcd.setCursor(0, 0);
-mylcd.print("hello");
-mylcd.setCursor(0, 1);
-mylcd.print("keyestudio");
-//mylcd.clear();
+  mylcd.setCursor(0, 0);
+  mylcd.print("hello");
+  mylcd.setCursor(0, 1);
+  mylcd.print("keyestudio");
+  //mylcd.clear();
 }
+
 ```
 
 #### **5. Test Result**
@@ -991,51 +1267,67 @@ When a gas sensor detects a high concentration of dangerous gas, the buzzer will
 ```c
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
-LiquidCrystal_I2C mylcd(0x27,16,2);
-#define gasPin 23
-#define buzPin 25
-boolean i = 1;
-boolean j = 1;
 
-void setup(){
-Serial.begin(9600);
-mylcd.init();
-mylcd.backlight();
-pinMode(buzPin, OUTPUT);
-pinMode(gasPin, INPUT);
-mylcd.setCursor(0, 0);
-mylcd.print("safety");
+// Initialize LCD with I2C address 0x27, 16 columns and 2 rows
+LiquidCrystal_I2C mylcd(0x27, 16, 2);
+
+#define gasPin 23    // Gas sensor input pin
+#define buzPin 25    // Buzzer output pin
+
+// State flags for LCD display updates
+boolean dangerDisplayed = 1;
+boolean safetyDisplayed = 1;
+
+void setup() {
+  Serial.begin(9600);
+  
+  // Initialize LCD
+  mylcd.init();
+  mylcd.backlight();
+  
+  // Set pin modes
+  pinMode(buzPin, OUTPUT);
+  pinMode(gasPin, INPUT);
+  
+  // Display initial message
+  mylcd.setCursor(0, 0);
+  mylcd.print("safety");
 }
 
-void loop(){
-boolean gasVal = digitalRead(gasPin);  //Reads the value detected by the gas sensor
-Serial.println(gasVal);
-if(gasVal == 0)  //If the hazardous gas is detected，LCD displays dangerous，the buzzer makes an alarm
-{
-    while(i == 1)
+void loop() {
+  boolean gasVal = digitalRead(gasPin);  // Read gas sensor value
+  Serial.println(gasVal);
+  
+  if(gasVal == 0)  // If dangerous gas detected
+  {
+    while(dangerDisplayed == 1)  // Update display if needed
     {
-    mylcd.clear();
-    mylcd.setCursor(0, 0);
-    mylcd.print("dangerous");
-    i = 0;
-    j = 1;
+      mylcd.clear();
+      mylcd.setCursor(0, 0);
+      mylcd.print("dangerous");
+      dangerDisplayed = 0;
+      safetyDisplayed = 1;
     }
-    digitalWrite(buzPin,HIGH);
+    
+    // Sound alarm buzzer (short pulses)
+    digitalWrite(buzPin, HIGH);
     delay(1);
-    digitalWrite(buzPin,LOW);
+    digitalWrite(buzPin, LOW);
     delay(1);
-}
-else{
-    digitalWrite(buzPin,LOW);
-    while(j == 1)
+  }
+  else  // No dangerous gas detected
+  {
+    digitalWrite(buzPin, LOW);  // Ensure buzzer is off
+    
+    while(safetyDisplayed == 1)  // Update display if needed
     {
-    mylcd.clear();
-    mylcd.setCursor(0, 0);
-    mylcd.print("safety");
-    i = 1;
-    j = 0;
+      mylcd.clear();
+      mylcd.setCursor(0, 0);
+      mylcd.print("safety");
+      dangerDisplayed = 1;
+      safetyDisplayed = 0;
     }
-}
+  }
 }
 ```
 
@@ -1060,6 +1352,12 @@ Its communication mode is serial data and single bus. The temperature measuremen
 #### **3. Test Code**
 
 ```c
+//**********************************************************************************
+/*  
+ * Filename    : xht11
+ * Description : Read the temperature and humidity values of XHT11.
+ * Auther      : http//www.keyestudio.coml
+*/
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 LiquidCrystal_I2C mylcd(0x27,16,2);
@@ -1068,13 +1366,13 @@ xht11 xht(17);
 
 unsigned char dht[4] = {0, 0, 0, 0};//Only the first 32 bits of data are received, not the parity bits
 void setup() {
-Serial.begin(9600);//Start the serial port monitor and set baud rate to 9600
-mylcd.init();
-mylcd.backlight();
+  Serial.begin(9600);//Start the serial port monitor and set baud rate to 9600
+  mylcd.init();
+  mylcd.backlight();
 }
 
 void loop() {
-if (xht.receive(dht)) { //Returns true when checked correctly
+  if (xht.receive(dht)) { //Returns true when checked correctly
     Serial.print("RH:");
     Serial.print(dht[0]); //The integral part of humidity, DHT [1] is the fractional part
     Serial.print("%  ");
@@ -1090,12 +1388,12 @@ if (xht.receive(dht)) { //Returns true when checked correctly
     mylcd.print(dht[0]);
     //mylcd.clear();
     delay(200);
-} 
-    else {    //Read error
+  } else {    //Read error
     Serial.println("sensor error");
-    }
-delay(1000);  //It takes 1000ms to wait for the device to read
+  }
+  delay(1000);  //It takes 1000ms to wait for the device to read
 }
+//**********************************************************************************
 ```
 
 #### **4. Test Result**
@@ -1122,23 +1420,17 @@ Use IIC communication
 
 #### **3. Test Code**
 
-After uploading the following code, open the serial monitor and approach the provided card to the RFID induction area. The serial monitor displays "Card UID: 171 217 41 227".
-
-**ATTENTION: The key values of white card/key vary from other ones. Thus, please approach your card/key to the module and read the values on serial monitor, and then replace the passwords with your values.**
-
-![](media/D81A6789-817E-4d6d-B07F-0865C6C08613.png)
-
-![](media/password.png)
-
 ```c
-/*Filename : RFID
- Description : RFID reader UID
- Auther : http//www.keyestudio.com */
-
+//**********************************************************************************
+/*  
+ * Filename    : RFID
+ * Description : RFID reader UID
+ * Auther      : http//www.keyestudio.com
+*/
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 LiquidCrystal_I2C mylcd(0x27,16,2);
-#include <ESP32_Servo.h>
+#include <ESP32Servo.h>
 Servo myservo;
 #include <Wire.h>
 #include "MFRC522_I2C.h"
@@ -1152,51 +1444,61 @@ boolean btnFlag = 0;
 String password = "";
 
 void setup() {
-Serial.begin(115200);           // initialize and PC's serial communication
-mylcd.init();
-mylcd.backlight();
-Wire.begin();                   // initialize I2C
-mfrc522.PCD_Init();             // initialize MFRC522
-ShowReaderDetails();            // display PCD - MFRC522 read carder
-Serial.println(F("Scan PICC to see UID, type, and data blocks..."));
-myservo.attach(servoPin);
-pinMode(btnPin, INPUT);
-mylcd.setCursor(0, 0);
-mylcd.print("Card");
+  Serial.begin(115200);           // initialize and PC's serial communication
+  mylcd.init();
+  mylcd.backlight();
+  Wire.begin();                   // initialize I2C
+  mfrc522.PCD_Init();             // initialize MFRC522
+  ShowReaderDetails();            // dispaly PCD - MFRC522 read carder
+  Serial.println(F("Scan PICC to see UID, type, and data blocks..."));
+
+	// Allow allocation of all timers
+	ESP32PWM::allocateTimer(0);
+	ESP32PWM::allocateTimer(1);
+	ESP32PWM::allocateTimer(2);
+	ESP32PWM::allocateTimer(3);
+	myservo.setPeriodHertz(50);    // standard 50 hz servo
+	myservo.attach(servoPin, 1000, 2000); // attaches the servo on pin 18 to the servo object
+	// using default min/max of 1000us and 2000us
+	// different servos may require different min/max settings
+	// for an accurate 0 to 180 sweep
+
+  mylcd.setCursor(0, 0);
+  mylcd.print("Card");
 }
 
 void loop() {
-// 
-if ( ! mfrc522.PICC_IsNewCardPresent() || ! mfrc522.PICC_ReadCardSerial() ) {
+  // 
+  if ( ! mfrc522.PICC_IsNewCardPresent() || ! mfrc522.PICC_ReadCardSerial() ) {
     delay(50);
     password = "";
     if(btnFlag == 1)
     {
-    boolean btnVal = digitalRead(btnPin);
-    if(btnVal == 0)  //Swipe the card to open the door and click button 1 to close the door
-    {
+      boolean btnVal = digitalRead(btnPin);
+      if(btnVal == 0)  //If door close button is pressed (active-low)
+      {
         Serial.println("close");
         mylcd.setCursor(0, 0);
         mylcd.print("close");
         myservo.write(0);
         btnFlag = 0;
-    }
+      }
     }
     return;
-}
-
-// select one of door cards. UID and SAK are mfrc522.uid.
-
-// save UID
-Serial.print(F("Card UID:"));
-for (byte i = 0; i < mfrc522.uid.size; i++) {
+  }
+  
+  // select one of door cards. UID and SAK are mfrc522.uid.
+  
+  // save UID
+  Serial.print(F("Card UID:"));
+  for (byte i = 0; i < mfrc522.uid.size; i++) {
     Serial.print(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " ");
     //Serial.print(mfrc522.uid.uidByte[i], HEX);
     Serial.print(mfrc522.uid.uidByte[i]);
     password = password + String(mfrc522.uid.uidByte[i]);
-}
-if(password == "17121741227")  //The card number is correct, open the door
-{
+  }
+  if(password == "")  //Card number is correct,open the door
+  {
     Serial.println("open");
     mylcd.setCursor(0, 0);
     mylcd.clear();
@@ -1204,38 +1506,54 @@ if(password == "17121741227")  //The card number is correct, open the door
     myservo.write(180);
     password = "";
     btnFlag = 1;
-}
-else   //The card number is wrong，LCD displays error
-{
+  }
+  else   //Card number error,dispaly error
+  {
     password = "";
     mylcd.setCursor(0, 0);
     mylcd.print("error");
-}
-//Serial.println(password);
+  }
+  //Serial.println(password);
 }
 
 void ShowReaderDetails() {
-//  attain the MFRC522 software
-byte v = mfrc522.PCD_ReadRegister(mfrc522.VersionReg);
-Serial.print(F("MFRC522 Software Version: 0x"));
-Serial.print(v, HEX);
-if (v == 0x91)
+  //  attain the MFRC522 software
+  byte v = mfrc522.PCD_ReadRegister(mfrc522.VersionReg);
+  Serial.print(F("MFRC522 Software Version: 0x"));
+  Serial.print(v, HEX);
+  if (v == 0x91)
     Serial.print(F(" = v1.0"));
-else if (v == 0x92)
+  else if (v == 0x92)
     Serial.print(F(" = v2.0"));
-else
+  else
     Serial.print(F(" (unknown)"));
-Serial.println("");
-// when returning to 0x00 or 0xFF, may fail to transmit communication signals
-if ((v == 0x00) || (v == 0xFF)) {
+  Serial.println("");
+  // when returning to 0x00 or 0xFF, may fail to transmit communication signals
+  if ((v == 0x00) || (v == 0xFF)) {
     Serial.println(F("WARNING: Communication failure, is the MFRC522 properly connected?"));
+  }
 }
-}
+//**********************************************************************************
+
 ```
 
 #### **4. Test Result**
 
-Close the provided card to the RFID induction area, the door will turn and open, and LCD1602 shows "The door is open". Click button 1 and the door turns and closes. However, when swiping another blue induction block, the LCD1602 shows "Error".
+Upload the code, display "Card" on the LCD1602, open the serial monitor, and set the baud rate to "115200".
+
+Close the provided card to the RFID induction area, display "error" on the LCD1602,but the serial monitor output is as shown in the figure:
+
+![](media/bb.png)
+
+
+
+Input the "Card UID" from the image into the position shown in the figure (remove spaces in "Card UID" and in the serial monitor's **Card UID**, remove leading **0** only if it appears **before any digits** (e.g., `" 0123"` → `"123"`), but keep **0** if it follows a number (e.g., `"601"` remains `"601"`).):
+
+![](media/cc.png)
+
+Upload the code,close the provided card to the RFID induction area,the door will turn and open, and LCD1602 shows "open". 
+
+Click button 1 and the door turns and closes. However, when swiping another blue induction block, the LCD1602 shows "Error".
 
 ### Project 11 Morse Code Open the Door
 
@@ -1260,65 +1578,75 @@ LiquidCrystal_I2C mylcd(0x27,16,2);
 OneButton button1(16, true);
 // Setup a new OneButton on pin 27.  
 OneButton button2(27, true);
-#include <ESP32_Servo.h>
+#include <ESP32Servo.h>
 Servo myservo;
 int servoPin = 13;
 String password = "";
-String correct_p = "-.-";  //The correct password for the password door
+String correct_p = "-.-";  //password
 
 // setup code here, to run once:
 void setup() {
-Serial.begin(115200);
-mylcd.init();
-mylcd.backlight();
-// link the button 1 functions.
-button1.attachClick(click1);
-button1.attachLongPressStop(longPressStop1);
-// link the button 2 functions.
-button2.attachClick(click2);
-button2.attachLongPressStop(longPressStop2);
+  Serial.begin(115200);
+  mylcd.init();
+  mylcd.backlight();
+  // link the button 1 functions.
+  button1.attachClick(click1);
+  button1.attachLongPressStop(longPressStop1);
+  // link the button 2 functions.
+  button2.attachClick(click2);
+  button2.attachLongPressStop(longPressStop2);
 
-myservo.attach(servoPin);
-mylcd.setCursor(0, 0);
-mylcd.print("Enter password");
+	// Allow allocation of all timers
+	ESP32PWM::allocateTimer(0);
+	ESP32PWM::allocateTimer(1);
+	ESP32PWM::allocateTimer(2);
+	ESP32PWM::allocateTimer(3);
+	myservo.setPeriodHertz(50);    // standard 50 hz servo
+	myservo.attach(servoPin, 1000, 2000); // attaches the servo on pin 18 to the servo object
+	// using default min/max of 1000us and 2000us
+	// different servos may require different min/max settings
+	// for an accurate 0 to 180 sweep
+  
+  mylcd.setCursor(0, 0);
+  mylcd.print("Enter password");
 }
 
 void loop() {
-// keep watching the push buttons:
-button1.tick();
-button2.tick();
-delay(10);
+  // keep watching the push buttons:
+  button1.tick();
+  button2.tick();
+  delay(10);
 }
 
 // ----- button 1 callback functions
 // This function will be called when the button1 was pressed 1 time (and no 2. button press followed).
 void click1() {
-Serial.print(".");
-password = password + '.';
-mylcd.setCursor(0, 1);
-mylcd.print(password);
+  Serial.print(".");
+  password = password + '.';
+  mylcd.setCursor(0, 1);
+  mylcd.print(password);
 } // click1
 
-// This function will be called once, when the button1 is released after being pressed for a long time.
+// This function will be called once, when the button1 is released after beeing pressed for a long time.
 void longPressStop1() {
-Serial.print("-");
-password = password + '-';
-mylcd.setCursor(0, 1);
-mylcd.print(password);
+  Serial.print("-");
+  password = password + '-';
+  mylcd.setCursor(0, 1);
+  mylcd.print(password);
 } // longPressStop1
 
 // ... and the same for button 2:
 void click2() {
-Serial.println(password);
-if(password == correct_p)
-{
-    myservo.write(180);  //Open the door if the password is correct
+  Serial.println(password);
+  if(password == correct_p)
+  {
+    myservo.write(180);  //open the door if the password correct
     mylcd.clear();
     mylcd.setCursor(0, 0);
     mylcd.print("open");
-}
-else
-{
+  }
+  else
+  {
     mylcd.clear();
     mylcd.setCursor(0, 0);
     mylcd.print("error");
@@ -1326,16 +1654,16 @@ else
     mylcd.clear();
     mylcd.setCursor(0, 0);
     mylcd.print("input again");
-}
-password = "";
+  }
+  password = "";
 } // click2
 
 void longPressStop2() {
-//Serial.println("Button 2 longPress stop");
-myservo.write(0);  //Close the door
-mylcd.clear();
-mylcd.setCursor(0, 0);
-mylcd.print("close");
+  //Serial.println("Button 2 longPress stop");
+   myservo.write(0);  //open door
+   mylcd.clear();
+   mylcd.setCursor(0, 0);
+   mylcd.print("close");
 } // longPressStop2
 ```
 
@@ -1367,70 +1695,127 @@ Note: ssiD and password in the code should be filled with your own WiFi name and
 #include <ESPmDNS.h>
 #include <WiFiClient.h>
 
-String item = "0";
-const char* ssid = "ChinaNet-2.4G-0DF0";
-const char* password = "ChinaNet@233";
+// Network Configuration
+const char* ssid = "LieBaoWiFi359";
+const char* password = "wmbd315931";
 WiFiServer server(80);
 
+// Global Variables
+String requestPath = "/";  // Stores the HTTP request path
+
 void setup() {
-Serial.begin(115200);
-WiFi.begin(ssid, password);
-while (WiFi.status() != WL_CONNECTED) {
+  Serial.begin(115200);
+  
+  // Connect to WiFi
+  Serial.println("\nConnecting to WiFi...");
+  WiFi.begin(ssid, password);
+  
+  while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
-}
-Serial.println("");
-Serial.print("Connected to ");
-Serial.println(ssid);
-Serial.print("IP address: ");
-Serial.println(WiFi.localIP());
-server.begin();
-Serial.println("TCP server started");
-MDNS.addService("http", "tcp", 80);
+  }
+  
+  // Network information
+  Serial.println("\nWiFi connected");
+  printNetworkInfo();
+  
+  // Start server and mDNS
+  server.begin();
+  if (!MDNS.begin("esp32")) {
+    Serial.println("Error setting up MDNS responder!");
+  }
+  MDNS.addService("http", "tcp", 80);
+  Serial.println("HTTP server started");
 }
 
 void loop() {
-Serial.print("Connected to ");
-Serial.println(ssid);
-Serial.print("IP address: ");
-Serial.println(WiFi.localIP());  //The assigned IP address is printed on the serial monitor  
-delay(200);
-WiFiClient client = server.available();
-if (!client) {
+  WiFiClient client = server.available();
+  
+  if (!client) {
     return;
-}
-while(client.connected() && !client.available()){
+  }
+  
+  // Wait for client data
+  while (client.connected() && !client.available()) {
     delay(1);
+  }
+  
+  // Read HTTP request
+  String request = client.readStringUntil('\r');
+  parseHttpRequest(request);
+  
+  // Handle request
+  String response;
+  if (requestPath == "/") {
+    response = buildHomepageResponse();
+    Serial.println("Serving homepage");
+  } else {
+    response = buildNotFoundResponse();
+    Serial.println("Unknown request: " + requestPath);
+  }
+  
+  // Send HTTP response
+  client.println(response);
+  client.stop();
+  
+  // Small delay between requests
+  delay(100);
 }
-String req = client.readStringUntil('\r');
-int addr_start = req.indexOf(' ');
-int addr_end = req.indexOf(' ', addr_start + 1);
-if (addr_start == -1 || addr_end == -1) {
+
+// Helper Functions
+void printNetworkInfo() {
+  Serial.print("SSID: ");
+  Serial.println(WiFi.SSID());
+  Serial.print("IP Address: ");
+  Serial.println(WiFi.localIP());
+}
+
+void parseHttpRequest(String req) {
+  int addr_start = req.indexOf(' ');
+  int addr_end = req.indexOf(' ', addr_start + 1);
+  
+  if (addr_start == -1 || addr_end == -1) {
     Serial.print("Invalid request: ");
     Serial.println(req);
+    requestPath = "/404";
     return;
+  }
+  
+  requestPath = req.substring(addr_start + 1, addr_end);
+  Serial.println("Requested path: " + requestPath);
 }
-req = req.substring(addr_start + 1, addr_end);
-item=req;
-Serial.println(item);
-String s;
-if (req == "/")  //Browser accesses address can read the information sent by the client.println(s);
-{
-    IPAddress ip = WiFi.localIP();
-    String ipStr = String(ip[0]) + '.' + String(ip[1]) + '.' + String(ip[2]) + '.' + String(ip[3]);
-    s = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<!DOCTYPE HTML>\r\n<html>Hello from ESP32 at ";
-    s += ipStr;
-    s += "</html>\r\n\r\n";
-    Serial.println("Sending 200");
-    client.println(s);  //Send the string S, you can read the information when visiting the address of E smart home using a browser.  
-//client.print(s);
-client.stop();
+
+String buildHomepageResponse() {
+  IPAddress ip = WiFi.localIP();
+  String ipStr = String(ip[0]) + '.' + ip[1] + '.' + ip[2] + '.' + ip[3];
+  
+  String html = "HTTP/1.1 200 OK\r\n";
+  html += "Content-Type: text/html\r\n";
+  html += "Connection: close\r\n";
+  html += "\r\n";
+  html += "<!DOCTYPE HTML>\n";
+  html += "<html><head><title>ESP32 Web Server</title></head>\n";
+  html += "<body><h1>Hello from ESP32</h1>\n";
+  html += "<p>IP Address: " + ipStr + "</p>\n";
+  html += "</body></html>\n";
+  
+  return html;
+}
+
+String buildNotFoundResponse() {
+  String html = "HTTP/1.1 404 Not Found\r\n";
+  html += "Content-Type: text/html\r\n";
+  html += "Connection: close\r\n";
+  html += "\r\n";
+  html += "<!DOCTYPE HTML>\n";
+  html += "<html><head><title>404 Not Found</title></head>\n";
+  html += "<body><h1>404</h1><p>Page not found</p></body></html>\n";
+  
+  return html;
 }
 ```
 
 #### **3. Test Result**
-
-**Note: Only WiFi in the 2.4GHz band is supported, not WiFi in the 5GHz band.**
 
 If the WiFi is connected successfully, the serial monitor will print out the assigned IP address.
 
@@ -1448,8 +1833,6 @@ In this project, we will learn how to realize different functions of the smart h
 
 #### **2. Test Code**
 
-Note: ssiD and password in the code should be filled with your own WiFi name and password.
-
 ```c
 #include <Arduino.h>
 #include <WiFi.h>
@@ -1457,106 +1840,103 @@ Note: ssiD and password in the code should be filled with your own WiFi name and
 #include <WiFiClient.h>
 
 String item = "0";
-const char* ssid = "ChinaNet-2.4G-0DF0";
-const char* password = "ChinaNet@233";
+const char* ssid = "LieBaoWiFi359";
+const char* password = "wmbd315931";
 WiFiServer server(80);
 
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 LiquidCrystal_I2C mylcd(0x27,16,2);
-#include <analogWrite.h>
+//#include <analogWrite.h>
 #define fanPin1 19
 #define fanPin2 18
-#define led_y 12  //Define the yellow led pin to 12
+#define led_y 12  //Define yellow LED pin as 12
 
 void setup() {
-Serial.begin(115200);
-mylcd.init();
-mylcd.backlight();
-pinMode(led_y, OUTPUT);
-pinMode(fanPin1, OUTPUT);
-pinMode(fanPin2, OUTPUT);
-
-WiFi.begin(ssid, password);
-while (WiFi.status() != WL_CONNECTED) {
+  Serial.begin(115200);
+  mylcd.init();
+  mylcd.backlight();
+  pinMode(led_y, OUTPUT);
+  pinMode(fanPin1, OUTPUT);
+  pinMode(fanPin2, OUTPUT);
+  
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
-}
-Serial.println("");
-Serial.print("Connected to ");
-Serial.println(ssid);
-Serial.print("IP address: ");
-Serial.println(WiFi.localIP());
-server.begin();
-Serial.println("TCP server started");
-MDNS.addService("http", "tcp", 80);
-mylcd.setCursor(0, 0);
-mylcd.print("ip:");
-mylcd.setCursor(0, 1);
-mylcd.print(WiFi.localIP());  //LCD displays the ip adress
+  }
+  Serial.println("");
+  Serial.print("Connected to ");
+  Serial.println(ssid);
+  Serial.print("IP address: ");
+  Serial.println(WiFi.localIP());
+  server.begin();
+  Serial.println("TCP server started");
+  MDNS.addService("http", "tcp", 80);
+  mylcd.setCursor(0, 0);
+  mylcd.print("ip:");
+  mylcd.setCursor(0, 1);
+  mylcd.print(WiFi.localIP());  //LCD displays IP address
 }
 
 void loop() {
-WiFiClient client = server.available();
-if (!client) {
-    return;
-}
-while(client.connected() && !client.available()){
-    delay(1);
-}
-String req = client.readStringUntil('\r');
-int addr_start = req.indexOf(' ');
-int addr_end = req.indexOf(' ', addr_start + 1);
-if (addr_start == -1 || addr_end == -1) {
-    Serial.print("Invalid request: ");
-    Serial.println(req);
-    return;
-}
-req = req.substring(addr_start + 1, addr_end);
-item=req;
-Serial.println(item);
-String s;
-if (req == "/")  //Browser accesses address can read the information sent by the client.println(s);
-{
-    IPAddress ip = WiFi.localIP();
-    String ipStr = String(ip[0]) + '.' + String(ip[1]) + '.' + String(ip[2]) + '.' + String(ip[3]);
-    s = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<!DOCTYPE HTML>\r\n<html>Hello from ESP32 at ";
-    s += ipStr;
-    s += "</html>\r\n\r\n";
-    Serial.println("Sending 200");
-    client.println(s);  //Send the string S, you can read the information when visiting the address of E smart home using a browser.  
-//client.print(s);
-}
-if(req == "/led/on") //Browser accesses the ip address/led/on
-{
+  WiFiClient client = server.available();
+  if (!client) {
+      return;
+  }
+  while(client.connected() && !client.available()){
+      delay(1);
+  }
+  String req = client.readStringUntil('\r');
+  int addr_start = req.indexOf(' ');
+  int addr_end = req.indexOf(' ', addr_start + 1);
+  if (addr_start == -1 || addr_end == -1) {
+      Serial.print("Invalid request: ");
+      Serial.println(req);
+      return;
+  }
+  req = req.substring(addr_start + 1, addr_end);
+  item=req;
+  Serial.println(item);
+  String s;
+  if (req == "/")  //Browser can read the information sent by client.println(s) when accessing the address
+  {
+      IPAddress ip = WiFi.localIP();
+      String ipStr = String(ip[0]) + '.' + String(ip[1]) + '.' + String(ip[2]) + '.' + String(ip[3]);
+      s = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<!DOCTYPE HTML>\r\n<html>Hello from ESP32 at ";
+      s += ipStr;
+      s += "</html>\r\n\r\n";
+      Serial.println("Sending 200");
+      client.println(s);  //Send the content of string S. When accessing the E-smart home address using a browser, the information can be read.
+  }
+  if(req == "/led/on") //Browser accesses IP address/led/on
+  {
     client.println("turn on the LED");
     digitalWrite(led_y, HIGH);
-}
-if(req == "/led/off") //Browser accesses the ip address/led/off
-{
+  }
+  if(req == "/led/off") //Browser accesses IP address/led/off
+  {
     client.println("turn off the LED");
     digitalWrite(led_y, LOW);
-}
-if(req == "/fan/on") //Browser accesses the ip address/fan/on
-{
+  }
+  if(req == "/fan/on") //Browser accesses IP address/fan/on
+  {
     client.println("turn on the fan");
     digitalWrite(fanPin1, LOW); //pwm = 0
     analogWrite(fanPin2, 180);
-}
-if(req == "/fan/off") //Browser accesses the ip address/fan/off
-{
+  }
+  if(req == "/fan/off") //Browser accesses IP address/fan/on
+  {
     client.println("turn off the fan");
     digitalWrite(fanPin1, LOW); //pwm = 0
     analogWrite(fanPin2, 0);
-}
-//client.print(s);
-client.stop();
+  }
+  //client.print(s);
+  client.stop();
 }
 ```
 
 #### **3. Test Result**
-
-**Note: Only WiFi in the 2.4GHz band is supported, not WiFi in the 5GHz band.**
 
 If the smart home is successfully connected to WiFi, the LCD screen will display the assigned address.
 
@@ -1602,8 +1982,6 @@ We will use APP to control the smart home LED lights and fan switches.
 
 #### **2. Test Code**
 
-Note: ssiD and password in the code should be filled with your own WiFi name and password.
-
 ```c
 #include <Arduino.h>
 #include <WiFi.h>
@@ -1611,105 +1989,109 @@ Note: ssiD and password in the code should be filled with your own WiFi name and
 #include <WiFiClient.h>
 
 String item = "0";
-const char* ssid = "ChinaNet-2.4G-0DF0";
-const char* password = "ChinaNet@233";
+const char* ssid = "LieBaoWiFi359";
+const char* password = "wmbd315931";
 WiFiServer server(80);
 
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 LiquidCrystal_I2C mylcd(0x27,16,2);
-#include <analogWrite.h>
+//#include <analogWrite.h>
 #define fanPin1 19
 #define fanPin2 18
-#define led_y 12  //Define the yellow led pin to 12
+#define led_y 12                                     // Define yellow LED pin as 12
 
-void setup() {
-Serial.begin(115200);
-mylcd.init();
-mylcd.backlight();
-pinMode(led_y, OUTPUT);
-pinMode(fanPin1, OUTPUT);
-pinMode(fanPin2, OUTPUT);
-
-WiFi.begin(ssid, password);
-while (WiFi.status() != WL_CONNECTED) {
+void setup() 
+{
+  Serial.begin(115200);
+  mylcd.init();
+  mylcd.backlight();
+  pinMode(led_y, OUTPUT);
+  pinMode(fanPin1, OUTPUT);
+  pinMode(fanPin2, OUTPUT);
+  
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) 
+  {
     delay(500);
     Serial.print(".");
-}
-Serial.println("");
-Serial.print("Connected to ");
-Serial.println(ssid);
-Serial.print("IP address: ");
-Serial.println(WiFi.localIP());
-server.begin();
-Serial.println("TCP server started");
-MDNS.addService("http", "tcp", 80);
-mylcd.setCursor(0, 0);
-mylcd.print("ip:");
-mylcd.setCursor(0, 1);
-mylcd.print(WiFi.localIP());  //LCD displays ip adress
+  }
+  Serial.println("");
+  Serial.print("Connected to ");
+  Serial.println(ssid);
+  Serial.print("IP address: ");
+  Serial.println(WiFi.localIP());
+  server.begin();
+  Serial.println("TCP server started");
+  MDNS.addService("http", "tcp", 80);
+  mylcd.setCursor(0, 0);
+  mylcd.print("ip:");
+  mylcd.setCursor(0, 1);
+  mylcd.print(WiFi.localIP());                       // LCD displays IP address
 }
 
-void loop() {
-WiFiClient client = server.available();
-if (!client) {
-    return;
-}
-while(client.connected() && !client.available()){
-    delay(1);
-}
-String req = client.readStringUntil('\r');
-int addr_start = req.indexOf(' ');
-int addr_end = req.indexOf(' ', addr_start + 1);
-if (addr_start == -1 || addr_end == -1) {
-    Serial.print("Invalid request: ");
-    Serial.println(req);
-    return;
-}
-req = req.substring(addr_start + 1, addr_end);
-item=req;
-Serial.println(item);
-String s;
-if (req == "/")  //Browser accesses address can read the information sent by the client.println(s);
+void loop() 
 {
-    IPAddress ip = WiFi.localIP();
-    String ipStr = String(ip[0]) + '.' + String(ip[1]) + '.' + String(ip[2]) + '.' + String(ip[3]);
-    s = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<!DOCTYPE HTML>\r\n<html>ESP32 ip:";
-    s += ipStr;
-    s += "</html>\r\n\r\n";
-    Serial.println("Sending 200");
-    client.println(s);  //Send the string S, then you can read the information when visiting the address of E smart home using a browser.
-}
-if(req == "/led/on") //Browser accesses address ip address/led/on
-{
+  WiFiClient client = server.available();
+  if (!client) 
+  {
+      return;
+  }
+  while(client.connected() && !client.available())
+  {
+      delay(1);
+  }
+  String req = client.readStringUntil('\r');
+  int addr_start = req.indexOf(' ');
+  int addr_end = req.indexOf(' ', addr_start + 1);
+  if (addr_start == -1 || addr_end == -1) 
+  {
+      Serial.print("Invalid request: ");
+      Serial.println(req);
+      return;
+  }
+  req = req.substring(addr_start + 1, addr_end);
+  item=req;
+  Serial.println(item);
+  String s;
+  if (req == "/")                                   // Browser can read the information sent by client.println(s) when accessing the address
+  {
+      IPAddress ip = WiFi.localIP();
+      String ipStr = String(ip[0]) + '.' + String(ip[1]) + '.' + String(ip[2]) + '.' + String(ip[3]);
+      s = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<!DOCTYPE HTML>\r\n<html>Hello from ESP32 at ";
+      s += ipStr;
+      s += "</html>\r\n\r\n";
+      Serial.println("Sending 200");
+      client.println(s);                            // Send the content of string S. When accessing the E-smart home address using a browser, the information can be read.
+  }
+  if(req == "/led/on")                              // Browser accesses IP address/led/on
+  {
     client.println("turn on the LED");
     digitalWrite(led_y, HIGH);
-}
-if(req == "/led/off") //Browser accesses address ip address/led/off
-{
+  }
+  if(req == "/led/off")                             // Browser accesses IP address/led/off
+  {
     client.println("turn off the LED");
     digitalWrite(led_y, LOW);
-}
-if(req == "/fan/on") //Browser accesses address ip address/fan/on
-{
+  }
+  if(req == "/fan/on")                              // Browser accesses IP address/fan/on
+  {
     client.println("turn on the fan");
-    digitalWrite(fanPin1, LOW); //pwm = 0
+    digitalWrite(fanPin1, LOW);                     // pwm = 0
     analogWrite(fanPin2, 180);
-}
-if(req == "/fan/off") //Browser accesses address ip address/fan/off
-{
+  }
+  if(req == "/fan/off")                             // Browser accesses IP address/fan/on
+  {
     client.println("turn off the fan");
-    digitalWrite(fanPin1, LOW); //pwm = 0
+    digitalWrite(fanPin1, LOW);                     // pwm = 0
     analogWrite(fanPin2, 0);
-}
-//client.print(s);
-client.stop();
+  }
+  //client.print(s);
+  client.stop();
 }
 ```
 
 #### **3. Test Result**
-
-**Note: Only WiFi in the 2.4GHz band is supported, not WiFi in the 5GHz band.**
 
 1\. Open the APP and select WIFI
 
@@ -1737,13 +2119,296 @@ What’s more, the smart home also can connect to the hotspot of the mobile phon
 
 #### **2. Test Code**
 
-Please refer to the sample code, as shown below:
+```
+#include <WiFi.h>
+#include <ESPmDNS.h>
+#include <WiFiClient.h>
+#include <Adafruit_NeoPixel.h>
+#define LED_PIN    26
+#define LED_COUNT 4                                      // Number of NeoPixels attached
+Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 
-![](media/547c1d768d1eb0dc27a85ea1d0bffcce.png)
+String item = "0";
+const char* ssid = "LieBaoWiFi359";
+const char* password = "wmbd315931";
+WiFiServer server(80);
+
+#include <LiquidCrystal_I2C.h>
+LiquidCrystal_I2C mylcd(0x27,16,2);
+#include "xht11.h"
+xht11 xht(17);
+
+#include <BuzzerESP32.h>
+#define buzzer_pin 25
+BuzzerESP32 buzzer(buzzer_pin);                          // GPIO25
+
+#define waterPin 34
+#define fanPin1 19
+#define fanPin2 18
+#define led_y 12                                         // Yellow LED pin definition
+#define gasPin 23
+#define pyroelectric 14
+
+unsigned char dht[4] = {0, 0, 0, 0};                    // Only first 32 bits received (no parity bits)
+
+// Servo channels
+int channel_PWM = 13;
+int channel_PWM2 = 10;
+int freq_PWM = 50; 
+int resolution_PWM = 10;
+const int PWM_Pin1 = 5;
+const int PWM_Pin2 = 13;
+
+void setup() 
+{
+  Serial.begin(115200);
+  mylcd.init();
+  mylcd.backlight();
+  pinMode(led_y, OUTPUT);
+  pinMode(fanPin1, OUTPUT);
+  pinMode(fanPin2, OUTPUT);
+  pinMode(waterPin, INPUT);
+
+  buzzer.setTimbre(30);                                  // Set timbre
+  buzzer.playTone(0,0);                                  // Turn off buzzer
+
+  pinMode(gasPin, INPUT);
+  pinMode(pyroelectric, INPUT);
+  
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) 
+  {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("");
+  Serial.print("Connected to ");
+  Serial.println(ssid);
+  Serial.print("IP address: ");
+  Serial.println(WiFi.localIP());
+  server.begin();
+  Serial.println("TCP server started");
+  MDNS.addService("http", "tcp", 80);
+  mylcd.setCursor(0, 0);
+  mylcd.print("ip:");
+  mylcd.setCursor(0, 1);
+  mylcd.print(WiFi.localIP());                           // Display IP on LCD
+}
+
+void loop() 
+{
+  WiFiClient client = server.available();
+  if (!client) 
+  {
+      return;
+  }
+  while(client.connected() && !client.available())
+  {
+      delay(1);
+  }
+  String req = client.readStringUntil('\r');
+  int addr_start = req.indexOf(' ');
+  int addr_end = req.indexOf(' ', addr_start + 1);
+  if (addr_start == -1 || addr_end == -1) 
+  {
+      Serial.print("Invalid request: ");
+      Serial.println(req);
+      return;
+  }
+  req = req.substring(addr_start + 1, addr_end);
+  item=req;
+  Serial.println(item);
+  String s;
+  if (req == "/")                                       // Browser can read information sent by client.println(s)
+  {
+      IPAddress ip = WiFi.localIP();
+      String ipStr = String(ip[0]) + '.' + String(ip[1]) + '.' + String(ip[2]) + '.' + String(ip[3]);
+      s = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<!DOCTYPE HTML>\r\n<html>ESP32 ip:";
+      s += ipStr;
+      s += "</html>\r\n\r\n";
+      Serial.println("Sending 200");
+      client.println(s);                                // Send string content - readable when accessing smart home address
+  }
+  if(req == "/led/on")                                  // IP address/led/on
+  {
+    client.println("turn on the LED");
+    digitalWrite(led_y, HIGH);
+  }
+  if(req == "/led/off")                                 // IP address/led/off
+  {
+    client.println("turn off the LED");
+    digitalWrite(led_y, LOW);
+  }
+  if(req == "/window/on")
+  {
+    client.println("open the window");
+    ledcWrite(channel_PWM, 100);                        // 2.5ms high pulse (2.5/20*1024) = 180° servo angle
+  }
+  if(req == "/window/off")
+  {
+    client.println("close the window");
+    ledcWrite(channel_PWM, 60);                         // 0.5ms high pulse = 0° servo angle
+  }
+  if(req == "/music/on")
+  {
+    //client.println("play music");
+  }
+  if(req == "/music/off")
+  {
+    client.println("play music");
+    birthday();
+    buzzer.playTone(0,0);
+  }
+  if(req == "/buz/on")
+  {
+    client.println("buzzer");
+    buzzer.playTone(392,250);
+    Serial.println("1");
+  }
+  if(req == "/buz/off")
+  {
+    client.println("off");
+    buzzer.playTone(0,0);
+  }
+  if(req == "/door/on")
+  {
+    client.println("open the door");
+    ledcWrite(channel_PWM2, 120);
+  }
+  if(req == "/door/off")
+  {
+    client.println("close the door");
+    ledcWrite(channel_PWM2, 20);
+  }
+  if(req == "/fan/on")
+  {
+    client.println("turn on the fan");
+    digitalWrite(fanPin1, LOW);                         // pwm = 0
+    ledcWrite(5, 100);                                  // LEDC channel 1 PWM output = 100
+  }
+  if(req == "/fan/off")
+  {
+    client.println("turn off the fan");
+    digitalWrite(fanPin1, LOW);                         // pwm = 0
+    ledcWrite(5, 0);                                    // LEDC channel 1 PWM output = 0
+  }
+  // Color control endpoints follow same pattern...
+  if(req == "/rain/on")
+  {
+    int rainVal = analogRead(waterPin);
+    client.println(rainVal);
+  }
+  if(req == "/rain/off")
+  {
+    client.println("off");
+  }
+  if(req == "/gas/on")
+  {
+    boolean gasVal = analogRead(gasPin);
+    if(gasVal == 0)
+    {
+      client.println("safety");
+    }
+    else
+    {
+      client.println("dangerous");
+    }
+  }
+  if(req == "/gas/off")
+  {
+    client.println("off");
+  }
+  if(req == "/body/on")
+  {
+    boolean pyroelectric_val = digitalRead(pyroelectric);
+    if(pyroelectric_val == 1)
+    {
+      client.println("someone");
+    }
+    else
+    {
+      client.println("no one");
+    }
+  }
+  if(req == "/body/off")
+  {
+    client.println("off");
+  }
+  if(req == "/temp/on")
+  {
+    if (xht.receive(dht))                               // Returns true on successful read
+    { 
+      Serial.print("Temp:");
+      Serial.print(dht[2]);                             // Integer part of temperature
+      Serial.println("C");
+      delay(200);
+    } 
+    else                                                // Read error
+    {    
+      Serial.println("sensor error");
+    }
+    client.println(dht[2]);
+    delay(1000);                                        // Wait 1000ms for device read
+  }
+  if(req == "/temp/off")
+  {
+    client.println("off");
+  }
+  if(req == "/humidity/on")
+  {
+    if (xht.receive(dht))                               // Returns true on successful read
+    { 
+      Serial.print("Humidity:");
+      Serial.print(dht[0]);                             // Integer part of humidity
+      Serial.println("%");
+      delay(200);
+    } 
+    else                                                // Read error
+    {    
+      Serial.println("sensor error");
+    }
+    client.println(dht[0]);
+    delay(1000);                                        // Wait 1000ms for device read
+  }
+  if(req == "/humidity/off")
+  {
+    client.println("off");
+  }
+}
+
+// Birthday melody function
+void birthday() 
+{
+  buzzer.playTone(294,250);                             // Parameters: frequency, duration
+  buzzer.playTone(440,250);
+  buzzer.playTone(392,250);
+  buzzer.playTone(532,250);
+  buzzer.playTone(494,250);
+  buzzer.playTone(392,250);
+  buzzer.playTone(440,250);
+  buzzer.playTone(392,250);
+  buzzer.playTone(587,250);
+  buzzer.playTone(532,250);
+  buzzer.playTone(392,250);
+  buzzer.playTone(784,250);
+  buzzer.playTone(659,250);
+  buzzer.playTone(532,250);
+  buzzer.playTone(494,250);
+  buzzer.playTone(440,250);
+  buzzer.playTone(698,250);
+  buzzer.playTone(659,250);
+  buzzer.playTone(532,250);
+  buzzer.playTone(587,250);
+  buzzer.playTone(532,500);
+  buzzer.playTone(0,0);                                 // Turn off
+}
+
+// NeoPixel effect functions (colorWipe, rainbow, theaterChaseRainbow remain unchanged)
+```
+
+
 
 **3. Test Result**
-
-**Note: Only WiFi in the 2.4GHz band is supported, not WiFi in the 5GHz band.**
 
 ![](media/a94cd80683c4eecb3c1bcabd4a60747d.png)
 

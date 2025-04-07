@@ -1,8 +1,8 @@
 from machine import Pin,PWM
 import time
 #Two pins of the motor
-INA =PWM(Pin(19,Pin.OUT),10000,0)#INA corresponds to IN+
-INB =PWM(Pin(18,Pin.OUT),10000,2)#INB corresponds to IN- 
+INA =PWM(Pin(19,Pin.OUT),10000)#INA corresponds to IN+
+INB =PWM(Pin(18,Pin.OUT),10000)#INB corresponds to IN- 
 
 try:
     while True:

@@ -1,48 +1,64 @@
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
-LiquidCrystal_I2C mylcd(0x27,16,2);
-#define gasPin 23
-#define buzPin 25
-boolean i = 1;
-boolean j = 1;
 
-void setup(){
+// Initialize LCD with I2C address 0x27, 16 columns and 2 rows
+LiquidCrystal_I2C mylcd(0x27, 16, 2);
+
+#define gasPin 23    // Gas sensor input pin
+#define buzPin 25    // Buzzer output pin
+
+// State flags for LCD display updates
+boolean dangerDisplayed = 1;
+boolean safetyDisplayed = 1;
+
+void setup() {
   Serial.begin(9600);
+  
+  // Initialize LCD
   mylcd.init();
   mylcd.backlight();
+  
+  // Set pin modes
   pinMode(buzPin, OUTPUT);
   pinMode(gasPin, INPUT);
+  
+  // Display initial message
   mylcd.setCursor(0, 0);
   mylcd.print("safety");
 }
 
-void loop(){
-  boolean gasVal = digitalRead(gasPin);  //读取气体传感器检测到的值
+void loop() {
+  boolean gasVal = digitalRead(gasPin);  // Read gas sensor value
   Serial.println(gasVal);
-  if(gasVal == 0)  //如果测到危险气体，LCD显示dangerous，蜂鸣器发出警报声
+  
+  if(gasVal == 0)  // If dangerous gas detected
   {
-    while(i == 1)
+    while(dangerDisplayed == 1)  // Update display if needed
     {
       mylcd.clear();
       mylcd.setCursor(0, 0);
       mylcd.print("dangerous");
-      i = 0;
-      j = 1;
+      dangerDisplayed = 0;
+      safetyDisplayed = 1;
     }
-    digitalWrite(buzPin,HIGH);
+    
+    // Sound alarm buzzer (short pulses)
+    digitalWrite(buzPin, HIGH);
     delay(1);
-    digitalWrite(buzPin,LOW);
+    digitalWrite(buzPin, LOW);
     delay(1);
   }
-  else{
-    digitalWrite(buzPin,LOW);
-    while(j == 1)
+  else  // No dangerous gas detected
+  {
+    digitalWrite(buzPin, LOW);  // Ensure buzzer is off
+    
+    while(safetyDisplayed == 1)  // Update display if needed
     {
       mylcd.clear();
       mylcd.setCursor(0, 0);
       mylcd.print("safety");
-      i = 1;
-      j = 0;
+      dangerDisplayed = 1;
+      safetyDisplayed = 0;
     }
   }
 }

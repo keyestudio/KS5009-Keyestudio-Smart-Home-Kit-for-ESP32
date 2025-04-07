@@ -1,10 +1,13 @@
 from time import sleep_ms, ticks_ms 
-from machine import I2C, Pin 
+from machine import SoftI2C, Pin 
 from i2c_lcd import I2cLcd 
 
 DEFAULT_I2C_ADDR = 0x27
 
-i2c = I2C(scl=Pin(22), sda=Pin(21), freq=400000) 
+scl_pin = Pin(22, Pin.OUT, pull=Pin.PULL_UP)  # GPIO22 with internal pull-up enabled
+sda_pin = Pin(21, Pin.OUT, pull=Pin.PULL_UP)  # GPIO21 with internal pull-up enabled
+
+i2c = SoftI2C(scl=Pin(22), sda=Pin(21), freq=100000) 
 lcd = I2cLcd(i2c, DEFAULT_I2C_ADDR, 2, 16)
 
 from machine import Pin

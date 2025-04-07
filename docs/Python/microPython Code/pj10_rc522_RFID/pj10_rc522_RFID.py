@@ -2,7 +2,6 @@ from machine import Pin, PWM,I2C, Pin
 import time
 from mfrc522_i2c import mfrc522
 
-
 pwm = PWM(Pin(13))  
 pwm.freq(50)
 button1 = Pin(16, Pin.IN, Pin.PULL_UP)
@@ -26,7 +25,7 @@ while True:
             for i in rc522.uid.uidByte[0 : rc522.uid.size]:
                 data = data + i
         print(data)
-        if(data == 656):
+        if(data == 510):
             pwm.duty(128)
             print("open")
         else:

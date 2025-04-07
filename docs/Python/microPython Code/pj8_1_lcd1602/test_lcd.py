@@ -1,10 +1,21 @@
 from time import sleep_ms, ticks_ms 
-from machine import I2C, Pin 
+from machine import SoftI2C, Pin 
 from i2c_lcd import I2cLcd 
 
 DEFAULT_I2C_ADDR = 0x27
 
-i2c = I2C(scl=Pin(22), sda=Pin(21), freq=400000) 
+# 初始化 SCL/SDA 引脚并启用内部上拉
+scl_pin = Pin(22, Pin.OUT, pull=Pin.PULL_UP)  # GPIO22 启用内部上拉
+sda_pin = Pin(21, Pin.OUT, pull=Pin.PULL_UP)  # GPIO21 启用内部上拉
+
+i2c = SoftI2C(scl=Pin(22), sda=Pin(21), freq=100000)
+
+devices = i2c.scan()
+if not devices:
+    print("未检测到 I2C 设备！检查接线/供电/上拉电阻")
+else:
+    print("检测到设备地址：", [hex(addr) for addr in devices])  # 输出十六进制地址‌:ml-citation{ref="3,8" data="citationList"}
+
 lcd = I2cLcd(i2c, DEFAULT_I2C_ADDR, 2, 16)
 
 lcd.move_to(1, 0)

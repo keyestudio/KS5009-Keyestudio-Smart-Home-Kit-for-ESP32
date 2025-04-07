@@ -4,17 +4,17 @@
 #include <WiFiClient.h>
 
 String item = "0";
-const char* ssid = "ChinaNet-2.4G-0DF0";
-const char* password = "ChinaNet@233";
+const char* ssid = "LieBaoWiFi359";
+const char* password = "wmbd315931";
 WiFiServer server(80);
 
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 LiquidCrystal_I2C mylcd(0x27,16,2);
-#include <analogWrite.h>
+//#include <analogWrite.h>
 #define fanPin1 19
 #define fanPin2 18
-#define led_y 12  //定义黄色led引脚为12
+#define led_y 12  //Define yellow LED pin as 12
 
 void setup() {
   Serial.begin(115200);
@@ -40,7 +40,7 @@ void setup() {
   mylcd.setCursor(0, 0);
   mylcd.print("ip:");
   mylcd.setCursor(0, 1);
-  mylcd.print(WiFi.localIP());  //LCD显示ip地址
+  mylcd.print(WiFi.localIP());  //LCD displays IP address
 }
 
 void loop() {
@@ -63,7 +63,7 @@ void loop() {
   item=req;
   Serial.println(item);
   String s;
-  if (req == "/")  //浏览器访问地址就能读取到client.println(s);发送的信息
+  if (req == "/")  //Browser can read the information sent by client.println(s) when accessing the address
   {
       IPAddress ip = WiFi.localIP();
       String ipStr = String(ip[0]) + '.' + String(ip[1]) + '.' + String(ip[2]) + '.' + String(ip[3]);
@@ -71,25 +71,25 @@ void loop() {
       s += ipStr;
       s += "</html>\r\n\r\n";
       Serial.println("Sending 200");
-      client.println(s);  //将字符串S的内容发送出去，使用浏览器访问E智能家居的地址时，就能读取到信息。
+      client.println(s);  //Send the content of string S. When accessing the E-smart home address using a browser, the information can be read.
   }
-  if(req == "/led/on") //浏览器访问ip地址/led/on
+  if(req == "/led/on") //Browser accesses IP address/led/on
   {
     client.println("turn on the LED");
     digitalWrite(led_y, HIGH);
   }
-  if(req == "/led/off") //浏览器访问ip地址/led/off
+  if(req == "/led/off") //Browser accesses IP address/led/off
   {
     client.println("turn off the LED");
     digitalWrite(led_y, LOW);
   }
-  if(req == "/fan/on") //浏览器访问ip地址/fan/on
+  if(req == "/fan/on") //Browser accesses IP address/fan/on
   {
     client.println("turn on the fan");
     digitalWrite(fanPin1, LOW); //pwm = 0
     analogWrite(fanPin2, 180);
   }
-  if(req == "/fan/off") //浏览器访问ip地址/fan/on
+  if(req == "/fan/off") //Browser accesses IP address/fan/on
   {
     client.println("turn off the fan");
     digitalWrite(fanPin1, LOW); //pwm = 0

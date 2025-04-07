@@ -1,37 +1,41 @@
-#include <ESP32Tone.h>
-#define buzzer_pin 25
+#include <BuzzerESP32.h>
 
-void setup() {
-  pinMode(buzzer_pin, OUTPUT);
-  birthday();
-}
+BuzzerESP32 buzzer(25); // Initialize buzzer on GPIO25
 
-void loop() {
-  
-}
-
-void birthday()
+void setup() 
 {
-  tone(buzzer_pin,294,250,0);  //4个参数分别为，引脚，频率，延时，通道
-  tone(buzzer_pin,440,250,0);
-  tone(buzzer_pin,392,250,0);
-  tone(buzzer_pin,532,250,0);
-  tone(buzzer_pin,494,250,0);
-  tone(buzzer_pin,392,250,0);
-  tone(buzzer_pin,440,250,0);
-  tone(buzzer_pin,392,250,0);
-  tone(buzzer_pin,587,250,0);
-  tone(buzzer_pin,532,250,0);
-  tone(buzzer_pin,392,250,0);
-  tone(buzzer_pin,784,250,0);
-  tone(buzzer_pin,659,250,0);
-  tone(buzzer_pin,532,250,0);
-  tone(buzzer_pin,494,250,0);
-  tone(buzzer_pin,440,250,0);
-  tone(buzzer_pin,698,250,0);
-  tone(buzzer_pin,659,250,0);
-  tone(buzzer_pin,532,250,0);
-  tone(buzzer_pin,587,250,0);
-  tone(buzzer_pin,532,500,0);
-  noTone(buzzer_pin,0);  //关闭
+  buzzer.setTimbre(30); // Set timbre (sound quality)
+  birthday();          // Play birthday melody
+}
+
+void loop() 
+{
+  // Empty loop as melody plays only once at startup
+}
+
+void birthday() 
+{
+  // Play birthday melody - parameters are (frequency, duration)
+  buzzer.playTone(294, 250);  // D4
+  buzzer.playTone(440, 250);  // A4
+  buzzer.playTone(392, 250);  // G4
+  buzzer.playTone(532, 250);  // C5 (slightly sharp)
+  buzzer.playTone(494, 250);  // B4
+  buzzer.playTone(392, 250);  // G4
+  buzzer.playTone(440, 250);  // A4
+  buzzer.playTone(392, 250);  // G4
+  buzzer.playTone(587, 250);  // D5
+  buzzer.playTone(532, 250);  // C5 (slightly sharp)
+  buzzer.playTone(392, 250);  // G4
+  buzzer.playTone(784, 250);  // G5
+  buzzer.playTone(659, 250);  // E5
+  buzzer.playTone(532, 250);  // C5 (slightly sharp)
+  buzzer.playTone(494, 250);  // B4
+  buzzer.playTone(440, 250);  // A4
+  buzzer.playTone(698, 250);  // F5
+  buzzer.playTone(659, 250);  // E5
+  buzzer.playTone(532, 250);  // C5 (slightly sharp)
+  buzzer.playTone(587, 250);  // D5
+  buzzer.playTone(532, 500);  // C5 (slightly sharp) - longer duration
+  buzzer.playTone(0, 0);      // Turn off buzzer
 }

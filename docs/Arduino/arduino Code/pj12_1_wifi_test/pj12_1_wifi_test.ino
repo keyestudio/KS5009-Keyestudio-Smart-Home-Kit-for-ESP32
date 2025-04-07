@@ -1,65 +1,80 @@
-#include <Arduino.h>
-#include <WiFi.h>
-#include <ESPmDNS.h>
-#include <WiFiClient.h>
+#include <musicESP32_home.h>   
+music Music(25);  // Initialize music player on GPIO25
+#define btn1 16    // Button pin
+int btn_count = 0; // Counter for button presses
+boolean music_flag = 0; // Flag to trigger music playback
 
-String item = "0";
-const char* ssid = "ChinaNet-2.4G-0DF0";
-const char* password = "ChinaNet@233";
-WiFiServer server(80);
-
-void setup() {
-  Serial.begin(115200);
-  WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-  Serial.println("");
-  Serial.print("Connected to ");
-  Serial.println(ssid);
-  Serial.print("IP address: ");
-  Serial.println(WiFi.localIP());
-  server.begin();
-  Serial.println("TCP server started");
-  MDNS.addService("http", "tcp", 80);
+void setup() 
+{
+  Serial.begin(9600);
+  pinMode(btn1, INPUT);
+  // Available music options:
+  // Music.tetris();
+  // Music.birthday();
+  // Music.Ode_to_Joy();
+  // Music.christmas();
+  // Music.star_war_tone();
 }
 
-void loop() {
-  Serial.print("Connected to ");
-  Serial.println(ssid);
-  Serial.print("IP address: ");
-  Serial.println(WiFi.localIP());  //串口监视器中打印出分配到的ip地址
-  delay(200);
-  WiFiClient client = server.available();
-  if (!client) {
-      return;
-  }
-  while(client.connected() && !client.available()){
-      delay(1);
-  }
-  String req = client.readStringUntil('\r');
-  int addr_start = req.indexOf(' ');
-  int addr_end = req.indexOf(' ', addr_start + 1);
-  if (addr_start == -1 || addr_end == -1) {
-      Serial.print("Invalid request: ");
-      Serial.println(req);
-      return;
-  }
-  req = req.substring(addr_start + 1, addr_end);
-  item=req;
-  Serial.println(item);
-  String s;
-  if (req == "/")  //浏览器访问地址就能读取到client.println(s);发送的信息
+void loop() 
+{
+  boolean btn1_val = digitalRead(btn1);
+  
+  if(btn1_val == 0) // If button is pressed
   {
-      IPAddress ip = WiFi.localIP();
-      String ipStr = String(ip[0]) + '.' + String(ip[1]) + '.' + String(ip[2]) + '.' + String(ip[3]);
-      s = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<!DOCTYPE HTML>\r\n<html>Hello from ESP32 at ";
-      s += ipStr;
-      s += "</html>\r\n\r\n";
-      Serial.println("Sending 200");
-      client.println(s);  //将字符串S的内容发送出去，使用浏览器访问E智能家居的地址时，就能读取到信息。
+    delay(10);  // 10ms delay for debouncing
+    
+    if(btn1_val == 0) // Confirm button is still pressed
+    {
+      boolean btn_state = 1;
+      
+      while(btn_state == 1) // Wait until button is released
+      {
+        boolean btn_val = digitalRead(btn1);
+        
+        if(btn_val == 1)  // If button is released
+        {
+          music_flag = 1;
+          btn_count++;    // Increment press counter
+          Serial.println(btn_count);
+          
+          // Cycle through 1-3 count
+          if(btn_count == 4)
+          {
+            btn_count = 1;
+          }
+          
+          // Play different song based on press count
+          switch(btn_count)
+          {
+            case 1: 
+              if(music_flag == 1)
+              {
+                Music.Ode_to_Joy();
+                music_flag=0;
+              } 
+              break;
+              
+            case 2: 
+              if(music_flag == 1)
+              {
+                Music.christmas();
+                music_flag=0;
+              } 
+              break;
+              
+            case 3: 
+              if(music_flag == 1)
+              {
+                Music.tetris();
+                music_flag=0;
+              } 
+              break;
+          }
+          
+          btn_state = 0;  // Exit wait loop
+        }
+      }
+    }
   }
-  //client.print(s);
-  client.stop();
 }

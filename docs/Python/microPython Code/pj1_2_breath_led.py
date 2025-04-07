@@ -4,7 +4,7 @@ from machine import Pin,PWM
 #The way that the ESP32 PWM pins output is different from traditionally controllers.
 #It can change frequency and duty cycle by configuring PWM’s parameters at the initialization stage.
 #Define GPIO 0’s output frequency as 10000Hz and its duty cycle as 0, and assign them to PWM.
-pwm =PWM(Pin(12,Pin.OUT),10000,0)
+pwm =PWM(Pin(12,Pin.OUT),10000)
 
 try:
     while True: 

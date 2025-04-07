@@ -157,12 +157,15 @@ It makes sense to take advantage of PWM. Output the number of high level and low
 import time
 from machine import Pin,PWM
 
-#The way that the ESP32 PWM pins output is different from traditionally controllers. It can change frequency and duty cycle by configuring PWM’s parameters at the initialization stage. Define GPIO 0’s output frequency as 10000Hz and its duty cycle as 0, and assign them to PWM.
-pwm =PWM(Pin(12,Pin.OUT),10000,0)
+#The way that the ESP32 PWM pins output is different from traditionally controllers.
+#It can change frequency and duty cycle by configuring PWM’s parameters at the initialization stage.
+#Define GPIO 0’s output frequency as 10000Hz and its duty cycle as 0, and assign them to PWM.
+pwm =PWM(Pin(12,Pin.OUT),10000)
 
 try:
     while True: 
-#The range of duty cycle is 0-1023, so we use the first for loop to control PWM to change the duty cycle value,making PWM output 0% -100%; Use the second for loop to make PWM output 100%-0%.  
+#The range of duty cycle is 0-1023, so we use the first for loop to control PWM to change the duty
+#cycle value,making PWM output 0% -100%; Use the second for loop to make PWM output 100%-0%.  
         for i in range(0,1023):
             pwm.duty(i)
             time.sleep_ms(1)
@@ -171,7 +174,8 @@ try:
             pwm.duty(1023-i)
             time.sleep_ms(1)  
 except:
-#Each time PWM is used, the hardware Timer will be turned ON to cooperate it. Therefore, after each use of PWM, deinit() needs to be called to turned OFF the timer. Otherwise, the PWM may fail to work next time.
+#Each time PWM is used, the hardware Timer will be turned ON to cooperate it. Therefore, after each use of PWM,
+#deinit() needs to be called to turned OFF the timer. Otherwise, the PWM may fail to work next time.
     pwm.deinit()
 ```
 
@@ -210,15 +214,18 @@ We will work to read the status value of the button and display it on the serial
 #### **2. Test Code**
 
 ```python
-    button1 = Pin(16, Pin.IN, Pin.PULL_UP)
-    button2 = Pin(27, Pin.IN, Pin.PULL_UP)
+from machine import Pin
+import time
 
-    while True:
-        btnVal1 = button1.value()  # Reads the value of button 1
-        btnVal2 = button2.value()
-        print("button1 =",btnVal1)  #Print it out in the shell
-        print("button2 =",btnVal2)
-        time.sleep(0.1) #delay 0.1s
+button1 = Pin(16, Pin.IN, Pin.PULL_UP)
+button2 = Pin(27, Pin.IN, Pin.PULL_UP)
+
+while True:
+    btnVal1 = button1.value()  # Reads the value of button 1
+    btnVal2 = button2.value()
+    print("button1 =",btnVal1)  #Print it out in the shell
+    print("button2 =",btnVal2)
+    time.sleep(0.1) #delay 0.1s
 ```
 
 #### **3. Test Result**
@@ -261,6 +268,11 @@ while True:
     else:
         led.value(0)
     time.sleep(0.1) #delay 0.1s
+    
+
+
+
+
 ```
 
 #### **Test Result**
@@ -713,8 +725,8 @@ We can control the [anticlockwise](C:/Users/NINGMEI/AppData/Local/youdao/dict/Ap
 from machine import Pin,PWM
 import time
 #Two pins of the motor
-INA =PWM(Pin(19,Pin.OUT),10000,0)#INA corresponds to IN+
-INB =PWM(Pin(18,Pin.OUT),10000,2)#INB corresponds to IN- 
+INA =PWM(Pin(19,Pin.OUT),10000)#INA corresponds to IN+
+INB =PWM(Pin(18,Pin.OUT),10000)#INB corresponds to IN- 
 
 try:
     while True:
@@ -747,7 +759,7 @@ The fan will rotate clockwise and anticlockwise at different speeds.
 
 ### Project 7.2 Switch On or Off the Fan
 
-One button switches the fan on and the other button controls the speed of the fan.
+Button one controls the fan switch.
 
 #### **1. Test Code**
 
@@ -755,8 +767,8 @@ One button switches the fan on and the other button controls the speed of the fa
 from machine import Pin,PWM
 import time
 #Two pins of the motor
-INA =PWM(Pin(19,Pin.OUT),10000,0)#INA corresponds to IN+
-INB =PWM(Pin(18,Pin.OUT),10000,2)#INB corresponds to IN-
+INA =PWM(Pin(19,Pin.OUT),10000)#INA corresponds to IN+
+INB =PWM(Pin(18,Pin.OUT),10000)#INB corresponds to IN-
 button1 = Pin(16, Pin.IN, Pin.PULL_UP)
 count = 0
 
@@ -768,7 +780,7 @@ try:
             while(btnVal1 == 0):
                 btnVal1 = button1.value()
                 if(btnVal1 == 1):
-                    count = count + 1
+                    count=count + 1
                     print(count)
         val = count % 2
         if(val == 1):
@@ -782,13 +794,15 @@ except:
     INB.duty(0)
     INA.deinit()
     INB.deinit()
+
+
+
+
 ```
 
 #### **2. Test Result**
 
-Click button 1, the fan starts to rotate, click button 2, the
-
-speed can be adjusted(there are three different speeds), press the button 1 again, the fan stops.
+Click button 1, the fan starts to rotate,  the press the button 1 again, the fan stops.
 
 ### Project 8: LCD1602 Display
 
@@ -908,12 +922,15 @@ It is a gas leak monitoring device for homes and factories, which is suitable fo
 
 ```python
 from time import sleep_ms, ticks_ms 
-from machine import I2C, Pin 
+from machine import SoftI2C, Pin 
 from i2c_lcd import I2cLcd 
 
 DEFAULT_I2C_ADDR = 0x27
 
-i2c = I2C(scl=Pin(22), sda=Pin(21), freq=400000) 
+scl_pin = Pin(22, Pin.OUT, pull=Pin.PULL_UP)  # GPIO22 with internal pull-up enabled
+sda_pin = Pin(21, Pin.OUT, pull=Pin.PULL_UP)  # GPIO21 with internal pull-up enabled
+
+i2c = SoftI2C(scl=Pin(22), sda=Pin(21), freq=100000) 
 lcd = I2cLcd(i2c, DEFAULT_I2C_ADDR, 2, 16)
 
 from machine import Pin
@@ -963,7 +980,7 @@ import machine
 import time
 import dht
 from time import sleep_ms, ticks_ms 
-from machine import I2C, Pin 
+from machine import SoftI2C, Pin 
 from i2c_lcd import I2cLcd 
 
 #Associate DHT11 with Pin(17).
@@ -971,17 +988,18 @@ DHT = dht.DHT11(machine.Pin(17))
 
 DEFAULT_I2C_ADDR = 0x27
 
-i2c = I2C(scl=Pin(22), sda=Pin(21), freq=400000) 
+i2c = SoftI2C(scl=Pin(22), sda=Pin(21), freq=100000) 
 lcd = I2cLcd(i2c, DEFAULT_I2C_ADDR, 2, 16)
 
 while True:
     DHT.measure() # Start DHT11 to measure data once.
-# Call the built-in function of DHT to obtain temperature and humidity data and print them in “Shell”.
+   # Call the built-in function of DHT to obtain temperature
+   # and humidity data and print them in “Shell”.
     print('temperature:',DHT.temperature(),'℃','humidity:',DHT.humidity(),'%')
     lcd.move_to(1, 0)
-    lcd.putstr('T: {}'.format(DHT.temperature()))
+    lcd.putstr('T= {}'.format(DHT.temperature()))
     lcd.move_to(1, 1)
-    lcd.putstr('H: {}'.format(DHT.humidity()))
+    lcd.putstr('H= {}'.format(DHT.humidity()))
     time.sleep_ms(1000)
 ```
 
@@ -1013,13 +1031,13 @@ Use IIC communication
 
 ![](media/03cab1a254dc41e5a07fda0a11daba59.png)
 
-After uploading the following code, open the Shell and approach the provided card to the RFID induction area. The Shell  displays "Card UID: 656".
-
 
 ```python
 from machine import Pin, PWM,I2C, Pin
 import time
 from mfrc522_i2c import mfrc522
+
+
 pwm = PWM(Pin(13))  
 pwm.freq(50)
 button1 = Pin(16, Pin.IN, Pin.PULL_UP)
@@ -1030,7 +1048,7 @@ sda = 21
     
 rc522 = mfrc522(scl, sda, addr)
 rc522.PCD_Init()
-rc522.ShowReaderDetails() # Show details of PCD - MFRC522 Card Reader details
+rc522.ShowReaderDetails()            # Show details of PCD - MFRC522 Card Reader details
 
 data = 0
 
@@ -1043,7 +1061,7 @@ while True:
             for i in rc522.uid.uidByte[0 : rc522.uid.size]:
                 data = data + i
         print(data)
-        if(data == 656):
+        if(data == 510):
             pwm.duty(128)
             print("open")
         else:
@@ -1057,10 +1075,6 @@ while True:
 ```
 
 #### **2. Test Result**
-
-**The key value vary from different RFID-RC522 white cards and blue keys. Therefore, please replace the value in the code with that you read in the Shell.**
-
-![](media/password1.png)
 
 Close the provided card to the RFID induction area, the door will turn and open, and the shell shows "open". Click button 1 and the door turns and closes. However, when swiping another blue induction block, the shell shows "Error".
 
@@ -1083,65 +1097,69 @@ We use ![](media/9491f7768f28ee4901e6fdb83632c27c.png)as the correct password. W
 #### **2. Test Code**
 
 ```python
-# Import machine, time and dht modules. 
+# Import machine, time and dht modules.
 from machine import Pin, PWM
 from time import sleep_ms, ticks_ms 
-from machine import I2C, Pin 
+from machine import SoftI2C, Pin 
 from i2c_lcd import I2cLcd 
 
 DEFAULT_I2C_ADDR = 0x27
 
-i2c = I2C(scl=Pin(22), sda=Pin(21), freq=400000) 
+# Initialize SCL/SDA pins and enable internal pull-up
+scl_pin = Pin(22, Pin.OUT, pull=Pin.PULL_UP)  # GPIO22 with internal pull-up
+sda_pin = Pin(21, Pin.OUT, pull=Pin.PULL_UP)  # GPIO21 with internal pull-up
+
+i2c = SoftI2C(scl=Pin(22), sda=Pin(21), freq=100000) 
 lcd = I2cLcd(i2c, DEFAULT_I2C_ADDR, 2, 16)
 
 button1 = Pin(16, Pin.IN, Pin.PULL_UP)
 button2 = Pin(27, Pin.IN, Pin.PULL_UP)
 count = 0
 time_count = 0
-password = ""   #Enter password
-correct_password = "-.-"  #Correct password
+password = ""   # Input password
+correct_password = "-.-"  # Correct password
 lcd.putstr("Enter password")
 pwm = PWM(Pin(13))  
 pwm.freq(50)
 
 while True:
-    btnVal1 = button1.value()  # Read the value of button 1
+    btnVal1 = button1.value()  # Reads the value of button 1
     if(btnVal1 == 0):
         sleep_ms(10)
         while(btnVal1 == 0):
-            time_count = time_count + 1  #Start counting the pressed time of the button
-            sleep_ms(200)                #The time is 200ms cumulative
+            time_count = time_count + 1  # Start counting how long the button is pressed
+            sleep_ms(200)                # Time accumulates in 200ms increments
             btnVal1 = button1.value()
             if(btnVal1 == 1):
                 count = count + 1
                 print(count)
                 print(time_count)
-                if(time_count > 3):      #If the pressed time of the button is more than 200*3ms，add"-" to  password
+                if(time_count > 3):      # If button pressed longer than 200*3ms, add "-" to password
                     lcd.clear()
                     #lcd.move_to(1, 1)
                     password = password + "-"
                 else:
                     lcd.clear()
-                    password = password + "."  #Otherwise add "."
+                    password = password + "."  # Otherwise add "."
                 lcd.putstr('{}'.format(password)) 
                 time_count = 0
                 
     btnVal2 = button2.value()
     if(btnVal2 == 0):
-        if(password == correct_password):  #If the password is correct
+        if(password == correct_password):  # If password is correct
             lcd.clear()
             lcd.putstr("open")
-            pwm.duty(128)  #Open the door
-            password = ""  #Remove the password
+            pwm.duty(128)  # Open door
+            password = ""  # Clear password
             sleep_ms(1000)
-        else:              #If the password is wrong
+        else:              # If password is wrong
             lcd.clear()
             lcd.putstr("error")
-            pwm.duty(25)  #Close the door
+            pwm.duty(25)  # Close door
             sleep_ms(2000)
             lcd.clear()
             lcd.putstr("enter again")
-            password = ""  #Remove the password
+            password = ""  # Clear password
 ```
 
 #### **Test Result**
@@ -1173,15 +1191,16 @@ import time
 import network #Import network module
 
 #Enter correct router name and password
-ssidRouter     = 'ChinaNet-2.4G-0DF0' #Enter the router name
-passwordRouter = 'ChinaNet@233' #Enter the router password
+ssidRouter     = 'LieBaoWiFi359' #Enter the router name
+passwordRouter = 'wmbd315931' #Enter the router password
 
 def STA_Setup(ssidRouter,passwordRouter):
     print("Setup start")
     sta_if = network.WLAN(network.STA_IF) #Set ESP32 in Station mode
     if not sta_if.isconnected():
         print('connecting to',ssidRouter)
-#Activate ESP32’s Station mode, initiate a connection request to the router and enter the password to connect.
+#Activate ESP32’s Station mode, initiate a connection request to the router
+#and enter the password to connect.
         sta_if.active(True)
         sta_if.connect(ssidRouter,passwordRouter)
 #Wait for ESP32 to connect to router until they connect to each other successfully.
@@ -1199,9 +1218,7 @@ except:
 
 #### **3. Test Result**
 
-**Note: Only WiFi in the 2.4GHz band is supported, not WiFi in the 5GHz band.**
-
-If the WiFi is connected successfully, the Shell will print out the connected WiFi  assigned IP address.
+If the WiFi is connected successfully, the serial monitor will print out the connected WiFi name and assigned IP address.
 
 ![](media/8c021cf89562d7ee27a6446f54be17bf.png)
 

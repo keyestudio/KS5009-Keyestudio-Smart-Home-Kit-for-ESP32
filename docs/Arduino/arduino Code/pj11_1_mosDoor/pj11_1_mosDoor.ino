@@ -6,11 +6,11 @@ LiquidCrystal_I2C mylcd(0x27,16,2);
 OneButton button1(16, true);
 // Setup a new OneButton on pin 27.  
 OneButton button2(27, true);
-#include <ESP32_Servo.h>
+#include <ESP32Servo.h>
 Servo myservo;
 int servoPin = 13;
 String password = "";
-String correct_p = "-.-";  //密码门的正确密码
+String correct_p = "-.-";  //password
 
 // setup code here, to run once:
 void setup() {
@@ -24,7 +24,17 @@ void setup() {
   button2.attachClick(click2);
   button2.attachLongPressStop(longPressStop2);
 
-  myservo.attach(servoPin);
+	// Allow allocation of all timers
+	ESP32PWM::allocateTimer(0);
+	ESP32PWM::allocateTimer(1);
+	ESP32PWM::allocateTimer(2);
+	ESP32PWM::allocateTimer(3);
+	myservo.setPeriodHertz(50);    // standard 50 hz servo
+	myservo.attach(servoPin, 1000, 2000); // attaches the servo on pin 18 to the servo object
+	// using default min/max of 1000us and 2000us
+	// different servos may require different min/max settings
+	// for an accurate 0 to 180 sweep
+  
   mylcd.setCursor(0, 0);
   mylcd.print("Enter password");
 }
@@ -58,7 +68,7 @@ void click2() {
   Serial.println(password);
   if(password == correct_p)
   {
-    myservo.write(180);  //密码正确就开门
+    myservo.write(180);  //open the door if the password correct
     mylcd.clear();
     mylcd.setCursor(0, 0);
     mylcd.print("open");
@@ -78,7 +88,7 @@ void click2() {
 
 void longPressStop2() {
   //Serial.println("Button 2 longPress stop");
-   myservo.write(0);  //关门
+   myservo.write(0);  //open door
    mylcd.clear();
    mylcd.setCursor(0, 0);
    mylcd.print("close");

@@ -7,7 +7,7 @@
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 LiquidCrystal_I2C mylcd(0x27,16,2);
-#include <ESP32_Servo.h>
+#include <ESP32Servo.h>
 Servo myservo;
 #include <Wire.h>
 #include "MFRC522_I2C.h"
@@ -28,8 +28,18 @@ void setup() {
   mfrc522.PCD_Init();             // initialize MFRC522
   ShowReaderDetails();            // dispaly PCD - MFRC522 read carder
   Serial.println(F("Scan PICC to see UID, type, and data blocks..."));
-  myservo.attach(servoPin);
-  pinMode(btnPin, INPUT);
+
+	// Allow allocation of all timers
+	ESP32PWM::allocateTimer(0);
+	ESP32PWM::allocateTimer(1);
+	ESP32PWM::allocateTimer(2);
+	ESP32PWM::allocateTimer(3);
+	myservo.setPeriodHertz(50);    // standard 50 hz servo
+	myservo.attach(servoPin, 1000, 2000); // attaches the servo on pin 18 to the servo object
+	// using default min/max of 1000us and 2000us
+	// different servos may require different min/max settings
+	// for an accurate 0 to 180 sweep
+
   mylcd.setCursor(0, 0);
   mylcd.print("Card");
 }
@@ -42,7 +52,7 @@ void loop() {
     if(btnFlag == 1)
     {
       boolean btnVal = digitalRead(btnPin);
-      if(btnVal == 0)  //刷卡开门后，点击按钮1关门
+      if(btnVal == 0)  //If door close button is pressed (active-low)
       {
         Serial.println("close");
         mylcd.setCursor(0, 0);
@@ -64,7 +74,7 @@ void loop() {
     Serial.print(mfrc522.uid.uidByte[i]);
     password = password + String(mfrc522.uid.uidByte[i]);
   }
-  if(password == "17121741227")  //卡号正确，开门
+  if(password == "219622227")  //Card number is correct,open the door
   {
     Serial.println("open");
     mylcd.setCursor(0, 0);
@@ -74,7 +84,7 @@ void loop() {
     password = "";
     btnFlag = 1;
   }
-  else   //卡号错误，LCD显示error
+  else   //Card number error,dispaly error
   {
     password = "";
     mylcd.setCursor(0, 0);
