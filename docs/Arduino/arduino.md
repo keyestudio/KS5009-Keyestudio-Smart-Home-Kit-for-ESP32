@@ -1,5 +1,8 @@
 # Arduino tutorial
 
+## Resource compression package
+[](Resource compression package.7z)
+
 ## Getting started with Arduino
 
 ### 1. ESP32 PLUS Development board
@@ -2414,4 +2417,4 @@ void birthday()
 
 ## Resources
 
-Download code, libraries and more details, please refer to the following link: https://fs.keyestudio.com/KS5009
+Download code, libraries and more details, please refer to the following link: https://github.com/keyestudio/KS5009-Keyestudio-Smart-Home-Kit-for-ESP32.git
