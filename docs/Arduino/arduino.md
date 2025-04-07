@@ -6,11 +6,11 @@ The resource package contains code,libraries,and driver files.You must have this
 
 
 
-![image-20250407162004098](media/image-20250407162004098.png)
+![image-20250407164254762](media/image-20250407164254762.png)
 
 
 
-[Resource compression package](./Resource compression package.7z)
+[Resource compression package](.Arduino.7z)
 
 ## Getting started with Arduino
 
