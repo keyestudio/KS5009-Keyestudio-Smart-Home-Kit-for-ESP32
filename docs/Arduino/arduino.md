@@ -1,7 +1,12 @@
 # Arduino tutorial
 
 ## Resource compression package
-[](Resource compression package.7z)
+
+The resource package contains code,libraries,and driver files.You must have this resourse to continue learing.
+
+![image-20250407162004098](media/image-20250407162004098.png)
+
+[Resource compression package](./Resource compression package.7z)
 
 ## Getting started with Arduino
 
@@ -2414,7 +2419,3 @@ void birthday()
 **3. Test Result**
 
 ![](media/a94cd80683c4eecb3c1bcabd4a60747d.png)
-
-## Resources
-
-Download code, libraries and more details, please refer to the following link: https://github.com/keyestudio/KS5009-Keyestudio-Smart-Home-Kit-for-ESP32.git
