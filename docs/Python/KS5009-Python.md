@@ -1,14 +1,20 @@
-# Python tutorial
+# 6. Python tutorial
 
-## get starter with thonny
+## 6.1 Resource compression package[](https://docs.keyestudio.com/projects/KS5009/en/latest/docs/Arduino/arduino.html#resource-compression-package)
 
-### Open the Thonny Package
+The resource package contains code,libraries,and driver files.You must have this resourse to continue learing.
+
+[Python](./Python.7z)
+
+## 6.2 get starter with thonny
+
+### 6.2.1 Open the Thonny Package
 
 Please refer to the folder shown below:
 
 ![](media/29fa7a9563dec2dddbfc7ed79d197380.png)
 
-### Thonny Interface
+###  6.2.2 Thonny Interface
 
 Open the Thonny
 
@@ -20,7 +26,7 @@ Main interface functions:
 
 ![](media/3d04fe6893ca104e4e593a0786cb3799.png)
 
-### Select ESP32 Development Environment
+### 6.2.3 Select ESP32 Development Environment
 
 Click Python.exe，then select Configure interpreter
 
@@ -30,7 +36,7 @@ Select MicroPython(ESP32) from the Interpreter interface
 
 ![](media/5f92c4dd24223cf49d6da075aa53307f.png)
 
-### Installing Firmware
+### 6.2.4 Installing Firmware
 
 Download link：<https://micropython.org/download/esp32/>
 
@@ -40,7 +46,7 @@ Choose to download version V1.17
 
 Of course, we also provide the downloaded firmware, as shown below.
 
-![](media/150da4adbcbf76f47793254a2ae56967.png)
+![image-20250408113209943](media/image-20250408113209943.png)
 
 Burn microPython firmware
 
@@ -77,13 +83,13 @@ Thonny interface
 ![](media/c42ed7549ff7ff1f7deabd64710cb98e.png)
 
 
-## Python Projects
+## 6.3 Python Projects
 
-Please refer to the file below：
+Code is provided for all projects and is available  in the 6.1 resource pack
 
-![](media/528951558fa53138c60b87e160a94d05.png)
+![image-20250408113455542](media/image-20250408113455542.png)
 
-### Project 1: Control LED
+### 6.3.1 Project 1: Control LED
 
 we will first learn how to control LED.
 
@@ -107,7 +113,7 @@ LED is also the light-emitting diode, which can be made into an electronic modul
 |    |    |
 
 
-### Project 1.1 LED Flashing
+### 6.3.2 Project 1.1 LED Flashing
 
 #### **Description**
 
@@ -141,7 +147,7 @@ Click the button
 
 We can see that the yellow LED is flashing .
 
-### Project 1.2 Breathing LED
+### 6.3.3 Project 1.2 Breathing LED
 
 #### **Description**
 
@@ -187,7 +193,7 @@ Click the button.
 
 The LED gradually gets dimmer then brighter, cyclically, like human breathe.
 
-### Project 2: Table Lamp
+### 6.3.4 Project 2: Table Lamp
 
 #### **Description**
 
@@ -205,7 +211,7 @@ The button module is a digital sensor, which can only read 0 or 1. When the modu
 | ------------ | ------ |
 | **Button 2** | **27** |
 
-### Project 2.1 Read the Button
+### 6.3.5 Project 2.1 Read the Button
 
 #### **1. Description**
 
@@ -234,7 +240,7 @@ Click the run button, then you can see the status values of button1 and button 2
 
 ![](media/1b984da67c0e89a72a9601c39362567d.png)
 
-### Project 2.2. Table Lamp
+### 6.3.6 Project 2.2. Table Lamp
 
 #### **Description**
 
@@ -281,7 +287,7 @@ The shell will print out the clicked button times, then click the button once, t
 
 ![](media/1bc079eabd93cb2e8a8e15f0ab7f1367.png)
 
-### Project 3: PIR Motion Sensor
+### 6.3.7 Project 3: PIR Motion Sensor
 
 #### **Description**
 
@@ -297,7 +303,7 @@ It is also a digital sensor like buttons, which has two state values 0 or 1. And
 | ----------------- | ---- |
 |    |    |
 
-### Project 3.1 Read the PIR Motion Sensor
+### 6.3.8 Project 3.1 Read the PIR Motion Sensor
 
 We will print out the value of the PIR motion sensor through the serial monitor.
 
@@ -324,7 +330,7 @@ When you stand still in front of the sensor, the reading value is 0, move a litt
 
 ![](media/f8c6be9a6ad7a6423c1fa1456f771406.png)
 
-### Project 3.2 PIR Motion Sensor
+### 6.3.9 Project 3.2 PIR Motion Sensor
 
 If someone moves in front of the sensor, the LED will light up.
 
@@ -351,7 +357,7 @@ while True:
 
 Move your hand in front of the sensor, the LED will turn on. After a few seconds of immobility, the LED will turn off.
 
-### Project 4: Play Music
+### 6.3.10 Project 4: Play Music
 
 #### **1. Description**
 
@@ -373,7 +379,7 @@ The audio power amplifier (like the passive buzzer) does not have internal oscil
 | -------------- | ---- |
 |    |    |
 
-### Project 4.1 Play Happy Birthday
+### 6.3.11 Project 4.1 Play Happy Birthday
 
 #### **1. Test Code**
 
@@ -434,7 +440,7 @@ buzzer.duty(0)
 
 The passive buzzer will play happy Birthday.
 
-### Project 5: Automatic Doors and Windows
+### 6.3.12 Project 5: Automatic Doors and Windows
 
 **Description**
 
@@ -468,7 +474,7 @@ In general, servo has three lines in brown, red and orange. The brown wire is gr
 |-------------------------|----|
 | The servo of the door   | 13 |
 
-### Project 5.1 Control the Door
+### 6.3.13 Project 5.1 Control the Door
 
 #### **1. Test Code**
 
@@ -503,7 +509,7 @@ while True:
 
 The servo of the door turns with the door, back and forth
 
-### Project 5.2 Close the Window
+### 6.3.14 Project 5.2 Close the Window
 
 #### **Description**
 
@@ -547,7 +553,7 @@ except:
 
 At first, the window opens automatically, and when you touch the raindrop sensor with your hand (which has water on the skin), the window will close.
 
-### Project 6: Atmosphere Lamp
+### 6.3.15 Project 6: Atmosphere Lamp
 
 #### **Description**
 
@@ -571,7 +577,7 @@ What’s more, the pixel point contains a data latch signal shaping amplifier dr
 | ------ | ---- |
 |    |    |
 
-### Project 6.1 Control SK6812
+### 6.3.16 Project 6.1 Control SK6812
 
 We will control SK6812 to display various lighting effects.
 
@@ -610,7 +616,7 @@ while True:
 
 The atmosphere lamps of the smart home will display red,greenish blue as well as white.
 
-### Project 6.2 Button
+### 6.3.17 Project 6.2 Button
 
 #### **Description**
 
@@ -688,7 +694,7 @@ while True:
 
 We can switch the color of the atmosphere lamp by clicking buttons 1 and 2.
 
-### Project 7: Fan
+### 6.3.18 Project 7: Fan
 
 **Description**
 
@@ -715,7 +721,7 @@ Two pins are required to control the motor of the fan, one for INA and two for I
 |-----|----|
 | INB | 18 |
 
-### Project 7.1 Control the Fan
+### 6.3.19 Project 7.1 Control the Fan
 
 We can control the [anticlockwise](C:/Users/NINGMEI/AppData/Local/youdao/dict/Application/8.10.7.0/resultui/html/index.html#/javascript:;) and clockwise rotation speed of the fan.
 
@@ -757,7 +763,7 @@ except:
 
 The fan will rotate clockwise and anticlockwise at different speeds.
 
-### Project 7.2 Switch On or Off the Fan
+### 6.3.20 Project 7.2 Switch On or Off the Fan
 
 Button one controls the fan switch.
 
@@ -804,7 +810,7 @@ except:
 
 Click button 1, the fan starts to rotate,  the press the button 1 again, the fan stops.
 
-### Project 8: LCD1602 Display
+### 6.3.21 Project 8: LCD1602 Display
 
 **Description**
 
@@ -822,7 +828,7 @@ As we all know, screen is one of the best ways for people to interact with elect
 |-----|-----|
 | SCL | SCL |
 
-### Project 8.1 Display Characters
+### 6.3.22 Project 8.1 Display Characters
 
 #### **Description**
 
@@ -898,7 +904,7 @@ lcd.putstr('keyestudio')
 
 The first line of the LCD1602 shows hello and the second line shows keyestudio.
 
-### Project 8.2 Dangerous Gas Alarm
+### 6.3.23 Project 8.2 Dangerous Gas Alarm
 
 #### **1. Description**
 
@@ -956,7 +962,7 @@ while True:
 
 The screen displays "safety" in normal state. However, when the gas sensor detects some dangerous gases, such as carbon monoxide, at a certain concentration, the buzzer will sound an alarm and the screen displays "dangerous".
 
-### Project 9: Temperature and Humidity Sensor
+### 6.3.24 Project 9: Temperature and Humidity Sensor
 
 **Component Knowledge**
 
@@ -970,7 +976,7 @@ Its communication mode is serial data and single bus. The temperature measuremen
 | ------------------------------- | ---- |
 |    |    |
 
-### Project 9.1 Temperature and Humidity Tester
+### 6.3.25 Project 9.1 Temperature and Humidity Tester
 
 #### **1. Test Code**
 
@@ -1007,7 +1013,7 @@ while True:
 
 The LCD1602 displays the temperature (T = \*\* ° C) and humidity (H = \*\* %RH). When you breathe into the T/H sensor, you can see that the humidity rises.
 
-### Project 10: RFID RC522 Module
+### 6.3.26 Project 10: RFID RC522 Module
 
 **Component Knowledge**
 
@@ -1025,7 +1031,7 @@ Use IIC communication
 |-----|-----|
 | SCL | SCL |
 
-### Project 10.1 Open the Door
+### 6.3.27 Project 10.1 Open the Door
 
 #### **1. Test Code**
 
@@ -1080,7 +1086,7 @@ Close the provided card to the RFID induction area, the door will turn and open,
 
 ![](media/03fd569d64704a7e9705c1891f4d4856.png)
 
-### Project 11: Morse Code
+### 6.3.28 Project 11: Morse Code
 
 Morse code, also known as Morse password, is an on-again, off-again signal code that expresses different letters, numbers, and punctuation marks in different sequences. Now we use it as our password gate.
 
@@ -1088,7 +1094,7 @@ The Morse code corresponds to the following characters:
 
 ![](media/1a5e70c0d091e2617acbfc274827b4fd.png)
 
-### Project 11.1 Morse Code Open the Door
+### 6.3.29 Project 11.1 Morse Code Open the Door
 
 #### **1. Description**
 
@@ -1168,13 +1174,13 @@ At first, the LCD1602 displays "Enter password", then click or long press button
 
 If other incorrect passwords are entered, the door will be closed and the LCD1602 will display error, which shows “enter again” 2s later.
 
-### Project 12: WiFi
+### 6.3.30 Project 12: WiFi
 
 The easiest way to access the Internet is to use a WiFi to connect. The ESP32 main control board comes with a WiFi module, making our smart home accessible to the Internet easily.
 
 ![](media/f74baff97695aa2ee33a8c19370d2547.png)
 
-### Project 12.1 Smart Home
+### 6.3.31 Project 12.1 Smart Home
 
 #### **1. Description**
 
@@ -1222,8 +1228,3 @@ If the WiFi is connected successfully, the serial monitor will print out the con
 
 ![](media/8c021cf89562d7ee27a6446f54be17bf.png)
 
-## Resources
-
-Download code, libraries and more details, please refer to the following link:
-
-[https://fs.keyestudio.com/KS5009](https://fs.keyestudio.com/KS5009)

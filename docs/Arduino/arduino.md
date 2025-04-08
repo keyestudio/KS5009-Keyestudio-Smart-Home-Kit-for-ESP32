@@ -1,14 +1,14 @@
-# Arduino tutorial
+# 5. Arduino tutorial
 
-## Resource compression package
+## 5.1 Resource compression package
 
 The resource package contains code,libraries,and driver files.You must have this resourse to continue learing.
 
 [Resource compression package](./Arduino.7z)
 
-## Getting started with Arduino
+## 5.2 Getting started with Arduino
 
-### 1. ESP32 PLUS Development board
+### 5.2.1 ESP32 PLUS Development board
 
 ![](media/201911d851d2d7fa6e854d6428bb5b67.png)
 
@@ -18,11 +18,11 @@ It has a hall sensor, high-speed SDIO/SPI, UART, I2S as well as I2C. Furthermore
 
 ![](media/e00562548e84b885ad18510b261ade05.png)
 
-### 2. Windows System
+### 5.2.2 Windows System
 
 ![](media/6cf6312dc7c7db27794b54d58a8bf80c.png)
 
-#### 2.1 Installing Arduino IDE
+#### 1 Installing Arduino IDE
 
 When you get control board, you need to download Arduino IDE and driver firstly.
 
@@ -40,7 +40,7 @@ You can choose between the Installer (.exe) and the Zip packages. We suggest you
 
 You just need to click JUST DOWNLOAD.
 
-#### 2.2 Install a driver
+#### 2 Install a driver
 
 If you have installed the CH340 driver, just skip it.
 
@@ -70,7 +70,7 @@ Check the serial port connection status again, as shown in the following figure,
 
 ![](media/789a5b530a3e6c44687099a219575666.png)
 
-#### 2.3 Add the ESP32 Environment(add version 3
+#### 3 Add the ESP32 Environment(add version 3.1.0)
 
 （1）Open the arduino IDE，click File \> Preferences，as shown below:
 
@@ -98,7 +98,7 @@ Check the serial port connection status again, as shown in the following figure,
 
 ![](media/677ff80219f4525f8aea366eec9a03af.png)
 
-#### 2.4 Arduino IDE Setting
+#### 4 Arduino IDE Setting
 
 Click![](media/9035a01879f001b75827e908d7dceb2d.png)icon，open Arduino IDE.
 
@@ -126,25 +126,29 @@ Before uploading the program to the board, let’s demonstrate the function of e
 
 4- Used to send the serial data received from board to the serial monitor.
 
-### 3.Mac System
+### 5.2.3 Mac System
 
 ![](media/a6fc83596009c574d8e29ef383748549.png)
 
-#### 3.1 Download Arduino IDE
+#### 1 Download Arduino IDE
 
 ![](media/77c03a9d0b23a0cc760d32095fa08e21.png)
 
-#### 3.2 Download the CH340 driver
+#### 2 Download the CH340 driver
 
-CH340 chip driver for MAC
+We provide,please go to 5.1 resourse pack to get
 
-#### 3.3 How to install the CH340 driver
+![image-20250408105719588](media/image-20250408105719588.png)
+
+#### 3 How to install the CH340 driver
 
 After the download, seen as below:
 
 ![](media/63eee4c4643c4638a659346edbd2500f.png)
 
-Double-click installation package and tap Continue![](media/c51b1c3d15affa4d754770184d5151df.png)
+Double-click installation package and tap Continue
+
+![](media/c51b1c3d15affa4d754770184d5151df.png)
 
 Click Install
 
@@ -166,15 +170,15 @@ Click Restart after the installation is finished
 
 ![](media/7416a8a6aedcae63e931880a1f033db6.png)
 
-#### 3.4 Arduino IDE Setting:
+#### 4 Arduino IDE Setting:
 
 Except for COM ports, the setting method is the same as in chapter 1.4:
 
 ![](media/37972c9e070bd6bcf9cdcb3f84679223.jpeg)
 
-## How to Add Libraries?
+## 5.3 How to Add Libraries?
 
-### What are Libraries ?
+### 5.3.1 What are Libraries ?
 
 [Libraries](https://www.arduino.cc/en/Reference/Libraries) are a collection of code that makes it easy for you to drive a sensor,display, module, etc.
 
@@ -184,7 +188,7 @@ The built-in libraries and some of these additional libraries are listed in the 
 
 <https://www.arduino.cc/en/Reference/Libraries>
 
-### Add ZIP Libraries
+### 5.3.2 Add ZIP Libraries
 
 When you want to add a zip library, you need to download it as a ZIP file, put in the proper directory. The Libraries needed to run the mini tank can be found on：
 
@@ -201,15 +205,19 @@ Import the library. You can find it in the include library list.
 ![](media/fda284b603a4b6b5c14ce3d58788326d.png)
 
 
-## Arduino Projects
+## 5.4 Arduino Projects
+
+Code is provided for all projects and is available  in the 5.1 resource pack
+
+![image-20250408110257525](media/image-20250408110257525.png)
 
 Alright, let’s get straight to our projects. We will make you know the smart home deeply from the simple sensor.
 
 **Note: In this course, the interface of each sensor / module marked with (G,-, GND) indicates the negative pole, G is connected to G, - or GND of sensor shield or control board; “V” is positive pole and connected with V, VCC or 5V.**
 
-### Project 1.1 LED Blink
+### 5.4.1 Project 1.1 LED Blink
 
-#### **1. Description**
+#### **1 Description**
 
 ![image-20230927115910677](media/image-20230927115910677.png)
 
@@ -221,24 +229,24 @@ Let’s connect GND and VCC to power. The LED will be on when signal end S is hi
 
 In addition, the different blinking frequency can be presented by adjusting the delayed time.
 
-#### **2. Working Principle**
+#### **2 Working Principle**
 
 LED is also the light-emitting diode, which can be made into an electronic module. It will shine if we control pins to output high level, otherwise it will be off.
 
-#### **3. Parameters**
+#### **3 Parameters**
 
 | Working voltage | DC 3\~5V |
 | --------------- | -------- |
 | Working current | \<20mA   |
 | Power           | 0.1W     |
 
-#### **4. Control Pin**
+#### **4 Control Pin**
 
 | Yellow LED | 12   |
 | ---------- | ---- |
 |   |   |
 
-#### **5. Test Code**
+#### **5 Test Code**
 
 ```c
 #define led_y 12  //Define the yellow led pin to 12
@@ -259,7 +267,7 @@ void loop() {     //The code inside the loop function will always run in a loop
 
 After uploading the code , you can see white and yellow LEDs flashing together.
 
-### Project 1.2 Breathing LED
+### 5.4.2 Project 1.2 Breathing LED
 
 #### **1. Description**
 
@@ -302,7 +310,7 @@ void loop()
 
 The LED gradually gets dimmer then brighter, cyclically, like human breathe.
 
-### Project 2.1 Read the Button
+### 5.4.3 Project 2.1 Read the Button
 
 #### **1. Description**
 
@@ -356,7 +364,7 @@ Press the button again to see the change of the button state value, as shown bel
 
 ![](media/07b8c2accc3f86ab0a853eee8fa3e58b.png)
 
-### Project 2.2. Table Lamp
+### 5.4.4 Project 2.2. Table Lamp
 
 #### **1. Description**
 
@@ -419,7 +427,7 @@ Open the serial monitor and print out the clicked button times, then click the b
 
 ![](media/a12e75e3ec7319757051795c827a7b24.png)
 
-### Project 3.1 Read the PIR Motion Sensor
+### 5.4.5 Project 3.1 Read the PIR Motion Sensor
 
 ![](media/c1518252606b111bfa66878a2bfcc965.png)
 
@@ -465,7 +473,7 @@ When you stand still in front of the sensor, the reading value is 0, move a litt
 
 ![](media/e50f0f6c666cdb14857511dccd71ed73.png)
 
-### Project 3.2 PIR Motion Sensor
+### 5.4.6 Project 3.2 PIR Motion Sensor
 
 If someone moves in front of the sensor, the LED will light up.
 
@@ -506,7 +514,7 @@ void loop()
 
 Move your hand in front of the sensor, the LED will turn on. After 5s of immobility, the LED lights will turn off.
 
-### Project 4.1 Play Happy Birthday
+### 5.4.7 Project 4.1 Play Happy Birthday
 
 ![](media/2e6fd6b7975ef84ab94eee896161347b.png)
 
@@ -576,7 +584,7 @@ void birthday()
 
 The passive buzzer will play happy Birthday.
 
-### Project 4.2 Music Box
+### 5.4.8 Project 4.2 Music Box
 
 we will make a music box and switch tunes by pressing buttons.
 
@@ -669,7 +677,7 @@ void loop()
 
 Click button 1 once, it will play a Tetris, then click it again, it will play *Ode to Joy*, after playing, click the button 1 for the third time, it will play Christmas.
 
-### Project 5.1 Control the Door
+### 5.4.9 Project 5.1 Control the Door
 
 #### **1. Description**
 
@@ -745,7 +753,7 @@ void loop() {
 
 The servo of the door turns with the door, back and forth
 
-### Project 5.2 Close the Window
+### 5.4.10 Project 5.2 Close the Window
 
 #### **1. Description**
 
@@ -802,7 +810,7 @@ void loop() {
 
 At first, the window opens automatically, and when you touch the raindrop sensor with your hand (which has water on the skin), the window will close.
 
-### Project 6.1 Control SK6812
+### 5.4.11 Project 6.1 Control SK6812
 
 #### **1. Description**
 
@@ -915,7 +923,7 @@ void theaterChaseRainbow(int wait) {
 
 The atmosphere lamps of the smart home will display a variety of colors and light effects.
 
-### Project 6.2 Button
+### 5.4.12 Project 6.2 Button
 
 #### **1. Description**
 
@@ -1037,7 +1045,7 @@ void colorWipe(uint32_t color, int wait)
 
 We can switch the color of the atmosphere lamp by clicking buttons 1 and 2.
 
-### Project 7.1 Control the Fan
+### 5.4.13 Project 7.1 Control the Fan
 
 #### **1. Description**
 
@@ -1097,7 +1105,7 @@ void loop() {
 
 The fan will rotate clockwise and [anticlockwise](C:/Users/NINGMEI/AppData/Local/youdao/dict/Application/8.10.7.0/resultui/html/index.html#/javascript:;) at different speeds.
 
-### Project 7.2 Switch On or Off the Fan
+### 5.4.14  Project 7.2 Switch On or Off the Fan
 
 One button switches the fan on and the other button controls the speed of the fan.
 
@@ -1212,7 +1220,7 @@ void loop() {
 
 Click button 1, the fan starts to rotate, click button 2, the speed can be adjusted(there are three different speeds), press the button 1 again, the fan stops.
 
-### Project 8.1 Display Characters
+### 5.4.15 Project 8.1 Display Characters
 
 #### **1. Description**
 
@@ -1256,7 +1264,7 @@ void loop(){
 
 The first line of the LCD1602 shows hello and the second line shows keyestudio.
 
-### Project 8.2 Dangerous Gas Alarm
+### 5.4.16 Project 8.2 Dangerous Gas Alarm
 
 #### **1. Description**
 
@@ -1341,7 +1349,7 @@ void loop() {
 
 The screen displays "safety" in normal state. However, when the gas sensor detects some dangerous gases, such as carbon monoxide, at a certain concentration, the buzzer will sound an alarm and the screen displays "dangerous".
 
-### Project 9 Temperature and Humidity Tester
+### 5.4.17 Project 9 Temperature and Humidity Tester
 
 #### **1. Component Knowledge**
 
@@ -1406,7 +1414,7 @@ void loop() {
 
 The LCD1602 displays the temperature (T = \*\* ° C) and humidity (H = \*\* %RH). When you breathe into the T/H sensor, you can see that the humidity rises.
 
-### Project 10 Open the Door
+### 5.4.18 Project 10 Open the Door
 
 #### **1. Component Knowledge**
 
@@ -1561,7 +1569,7 @@ Upload the code,close the provided card to the RFID induction area,the door will
 
 Click button 1 and the door turns and closes. However, when swiping another blue induction block, the LCD1602 shows "Error".
 
-### Project 11 Morse Code Open the Door
+### 5.4.19 Project 11 Morse Code Open the Door
 
 Morse code, also known as Morse password, is an on-again, off-again signal code that expresses different letters, numbers, and punctuation marks in different sequences. Now we use it as our password gate.
 
@@ -1679,7 +1687,7 @@ At first, the LCD1602 displays "Enter password", then click or long press button
 
 If other incorrect passwords are entered, the door will not move, the LCD1602 will display “error” and then “enter again” 2s later. Furthermore, long press button 2 can close the door.
 
-### Project 12.1 Smart Home
+### 5.4.20 Project 12.1 Smart Home
 
 The easiest way to access the Internet is to use a WiFi to connect. The ESP32 main control board comes with a WiFi module, making our smart home accessible to the Internet easily.
 
@@ -1831,7 +1839,7 @@ Open a browser to access the IP address, then we will read the contents of the s
 
 ![](media/cd11492bc27df711a04eafb7696f0dfb.png)
 
-### Project 12.2 Control Smart Home
+### 5.4.21 Project 12.2 Control Smart Home
 
 #### **1. Description**
 
@@ -1956,7 +1964,7 @@ When the browser accesses 192.168.0.129/fan/ on, the fan of the smart home will 
 
 ![](media/1af74f12f1a18d08dfc4c88f0b65f89b.png)
 
-### Project 13.1: Mobile Phone APP test
+### 5.4.22 Project 13.1: Mobile Phone APP test
 
 #### **Download APP**
 
@@ -2113,7 +2121,7 @@ Next, you can click the LED, then the smart home LED will be turned on. Click th
 
 ![](media/aba40215ce81fc7c326f6666c67059b8.png)
 
-### Project 13.2 IoT Smart Home
+### 5.4.23 Project 13.2 IoT Smart Home
 
 #### **1. Description**
 

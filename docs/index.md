@@ -2,13 +2,13 @@
 
 ![](media/3095ddd50f970bde24971d42e000cbc6.jpeg)
 
-# Description
+# 1. Description
 
 As the rapid development of the Internet grows, various intelligent devices are gradually integrated into our daily life. For example, we can use RFID to open the door. In addition, the kitchen is equipped with a gas detection alarm, which alerts people to the danger when dangerous gas and large smoke are detected. When it detects rain, it can automatically collect clothes and close windows. All kinds of electrical equipment can be controlled by mobile phone, control lights, fans, air conditioning and so on.
 
 In this connection, we seek to launch this smart home product with ESP32 control, which has a host of sensors and modules as well as networking function, making the relevant knowledge of the Internet more accessible to you.
 
-# Features
+# 2. Features
 
 1.  Elegant appearance
 2.  A host of sensor modules
@@ -18,7 +18,7 @@ In this connection, we seek to launch this smart home product with ESP32 control
 6.  RFID function
 7.  C language and MicroPython
 
-# Kit list
+# 3. Kit list
 
 | \#   | Picture                                          | Name                                  | QTY               |
 | ---- | ------------------------------------------------ | ------------------------------------- | ----------------- |
@@ -61,7 +61,7 @@ In this connection, we seek to launch this smart home product with ESP32 control
 | 37   | ![](media/ac4d8bcad35658ce6ec738d4aaa555c7.png)  | White Card                            | 1                 |
 | 38   | ![](media/cfc5265d05b7b1cd89f9853bca223fb3.png)  | ABS RFID Key                          | 1                 |
 
-# How to install the smart home
+# 4. How to install the smart home
 
  Step 1                                                                                                                     
 
@@ -108,7 +108,7 @@ In this connection, we seek to launch this smart home product with ESP32 control
  Components Required                                           
 
 ![](media/77c19fec4a9f2739bc1095e68e619e7c.png)              
- Step 1                                                        
+Installation Diagram                                                        
 
 ![](media/4e0d6c06490d59a969ab4991098918e1.png)              
  Prototype                                                     
