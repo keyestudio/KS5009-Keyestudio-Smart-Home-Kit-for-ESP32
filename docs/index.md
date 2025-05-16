@@ -41,25 +41,26 @@ In this connection, we seek to launch this smart home product with ESP32 control
 | 17   | ![](media/6fc873ea0e2d30ef6c65c48192777b2c.png)  | 3P F-F 200 mm Dupont Wire             | 4                 |
 | 18   | ![](media/8d8d7ecea527ea96266c5a30a23adc49.png)  | F-F 200 mm /40P/2.54 Wires            | 0.1 （4 strands） |
 | 19   | ![](media/4de60c3b32470ba75de2c6d2b39dfabb.png)  | 4P F-F 200 mm Splicing Dupont Wire    | 2                 |
-| 20   | ![](media/b05fb368afcc7f64143fd15972aa1fcc.png)  | M1.4\*6MM Round Head Screws           | 10                |
-| 21   | ![](media/2921490c73e7ec456e68d03f26cd638d.png)  | M3 Nickle-plated Nut(self-locking)    | 5                 |
-| 22   | ![](media/90f262e52991756983f29416b65889de.png)  | M4\*8MM Round Head Screws             | 24                |
-| 23   | ![](media/de8991dc2b94e7a9a01e24239cf77500.png)  | M3\*6MM Round Head Screws             | 9                 |
-| 24   | ![](media/90f262e52991756983f29416b65889de.png)  | M3\*10MM Round Head Screws            | 5                 |
-| 25   | ![](media/90f262e52991756983f29416b65889de.png)  | M2\*12MM Round Head Screws            | 5                 |
-| 26   | ![](media/40828578b370119a7a5c40dcc412f9c6.png)  | M4 Nickle-plated Nut                  | 24                |
-| 27   | ![](media/40828578b370119a7a5c40dcc412f9c6.png)  | M3 Nickle-plated Nut                  | 7                 |
-| 28   | ![](media/40828578b370119a7a5c40dcc412f9c6.png)  | M2 Nickle-plated Nut                  | 6                 |
-| 29   | ![](media/2991c80d0f141474a234a1b915866506.png)  | M3\*8MM Flat Head Screws              | 3                 |
-| 30   | ![](media/e8e1c04d2c03b995842b0bd92e2fdf72.jpeg) | Cross Wrench                          | 1                 |
-| 31   | ![](media/f353b46e6c2c0597c3268d5aa137fd99.png)  | 3.0\*40MM Screwdriver                 | 1                 |
-| 32   | ![](media/aa12dd0fe16e3f122e1822f671b3c0c7.png)  | 2.0\*40MM Screwdriver                 | 1                 |
-| 33   | ![](media/71338bc1f531d68fa7747582b8f2b073.png)  | M3\*10MM Dual-pass Copper Pillar      | 4                 |
-| 34   | ![](media/a2785e36ab41cea44f41ddf2d87c8ead.png)  | USB Cable                             | 1                 |
-| 35   | ![](media/119770f24627eed3c13c3008eb926888.png)  | 6-Slot AA Battery Holder              | 1                 |
-| 36   | ![](media/90f262e52991756983f29416b65889de.png)  | M3\*12MM Round Head Screws            | 4                 |
-| 37   | ![](media/ac4d8bcad35658ce6ec738d4aaa555c7.png)  | White Card                            | 1                 |
-| 38   | ![](media/cfc5265d05b7b1cd89f9853bca223fb3.png)  | ABS RFID Key                          | 1                 |
+| 20   | ![](media/b05fb368afcc7f64143fd15972aa1fcc.png)  | M1.4\*6MM Round Head Screws           | 4                 |
+| 21   | ![img](media/wps1.jpg)                           | M1.2*4MM Round Head Screws            | 4                 |
+| 22   | ![](media/2921490c73e7ec456e68d03f26cd638d.png)  | M3 Nickle-plated Nut(self-locking)    | 5                 |
+| 23   | ![](media/90f262e52991756983f29416b65889de.png)  | M4\*8MM Round Head Screws             | 24                |
+| 24   | ![](media/de8991dc2b94e7a9a01e24239cf77500.png)  | M3\*6MM Round Head Screws             | 9                 |
+| 25   | ![](media/90f262e52991756983f29416b65889de.png)  | M3\*10MM Round Head Screws            | 5                 |
+| 26   | ![](media/90f262e52991756983f29416b65889de.png)  | M2\*12MM Round Head Screws            | 5                 |
+| 27   | ![](media/40828578b370119a7a5c40dcc412f9c6.png)  | M4 Nickle-plated Nut                  | 24                |
+| 28   | ![](media/40828578b370119a7a5c40dcc412f9c6.png)  | M3 Nickle-plated Nut                  | 7                 |
+| 29   | ![](media/40828578b370119a7a5c40dcc412f9c6.png)  | M2 Nickle-plated Nut                  | 6                 |
+| 30   | ![](media/2991c80d0f141474a234a1b915866506.png)  | M3\*8MM Flat Head Screws              | 3                 |
+| 31   | ![](media/e8e1c04d2c03b995842b0bd92e2fdf72.jpeg) | Cross Wrench                          | 1                 |
+| 32   | ![](media/f353b46e6c2c0597c3268d5aa137fd99.png)  | 3.0\*40MM Screwdriver                 | 1                 |
+| 33   | ![](media/aa12dd0fe16e3f122e1822f671b3c0c7.png)  | 2.0\*40MM Screwdriver                 | 1                 |
+| 34   | ![](media/71338bc1f531d68fa7747582b8f2b073.png)  | M3\*10MM Dual-pass Copper Pillar      | 4                 |
+| 35   | ![](media/a2785e36ab41cea44f41ddf2d87c8ead.png)  | USB Cable                             | 1                 |
+| 36   | ![](media/119770f24627eed3c13c3008eb926888.png)  | 6-Slot AA Battery Holder              | 1                 |
+| 37   | ![](media/90f262e52991756983f29416b65889de.png)  | M3\*12MM Round Head Screws            | 4                 |
+| 38   | ![](media/ac4d8bcad35658ce6ec738d4aaa555c7.png)  | White Card                            | 1                 |
+| 39   | ![](media/cfc5265d05b7b1cd89f9853bca223fb3.png)  | ABS RFID Key                          | 1                 |
 
 # 4. How to install the smart home
 
@@ -131,7 +132,11 @@ Installation Diagram
  Adjust the angle of the servo,adjust servo of the window to 0 degree before installation    
  Installation (As shown in the picture)                        
 
-![](media/aa95521f86389ec884e71c5dc41fee57.png)              
+![img](media/wps1-17473763871941.jpg)
+
+ Install M1.4*6MM self-tapping screws as shown below 
+
+  ![img](media/wps2.jpg)        
  Prototype                                                     
 
 ![](media/adfb7abbafd97f2eaf73ee05e6ef74ec.png)              
