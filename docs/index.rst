@@ -1,11 +1,9 @@
-.. _**Keyestudio-IoT-Smart-Home-Kit-for-ESP32**:
-
 **Keyestudio IoT Smart Home Kit for ESP32**
 ===========================================
 
-.. image:: media/3095ddd50f970bde24971d42e000cbc6.jpeg
+|image1|
 
-.. _1.-Description:
+.. _1-description:
 
 1. Description
 ==============
@@ -24,440 +22,623 @@ control, which has a host of sensors and modules as well as networking
 function, making the relevant knowledge of the Internet more accessible
 to you.
 
-.. _2.-Features:
+.. _2-features:
 
 2. Features
 ===========
 
-#. Elegant appearance
-#. A host of sensor modules
-#. Mobile phone APP network control
-#. Morse password door
-#. It can automatically close windows
-#. RFID function
-#. C language and MicroPython
+1. Elegant appearance
+2. A host of sensor modules
+3. Mobile phone APP network control
+4. Morse password door
+5. It can automatically close windows
+6. RFID function
+7. C language and MicroPython
 
-.. _3.-Kit-list:
+.. _3-kit-list:
 
 3. Kit list
 ===========
 
-.. container:: table-wrapper
+== ========= ===================================== =================
+#  Picture   Name                                  QTY
+== ========= ===================================== =================
+1  |image2|  Wooden Board                          1
+2  |image3|  Acrylic Board                         1
+3  |image4|  ESP32 PLUS Development Board          1
+4  |image5|  6812 RGB Module                       1
+5  |image6|  Analog Gas Sensor                     1
+6  |image7|  Button Module                         2
+7  |image8|  RFID Module                           1
+8  |image9|  Passive Buzzer Module                 1
+9  |image10| 130 Motor                             1
+10 |image11| Steam Sensor                          1
+11 |image12| XHT11 Temperature and Humidity Sensor 1
+12 |image13| PIR Motion Sensor                     1
+13 |image14| Yellow LED Module                     1
+14 |image15| Servo                                 2
+15 |image16| I2C1602 LCD Module                    1
+16 |image17| 3P F-F 150 mm Dupont Wire             5
+17 |image18| 3P F-F 200 mm Dupont Wire             4
+18 |image19| F-F 200 mm /40P/2.54 Wires            0.1 （4 strands）
+19 |image20| 4P F-F 200 mm Splicing Dupont Wire    2
+20 |image21| M1.4*6MM Round Head Screws            4
+21 |img|     M1.2*4MM Round Head Screws            4
+22 |image22| M3 Nickle-plated Nut(self-locking)    5
+23 |image23| M4*8MM Round Head Screws              24
+24 |image24| M3*6MM Round Head Screws              9
+25 |image25| M3*10MM Round Head Screws             5
+26 |image26| M2*12MM Round Head Screws             5
+27 |image27| M4 Nickle-plated Nut                  24
+28 |image28| M3 Nickle-plated Nut                  7
+29 |image29| M2 Nickle-plated Nut                  6
+30 |image30| M3*8MM Flat Head Screws               3
+31 |image31| Cross Wrench                          1
+32 |image32| 3.0*40MM Screwdriver                  1
+33 |image33| 2.0*40MM Screwdriver                  1
+34 |image34| M3*10MM Dual-pass Copper Pillar       4
+35 |image35| USB Cable                             1
+36 |image36| 6-Slot AA Battery Holder              1
+37 |image37| M3*12MM Round Head Screws             4
+38 |image38| White Card                            1
+39 |image39| ABS RFID Key                          1
+== ========= ===================================== =================
 
-   == ========= ===================================== =================
-   #  Picture   Name                                  QTY
-   == ========= ===================================== =================
-   1  |image1|  Wooden Board                          1
-   2  |image2|  Acrylic Board                         1
-   3  |image3|  ESP32 PLUS Development Board          1
-   4  |image4|  6812 RGB Module                       1
-   5  |image5|  Analog Gas Sensor                     1
-   6  |image6|  Button Module                         2
-   7  |image7|  RFID Module                           1
-   8  |image8|  Passive Buzzer Module                 1
-   9  |image9|  130 Motor                             1
-   10 |image10| Steam Sensor                          1
-   11 |image11| XHT11 Temperature and Humidity Sensor 1
-   12 |image12| PIR Motion Sensor                     1
-   13 |image13| Yellow LED Module                     1
-   14 |image14| Servo                                 2
-   15 |image15| I2C1602 LCD Module                    1
-   16 |image16| 3P F-F 150 mm Dupont Wire             5
-   17 |image17| 3P F-F 200 mm Dupont Wire             4
-   18 |image18| F-F 200 mm /40P/2.54 Wires            0.1 （4 strands）
-   19 |image19| 4P F-F 200 mm Splicing Dupont Wire    2
-   20 |image20| M1.4*6MM Round Head Screws            4
-   21 |img|     M1.2*4MM Round Head Screws            4
-   22 |image21| M3 Nickle-plated Nut(self-locking)    5
-   23 |image22| M4*8MM Round Head Screws              24
-   24 |image23| M3*6MM Round Head Screws              9
-   25 |image24| M3*10MM Round Head Screws             5
-   26 |image25| M2*12MM Round Head Screws             5
-   27 |image26| M4 Nickle-plated Nut                  24
-   28 |image27| M3 Nickle-plated Nut                  7
-   29 |image28| M2 Nickle-plated Nut                  6
-   30 |image29| M3*8MM Flat Head Screws               3
-   31 |image30| Cross Wrench                          1
-   32 |image31| 3.0*40MM Screwdriver                  1
-   33 |image32| 2.0*40MM Screwdriver                  1
-   34 |image33| M3*10MM Dual-pass Copper Pillar       4
-   35 |image34| USB Cable                             1
-   36 |image35| 6-Slot AA Battery Holder              1
-   37 |image36| M3*12MM Round Head Screws             4
-   38 |image37| White Card                            1
-   39 |image38| ABS RFID Key                          1
-   == ========= ===================================== =================
-
-.. _4.-How-to-install-the-smart-home:
+.. _4-how-to-install-the-smart-home:
 
 4. How to install the smart home
 ================================
 
-Step 1
+| **Step1**
+| Components Required
+
+|image40|
+
+Installation Diagram
+
+|image41|
+
+Prototype
+
+|image42|
+
+**Step 2**
 
 Components Required
 
-| |image39|
-| Installation Diagram
+|image43|
 
-| |image40|
-| Prototype
+Installation Diagram
 
-| |image41|
-| Step 2
-| Components Required
+|image44|
 
-| |image42|
-| Installation Diagram
+Prototype
 
-| |image43|
-| Prototype
+|image45|
 
-| |image44|
-| Step 3
-| Components Required
+**Step 3**
 
-| |image45|
-| Installation
+Components Required
 
-| |image46|
-| Prototype
+|image46|
 
-| |image47|
-| Step 4
-| Components Required
+Installation
 
-| |image48|
-| Installation Diagram
+|image47|
 
-| |image49|
-| Prototype
+Prototype
 
-| |image50|
-| Step 5
-| Components Required
+|image48|
 
-| |image51|
-| Installation Diagram
+**Step 4**
 
-| |image52|
-| Prototype
+Components Required
 
-| |image53|
-| Step 6
-| Components Required
+|image49|
 
-| |image54|
-| Installation(Don’t tighten the self-locking nuts)
+Installation Diagram
 
-| |image55|
-| Prototype
+|image50|
 
-| |image56|
-| Step 7
-| Components Required
+Prototype
 
-| |image57|
-| Adjust the angle of the servo,adjust servo of the window to 0 degree
-  before installation
-| Installation (As shown in the picture)
+|image51|
 
-.. image:: media/wps1-17473763871941.jpg
-   :alt: img
+**Step 5**
+
+Components Required
+
+|image52|
+
+Installation Diagram
+
+|image53|
+
+Prototype
+
+|image54|
+
+**Step 6**
+
+Components Required
+
+|image55|
+
+Installation(Don’t tighten the self-locking nuts)
+
+|image56|
+
+Prototype
+
+|image57|
+
+**Step 7**
+
+Components Required
+
+|image58|
+
+⚠️ **Special note:** Adjust servo of the window to 0 degree before
+installation*\*
+
+=========== =====
+Servo       PCB
+=========== =====
+Brown line  G
+Red line    5V
+Orange line GPIO5
+=========== =====
+
+**Method 1：Arduino code**
+
+⚠️ **Special note: Before you write the code and upload it, you must
+install the Arduino IDE, please go to the the link:** `5. Arduino
+Tutorial <https://docs.keyestudio.com/projects/KS5009/en/latest/docs/Arduino/arduino.html>`__\ ，and
+then to see the part of **5.2 Getting started with Arduino** .
+
+.. code:: c
+
+   #include <ESP32Servo.h>
+   Servo myservo;
+   #define servoPin 5
+
+   void setup() {
+     myservo.attach(servoPin,500,2500);
+     myservo.write(0);
+     delay(300);
+     myservo.write(90);
+     delay(300);
+     myservo.write(0);
+     delay(300);
+   }
+
+   void loop() {
+     // put your main code here, to run repeatedly:
+   }
+
+How to get it ?
+
+In folder **..\\Resource compression package\\arduino Code** , open file
+**Initialization-of-window-servo-angle.ino** , or copy and paste the
+above test code into the Arduino IDE.
+
+|Img|
+
+**Method 2：MicroPython code**
+
+⚠️ **Special note: Before you write the code and upload it, you must
+install the MicroPython IDE, please go to the the link:** `6. Python
+tutorial <https://docs.keyestudio.com/projects/KS5009/en/latest/docs/Python/KS5009-Python.html>`__,
+and then to see the part of **6.2 get starter with Thonny** .
+
+.. code:: python
+
+   from machine import Pin, PWM
+   import time
+   pwm = PWM(Pin(5))  
+   pwm.freq(50)
+
+   '''
+   The duty cycle corresponding to the angle
+   0°----2.5%----25
+   45°----5%----51.2
+   90°----7.5%----77
+   135°----10%----102.4
+   180°----12.5%----128
+   '''
+   angle_0 = 25
+   angle_90 = 77
+   angle_180 = 128
+
+   pwm.duty(angle_0)
+   time.sleep(1)
+   pwm.duty(angle_90)
+   time.sleep(1)
+   pwm.duty(angle_0)
+   time.sleep(1)
+
+   # while True:
+
+How to get it?
+
+In folder **..\\Resource compression package\\microPython Code** , open
+file **Initialization-of-window-servo-angle.py** , or copy and paste the
+above test code into the Thonny IDE.
+
+|image59|
+
+After adjusting the angle of the window servo to 0°, proceed to install
+as shown in the following picture)
+
+|image60|
 
 Install M1.4*6MM self-tapping screws as shown below
 
-| |image58|
-| Prototype
+|image61|
 
-| |image59|
-| Step 8
-| Components Required
+Prototype
 
-| |image60|
-| Installation Diagram
+|image62|
 
-| |image61|
-| Prototype
+**Step 8**
 
-| |image62|
-| Step 9
-| Components Required
+Components Required
 
-| |image63|
-| Installation Diagram
+|image63|
 
-| |image64|
-| Prototype
+Installation Diagram
 
-| |image65|
-| Step 10
-| Components Required
+|image64|
 
-| |image66|
-| Installation Diagram
+Prototype
 
-| |image67|
-| Prototype
+|image65|
 
-| |image68|
-| Step 11
-| Components Required
+**Step 9**
 
-| |image69|
-| Installation Diagram
+Components Required
 
-| |image70|
-| Prototype
+|image66|
 
-| |image71|
-| Step 12
-| Components Required
+Installation Diagram
 
-| |image72|
-| Installation Diagram
+|image67|
 
-| |image73|
-| Prototype
+Prototype
 
-| |image74|
-| Step 13
-| Components Required
+|image68|
 
-| |image75|
-| Installation Diagram
+**Step 10**
 
-| |image76|
-| Prototype
+Components Required
 
-| |image77|
-| Step 14
-| Components Required
+|image69|
 
-| |image78|
-| Installation Diagram
+Installation Diagram
 
-| |image79|
-| Prototype
+|image70|
 
-| |image80|
-| Step 15
-| Components Required
+Prototype
 
-| |image81|
-| Installation Diagram
+|image71|
 
-| |image82|
-| Prototype
+**Step 11**
 
-| |image83|
-| Step 16
-| Components Required
+Components Required
 
-| |image84|
-| Installation Diagram
+|image72|
 
-| |image85|
-| Prototype
+Installation Diagram
 
-| |image86|
-| Step 17
-| Components Required
+|image73|
 
-| |image87|
-| Installation Diagram
+Prototype
 
-| |image88|
-| Prototype
+|image74|
 
-| |image89|
-| Step 18
-| Components Required
+**Step 12**
 
-| |image90|
-| Installation Diagram
+Components Required
 
-| |image91|
-| Prototype
+|image75|
 
-| |image92|
-| Step 19
-| Components Required
+Installation Diagram
 
-| |image93|
-| Installation Diagram
+|image76|
 
-| |image94|
-| Prototype
+Prototype
 
-| |image95|
-| Wiring Part
-| temperature and humidity to io17
+|image77|
 
-| |image96|
-| yellow led module to io12
+**Step 13**
 
-| |image97|
-| steam sensor to the io34
+Components Required
 
-| |image98|
-| fan (IN- to io18，IN+ to io19)
+|image78|
 
-| |image99|
-| PIR motion sensor to the io14
+Installation Diagram
 
-| |image100|
-| left button module to the io16
+|image79|
 
-| |image101|
-| right button module to the io27
+Prototype
 
-| |image102|
-| RFID module to the IIC
+|image80|
 
-| |image103|
-| LCD1602 display to the IIC
+**Step 14**
 
-| |image104|
-| 6812RGB LED to the io26
+Components Required
 
-| |image105|
-| gas sensor to the io23
+|image81|
 
-| |image106|
-| buzzer sensor to the io25
+Installation Diagram
 
-| |image107|
-| servo controlling windows to io5
+|image82|
 
-| |image108|
-| servo controlling doors to the io13
+Prototype
 
-| |image109|
-| power wiring
+|image83|
 
-| |image110|
-| Step 20
-| Components Required
+**Step 15**
 
-| |image111|
-| Installation Diagram
+Components Required
 
-| |image112|
-| Prototype
+|image84|
 
-.. image:: media/c70b59a621643bbc55f1b86e00e85702.png
+Installation Diagram
 
-.. |image1| image:: media/b560f7be0ce2c2d7534576d950528260.jpeg
-.. |image2| image:: media/74a3a377c2bcfed83365320e364fd482.jpeg
-.. |image3| image:: media/1a7d4155e125e37cd0dcb90dbc91ec5c.jpeg
-.. |image4| image:: media/3a6b4ad25421aaa86fa120bea64cf6eb.png
-.. |image5| image:: media/2b0ca5300e76049aca5cc4eff15633f0.png
-.. |image6| image:: media/1f9f1fc55c50387418fbca20eb2ada99.png
-.. |image7| image:: media/0016b6f83c18cda6804a1ef58c4300b2.png
-.. |image8| image:: media/b5c96bec0fabc393395428791ae81358.png
-.. |image9| image:: media/a572bcde7a5e3bf01d273b3d9a024701.png
-.. |image10| image:: media/90bec429f8b84d8446c5107a86c0a0da.png
-.. |image11| image:: media/046b44ce1caf1608d8bacec5b127ba0d.png
-.. |image12| image:: media/63b47a2f4ef533a41a14d65d490cad06.png
-.. |image13| image:: media/80b8e979df120788f2c56ffa0801e974.png
-.. |image14| image:: media/78bcbf50389079a2b773538794e925cd.png
-.. |image15| image:: media/9e333cb91eb0e585e50e21c6eb31aaca.png
-.. |image16| image:: media/a6f94cd448d58a53f41b2a1fa2204863.png
-.. |image17| image:: media/6fc873ea0e2d30ef6c65c48192777b2c.png
-.. |image18| image:: media/8d8d7ecea527ea96266c5a30a23adc49.png
-.. |image19| image:: media/4de60c3b32470ba75de2c6d2b39dfabb.png
-.. |image20| image:: media/b05fb368afcc7f64143fd15972aa1fcc.png
+|image85|
+
+Prototype
+
+|image86|
+
+**Step 16**
+
+Components Required
+
+|image87|
+
+Installation Diagram
+
+|image88|
+
+Prototype
+
+|image89|
+
+**Step 17**
+
+Components Required
+
+|image90|
+
+Installation Diagram
+
+|image91|
+
+Prototype
+
+|image92|
+
+**Step 18**
+
+Components Required
+
+|image93|
+
+Installation Diagram
+
+|image94|
+
+Prototype
+
+|image95|
+
+**Step 19**
+
+Components Required
+
+|image96|
+
+Installation Diagram
+
+|image97|
+
+Prototype
+
+|image98|
+
+**Wiring Part**
+
+temperature and humidity to io17
+
+|image99|
+
+yellow led module to io12
+
+|image100|
+
+steam sensor to the io34
+
+|image101|
+
+fan (IN- to io18，IN+ to io19)
+
+|image102|
+
+PIR motion sensor to the io14
+
+|image103|
+
+left button module to the io16
+
+|image104|
+
+right button module to the io27
+
+|image105|
+
+RFID module to the IIC
+
+|image106|
+
+LCD1602 display to the IIC
+
+|image107|
+
+6812RGB LED to the io26
+
+|image108|
+
+gas sensor to the io23
+
+|image109|
+
+buzzer sensor to the io25
+
+|image110|
+
+servo controlling windows to io5
+
+|image111|
+
+servo controlling doors to the io13
+
+|image112|
+
+power wiring
+
+|image113|
+
+**Step 20**
+
+Components Required
+
+|image114|
+
+Installation Diagram
+
+|image115|
+
+Prototype
+
+|image116|
+
+.. |image1| image:: media/A1.jpeg
+.. |image2| image:: media/Wooden-Board.jpeg
+.. |image3| image:: media/Acrylic-Board.jpeg
+.. |image4| image:: media/ESP32-Board.jpeg
+.. |image5| image:: media/6812-RGB.png
+.. |image6| image:: media/Gas-Sensor.png
+.. |image7| image:: media/Button-Module.png
+.. |image8| image:: media/RFID-Module.png
+.. |image9| image:: media/Buzzer-Module.png
+.. |image10| image:: media/Motor.png
+.. |image11| image:: media/Steam-Sensor.png
+.. |image12| image:: media/XHT11.png
+.. |image13| image:: media/PIR-Sensor.png
+.. |image14| image:: media/LED-Module.png
+.. |image15| image:: media/Servo.png
+.. |image16| image:: media/I2C1602-LCD.png
+.. |image17| image:: media/3P-150-mm-Wire.png
+.. |image18| image:: media/3P-200-mm-Wire.png
+.. |image19| image:: media/F-F-200-mm.png
+.. |image20| image:: media/4P-200-mm-Wire.png
+.. |image21| image:: media/M1.4-6MM-Screws.png
 .. |img| image:: media/wps1.jpg
-.. |image21| image:: media/2921490c73e7ec456e68d03f26cd638d.png
-.. |image22| image:: media/90f262e52991756983f29416b65889de.png
-.. |image23| image:: media/de8991dc2b94e7a9a01e24239cf77500.png
-.. |image24| image:: media/90f262e52991756983f29416b65889de.png
-.. |image25| image:: media/90f262e52991756983f29416b65889de.png
-.. |image26| image:: media/40828578b370119a7a5c40dcc412f9c6.png
-.. |image27| image:: media/40828578b370119a7a5c40dcc412f9c6.png
-.. |image28| image:: media/40828578b370119a7a5c40dcc412f9c6.png
-.. |image29| image:: media/2991c80d0f141474a234a1b915866506.png
-.. |image30| image:: media/e8e1c04d2c03b995842b0bd92e2fdf72.jpeg
-.. |image31| image:: media/f353b46e6c2c0597c3268d5aa137fd99.png
-.. |image32| image:: media/aa12dd0fe16e3f122e1822f671b3c0c7.png
-.. |image33| image:: media/71338bc1f531d68fa7747582b8f2b073.png
-.. |image34| image:: media/a2785e36ab41cea44f41ddf2d87c8ead.png
-.. |image35| image:: media/119770f24627eed3c13c3008eb926888.png
-.. |image36| image:: media/90f262e52991756983f29416b65889de.png
-.. |image37| image:: media/ac4d8bcad35658ce6ec738d4aaa555c7.png
-.. |image38| image:: media/cfc5265d05b7b1cd89f9853bca223fb3.png
-.. |image39| image:: media/8dd604409369919ccf6f88ce6b4f8ef4.png
-.. |image40| image:: media/5635e47e50d2d3c59396f0493248fbe1.png
-.. |image41| image:: media/3c6f079bf7c6d4b6467d75683c2ab6e0.png
-.. |image42| image:: media/40193f8b74566b51329f60c7af843380.png
-.. |image43| image:: media/deb26849635d49c3f6a3d650d335e1ba.png
-.. |image44| image:: media/1dd06d0e20d6e82c3d40de86499595ec.png
-.. |image45| image:: media/70dde8f4791ac31969167ec98a71c9ff.png
-.. |image46| image:: media/f99d8208a13cb6ec7b37d92ea6bf44d4.png
-.. |image47| image:: media/3e41a27e6450b4b465ce6adf7442e981.png
-.. |image48| image:: media/dc3d7d2ad06a95ff0073cca27257d8ba.png
-.. |image49| image:: media/89102eccb6e6074de12c1887f869d710.png
-.. |image50| image:: media/3cb7b1cad3e2d2f4c4b5444d9d660c7e.png
-.. |image51| image:: media/77c19fec4a9f2739bc1095e68e619e7c.png
-.. |image52| image:: media/4e0d6c06490d59a969ab4991098918e1.png
-.. |image53| image:: media/71080dc63e65195e7dc28d94f3041319.png
-.. |image54| image:: media/d4f07269d100e0f46851252e28ba8383.png
-.. |image55| image:: media/553ac0654da4c14ad9b958ac16c46ccd.png
-.. |image56| image:: media/60e168e21936ccdd39883ec5259a5dcf.png
-.. |image57| image:: media/4842582f892bcb0ab270554ca1487c42.png
-.. |image58| image:: media/wps2.jpg
-.. |image59| image:: media/adfb7abbafd97f2eaf73ee05e6ef74ec.png
-.. |image60| image:: media/d2a9dbb7352038e6c8d06037d8479849.png
-.. |image61| image:: media/56e79d6d0d0bbe904516a0dff5e0b065.png
-.. |image62| image:: media/4ded3da1546a1a96288a013fe3b50cd6.png
-.. |image63| image:: media/3615bf486cb4295bf7c35119a2cb531c.png
-.. |image64| image:: media/8cc78358bed8e02d11207bb843c37294.png
-.. |image65| image:: media/58861409694aa6c85759c7a587ef991e.png
-.. |image66| image:: media/be5af4990413c71bbecf8ceee1e36890.png
-.. |image67| image:: media/917885be60d62d6d684bfae2eda9fcda.png
-.. |image68| image:: media/3b619925112b0df796c70eaedb638e2e.png
-.. |image69| image:: media/61a63240fef3eeab555697282a45e5aa.png
-.. |image70| image:: media/28962cc5cc630fdcde317015db012493.png
-.. |image71| image:: media/0adad38a8057430d3079a1a8b83b6aa0.png
-.. |image72| image:: media/03a042d71bffc005eb7205fbad6160fe.png
-.. |image73| image:: media/1b66b8276b5bf2ddb2c0250b7747a680.png
-.. |image74| image:: media/ab966ba502dcd28ba54465d397ced1fe.png
-.. |image75| image:: media/99e6ac3da48de02825ea132ce16f0d65.png
-.. |image76| image:: media/6de404a9bf8bcf588d797bfc8aad25c3.png
-.. |image77| image:: media/9e70c40c583b46f90285fd8c23005cd5.png
-.. |image78| image:: media/e9e83216afd5f55d907f3814e434bdff.png
-.. |image79| image:: media/a918ecc2c9abb3cbbce1fe32b45a7aae.png
-.. |image80| image:: media/5d6482b761491738bbce0362dbef31e9.png
-.. |image81| image:: media/2c4a8d81449ce6c6a294c9535bd7244b.png
-.. |image82| image:: media/4db291f9ac3ed41956f7c7185fa38f64.png
-.. |image83| image:: media/988ca4ff3040d709012588dcb3b2c2d5.png
-.. |image84| image:: media/9c4c1c7fb8609386670e6427b0e02696.png
-.. |image85| image:: media/5a3f843578cc59e4023481bff69e4189.png
-.. |image86| image:: media/718bb1c9b50fb5ac328ab74a1114c0f7.png
-.. |image87| image:: media/d5d400670d0d36caa3a08cb59e0a8892.png
-.. |image88| image:: media/2a8634f2a50fb7bf1ef20e1949378e3c.png
-.. |image89| image:: media/df39c9789513ea5e13043cfaa1e687c3.png
-.. |image90| image:: media/f9ae11d160ca4fa1ab7a517bf538036b.png
-.. |image91| image:: media/e50de39b9c9805b808933b266458eed4.png
-.. |image92| image:: media/effcbfa998c83525095360f7c6a19676.png
-.. |image93| image:: media/e855c45671386c25affdfa67144fb66d.png
-.. |image94| image:: media/9637cad77c563081c78bd014920d44d8.png
-.. |image95| image:: media/85f68b8b0880c6834105a23c21c3ba00.png
-.. |image96| image:: media/b20fffd8e6d99fdea58ac47ab4b339a5.png
-.. |image97| image:: media/8f254931280578d7829b16344a9e2bda.png
-.. |image98| image:: media/db35422182a8b02ed371bcecbf4640b8.png
-.. |image99| image:: media/8688977d33afcb5fe1542b31e5cf0259.png
-.. |image100| image:: media/6572ce6a6ddfc8bf17945fc71897d9fb.png
-.. |image101| image:: media/2d579eeb0aa3a6f71f1572e1579d153f.png
-.. |image102| image:: media/639ac8cf0b991c7c150a6b4be8cf8e93.png
-.. |image103| image:: media/142fd5fdd102aa25eb3f8406e257ccaf.png
-.. |image104| image:: media/518e6c496b5c22b7d4b0c4de40acc80e.png
-.. |image105| image:: media/4edea8aa5ff83d17fa8cab9173760c12.png
-.. |image106| image:: media/ed22723361dc2dc2bc0eb6b80c36ce28.png
-.. |image107| image:: media/77e7f24ef8d39732a6ae6a9150e86243.png
-.. |image108| image:: media/4f4c7f0ea162c7de24f1263dafad9075.png
-.. |image109| image:: media/c6334d6486a50808300936aef00a55e8.png
-.. |image110| image:: media/66217ef904b5256055eb20b2f8c95678.jpeg
-.. |image111| image:: media/981c1d00ec6ffa26832828c3bb50cff2.png
-.. |image112| image:: media/103f079c5a1bbdee286d00e98463fe89.png
+.. |image22| image:: media/M3-Nickle-plated.png
+.. |image23| image:: media/M4-8MM-Screws.png
+.. |image24| image:: media/M3-6MM-Screws.png
+.. |image25| image:: media/M3-6MM-Screws.png
+.. |image26| image:: media/M3-6MM-Screws.png
+.. |image27| image:: media/M4-Nut.png
+.. |image28| image:: media/M4-Nut.png
+.. |image29| image:: media/M4-Nut.png
+.. |image30| image:: media/M3-8MM.png
+.. |image31| image:: media/Cross-Wrench.jpeg
+.. |image32| image:: media/3.0-40MM-Screwdriver.png
+.. |image33| image:: media/2.0-40MM-Screwdriver.png
+.. |image34| image:: media/M3-10MM.png
+.. |image35| image:: media/USB-Cable.png
+.. |image36| image:: media/AA-Battery-Holder.png
+.. |image37| image:: media/M3-6MM-Screws.png
+.. |image38| image:: media/White-Card.png
+.. |image39| image:: media/ABS-RFID-Key.png
+.. |image40| image:: media/A01.png
+.. |image41| image:: media/A02.png
+.. |image42| image:: media/A03.png
+.. |image43| image:: media/A04.png
+.. |image44| image:: media/A05.png
+.. |image45| image:: media/A06.png
+.. |image46| image:: media/A07.png
+.. |image47| image:: media/A08.png
+.. |image48| image:: media/A09.png
+.. |image49| image:: media/A10.png
+.. |image50| image:: media/A11.png
+.. |image51| image:: media/A12.png
+.. |image52| image:: media/A13.png
+.. |image53| image:: media/A14.png
+.. |image54| image:: media/A15.png
+.. |image55| image:: media/A16.png
+.. |image56| image:: media/A17.png
+.. |image57| image:: media/A18.png
+.. |image58| image:: media/A19.png
+.. |Img| image:: ./media/A20.png
+.. |image59| image:: ./media/A21.png
+.. |image60| image:: media/wps1-1.jpg
+.. |image61| image:: media/wps2.jpg
+.. |image62| image:: media/A22.png
+.. |image63| image:: media/A23.png
+.. |image64| image:: media/A24.png
+.. |image65| image:: media/A25.png
+.. |image66| image:: media/A26.png
+.. |image67| image:: media/A27.png
+.. |image68| image:: media/A28.png
+.. |image69| image:: media/A29.png
+.. |image70| image:: media/A30.png
+.. |image71| image:: media/A31.png
+.. |image72| image:: media/A32.png
+.. |image73| image:: media/A33.png
+.. |image74| image:: media/A34.png
+.. |image75| image:: media/A35.png
+.. |image76| image:: media/A36.png
+.. |image77| image:: media/A37.png
+.. |image78| image:: media/A38.png
+.. |image79| image:: media/A39.png
+.. |image80| image:: media/A40.png
+.. |image81| image:: media/A41.png
+.. |image82| image:: media/A43.png
+.. |image83| image:: media/A44.png
+.. |image84| image:: media/A45.png
+.. |image85| image:: media/A46.png
+.. |image86| image:: media/A47.png
+.. |image87| image:: media/A48.png
+.. |image88| image:: media/A49.png
+.. |image89| image:: media/A50.png
+.. |image90| image:: media/A51.png
+.. |image91| image:: media/A52.png
+.. |image92| image:: media/A53.png
+.. |image93| image:: media/A54.png
+.. |image94| image:: media/A55.png
+.. |image95| image:: media/A56.png
+.. |image96| image:: media/A57.png
+.. |image97| image:: media/A58.png
+.. |image98| image:: media/A59.png
+.. |image99| image:: media/A60.png
+.. |image100| image:: media/A61.png
+.. |image101| image:: media/A62.png
+.. |image102| image:: media/A63.png
+.. |image103| image:: media/A64.png
+.. |image104| image:: media/A65.png
+.. |image105| image:: media/A66.png
+.. |image106| image:: media/A67.png
+.. |image107| image:: media/A68.png
+.. |image108| image:: media/A69.png
+.. |image109| image:: media/A70.png
+.. |image110| image:: media/A71.png
+.. |image111| image:: media/A72.png
+.. |image112| image:: media/A73.png
+.. |image113| image:: media/A74.jpeg
+.. |image114| image:: media/A75.png
+.. |image115| image:: media/A76.png
+.. |image116| image:: media/A77.png

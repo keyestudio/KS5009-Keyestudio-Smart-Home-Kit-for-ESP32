@@ -1,9 +1,9 @@
-.. _5.-Arduino-tutorial:
+.. _5-arduino-tutorial:
 
-5. Arduino tutorial
+5. Arduino Tutorial
 ===================
 
-.. _5.1-Resource-compression-package:
+.. _51-resource-compression-package:
 
 5.1 Resource compression package
 --------------------------------
@@ -11,19 +11,19 @@
 The resource package contains code,libraries,and driver files.You must
 have this resourse to continue learing.
 
-:download:`Resource compression package <Arduino.7z>`
+:download:`Resource compression package <./Resource-compression-package.7z>`
 
-.. _5.2-Getting-started-with-Arduino:
+.. _52-getting-started-with-arduino:
 
 5.2 Getting started with Arduino
 --------------------------------
 
-.. _5.2.1-ESP32-PLUS-Development-board:
+.. _521-esp32-plus-development-board:
 
 5.2.1 ESP32 PLUS Development board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: media/201911d851d2d7fa6e854d6428bb5b67.png
+|image1|
 
 ESP32PLUS is a universal WIFI plus Bluetooth development board based on
 ESP32, integrated with ESP32-WOROOM-32 module and compatible with
@@ -33,16 +33,16 @@ It has a hall sensor, high-speed SDIO/SPI, UART, I2S as well as I2C.
 Furthermore, equipped with freeRTOS operating system, which is quite
 suitable for the Internet of things and smart home.
 
-.. image:: media/e00562548e84b885ad18510b261ade05.png
+|image2|
 
-.. _5.2.2-Windows-System:
+.. _522-windows-system:
 
 5.2.2 Windows System
 ~~~~~~~~~~~~~~~~~~~~
 
-.. image:: media/6cf6312dc7c7db27794b54d58a8bf80c.png
+|image3|
 
-.. _1-Installing-Arduino-IDE:
+.. _1-installing-arduino-ide:
 
 1 Installing Arduino IDE
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -50,17 +50,22 @@ suitable for the Internet of things and smart home.
 When you get control board, you need to download Arduino IDE and driver
 firstly.
 
-You could download Arduino IDE from the official
-website:https://www.arduino.cc/, click the **SOFTWARE** on the browse
-bar to enter download page, as shown below:
+You could download Arduino IDE from the official website:
+https://www.arduino.cc/, click the **SOFTWARE** on the browse bar to
+enter download page, as shown below:
 
-.. image:: media/83a843a56d49e93ec9f99bfb33fee269.png
+|image4|
+
+⚠️ **Special reminder: If you cannot find the Arduino IDE in the
+software on the aforementioned official website, you can click on this
+link：\ **\ https://www.arduino.cc/en/software **to directly access the
+Arduino IDE download page.**
 
 There are various versions of IDE for Arduino. Just download a version
 compatible with your system. Here we will show you how to download and
 install the windows version of Arduino IDE.
 
-.. image:: media/fac59eb6f401fa9e6ce711bb5f3f62f2.png
+|image5|
 
 You can choose between the Installer (.exe) and the Zip packages. We
 suggest you use the first one that installs directly everything you need
@@ -68,16 +73,17 @@ to use the Arduino Software (IDE), including the drivers. With the Zip
 package you need to install the drivers manually. The Zip file is also
 useful if you want to create a portable installation.
 
-.. image:: media/0ab58d5303a100e9638be44131a34b51.png
+|image6|
 
 You just need to click JUST DOWNLOAD.
 
-.. _2-Install-a-driver:
+.. _2-install-a-driver:
 
 2 Install a driver
 ^^^^^^^^^^^^^^^^^^
 
-If you have installed the CH340 driver, just skip it.
+⚠️ **Special reminder: If you have installed the CH340 driver, just skip
+it.**
 
 Connect the main control board to your computer with a USB cable, and
 the driver will be installed automatically on MacOS and Windows10
@@ -89,69 +95,72 @@ the driver manually.
 Right click Computer----- Click Properties-----Click Device Manager, the
 following picture shows the successful installation:
 
-.. image:: media/789a5b530a3e6c44687099a219575666.png
+|image7|
 
 (2) Manual installation:
 
 Right-click “\ **USB2.0-Serial**\ ” and click “\ **Update drive...**\ ”
 
-.. image:: media/378b65e69d5a926721245ecb4d2209a7.png
+|image8|
 
 Click “\ **Browse my computer for driver software**\ ”
 
-.. image:: media/dc27c46ecc96141df0ff60cf605875f3.png
+|image9|
 
 Click“\ **Browse...**\ ”and select the“\ **usb_ch341_3.1.2009.06
 folder**\ ”.
 
-.. image:: media/32e5e41e0c42893596d82c48e8914802.png
+|image10|
 
 Check the serial port connection status again, as shown in the following
 figure, the driver is successfully installed.
 
-.. image:: media/789a5b530a3e6c44687099a219575666.png
+|image11|
 
-.. _3-Add-the-ESP32-Environment(add-version-3.1.0):
+.. _3-add-the-esp32-environmentadd-version-310:
 
 3 Add the ESP32 Environment(add version 3.1.0)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 （1）Open the arduino IDE，click File > Preferences，as shown below:
 
-.. image:: media/cd670e08b43572b8b90f11a3d1edd61c.png
+|image12|
 
 （2）Copy the
-link：\ https://dl.espressif.com/dl/package_esp32_index.json
+link：\ ``https://espressif.github.io/arduino-esp32/package_esp32_index.json``
+.
 
 （3）Open the button marked below:
 
-.. image:: media/bb39b0b271fcdfb85e6a7ff284c290dd.png
+|image13|
 
 (4) Paste it inside and click OK, as shown below
 
-.. image:: media/58a1317f28e334e6fcdc833bf7161f29.png
+|image14|
+
+|Img|
 
 (5) Click Tools > Board > Boards Manager
 
-.. image:: media/dab13b40132ce5c687ca4726b75733f6.png
+|image15|
 
 (6) Find the ESP32 from the pop up Boards Manager and then click
-install. <font color = "red">(add version 3.1.0)!!!Very important</font>
+install. (add version 3.1.3)!!!Very important
 
-.. image:: media/aa.png
+|image16|
 
 (7) Click Tools > Board >esp32 to choose the ESP32 Dev Module.
 
-.. image:: media/677ff80219f4525f8aea366eec9a03af.png
+|image17|
 
-.. _4-Arduino-IDE-Setting:
+.. _4-arduino-ide-setting:
 
 4 Arduino IDE Setting
 ^^^^^^^^^^^^^^^^^^^^^
 
-Click\ |image1|\ icon，open Arduino IDE.
+Click\ |image18|\ icon，open Arduino IDE.
 
-.. image:: media/843b5bb2d4c1d33c215e8d0c76c07abf.png
+|image19|
 
 To avoid the errors when uploading the program to the board, you need to
 select the correct Arduino board that matches the board connected to
@@ -160,17 +169,17 @@ your computer.
 Then come back to the Arduino software, you should click Tools→Board,
 select the board. (as shown below)
 
-.. image:: media/82243fba22e2575044b1c29decef18d9.png
+|image20|
 
 Then select the correct COM port (you can see the corresponding COM port
 after the driver is successfully installed)
 
-.. image:: media/d8fe59d73cdbce2afc74b37eb5f8e8c0.png
+|image21|
 
 Before uploading the program to the board, let’s demonstrate the
 function of each symbol in the Arduino IDE toolbar.
 
-.. image:: media/3d76bbceb5014e1413c7c8d43ea52eb0.png
+|image22|
 
 1- Used to verify whether there is any compiling mistakes or not.
 
@@ -182,78 +191,77 @@ plottle.
 4- Used to send the serial data received from board to the serial
 monitor.
 
-.. _5.2.3-Mac-System:
+.. _523-mac-system:
 
 5.2.3 Mac System
 ~~~~~~~~~~~~~~~~
 
-.. image:: media/a6fc83596009c574d8e29ef383748549.png
+|image23|
 
-.. _1-Download-Arduino-IDE:
+.. _1-download-arduino-ide:
 
 1 Download Arduino IDE
 ^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: media/77c03a9d0b23a0cc760d32095fa08e21.png
+|image24|
 
-.. _2-Download-the-CH340-driver:
+.. _2-download-the-ch340-driver:
 
 2 Download the CH340 driver
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We provide,please go to 5.1 resourse pack to get
 
-.. image:: media/image-20250408105719588.png
-   :alt: image-20250408105719588
+|image-20250408105719588|
 
-.. _3-How-to-install-the-CH340-driver:
+.. _3-how-to-install-the-ch340-driver:
 
 3 How to install the CH340 driver
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 After the download, seen as below:
 
-.. image:: media/63eee4c4643c4638a659346edbd2500f.png
+|image25|
 
 Double-click installation package and tap Continue
 
-.. image:: media/c51b1c3d15affa4d754770184d5151df.png
+|image26|
 
 Click Install
 
-.. image:: media/de96ded3dc9582e151dd7713d3ef33a1.png
+|image27|
 
 Input your user password and click Install Software
 
-.. image:: media/fafdebb694a110227b53ca6369ebc96a.png
+|image28|
 
 Tap Continue Installation
 
-.. image:: media/55c6bd90dc3ce4762e2598f76700e978.png
+|image29|
 
 Wait to install
 
-.. image:: media/535f31eba84df8664c4566e1b9ecd767.png
+|image30|
 
 Click Restart after the installation is finished
 
-.. image:: media/7416a8a6aedcae63e931880a1f033db6.png
+|image31|
 
-.. _4-Arduino-IDE-Setting::
+.. _4-arduino-ide-setting-1:
 
 4 Arduino IDE Setting:
 ^^^^^^^^^^^^^^^^^^^^^^
 
 Except for COM ports, the setting method is the same as in chapter 1.4:
 
-.. image:: media/37972c9e070bd6bcf9cdcb3f84679223.jpeg
+|image32|
 
-.. _5.3-How-to-Add-Libraries?:
+.. _53-how-to-add-libraries:
 
 5.3 How to Add Libraries?
 -------------------------
 
-.. _5.3.1-What-are-Libraries-?:
+.. _531-what-are-libraries-:
 
 5.3.1 What are Libraries ?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -271,30 +279,29 @@ in the reference.
 
 https://www.arduino.cc/en/Reference/Libraries
 
-.. _5.3.2-Add-ZIP-Libraries:
+.. _532-add-zip-libraries:
 
 5.3.2 Add ZIP Libraries
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 When you want to add a zip library, you need to download it as a ZIP
-file, put in the proper directory. The Libraries needed to run the mini
-tank can be found on：
+file, put in the proper directory. The Libraries needed to run the Smart
+Home can be found on：
 
-.. image:: media/dd.png
+|image33|
 
 Click Sketch---->Include Library—>Add.ZIP Library，then Then navigate to
 the library file you downloaded and click "open."
 
-.. image:: media/baef5ce61ba8567f4a18fec16a2e3dae.png
+|image34|
 
-.. image:: media/image-20250329140352208.png
-   :alt: image-20250329140352208
+|image-20250329140352208|
 
 Import the library. You can find it in the include library list.
 
-.. image:: media/fda284b603a4b6b5c14ce3d58788326d.png
+|image35|
 
-.. _5.4-Arduino-Projects:
+.. _54-arduino-projects:
 
 5.4 Arduino Projects
 --------------------
@@ -302,8 +309,7 @@ Import the library. You can find it in the include library list.
 Code is provided for all projects and is available in the 5.1 resource
 pack
 
-.. image:: media/image-20250408110257525.png
-   :alt: image-20250408110257525
+|image-20250408110257525|
 
 Alright, let’s get straight to our projects. We will make you know the
 smart home deeply from the simple sensor.
@@ -313,18 +319,17 @@ with (G,-, GND) indicates the negative pole, G is connected to G, - or
 GND of sensor shield or control board; “V” is positive pole and
 connected with V, VCC or 5V.**
 
-.. _5.4.1-Project-1.1-LED-Blink:
+.. _541-project-11-led-blink:
 
 5.4.1 Project 1.1 LED Blink
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _**1-Description**:
+.. _1-description:
 
 **1 Description**
 ^^^^^^^^^^^^^^^^^
 
-.. image:: media/image-20230927115910677.png
-   :alt: image-20230927115910677
+|image-20230927115910677|
 
 We’ve installed the driver of ESP32 PLUS development board.
 
@@ -337,7 +342,7 @@ low level.
 In addition, the different blinking frequency can be presented by
 adjusting the delayed time.
 
-.. _**2-Working-Principle**:
+.. _2-working-principle:
 
 **2 Working Principle**
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -346,34 +351,30 @@ LED is also the light-emitting diode, which can be made into an
 electronic module. It will shine if we control pins to output high
 level, otherwise it will be off.
 
-.. _**3-Parameters**:
+.. _3-parameters:
 
 **3 Parameters**
 ^^^^^^^^^^^^^^^^
 
-.. container:: table-wrapper
+=============== =======
+Working voltage DC 3~5V
+=============== =======
+Working current <20mA
+Power           0.1W
+=============== =======
 
-   =============== =======
-   Working voltage DC 3~5V
-   =============== =======
-   Working current <20mA
-   Power           0.1W
-   =============== =======
-
-.. _**4-Control-Pin**:
+.. _4-control-pin:
 
 **4 Control Pin**
 ^^^^^^^^^^^^^^^^^
 
-.. container:: table-wrapper
+========== ==
+Yellow LED 12
+========== ==
+\          
+========== ==
 
-   ========== ==
-   Yellow LED 12
-   ========== ==
-   \          
-   ========== ==
-
-.. _**5-Test-Code**:
+.. _5-test-code:
 
 **5 Test Code**
 ^^^^^^^^^^^^^^^
@@ -393,7 +394,7 @@ level, otherwise it will be off.
      delay(200);
    }
 
-.. _**6.Test-Result**:
+.. _6test-result:
 
 **6.Test Result**
 ^^^^^^^^^^^^^^^^^
@@ -401,12 +402,12 @@ level, otherwise it will be off.
 After uploading the code , you can see white and yellow LEDs flashing
 together.
 
-.. _5.4.2-Project-1.2-Breathing-LED:
+.. _542-project-12-breathing-led:
 
 5.4.2 Project 1.2 Breathing LED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _**1.-Description**:
+.. _1-description-1:
 
 **1. Description**
 ^^^^^^^^^^^^^^^^^^
@@ -420,13 +421,13 @@ It makes sense to take advantage of PWM. Output the number of high level
 and low level in unit time, the more time the high level occupies, the
 larger the PWM value, the brighter the LED.
 
-.. image:: media/704984700612966b997127cb9bde5c96.jpeg
+|image36|
 
 We provide the PWM output library file < analogwrite.h > for ESP32,
 therefore solely a simple statement analogWrite(); can control the PWM
 output.
 
-.. _**2.-Test-Code**:
+.. _2-test-code:
 
 **2. Test Code**
 ^^^^^^^^^^^^^^^^
@@ -456,7 +457,7 @@ output.
      }
    }
 
-.. _**3.-Test-Result**:
+.. _3-test-result:
 
 **3. Test Result**
 ^^^^^^^^^^^^^^^^^^
@@ -464,12 +465,12 @@ output.
 The LED gradually gets dimmer then brighter, cyclically, like human
 breathe.
 
-.. _5.4.3-Project-2.1-Read-the-Button:
+.. _543-project-21-read-the-button:
 
 5.4.3 Project 2.1 Read the Button
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _**1.-Description**:
+.. _1-description-2:
 
 **1. Description**
 ^^^^^^^^^^^^^^^^^^
@@ -480,7 +481,7 @@ light on and off pressing the button.
 We will work to read the status value of the button and display it on
 the serial monitor, so as to see it intuitively.
 
-.. _**2.-Button-Principle**:
+.. _2-button-principle:
 
 **2. Button Principle**
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -489,22 +490,20 @@ The button module is a digital sensor, which can only read 0 or 1. When
 the module is not pressed, it is in a high level state, that is, 1, when
 pressed, it is a low level 0.
 
-.. image:: media/41f565d4f355abb96e105119660e80ba.png
+|image37|
 
-.. _**3.-Pins-of-the-Button**:
+.. _3-pins-of-the-button:
 
 **3. Pins of the Button**
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. container:: table-wrapper
+======== ==
+Button 1 16
+======== ==
+Button 2 27
+======== ==
 
-   ======== ==
-   Button 1 16
-   ======== ==
-   Button 2 27
-   ======== ==
-
-.. _**4.-Test-Code**:
+.. _4-test-code:
 
 **4. Test Code**
 ^^^^^^^^^^^^^^^^
@@ -531,26 +530,26 @@ pressed, it is a low level 0.
      delay(100);
    }
 
-.. _**5.-Test-Result**:
+.. _5-test-result:
 
 **5. Test Result**
 ^^^^^^^^^^^^^^^^^^
 
 Open the serial monitor of the arduino IDE
 
-.. image:: media/7b790a6090abe48cc2599d3035d3a151.png
+|image38|
 
 Press the button again to see the change of the button state value, as
 shown below:
 
-.. image:: media/07b8c2accc3f86ab0a853eee8fa3e58b.png
+|image39|
 
-.. _5.4.4-Project-2.2.-Table-Lamp:
+.. _544-project-22-table-lamp:
 
 5.4.4 Project 2.2. Table Lamp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _**1.-Description**:
+.. _1-description-3:
 
 **1. Description**
 ^^^^^^^^^^^^^^^^^^
@@ -558,7 +557,7 @@ shown below:
 For common simple table lamp, click the button it will be opened, click
 it again, the lamp will be closed.
 
-.. _**2.-Test-Code**:
+.. _2-test-code-1:
 
 **2. Test Code**
 ^^^^^^^^^^^^^^^^
@@ -611,7 +610,7 @@ get 0 or 1 two state values.
      }
    }
 
-.. _**3.-Test-Result**:
+.. _3-test-result-1:
 
 **3. Test Result**
 ^^^^^^^^^^^^^^^^^^
@@ -620,16 +619,16 @@ Open the serial monitor and print out the clicked button times, then
 click the button once, the LED will be on, click it again, it will be
 off.
 
-.. image:: media/a12e75e3ec7319757051795c827a7b24.png
+|image40|
 
-.. _5.4.5-Project-3.1-Read-the-PIR-Motion-Sensor:
+.. _545-project-31-read-the-pir-motion-sensor:
 
 5.4.5 Project 3.1 Read the PIR Motion Sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: media/c1518252606b111bfa66878a2bfcc965.png
+|image41|
 
-.. _**1.-Description**:
+.. _1-description-4:
 
 **1. Description**
 ^^^^^^^^^^^^^^^^^^
@@ -645,20 +644,18 @@ values 0 or 1. And it will be sensed when people are moving.
 We will print out the value of the PIR motion sensor through the serial
 monitor.
 
-.. _**2.-Control-Pin**:
+.. _2-control-pin:
 
 **2. Control Pin**
 ^^^^^^^^^^^^^^^^^^
 
-.. container:: table-wrapper
+================= ==
+PIR motion sensor 14
+================= ==
+\                 
+================= ==
 
-   ================= ==
-   PIR motion sensor 14
-   ================= ==
-   \                 
-   ================= ==
-
-.. _**3.-Test-Code**:
+.. _3-test-code:
 
 **3. Test Code**
 ^^^^^^^^^^^^^^^^
@@ -679,7 +676,7 @@ monitor.
      delay(200);
    }
 
-.. _**4.-Test-Result**:
+.. _4-test-result:
 
 **4. Test Result**
 ^^^^^^^^^^^^^^^^^^
@@ -687,16 +684,16 @@ monitor.
 When you stand still in front of the sensor, the reading value is 0,
 move a little, it will change to 1.
 
-.. image:: media/e50f0f6c666cdb14857511dccd71ed73.png
+|image42|
 
-.. _5.4.6-Project-3.2-PIR-Motion-Sensor:
+.. _546-project-32-pir-motion-sensor:
 
 5.4.6 Project 3.2 PIR Motion Sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If someone moves in front of the sensor, the LED will light up.
 
-.. _**1.-Test-Code**:
+.. _1-test-code:
 
 **1. Test Code**
 ^^^^^^^^^^^^^^^^
@@ -732,7 +729,7 @@ If someone moves in front of the sensor, the LED will light up.
      }
    }
 
-.. _**2.-Test-Result**:
+.. _2-test-result:
 
 **2. Test Result**
 ^^^^^^^^^^^^^^^^^^
@@ -740,14 +737,14 @@ If someone moves in front of the sensor, the LED will light up.
 Move your hand in front of the sensor, the LED will turn on. After 5s of
 immobility, the LED lights will turn off.
 
-.. _5.4.7-Project-4.1-Play-Happy-Birthday:
+.. _547-project-41-play-happy-birthday:
 
 5.4.7 Project 4.1 Play Happy Birthday
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: media/2e6fd6b7975ef84ab94eee896161347b.png
+|image43|
 
-.. _**1.-Description**:
+.. _1-description-5:
 
 **1. Description**
 ^^^^^^^^^^^^^^^^^^
@@ -757,7 +754,7 @@ which is as an external amplification equipment to play music.
 
 In this project, we will work to play a piece of music by using it.
 
-.. _**2.-Component-Knowledge**:
+.. _2-component-knowledge:
 
 **2. Component Knowledge**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -768,20 +765,18 @@ square waves of different frequencies to the positive pole of the
 component and ground the negative pole to control the power amplifier to
 chime sounds of different frequencies.
 
-.. _**3.-Control-Pin**:
+.. _3-control-pin:
 
 **3. Control Pin**
 ^^^^^^^^^^^^^^^^^^
 
-.. container:: table-wrapper
+============== ==
+Passive Buzzer 25
+============== ==
+\              
+============== ==
 
-   ============== ==
-   Passive Buzzer 25
-   ============== ==
-   \              
-   ============== ==
-
-.. _**4.-Test-Code**:
+.. _4-test-code-1:
 
 **4. Test Code**
 ^^^^^^^^^^^^^^^^
@@ -830,21 +825,21 @@ chime sounds of different frequencies.
      buzzer.playTone(0, 0);      // Turn off buzzer
    }
 
-.. _**5.-Test-Result**:
+.. _5-test-result-1:
 
 **5. Test Result**
 ^^^^^^^^^^^^^^^^^^
 
 The passive buzzer will play happy Birthday.
 
-.. _5.4.8-Project-4.2-Music-Box:
+.. _548-project-42-music-box:
 
 5.4.8 Project 4.2 Music Box
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 we will make a music box and switch tunes by pressing buttons.
 
-.. _**1.-Test-Code**:
+.. _1-test-code-1:
 
 **1. Test Code**
 ^^^^^^^^^^^^^^^^
@@ -932,7 +927,7 @@ we will make a music box and switch tunes by pressing buttons.
      }
    }
 
-.. _**2.-Test-Result**:
+.. _2-test-result-1:
 
 **2. Test Result**
 ^^^^^^^^^^^^^^^^^^
@@ -941,12 +936,12 @@ Click button 1 once, it will play a Tetris, then click it again, it will
 play *Ode to Joy*, after playing, click the button 1 for the third time,
 it will play Christmas.
 
-.. _5.4.9-Project-5.1-Control-the-Door:
+.. _549-project-51-control-the-door:
 
 5.4.9 Project 5.1 Control the Door
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _**1.-Description**:
+.. _1-description-6:
 
 **1. Description**
 ^^^^^^^^^^^^^^^^^^
@@ -957,15 +952,14 @@ sensor, you can achieve the effect of closing windows automatically when
 raining. If adding a RFID, we can realize the effect of swiping to open
 the door and so on.
 
-.. _**2.-Component-Knowledge**:
+.. _2-component-knowledge-1:
 
 **2. Component Knowledge**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Servo:** Servo is a position servo
-`driver <C:/Users/NINGMEI/AppData/Local/youdao/dict/Application/8.10.7.0/resultui/html/index.html#/javascript:;>`__
-device consists of a housing, a circuit board, a coreless motor, a gear
-and a position detector.
+**Servo:** Servo is a position servo driver device consists of a
+housing, a circuit board, a coreless motor, a gear and a position
+detector.
 
 Its working principle is that the servo receives the signal sent by MCU
 or receiver and produces a reference signal with a period of 20ms and
@@ -988,30 +982,28 @@ The pulse period of the control servo is 20ms, the pulse width is 0.5ms
 ~ 2.5ms, and the corresponding position is -90°~ +90°. Here is an
 example of a 180° servo:
 
-.. image:: media/708316fde05c62113a3024e0efb0c237.jpeg
+|image44|
 
 In general, servo has three lines in brown, red and orange. The brown
 wire is grounded, the red one is a positive pole line and the orange one
 is a signal line.
 
-.. image:: media/35084ae289a08e35bdb8c89ceb134ba4.png
+|image45|
 
-.. image:: media/6cbf6f177ea204f7632b872497fde010.png
+|image46|
 
-.. _**3.-Pin**:
+.. _3-pin:
 
 **3. Pin**
 ^^^^^^^^^^
 
-.. container:: table-wrapper
+======================= ==
+The servo of the window 5
+======================= ==
+The servo of the door   13
+======================= ==
 
-   ======================= ==
-   The servo of the window 5
-   ======================= ==
-   The servo of the door   13
-   ======================= ==
-
-.. _**4.-Test-Code**:
+.. _4-test-code-2:
 
 **4. Test Code**
 ^^^^^^^^^^^^^^^^
@@ -1053,19 +1045,19 @@ is a signal line.
 
    }
 
-.. _**5.-Test-Result**:
+.. _5-test-result-2:
 
 **5. Test Result**
 ^^^^^^^^^^^^^^^^^^
 
 The servo of the door turns with the door, back and forth
 
-.. _5.4.10-Project-5.2-Close-the-Window:
+.. _5410-project-52-close-the-window:
 
 5.4.10 Project 5.2 Close the Window
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _**1.-Description**:
+.. _1-description-7:
 
 **1. Description**
 ^^^^^^^^^^^^^^^^^^
@@ -1073,7 +1065,7 @@ The servo of the door turns with the door, back and forth
 We will work to use a servo and a raindrop sensor to make an device
 closing windows automatically when raining.
 
-.. _**2.-Component-Knowledge**:
+.. _2-component-knowledge-2:
 
 **2. Component Knowledge**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1082,7 +1074,7 @@ closing windows automatically when raining.
 area covered by water on the detection surface, the greater the value
 returned (range 0~4096).
 
-.. _**3.-Test-Code**:
+.. _3-test-code-1:
 
 **3. Test Code**
 ^^^^^^^^^^^^^^^^
@@ -1127,7 +1119,7 @@ returned (range 0~4096).
      }
    }
 
-.. _**4.-Test-Result**:
+.. _4-test-result-1:
 
 **4. Test Result**
 ^^^^^^^^^^^^^^^^^^
@@ -1136,12 +1128,12 @@ At first, the window opens automatically, and when you touch the
 raindrop sensor with your hand (which has water on the skin), the window
 will close.
 
-.. _5.4.11-Project-6.1-Control-SK6812:
+.. _5411-project-61-control-sk6812:
 
 5.4.11 Project 6.1 Control SK6812
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _**1.-Description**:
+.. _1-description-8:
 
 **1. Description**
 ^^^^^^^^^^^^^^^^^^
@@ -1156,7 +1148,7 @@ the atmosphere and other scenes.
 
 In this experiment, we will make various lighting effects.
 
-.. _**2.-Component-Knowledge**:
+.. _2-component-knowledge-3:
 
 **2. Component Knowledge**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1172,24 +1164,22 @@ What’s more, the pixel point contains a data latch signal shaping
 amplifier drive circuit and a signal shaping circuit, which effectively
 ensures the color of the pixel point light is highly consistent.
 
-.. image:: media/86e292d0666046b72a1e0e68adfb17e8.png
+|image47|
 
-.. image:: media/c0df93f61c6b9272f62b1847ccfbdb10.png
+|image48|
 
-.. _**3.-Pin**:
+.. _3-pin-1:
 
 **3. Pin**
 ^^^^^^^^^^
 
-.. container:: table-wrapper
+====== ==
+SK6812 26
+====== ==
+\      
+====== ==
 
-   ====== ==
-   SK6812 26
-   ====== ==
-   \      
-   ====== ==
-
-.. _**4.-Test-Code**:
+.. _4-test-code-3:
 
 **4. Test Code**
 ^^^^^^^^^^^^^^^^
@@ -1275,7 +1265,7 @@ ensures the color of the pixel point light is highly consistent.
      }
    }
 
-.. _**5.-Test-Result**:
+.. _5-test-result-3:
 
 **5. Test Result**
 ^^^^^^^^^^^^^^^^^^
@@ -1283,19 +1273,19 @@ ensures the color of the pixel point light is highly consistent.
 The atmosphere lamps of the smart home will display a variety of colors
 and light effects.
 
-.. _5.4.12-Project-6.2-Button:
+.. _5412-project-62-button:
 
 5.4.12 Project 6.2 Button
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _**1.-Description**:
+.. _1-description-9:
 
 **1. Description**
 ^^^^^^^^^^^^^^^^^^
 
 There are two buttons to switch the color of the atmosphere lamp.
 
-.. _**2.-Test-Code**:
+.. _2-test-code-2:
 
 **2. Test Code**
 ^^^^^^^^^^^^^^^^
@@ -1408,7 +1398,7 @@ There are two buttons to switch the color of the atmosphere lamp.
      }
    }
 
-.. _**3.-Test-Result**:
+.. _3-test-result-2:
 
 **3. Test Result**
 ^^^^^^^^^^^^^^^^^^
@@ -1416,19 +1406,19 @@ There are two buttons to switch the color of the atmosphere lamp.
 We can switch the color of the atmosphere lamp by clicking buttons 1 and
 2.
 
-.. _5.4.13-Project-7.1-Control-the-Fan:
+.. _5413-project-71-control-the-fan:
 
 5.4.13 Project 7.1 Control the Fan
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _**1.-Description**:
+.. _1-description-10:
 
 **1. Description**
 ^^^^^^^^^^^^^^^^^^
 
 In this project, we will learn how to make a small fan.
 
-.. _**2.-Component-Knowledge**:
+.. _2-component-knowledge-4:
 
 **2. Component Knowledge**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1436,9 +1426,9 @@ In this project, we will learn how to make a small fan.
 The small fan uses a 130 DC motor and safe fan blades. You can use PWM
 output to control the fan speed.
 
-.. image:: media/33da52918e88862a94035d61a9050f2e.png
+|image49|
 
-.. _**3.-Control-Method**:
+.. _3-control-method:
 
 **3. Control Method**
 ^^^^^^^^^^^^^^^^^^^^^
@@ -1447,33 +1437,25 @@ Two pins are required to control the motor of the fan, one for INA and
 two for INB. The PWM value range is 0~255. When the PWM output of the
 two pins is different, the fan can rotate.
 
-.. container:: table-wrapper
+================== ====================
+INA - INB <= -45   Rotate clockwise
+================== ====================
+INA - INB >= 45    Rotate anticlockwise
+INA == 0, INB == 0 Stop
+================== ====================
 
-   +--------------------+------------------------------------------------+
-   | INA - INB <= -45   | Rotate clockwise                               |
-   +====================+================================================+
-   | INA - INB >= 45    | Rotate                                         |
-   |                    | `anticlockwise <C:/Users/NINGM                 |
-   |                    | EI/AppData/Local/youdao/dict/Application/8.10. |
-   |                    | 7.0/resultui/html/index.html#/javascript:;>`__ |
-   +--------------------+------------------------------------------------+
-   | INA == 0, INB == 0 | Stop                                           |
-   +--------------------+------------------------------------------------+
-
-.. _**4.-Control-Pins**:
+.. _4-control-pins:
 
 **4. Control Pins**
 ^^^^^^^^^^^^^^^^^^^
 
-.. container:: table-wrapper
+=== ==
+INA 19
+=== ==
+INB 18
+=== ==
 
-   === ==
-   INA 19
-   === ==
-   INB 18
-   === ==
-
-.. _**5.-Test-Code**:
+.. _5-test-code-1:
 
 **5. Test Code**
 ^^^^^^^^^^^^^^^^
@@ -1504,16 +1486,14 @@ two pins is different, the fan can rotate.
 
    }
 
-.. _**6.-Test-Result**:
+.. _6-test-result:
 
 **6. Test Result**
 ^^^^^^^^^^^^^^^^^^
 
-The fan will rotate clockwise and
-`anticlockwise <C:/Users/NINGMEI/AppData/Local/youdao/dict/Application/8.10.7.0/resultui/html/index.html#/javascript:;>`__
-at different speeds.
+The fan will rotate clockwise and anticlockwise at different speeds.
 
-.. _5.4.14-Project-7.2-Switch-On-or-Off-the-Fan:
+.. _5414-project-72-switch-on-or-off-the-fan:
 
 5.4.14 Project 7.2 Switch On or Off the Fan
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1521,7 +1501,7 @@ at different speeds.
 One button switches the fan on and the other button controls the speed
 of the fan.
 
-.. _**1.-Test-Code**:
+.. _1-test-code-2:
 
 **1. Test Code**
 ^^^^^^^^^^^^^^^^
@@ -1631,7 +1611,7 @@ of the fan.
      }
    }
 
-.. _**2.-Test-Result**:
+.. _2-test-result-2:
 
 **2. Test Result**
 ^^^^^^^^^^^^^^^^^^
@@ -1640,12 +1620,12 @@ Click button 1, the fan starts to rotate, click button 2, the speed can
 be adjusted(there are three different speeds), press the button 1 again,
 the fan stops.
 
-.. _5.4.15-Project-8.1-Display-Characters:
+.. _5415-project-81-display-characters:
 
 5.4.15 Project 8.1 Display Characters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _**1.-Description**:
+.. _1-description-11:
 
 **1. Description**
 ^^^^^^^^^^^^^^^^^^
@@ -1653,7 +1633,7 @@ the fan stops.
 As we all know, screen is one of the best ways for people to interact
 with electronic devices.
 
-.. _**2.-Component-Knowledge**:
+.. _2-component-knowledge-5:
 
 **2. Component Knowledge**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1661,22 +1641,20 @@ with electronic devices.
 1602 is a line that can display 16 characters. There are two lines,
 which use IIC communication protocol.
 
-.. image:: media/066e093f1711ada67d3309ddc9bdc66e.png
+|image50|
 
-.. _**3.-Control-Pins**:
+.. _3-control-pins:
 
 **3. Control Pins**
 ^^^^^^^^^^^^^^^^^^^
 
-.. container:: table-wrapper
+=== ===
+SDA SDA
+=== ===
+SCL SCL
+=== ===
 
-   === ===
-   SDA SDA
-   === ===
-   SCL SCL
-   === ===
-
-.. _**4.-Test-Code**:
+.. _4-test-code-4:
 
 **4. Test Code**
 ^^^^^^^^^^^^^^^^
@@ -1700,7 +1678,7 @@ which use IIC communication protocol.
      //mylcd.clear();
    }
 
-.. _**5.-Test-Result**:
+.. _5-test-result-4:
 
 **5. Test Result**
 ^^^^^^^^^^^^^^^^^^
@@ -1708,12 +1686,12 @@ which use IIC communication protocol.
 The first line of the LCD1602 shows hello and the second line shows
 keyestudio.
 
-.. _5.4.16-Project-8.2-Dangerous-Gas-Alarm:
+.. _5416-project-82-dangerous-gas-alarm:
 
 5.4.16 Project 8.2 Dangerous Gas Alarm
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _**1.-Description**:
+.. _1-description-12:
 
 **1. Description**
 ^^^^^^^^^^^^^^^^^^
@@ -1721,7 +1699,7 @@ keyestudio.
 When a gas sensor detects a high concentration of dangerous gas, the
 buzzer will sound an alarm and the display will show dangerous.
 
-.. _**2.-Component-Knowledge**:
+.. _2-component-knowledge-6:
 
 **2. Component Knowledge**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1732,9 +1710,9 @@ hydrogen as well as smoke detection. Our sensor leads to digital pin D
 and analog output pin A, which is connected to D as a digital sensor in
 this project.
 
-.. image:: media/4550c4935e6c08e595a1e8707b54b551.png
+|image51|
 
-.. _**3.-Test-Code**:
+.. _3-test-code-2:
 
 **3. Test Code**
 ^^^^^^^^^^^^^^^^
@@ -1806,7 +1784,7 @@ this project.
      }
    }
 
-.. _**4.-Test-Result**:
+.. _4-test-result-2:
 
 **4. Test Result**
 ^^^^^^^^^^^^^^^^^^
@@ -1816,12 +1794,12 @@ sensor detects some dangerous gases, such as carbon monoxide, at a
 certain concentration, the buzzer will sound an alarm and the screen
 displays "dangerous".
 
-.. _5.4.17-Project-9-Temperature-and-Humidity-Tester:
+.. _5417-project-9-temperature-and-humidity-tester:
 
 5.4.17 Project 9 Temperature and Humidity Tester
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _**1.-Component-Knowledge**:
+.. _1-component-knowledge:
 
 **1. Component Knowledge**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1830,86 +1808,82 @@ Its communication mode is serial data and single bus. The temperature
 measurement range is -20 ~ +60℃, accuracy is ±2℃. However, the humidity
 range is 5 ~ 95%RH, the accuracy is ±5%RH.
 
-.. image:: media/0b9c44c3e4f3706638b9cf15871b861c.png
+|image52|
 
-.. _**2.-Control-Pin**:
+.. _2-control-pin-1:
 
 **2. Control Pin**
 ^^^^^^^^^^^^^^^^^^
 
-.. container:: table-wrapper
+=============================== ==
+Temperature and Humidity Sensor 17
+=============================== ==
+\                               
+=============================== ==
 
-   =============================== ==
-   Temperature and Humidity Sensor 17
-   =============================== ==
-   \                               
-   =============================== ==
-
-.. _**3.-Test-Code**:
+.. _3-test-code-3:
 
 **3. Test Code**
 ^^^^^^^^^^^^^^^^
 
 .. code:: c
 
-   //**********************************************************************************
-   /*  
-    * Filename    : xht11
-    * Description : Read the temperature and humidity values of XHT11.
-    * Auther      : http//www.keyestudio.coml
-   */
    #include <Wire.h>
    #include <LiquidCrystal_I2C.h>
    LiquidCrystal_I2C mylcd(0x27,16,2);
-   #include "xht11.h"
-   xht11 xht(17);
+   #include <dht11.h>
 
-   unsigned char dht[4] = {0, 0, 0, 0};//Only the first 32 bits of data are received, not the parity bits
+   // Define the pin constants
+   const int DHT11PIN = 17; // Temperature and humidity sensor pin
+   dht11 DHT11; // Initialize dht11
+
    void setup() {
-     Serial.begin(9600);//Start the serial port monitor and set baud rate to 9600
+     Serial.begin(9600);//Start the serial monitor and set the baud rate to 9600
      mylcd.init();
      mylcd.backlight();
+     mylcd.clear();
    }
 
    void loop() {
-     if (xht.receive(dht)) { //Returns true when checked correctly
-       Serial.print("RH:");
-       Serial.print(dht[0]); //The integral part of humidity, DHT [1] is the fractional part
-       Serial.print("%  ");
-       Serial.print("Temp:");
-       Serial.print(dht[2]); //The integral part of temperature, DHT [3] is the fractional part
-       Serial.println("C");
-       
-       mylcd.setCursor(0, 0);
-       mylcd.print("T = ");
-       mylcd.print(dht[2]);
-       mylcd.setCursor(0, 1);
-       mylcd.print("H = ");
-       mylcd.print(dht[0]);
-       //mylcd.clear();
-       delay(200);
-     } else {    //Read error
-       Serial.println("sensor error");
-     }
-     delay(1000);  //It takes 1000ms to wait for the device to read
+      //Define two temperature and humidity values
+      int Temperature;
+      int Humidity;
+      //Obtain data
+      int chk = DHT11.read(DHT11PIN); 
+      Temperature = DHT11.temperature;
+      Humidity = DHT11.humidity;
+      // Display the temperature information at the corresponding position on the LCD
+      mylcd.setCursor(0, 0);
+      mylcd.print("Temp:");
+      mylcd.setCursor(5, 0);
+      mylcd.print(Temperature); 
+      mylcd.setCursor(8, 0);
+      mylcd.print("C");
+      // Display humidity information at the corresponding position on the LCD
+      mylcd.setCursor(0, 1);
+      mylcd.print("Hum:");
+      mylcd.setCursor(5, 1);
+      mylcd.print(Humidity);
+      mylcd.setCursor(8, 1);
+      mylcd.print("%RH");
+      delay(500);
    }
-   //**********************************************************************************
 
-.. _**4.-Test-Result**:
+.. _4-test-result-3:
 
 **4. Test Result**
 ^^^^^^^^^^^^^^^^^^
 
-The LCD1602 displays the temperature (T = \*\* ° C) and humidity (H =
-\*\* %RH). When you breathe into the T/H sensor, you can see that the
+The LCD1602 displays the temperature (T = \*\* C) and humidity (H = \*\*
+%RH). When you breathe into the T/H sensor, you can see that the
 humidity rises.
 
-.. _5.4.18-Project-10-Open-the-Door:
+.. _5418-project-10-open-the-door:
 
 5.4.18 Project 10 Open the Door
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _**1.-Component-Knowledge**:
+.. _1-component-knowledge-1:
 
 **1. Component Knowledge**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1925,24 +1899,22 @@ card reader. The reader will generate a magnetic field, which can
 produce electricity according to Lenz's law, then the RFID tag will
 supply power, thereby activating the device.
 
-.. image:: media/982ac6a9da0e8f55465ca5a969ac0dfe.png
+|image53|
 
-.. _**2.-Control-Pins**:
+.. _2-control-pins:
 
 **2. Control Pins**
 ^^^^^^^^^^^^^^^^^^^
 
 Use IIC communication
 
-.. container:: table-wrapper
+=== ===
+SDA SDA
+=== ===
+SCL SCL
+=== ===
 
-   === ===
-   SDA SDA
-   === ===
-   SCL SCL
-   === ===
-
-.. _**3.-Test-Code**:
+.. _3-test-code-4:
 
 **3. Test Code**
 ^^^^^^^^^^^^^^^^
@@ -2063,7 +2035,7 @@ Use IIC communication
    }
    //**********************************************************************************
 
-.. _**4.-Test-Result**:
+.. _4-test-result-4:
 
 **4. Test Result**
 ^^^^^^^^^^^^^^^^^^
@@ -2074,7 +2046,7 @@ and set the baud rate to "115200".
 Close the provided card to the RFID induction area, display "error" on
 the LCD1602,but the serial monitor output is as shown in the figure:
 
-.. image:: media/bb.png
+|image54|
 
 Input the "Card UID" from the image into the position shown in the
 figure (remove spaces in "Card UID" and in the serial monitor's **Card
@@ -2082,7 +2054,7 @@ UID**, remove leading **0** only if it appears **before any digits**
 (e.g., ``" 0123"`` → ``"123"``), but keep **0** if it follows a number
 (e.g., ``"601"`` remains ``"601"``).):
 
-.. image:: media/cc.png
+|image55|
 
 Upload the code,close the provided card to the RFID induction area,the
 door will turn and open, and LCD1602 shows "open".
@@ -2090,7 +2062,7 @@ door will turn and open, and LCD1602 shows "open".
 Click button 1 and the door turns and closes. However, when swiping
 another blue induction block, the LCD1602 shows "Error".
 
-.. _5.4.19-Project-11-Morse-Code-Open-the-Door:
+.. _5419-project-11-morse-code-open-the-door:
 
 5.4.19 Project 11 Morse Code Open the Door
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2101,19 +2073,19 @@ marks in different sequences. Now we use it as our password gate.
 
 The Morse code corresponds to the following characters:
 
-.. image:: media/1a5e70c0d091e2617acbfc274827b4fd.png
+|image56|
 
-.. _**1.-Description**:
+.. _1-description-13:
 
 **1. Description**
 ^^^^^^^^^^^^^^^^^^
 
-We use |image2|\ as the correct password. What’s more, there is a button
-library file OneButton, which is very simple to click, double click,
-long press and other functions. For Morse password, click is“.”, long
-press and release is “-”.
+We use |image57|\ as the correct password. What’s more, there is a
+button library file OneButton, which is very simple to click, double
+click, long press and other functions. For Morse password, click is“.”,
+long press and release is “-”.
 
-.. _**2.-Test-Code**:
+.. _2-test-code-3:
 
 **2. Test Code**
 ^^^^^^^^^^^^^^^^
@@ -2216,7 +2188,7 @@ press and release is “-”.
       mylcd.print("close");
    } // longPressStop2
 
-.. _**3.-Test-Result**:
+.. _3-test-result-3:
 
 **3. Test Result**
 ^^^^^^^^^^^^^^^^^^
@@ -2230,18 +2202,18 @@ If other incorrect passwords are entered, the door will not move, the
 LCD1602 will display “error” and then “enter again” 2s later.
 Furthermore, long press button 2 can close the door.
 
-.. _5.4.20-Project-12.1-Smart-Home:
+.. _5420-project-121-wifi-test:
 
-5.4.20 Project 12.1 Smart Home
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+5.4.20 Project 12.1 wifi test
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The easiest way to access the Internet is to use a WiFi to connect. The
 ESP32 main control board comes with a WiFi module, making our smart home
 accessible to the Internet easily.
 
-.. image:: media/f74baff97695aa2ee33a8c19370d2547.png
+|image58|
 
-.. _**1.-Description**:
+.. _1-description-14:
 
 **1. Description**
 ^^^^^^^^^^^^^^^^^^
@@ -2251,15 +2223,30 @@ the hot spot of your phone. After the connection is successful, an
 address will be assigned, which can be used for communication. We will
 print the assigned address in the serial monitor.
 
-.. _**2.-Test-Code**:
+.. _2-test-code-4:
 
 **2. Test Code**
 ^^^^^^^^^^^^^^^^
 
-Note: ssiD and password in the code should be filled with your own WiFi
-name and password.
+⚠️ \ **ATTENTION:**\  After opening the code file, you need to modify
+the WiFi name and passwords that the ESP32 development board needs to
+connect to. Replace ``ChinaNet-2.4G-0DF0`` and ``ChinaNet@233`` with
+your own WiFi name and password respectively. You must do this before
+uploading the code; otherwise, the ESP32 board will not be able to
+connect to the network.
 
-.. image:: media/12bde88b91fc863585343bca76b0daa6.png
+.. code:: c
+
+   const char* ssid = "ChinaNet-2.4G-0DF0";  // Enter your own WiFi name
+   const char* password = "ChinaNet@233"; // Enter your own WiFi passwords
+
+⚠️ **NOTE: Please ensure that the WiFi name and passwords in the code
+are the same as the network connected to your computer, mobile
+phone/tablet, ESP32 development board and router. They must be within
+the same local area network (WiFi).**
+
+⚠️ **NOTE: The WiFi must be on a 2.4Ghz frequency; otherwise, the ESP32
+cannot connect to WiFi.**
 
 .. code:: c
 
@@ -2269,8 +2256,8 @@ name and password.
    #include <WiFiClient.h>
 
    // Network Configuration
-   const char* ssid = "LieBaoWiFi359";
-   const char* password = "wmbd315931";
+   const char* ssid = "ChinaNet-2.4G-0DF0";
+   const char* password = "ChinaNet@233";
    WiFiServer server(80);
 
    // Global Variables
@@ -2387,27 +2374,35 @@ name and password.
      return html;
    }
 
-.. _**3.-Test-Result**:
+.. _3-test-result-4:
 
 **3. Test Result**
 ^^^^^^^^^^^^^^^^^^
 
+⚠️ **Note: The mobile phone or tablet must be connected to the ESP32
+development board via the same WiFi. Otherwise, it will not be able to
+access the control page. Also, when the ESP32 development board uses the
+WiFi function, it consumes a lot of power. An external DC power supply
+is required to meet its power demand for operation. If the power demand
+is not met, the ESP32 board will keep resetting, resulting in the code
+not running normally.**
+
 If the WiFi is connected successfully, the serial monitor will print out
 the assigned IP address.
 
-.. image:: media/978de9389d1f427010faadcfe2669e08.png
+|image59|
 
 Open a browser to access the IP address, then we will read the contents
 of the string S sent out by the client.println(s); in the code.
 
-.. image:: media/cd11492bc27df711a04eafb7696f0dfb.png
+|image60|
 
-.. _5.4.21-Project-12.2-Control-Smart-Home:
+.. _5421-project-122-wifi-control-led-and-fan:
 
-5.4.21 Project 12.2 Control Smart Home
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+5.4.21 Project 12.2 WiFi Control LED and Fan
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _**1.-Description**:
+.. _1-description-15:
 
 **1. Description**
 ^^^^^^^^^^^^^^^^^^
@@ -2417,10 +2412,30 @@ smart home through accessing different strings under the address. There
 is a LCD screen that can print out the IP address, which is much more
 convenient.
 
-.. _**2.-Test-Code**:
+.. _2-test-code-5:
 
 **2. Test Code**
 ^^^^^^^^^^^^^^^^
+
+⚠️ \ **ATTENTION:**\  After opening the code file, you need to modify
+the WiFi name and passwords that the ESP32 development board needs to
+connect to. Replace ``ChinaNet-2.4G-0DF0`` and ``ChinaNet@233`` with
+your own WiFi name and password respectively. You must do this before
+uploading the code; otherwise, the ESP32 board will not be able to
+connect to the network.
+
+.. code:: c
+
+   const char* ssid = "ChinaNet-2.4G-0DF0";  // Enter your own WiFi name
+   const char* password = "ChinaNet@233"; // Enter your own WiFi passwords
+
+⚠️ **NOTE: Please ensure that the WiFi name and passwords in the code
+are the same as the network connected to your computer, mobile
+phone/tablet, ESP32 development board and router. They must be within
+the same local area network (WiFi).**
+
+⚠️ **NOTE: The WiFi must be on a 2.4Ghz frequency; otherwise, the ESP32
+cannot connect to WiFi.**
 
 .. code:: c
 
@@ -2430,8 +2445,8 @@ convenient.
    #include <WiFiClient.h>
 
    String item = "0";
-   const char* ssid = "LieBaoWiFi359";
-   const char* password = "wmbd315931";
+   const char* ssid = "ChinaNet-2.4G-0DF0";
+   const char* password = "ChinaNet@233";
    WiFiServer server(80);
 
    #include <Wire.h>
@@ -2525,34 +2540,40 @@ convenient.
      client.stop();
    }
 
-.. _**3.-Test-Result**:
+.. _3-test-result-5:
 
 **3. Test Result**
 ^^^^^^^^^^^^^^^^^^
 
+⚠️ **Note: The mobile phone or tablet must be connected to the ESP32
+development board via the same WiFi. Otherwise, it will not be able to
+access the control page. Also, when the ESP32 development board uses the
+WiFi function, it consumes a lot of power. An external DC power supply
+is required to meet its power demand for operation. If the power demand
+is not met, the ESP32 board will keep resetting, resulting in the code
+not running normally.**
+
 If the smart home is successfully connected to WiFi, the LCD screen will
 display the assigned address.
 
-.. image:: media/b61227cbbfd35940c62fac04a680484e.png
+|image61|
 
 Accessing address must add / led/on when using the browser, such as my
 address is 192.168.0.129/ led/on. Then the smart home LED lights will be
 turned on, if accessing 192.168.0.129/ led /off, then the LED lights
 will be off.
 
-.. image:: media/2788e68263a21922bd1f2178748db72b.png
+|image62|
 
 When the browser accesses 192.168.0.129/fan/ on, the fan of the smart
 home will be turned on and at 192.168.0.129/fan/ off will be turned off.
 
-.. image:: media/1af74f12f1a18d08dfc4c88f0b65f89b.png
+|image63|
 
-.. _5.4.22-Project-13.1:-Mobile-Phone-APP-test:
+.. _5422-project-131-mobile-phone-app-test:
 
 5.4.22 Project 13.1: Mobile Phone APP test
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. _**Download-APP**:
 
 **Download APP**
 ^^^^^^^^^^^^^^^^
@@ -2562,157 +2583,178 @@ home will be turned on and at 192.168.0.129/fan/ off will be turned off.
 The Android apk installation package is available in our resource pack,
 as shown below:
 
-.. image:: media/e1ad649f98cab75e4619b8fc1ca1e24a.png
+|image64|
 
 Download from Google play:
 
-Please search for keyes IoT home on Google play to download it.
+Please search for **keyes IoT home** on Google play to download it.
 
 **Icon:**
 
-.. image:: media/ce17c63fa9d88b5981779202e4292b36.png
+|image65|
 
-APP
-`Interface <C:/Users/NINGMEI/AppData/Local/youdao/dict/Application/8.10.7.0/resultui/html/index.html#/javascript:;>`__
+**APP Interface**
 
-.. image:: media/8e7c339852876017b41a39d5a0b31323.png
-
-.. _**Download-iOS-APP**:
+|image66|
 
 **Download iOS APP**
-^^^^^^^^^^^^^^^^^^^^
 
-Please search for keyes IoT home on APP Store to download it.
+Please search for **keyes IoT home** on APP Store to download it.
 
-.. _**1.-Description**:
+.. _1-description-16:
 
 **1. Description**
 ^^^^^^^^^^^^^^^^^^
 
 We will use APP to control the smart home LED lights and fan switches.
 
-.. _**2.-Test-Code**:
+.. _2-test-code-6:
 
 **2. Test Code**
 ^^^^^^^^^^^^^^^^
 
+⚠️ \ **ATTENTION:**\  After opening the code file, you need to modify
+the WiFi name and passwords that the ESP32 development board needs to
+connect to. Replace ``ChinaNet-2.4G-0DF0`` and ``ChinaNet@233`` with
+your own WiFi name and password respectively. You must do this before
+uploading the code; otherwise, the ESP32 board will not be able to
+connect to the network.
+
+.. code:: c
+
+   const char* ssid = "ChinaNet-2.4G-0DF0";  // Enter your own WiFi name
+   const char* pwd = "ChinaNet@233"; // Enter your own WiFi passwords
+
+⚠️ **NOTE: Please ensure that the WiFi name and passwords in the code
+are the same as the network connected to your computer, mobile
+phone/tablet, ESP32 development board and router. They must be within
+the same local area network (WiFi).**
+
+⚠️ **NOTE: The WiFi must be on a 2.4Ghz frequency; otherwise, the ESP32
+cannot connect to WiFi.**
+
 .. code:: c
 
    #include <Arduino.h>
+   #ifdef ESP32
    #include <WiFi.h>
-   #include <ESPmDNS.h>
-   #include <WiFiClient.h>
+   #elif defined(ESP8266)
+   #include <ESP8266WiFi.h>
+   #endif
 
-   String item = "0";
-   const char* ssid = "LieBaoWiFi359";
-   const char* password = "wmbd315931";
-   WiFiServer server(80);
+   #include <LiquidCrystal_I2C.h>
+
+   #define fanPin1 19 //IN+ pin
+   #define fanPin2 18 //IN- pin
+   #define led_y 12  //Define the yellow led pin as 12
+
+   const char* ssid = "ChinaNet-2.4G-0DF0";
+   const char* pwd = "ChinaNet@233";
 
    #include <Wire.h>
-   #include <LiquidCrystal_I2C.h>
-   LiquidCrystal_I2C mylcd(0x27,16,2);
-   //#include <analogWrite.h>
-   #define fanPin1 19
-   #define fanPin2 18
-   #define led_y 12                                     // Define yellow LED pin as 12
+   //Initialize the LCD address, columns and rows
+   LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-   void setup() 
-   {
-     Serial.begin(115200);
-     mylcd.init();
-     mylcd.backlight();
+   WiFiServer server(80);  //Initialize the WiFi service
+
+   //Define the variable as the detected value
+   String request;
+
+   unsigned long prevTask = 0;
+
+   void setup() {
+     Serial.begin(9600);
+     //Connect to wifi
+     WiFi.begin(ssid, pwd);
+     //Determine whether it is connected
+     Serial.println("Connecting to WiFi...");
+     while (WiFi.status() != WL_CONNECTED) {
+       delay(1000);
+       Serial.print(".");
+     }
+     delay(1000);
+     //The serial monitor will display the name and IP address of the wireless network
+     Serial.println("Connected to WiFi");
+     Serial.print("WiFi NAME:");
+     Serial.println(ssid);
+     Serial.print("IP:");
+     Serial.println(WiFi.localIP());
+
+     //Initialize the LCD
+     lcd.init();
+     //Turn on the LCD backlight
+     lcd.backlight();
+     //lcd.noBacklight();
+     lcd.clear();
+     //Set the position of the cursor
+     lcd.setCursor(0, 0);
+     //LCD printing
+     lcd.print("IP:");
+     //Set the position of the cursor
+     lcd.setCursor(0, 1);
+     //LCD printing
+     lcd.print(WiFi.localIP());
+
+     //Set pin modes
      pinMode(led_y, OUTPUT);
      pinMode(fanPin1, OUTPUT);
      pinMode(fanPin2, OUTPUT);
-     
-     WiFi.begin(ssid, password);
-     while (WiFi.status() != WL_CONNECTED) 
-     {
-       delay(500);
-       Serial.print(".");
-     }
-     Serial.println("");
-     Serial.print("Connected to ");
-     Serial.println(ssid);
-     Serial.print("IP address: ");
-     Serial.println(WiFi.localIP());
+     //Start the service
      server.begin();
-     Serial.println("TCP server started");
-     MDNS.addService("http", "tcp", 80);
-     mylcd.setCursor(0, 0);
-     mylcd.print("ip:");
-     mylcd.setCursor(0, 1);
-     mylcd.print(WiFi.localIP());                       // LCD displays IP address
    }
 
-   void loop() 
-   {
+   void loop() {
+     //Check whether the client has been connected to the network server
+     //When the client establishes a connection with the server, the "server.available()" function returns a WiFiClient object for client-side communication.
      WiFiClient client = server.available();
-     if (!client) 
-     {
-         return;
+     if (client) {
+       Serial.println("New client connected");
+       while (client.connected()) {
+         //Determine whether the server sends data
+         if (client.available()) {
+           request = client.readStringUntil('s');
+           Serial.print("Received message: ");
+           Serial.println(request);
+         }
+
+         //LED
+         if (request == "a") {
+           digitalWrite(led_y, HIGH);
+         } else if (request == "A") {
+           digitalWrite(led_y, LOW);
+         }
+
+         //fan
+         if (request == "f") {
+           digitalWrite(fanPin1, LOW); //pwm = 0
+           analogWrite(fanPin2, 100); //LEDC channel 5 is bound to the specified left motor output PWM value as 100.
+         } else if (request == "F") {
+           digitalWrite(fanPin1, LOW); //pwm = 0
+           analogWrite(fanPin2, 0); //LEDC channel 5 is bound to the specified left motor output PWM value as 0.
+         }
+
+         request = "";
+       }
+       Serial.println("Client disconnected");
      }
-     while(client.connected() && !client.available())
-     {
-         delay(1);
-     }
-     String req = client.readStringUntil('\r');
-     int addr_start = req.indexOf(' ');
-     int addr_end = req.indexOf(' ', addr_start + 1);
-     if (addr_start == -1 || addr_end == -1) 
-     {
-         Serial.print("Invalid request: ");
-         Serial.println(req);
-         return;
-     }
-     req = req.substring(addr_start + 1, addr_end);
-     item=req;
-     Serial.println(item);
-     String s;
-     if (req == "/")                                   // Browser can read the information sent by client.println(s) when accessing the address
-     {
-         IPAddress ip = WiFi.localIP();
-         String ipStr = String(ip[0]) + '.' + String(ip[1]) + '.' + String(ip[2]) + '.' + String(ip[3]);
-         s = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<!DOCTYPE HTML>\r\n<html>Hello from ESP32 at ";
-         s += ipStr;
-         s += "</html>\r\n\r\n";
-         Serial.println("Sending 200");
-         client.println(s);                            // Send the content of string S. When accessing the E-smart home address using a browser, the information can be read.
-     }
-     if(req == "/led/on")                              // Browser accesses IP address/led/on
-     {
-       client.println("turn on the LED");
-       digitalWrite(led_y, HIGH);
-     }
-     if(req == "/led/off")                             // Browser accesses IP address/led/off
-     {
-       client.println("turn off the LED");
-       digitalWrite(led_y, LOW);
-     }
-     if(req == "/fan/on")                              // Browser accesses IP address/fan/on
-     {
-       client.println("turn on the fan");
-       digitalWrite(fanPin1, LOW);                     // pwm = 0
-       analogWrite(fanPin2, 180);
-     }
-     if(req == "/fan/off")                             // Browser accesses IP address/fan/on
-     {
-       client.println("turn off the fan");
-       digitalWrite(fanPin1, LOW);                     // pwm = 0
-       analogWrite(fanPin2, 0);
-     }
-     //client.print(s);
-     client.stop();
    }
 
-.. _**3.-Test-Result**:
+.. _3-test-result-6:
 
 **3. Test Result**
 ^^^^^^^^^^^^^^^^^^
 
+⚠️ **Note: The mobile phone or tablet must be connected to the ESP32
+development board via the same WiFi. Otherwise, it will not be able to
+access the control page. Also, when the ESP32 development board uses the
+WiFi function, it consumes a lot of power. An external DC power supply
+is required to meet its power demand for operation. If the power demand
+is not met, the ESP32 board will keep resetting, resulting in the code
+not running normally.**
+
 1. Open the APP and select WIFI
 
-.. image:: media/ac7304f39a53b2318825db72e5085753.png
+|image67|
 
 2. APP controls LED and the fan
 
@@ -2720,20 +2762,20 @@ The mobile phone and the smart home must share the same WiFi, or the
 smart home connects to the hotspot of the mobile phone.
 
 APP input IP address (LCD1602 displays the assigned IP address), then
-click connect, the connection is successful if ESP32 IP: 192.168......
+click connect, the connection is successful if ESP32 IP: 192.168.xx.xx
 is displayed.
 
 Next, you can click the LED, then the smart home LED will be turned on.
 Click the fan button and the fan will be turned on, as shown below:
 
-.. image:: media/aba40215ce81fc7c326f6666c67059b8.png
+|image68|
 
-.. _5.4.23-Project-13.2-IoT-Smart-Home:
+.. _5423-project-132-iot-smart-home:
 
 5.4.23 Project 13.2 IoT Smart Home
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _**1.-Description**:
+.. _1-description-17:
 
 **1. Description**
 ^^^^^^^^^^^^^^^^^^
@@ -2749,57 +2791,116 @@ the IP address. Using the phone APP to input the corresponding IP for
 communication is enable to realize the APP control of various functions
 of the smart home.
 
-.. _**2.-Test-Code**:
+.. _2-test-code-7:
 
 **2. Test Code**
 ^^^^^^^^^^^^^^^^
 
+⚠️ \ **ATTENTION:**\  After opening the code file, you need to modify
+the WiFi name and passwords that the ESP32 development board needs to
+connect to. Replace ``ChinaNet-2.4G-0DF0`` and ``ChinaNet@233`` with
+your own WiFi name and password respectively. You must do this before
+uploading the code; otherwise, the ESP32 board will not be able to
+connect to the network.
+
+.. code:: c
+
+   const char* ssid = "ChinaNet-2.4G-0DF0";  // Enter your own WiFi name
+   const char* pwd = "ChinaNet@233"; // Enter your own WiFi passwords
+
+⚠️ **NOTE: Please ensure that the WiFi name and passwords in the code
+are the same as the network connected to your computer, mobile
+phone/tablet, ESP32 development board and router. They must be within
+the same local area network (WiFi).**
+
+⚠️ **NOTE: The WiFi must be on a 2.4Ghz frequency; otherwise, the ESP32
+cannot connect to WiFi.**
+
 ::
 
+   #include <Arduino.h>
+   #ifdef ESP32
    #include <WiFi.h>
-   #include <ESPmDNS.h>
-   #include <WiFiClient.h>
+   #elif defined(ESP8266)
+   #include <ESP8266WiFi.h>
+   #endif
+
+   #include <Wire.h>
    #include <Adafruit_NeoPixel.h>
    #define LED_PIN    26
-   #define LED_COUNT 4                                      // Number of NeoPixels attached
+   #define LED_COUNT 4     // Number of NeoPixels attached
    Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 
-   String item = "0";
-   const char* ssid = "LieBaoWiFi359";
-   const char* password = "wmbd315931";
-   WiFiServer server(80);
+   //Define the variable as the detected value
+   String request;
+   const char* ssid = "ChinaNet-2.4G-0DF0";
+   const char* pwd = "ChinaNet@233";
+   WiFiServer server(80);  //Initialize the WiFi service
 
    #include <LiquidCrystal_I2C.h>
-   LiquidCrystal_I2C mylcd(0x27,16,2);
-   #include "xht11.h"
-   xht11 xht(17);
+   LiquidCrystal_I2C lcd(0x27,16,2);
+
+   #include <dht11.h>
+   #define DHT11PIN 17
+   dht11 DHT11; // Initialize dht11
 
    #include <BuzzerESP32.h>
    #define buzzer_pin 25
-   BuzzerESP32 buzzer(buzzer_pin);                          // GPIO25
+   BuzzerESP32 buzzer(buzzer_pin);   // GPIO25
 
    #define waterPin 34
    #define fanPin1 19
    #define fanPin2 18
-   #define led_y 12                                         // Yellow LED pin definition
+   #define led_y 12           // Yellow LED pin definition
    #define gasPin 23
    #define pyroelectric 14
 
-   unsigned char dht[4] = {0, 0, 0, 0};                    // Only first 32 bits received (no parity bits)
-
    // Servo channels
-   int channel_PWM = 13;
+   int channel_PWM1 = 13;
    int channel_PWM2 = 10;
    int freq_PWM = 50; 
    int resolution_PWM = 10;
    const int PWM_Pin1 = 5;
    const int PWM_Pin2 = 13;
 
-   void setup() 
-   {
-     Serial.begin(115200);
-     mylcd.init();
-     mylcd.backlight();
+   String dataBuffer = "4095,0,0,32,65";
+
+   int Rainwater, gas, pir, t, h;  //Define variables
+   unsigned long prevTask = 0;
+
+   void setup() {
+     Serial.begin(9600);
+     //Connect to wifi
+     WiFi.begin(ssid, pwd);
+     //Determine whether it is connected
+     Serial.println("Connecting to WiFi...");
+     while (WiFi.status() != WL_CONNECTED) {
+       delay(1000);
+       Serial.print(".");
+     }
+     delay(1000);
+     //The serial monitor will display the name and IP address of the wireless network
+     Serial.println("Connected to WiFi");
+     Serial.print("WiFi NAME:");
+     Serial.println(ssid);
+     Serial.print("IP:");
+     Serial.println(WiFi.localIP());
+
+     //Initialize LCD
+     lcd.init();
+     //Turn on the LCD backlight
+     lcd.backlight();
+     //lcd.noBacklight();
+     lcd.clear();
+     //Set the position of the cursor
+     lcd.setCursor(0, 0);
+     //LCD printing
+     lcd.print("IP:");
+     //Set the position of the cursor
+     lcd.setCursor(0, 1);
+     //LCD printing
+     lcd.print(WiFi.localIP());
+
      pinMode(led_y, OUTPUT);
      pinMode(fanPin1, OUTPUT);
      pinMode(fanPin2, OUTPUT);
@@ -2810,212 +2911,210 @@ of the smart home.
 
      pinMode(gasPin, INPUT);
      pinMode(pyroelectric, INPUT);
-     
-     WiFi.begin(ssid, password);
-     while (WiFi.status() != WL_CONNECTED) 
-     {
-       delay(500);
-       Serial.print(".");
-     }
-     Serial.println("");
-     Serial.print("Connected to ");
-     Serial.println(ssid);
-     Serial.print("IP address: ");
-     Serial.println(WiFi.localIP());
+
+     ledcAttach(PWM_Pin1, freq_PWM, resolution_PWM);
+     ledcAttachChannel(PWM_Pin1, freq_PWM, resolution_PWM, channel_PWM1);
+     ledcAttach(PWM_Pin2, freq_PWM, resolution_PWM);
+     ledcAttachChannel(PWM_Pin2, freq_PWM, resolution_PWM, channel_PWM2);
+     ledcWrite(PWM_Pin1, 25);
+     delay(500);
+     ledcWrite(PWM_Pin2, 25);
+     delay(500);
+     //Start the service
      server.begin();
-     Serial.println("TCP server started");
-     MDNS.addService("http", "tcp", 80);
-     mylcd.setCursor(0, 0);
-     mylcd.print("ip:");
-     mylcd.setCursor(0, 1);
-     mylcd.print(WiFi.localIP());                           // Display IP on LCD
    }
 
-   void loop() 
-   {
+   void loop() {
+     //Check whether the client has been connected to the network server
+     //When the client establishes a connection with the server, the "server.available()" function returns a WiFiClient object for client-side communication.
      WiFiClient client = server.available();
-     if (!client) 
-     {
-         return;
-     }
-     while(client.connected() && !client.available())
-     {
-         delay(1);
-     }
-     String req = client.readStringUntil('\r');
-     int addr_start = req.indexOf(' ');
-     int addr_end = req.indexOf(' ', addr_start + 1);
-     if (addr_start == -1 || addr_end == -1) 
-     {
-         Serial.print("Invalid request: ");
-         Serial.println(req);
-         return;
-     }
-     req = req.substring(addr_start + 1, addr_end);
-     item=req;
-     Serial.println(item);
-     String s;
-     if (req == "/")                                       // Browser can read information sent by client.println(s)
-     {
-         IPAddress ip = WiFi.localIP();
-         String ipStr = String(ip[0]) + '.' + String(ip[1]) + '.' + String(ip[2]) + '.' + String(ip[3]);
-         s = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<!DOCTYPE HTML>\r\n<html>ESP32 ip:";
-         s += ipStr;
-         s += "</html>\r\n\r\n";
-         Serial.println("Sending 200");
-         client.println(s);                                // Send string content - readable when accessing smart home address
-     }
-     if(req == "/led/on")                                  // IP address/led/on
-     {
-       client.println("turn on the LED");
-       digitalWrite(led_y, HIGH);
-     }
-     if(req == "/led/off")                                 // IP address/led/off
-     {
-       client.println("turn off the LED");
-       digitalWrite(led_y, LOW);
-     }
-     if(req == "/window/on")
-     {
-       client.println("open the window");
-       ledcWrite(channel_PWM, 100);                        // 2.5ms high pulse (2.5/20*1024) = 180° servo angle
-     }
-     if(req == "/window/off")
-     {
-       client.println("close the window");
-       ledcWrite(channel_PWM, 60);                         // 0.5ms high pulse = 0° servo angle
-     }
-     if(req == "/music/on")
-     {
-       //client.println("play music");
-     }
-     if(req == "/music/off")
-     {
-       client.println("play music");
-       birthday();
-       buzzer.playTone(0,0);
-     }
-     if(req == "/buz/on")
-     {
-       client.println("buzzer");
-       buzzer.playTone(392,250);
-       Serial.println("1");
-     }
-     if(req == "/buz/off")
-     {
-       client.println("off");
-       buzzer.playTone(0,0);
-     }
-     if(req == "/door/on")
-     {
-       client.println("open the door");
-       ledcWrite(channel_PWM2, 120);
-     }
-     if(req == "/door/off")
-     {
-       client.println("close the door");
-       ledcWrite(channel_PWM2, 20);
-     }
-     if(req == "/fan/on")
-     {
-       client.println("turn on the fan");
-       digitalWrite(fanPin1, LOW);                         // pwm = 0
-       ledcWrite(5, 100);                                  // LEDC channel 1 PWM output = 100
-     }
-     if(req == "/fan/off")
-     {
-       client.println("turn off the fan");
-       digitalWrite(fanPin1, LOW);                         // pwm = 0
-       ledcWrite(5, 0);                                    // LEDC channel 1 PWM output = 0
-     }
-     // Color control endpoints follow same pattern...
-     if(req == "/rain/on")
-     {
-       int rainVal = analogRead(waterPin);
-       client.println(rainVal);
-     }
-     if(req == "/rain/off")
-     {
-       client.println("off");
-     }
-     if(req == "/gas/on")
-     {
-       boolean gasVal = analogRead(gasPin);
-       if(gasVal == 0)
-       {
-         client.println("safety");
+     if (client) {
+       Serial.println("New client connected");
+       while (client.connected()) {
+         //Determine whether the server sends data
+         if (client.available()) {
+           request = client.readStringUntil('s');
+           Serial.print("Received message: ");
+           Serial.println(request);
+         }
+         //Obtain all sensor data
+         getSensorsData();
+         //Put all the data into "dataBuffer"
+         dataBuffer = "";
+         dataBuffer += String(Rainwater);
+         dataBuffer += ",";
+         dataBuffer += String(gas);
+         dataBuffer += ",";
+         dataBuffer += String(pir);
+         dataBuffer += ",";
+         dataBuffer += String(t);
+         dataBuffer += ",";
+         dataBuffer += String(h);
+         //Send the data to the server and then transfer it to the application.
+         if (millis() - prevTask >= 1000) {  // Execute every second
+           prevTask = millis();
+           client.print(dataBuffer);
+         }
+
+         delay(500);
+
+         //LED
+         if (request == "a") {
+           digitalWrite(led_y, HIGH);
+         } else if (request == "A") {
+           digitalWrite(led_y, LOW);
+         }
+
+         //window servo
+         if (request == "b") {
+           ledcWrite(PWM_Pin1, 100); //The high level of 20ms is approximately 2.5ms, that is, 2.5/20*1024, and the servo rotates at the specified Angle.
+           delay(500);
+         } else if (request == "B") {
+           ledcWrite(PWM_Pin1, 25);  //The high level of 20ms is approximately 0.5ms, that is, 0.5/20*1024, and the servo rotates at the specified Angle.
+           delay(500);
+         }
+
+         //buzzer plays music
+         if (request == "c") {
+           birthday();
+           buzzer.playTone(0,0);
+         } else if (request == "C") {
+           buzzer.playTone(0,0);
+         }
+
+         //The buzzer sounds
+         if (request == "d") {
+           buzzer.playTone(392,250);
+         } else if (request == "D") {
+           buzzer.playTone(0,0);
+         }
+
+         //door servo
+         if (request == "e") {
+           ledcWrite(PWM_Pin2, 120);
+           delay(500);
+         } else if (request == "E") {
+           ledcWrite(PWM_Pin2, 25);
+           delay(500);
+         }
+    
+         //fan
+         if (request == "f") {
+           digitalWrite(fanPin2, LOW); //pwm = 0
+           analogWrite(fanPin1, 100); //LEDC channel 5 is bound to the specified left motor output PWM value as 100.
+         } else if (request == "F") {
+           digitalWrite(fanPin2, LOW); //pwm = 0
+           analogWrite(fanPin1, 0); //LEDC channel 5 is bound to the specified left motor output PWM value as 0.
+         }
+
+         //SK6812RGB turns on and off its red light
+         if (request == "g") {
+           colorWipe(strip.Color(255,   0,   0), 50);
+         } else if (request == "G") {
+           colorWipe(strip.Color(0,   0,   0), 50);
+         }
+    
+         //SK6812RGB turns on and off its orange light
+         if (request == "h") {
+           colorWipe(strip.Color(200,   100,   0), 50);
+         } else if (request == "H") {
+           colorWipe(strip.Color(0,   0,   0), 50);
+         }
+    
+         //SK6812RGB turns on and off its yellow light
+         if (request == "i") {
+           colorWipe(strip.Color(200,   200,   0), 50);
+         } else if (request == "I") {
+           colorWipe(strip.Color(0,   0,   0), 50);
+         }
+
+         //SK6812RGB turns on and off its green light
+         if (request == "j") {
+           colorWipe(strip.Color(0,   255,   0), 50);
+         } else if (request == "J") {
+           colorWipe(strip.Color(0,   0,   0), 50);
+         }
+    
+         //SK6812RGB turns on and off its blue-green light
+         if (request == "k") {
+           colorWipe(strip.Color(0,   100,   255), 50);
+         } else if (request == "K") {
+           colorWipe(strip.Color(0,   0,   0), 50);
+         }
+
+         //SK6812RGB turns on and off its blue light
+         if (request == "l") {
+           colorWipe(strip.Color(0,   0,   255), 50);
+         } else if (request == "L") {
+           colorWipe(strip.Color(0,   0,   0), 50);
+         }
+    
+         //SK6812RGB turns on and off its purple light
+         if (request == "m") {
+           colorWipe(strip.Color(100,   0,   255), 50);
+         } else if (request == "M") {
+           colorWipe(strip.Color(0,   0,   0), 50);
+         }
+
+         //SK6812RGB turns on and off its white light
+         if (request == "n") {
+           colorWipe(strip.Color(255,   255,   255), 50);
+         } else if (request == "N") {
+           colorWipe(strip.Color(0,   0,   0), 50);
+         }
+
+         //SK6812RGB-sfx1
+         if (request == "o") {
+           rainbow(10);
+         } else if (request == "O") {
+           colorWipe(strip.Color(0,   0,   0), 50);
+         }
+
+         //SK6812RGB-sfx2
+         if (request == "p") {
+           theaterChaseRainbow(50);
+         } else if (request == "P") {
+           colorWipe(strip.Color(0,   0,   0), 50);
+         }
+         request = "";
        }
-       else
-       {
-         client.println("dangerous");
-       }
-     }
-     if(req == "/gas/off")
-     {
-       client.println("off");
-     }
-     if(req == "/body/on")
-     {
-       boolean pyroelectric_val = digitalRead(pyroelectric);
-       if(pyroelectric_val == 1)
-       {
-         client.println("someone");
-       }
-       else
-       {
-         client.println("no one");
-       }
-     }
-     if(req == "/body/off")
-     {
-       client.println("off");
-     }
-     if(req == "/temp/on")
-     {
-       if (xht.receive(dht))                               // Returns true on successful read
-       { 
-         Serial.print("Temp:");
-         Serial.print(dht[2]);                             // Integer part of temperature
-         Serial.println("C");
-         delay(200);
-       } 
-       else                                                // Read error
-       {    
-         Serial.println("sensor error");
-       }
-       client.println(dht[2]);
-       delay(1000);                                        // Wait 1000ms for device read
-     }
-     if(req == "/temp/off")
-     {
-       client.println("off");
-     }
-     if(req == "/humidity/on")
-     {
-       if (xht.receive(dht))                               // Returns true on successful read
-       { 
-         Serial.print("Humidity:");
-         Serial.print(dht[0]);                             // Integer part of humidity
-         Serial.println("%");
-         delay(200);
-       } 
-       else                                                // Read error
-       {    
-         Serial.println("sensor error");
-       }
-       client.println(dht[0]);
-       delay(1000);                                        // Wait 1000ms for device read
-     }
-     if(req == "/humidity/off")
-     {
-       client.println("off");
+       Serial.println("Client disconnected");
      }
    }
 
-   // Birthday melody function
-   void birthday() 
+   void getSensorsData() { 
+      //Obtain data
+      int chk = DHT11.read(DHT11PIN); 
+      t = DHT11.temperature;
+      h = DHT11.humidity;
+         
+      //steam sensor
+      Rainwater = analogRead(waterPin); //read steam sensor analog value and assign it to variable Rainwater
+
+      //gas sensor
+      gas = digitalRead(gasPin); //read gas sensor analog value and assign it to variable gas
+
+      //PIR motion sensor
+      pir = digitalRead(pyroelectric); //read PIR motion sensor analog value and assign it to variable gas
+   }
+
+   //Convert the data into percentages
+   String dataHandle(int data) {
+     // Convert the analog values to percentages
+     int percentage = (data / 4095.0) * 100;
+     // If the converted percentage is greater than 100, output 10.
+     percentage = percentage > 100 ? 100 : percentage;
+     // Six characters are used to store a hexadecimal string, with one serving as the terminator
+     char hexString[3];
+     // Convert the hexadecimal value to a 6-bit hexadecimal string and add leading zeros in front: 0 represents 00, 1 represents 01...
+     sprintf(hexString, "%02X", percentage);
+
+     return hexString;
+   }
+
+   void birthday()
    {
-     buzzer.playTone(294,250);                             // Parameters: frequency, duration
+     buzzer.playTone(294,250);  //The four parameters are frequency, delay, etc
      buzzer.playTone(440,250);
      buzzer.playTone(392,250);
      buzzer.playTone(532,250);
@@ -3036,14 +3135,145 @@ of the smart home.
      buzzer.playTone(532,250);
      buzzer.playTone(587,250);
      buzzer.playTone(532,500);
-     buzzer.playTone(0,0);                                 // Turn off
+     buzzer.playTone(0,0);  //off
    }
 
-   // NeoPixel effect functions (colorWipe, rainbow, theaterChaseRainbow remain unchanged)
+   void colorWipe(uint32_t color, int wait) {
+     for(int i=0; i<strip.numPixels(); i++) { // For each pixel in the strip...
+       strip.setPixelColor(i, color);         // Set the color of the pixels (in RAM)
+       strip.show();                          // Update the stripe to match
+       delay(wait);                           // delay
+     }
+   }
+
+   // The rainbow circulates along the entire band. Transfer the delay time (in milliseconds) between frames.
+   void rainbow(int wait) {
+     for(long firstPixelHue = 0; firstPixelHue < 5*65536; firstPixelHue += 256) {
+       for(int i=0; i<strip.numPixels(); i++) { // For each pixel in strip...
+         int pixelHue = firstPixelHue + (i * 65536L / strip.numPixels());
+         strip.setPixelColor(i, strip.gamma32(strip.ColorHSV(pixelHue)));
+       }
+       strip.show(); // Update strip content
+       delay(wait);  // delay
+     }
+   }
+
+   // Rainbow-enhanced Marquise-style. Transfer delay time (milliseconds) between frames
+   void theaterChaseRainbow(int wait) {
+     int firstPixelHue = 0;     // The first pixel starts from red (hue 0).
+     for(int a=0; a<30; a++) {  // Repeat 30 times...
+       for(int b=0; b<3; b++) { // 'b' counts from 0 to 2...
+         strip.clear();         // Set all pixels in RAM to 0(off)
+         // 'c' is counted starting from 'b' and increments in units of 3...
+         for(int c=b; c<strip.numPixels(); c += 3) {
+           int      hue   = firstPixelHue + c * 65536L / strip.numPixels();
+           uint32_t color = strip.gamma32(strip.ColorHSV(hue)); // color -> RGB
+           strip.setPixelColor(c, color); // Set the value of pixel c to color
+         }
+         strip.show();                // Update strip content
+         delay(wait);                 // delay
+         firstPixelHue += 65536 / 90; // The color wheel of one cycle exceeds 90 frames
+       }
+     }
+   }
+
+.. _3-test-result-7:
 
 **3. Test Result**
+^^^^^^^^^^^^^^^^^^
 
-.. image:: media/a94cd80683c4eecb3c1bcabd4a60747d.png
+⚠️ **Note: The mobile phone or tablet must be connected to the ESP32
+development board via the same WiFi. Otherwise, it will not be able to
+access the control page. Also, when the ESP32 development board uses the
+WiFi function, it consumes a lot of power. An external DC power supply
+is required to meet its power demand for operation. If the power demand
+is not met, the ESP32 board will keep resetting, resulting in the code
+not running normally.**
 
-.. |image1| image:: media/9035a01879f001b75827e908d7dceb2d.png
-.. |image2| image:: media/9491f7768f28ee4901e6fdb83632c27c.png
+A. Enter the IP address in the APP (The allocated IP address will be
+displayed on the LCD1602 or in the serial monitor window of the IDE.)
+
+B. Click "CONNECT" to connect to the IP address.
+
+C. The successful connection is indicated by the word "Connected"
+popping up. Please pay attention to it.
+
+D. After the IP address is connected, click the corresponding button on
+the APP interface to control the corresponding sensor module to work.
+
+|image69|
+
+.. |image1| image:: media/201911d851d2d7fa6e854d6428bb5b67.png
+.. |image2| image:: media/e00562548e84b885ad18510b261ade05.png
+.. |image3| image:: media/6cf6312dc7c7db27794b54d58a8bf80c.png
+.. |image4| image:: media/83a843a56d49e93ec9f99bfb33fee269.png
+.. |image5| image:: media/fac59eb6f401fa9e6ce711bb5f3f62f2.png
+.. |image6| image:: media/0ab58d5303a100e9638be44131a34b51.png
+.. |image7| image:: media/789a5b530a3e6c44687099a219575666.png
+.. |image8| image:: media/378b65e69d5a926721245ecb4d2209a7.png
+.. |image9| image:: media/dc27c46ecc96141df0ff60cf605875f3.png
+.. |image10| image:: media/32e5e41e0c42893596d82c48e8914802.png
+.. |image11| image:: media/789a5b530a3e6c44687099a219575666.png
+.. |image12| image:: media/cd670e08b43572b8b90f11a3d1edd61c.png
+.. |image13| image:: media/bb39b0b271fcdfb85e6a7ff284c290dd.png
+.. |image14| image:: media/58a1317f28e334e6fcdc833bf7161f29.png
+.. |Img| image:: ./media/img-20250603083908.png
+.. |image15| image:: media/dab13b40132ce5c687ca4726b75733f6.png
+.. |image16| image:: media/aa.png
+.. |image17| image:: media/677ff80219f4525f8aea366eec9a03af.png
+.. |image18| image:: media/9035a01879f001b75827e908d7dceb2d.png
+.. |image19| image:: media/843b5bb2d4c1d33c215e8d0c76c07abf.png
+.. |image20| image:: media/82243fba22e2575044b1c29decef18d9.png
+.. |image21| image:: media/d8fe59d73cdbce2afc74b37eb5f8e8c0.png
+.. |image22| image:: media/3d76bbceb5014e1413c7c8d43ea52eb0.png
+.. |image23| image:: media/a6fc83596009c574d8e29ef383748549.png
+.. |image24| image:: media/77c03a9d0b23a0cc760d32095fa08e21.png
+.. |image-20250408105719588| image:: media/image-20250408105719588.png
+.. |image25| image:: media/63eee4c4643c4638a659346edbd2500f.png
+.. |image26| image:: media/c51b1c3d15affa4d754770184d5151df.png
+.. |image27| image:: media/de96ded3dc9582e151dd7713d3ef33a1.png
+.. |image28| image:: media/fafdebb694a110227b53ca6369ebc96a.png
+.. |image29| image:: media/55c6bd90dc3ce4762e2598f76700e978.png
+.. |image30| image:: media/535f31eba84df8664c4566e1b9ecd767.png
+.. |image31| image:: media/7416a8a6aedcae63e931880a1f033db6.png
+.. |image32| image:: media/37972c9e070bd6bcf9cdcb3f84679223.jpeg
+.. |image33| image:: media/dd.png
+.. |image34| image:: media/baef5ce61ba8567f4a18fec16a2e3dae.png
+.. |image-20250329140352208| image:: media/image-20250329140352208.png
+.. |image35| image:: media/fda284b603a4b6b5c14ce3d58788326d.png
+.. |image-20250408110257525| image:: media/image-20250408110257525.png
+.. |image-20230927115910677| image:: media/image-20230927115910677.png
+.. |image36| image:: media/704984700612966b997127cb9bde5c96.jpeg
+.. |image37| image:: media/41f565d4f355abb96e105119660e80ba.png
+.. |image38| image:: media/7b790a6090abe48cc2599d3035d3a151.png
+.. |image39| image:: media/07b8c2accc3f86ab0a853eee8fa3e58b.png
+.. |image40| image:: media/a12e75e3ec7319757051795c827a7b24.png
+.. |image41| image:: media/c1518252606b111bfa66878a2bfcc965.png
+.. |image42| image:: media/e50f0f6c666cdb14857511dccd71ed73.png
+.. |image43| image:: media/2e6fd6b7975ef84ab94eee896161347b.png
+.. |image44| image:: media/708316fde05c62113a3024e0efb0c237.jpeg
+.. |image45| image:: media/35084ae289a08e35bdb8c89ceb134ba4.png
+.. |image46| image:: media/6cbf6f177ea204f7632b872497fde010.png
+.. |image47| image:: media/86e292d0666046b72a1e0e68adfb17e8.png
+.. |image48| image:: media/c0df93f61c6b9272f62b1847ccfbdb10.png
+.. |image49| image:: media/33da52918e88862a94035d61a9050f2e.png
+.. |image50| image:: media/066e093f1711ada67d3309ddc9bdc66e.png
+.. |image51| image:: media/4550c4935e6c08e595a1e8707b54b551.png
+.. |image52| image:: media/0b9c44c3e4f3706638b9cf15871b861c.png
+.. |image53| image:: media/982ac6a9da0e8f55465ca5a969ac0dfe.png
+.. |image54| image:: media/bb.png
+.. |image55| image:: media/cc.png
+.. |image56| image:: media/1a5e70c0d091e2617acbfc274827b4fd.png
+.. |image57| image:: media/9491f7768f28ee4901e6fdb83632c27c.png
+.. |image58| image:: media/f74baff97695aa2ee33a8c19370d2547.png
+.. |image59| image:: media/978de9389d1f427010faadcfe2669e08.png
+.. |image60| image:: media/cd11492bc27df711a04eafb7696f0dfb.png
+.. |image61| image:: media/b61227cbbfd35940c62fac04a680484e.png
+.. |image62| image:: media/2788e68263a21922bd1f2178748db72b.png
+.. |image63| image:: media/1af74f12f1a18d08dfc4c88f0b65f89b.png
+.. |image64| image:: media/e1ad649f98cab75e4619b8fc1ca1e24a.png
+.. |image65| image:: media/ce17c63fa9d88b5981779202e4292b36.png
+.. |image66| image:: media/8e7c339852876017b41a39d5a0b31323.png
+.. |image67| image:: media/ac7304f39a53b2318825db72e5085753.png
+.. |image68| image:: media/aba40215ce81fc7c326f6666c67059b8.png
+.. |image69| image:: media/a94cd80683c4eecb3c1bcabd4a60747d.png
