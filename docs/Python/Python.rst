@@ -5,8 +5,8 @@
 
 .. _61-resource-compression-package:
 
-6.1 Resource compression package\ ` <https://docs.keyestudio.com/projects/KS5009/en/latest/docs/Arduino/arduino.html#resource-compression-package>`__
-------------------------------------------------------------------------------------------------------------------------------------------------------
+6.1 Resource compression package
+--------------------------------
 
 The resource package contains code,libraries,firmware and Thonny
 software.You must have this resourse to continue learing.
