@@ -179,7 +179,7 @@ Components Required
 |image58|
 
 ⚠️ **Special note:** Adjust servo of the window to 0 degree before
-installation*\*
+installation
 
 =========== =====
 Servo       PCB
@@ -189,12 +189,23 @@ Red line    5V
 Orange line GPIO5
 =========== =====
 
+⚠️ **Especially Remind:** The following two methods can be chosen freely
+according to your own situation.
+
 **Method 1：Arduino code**
 
-⚠️ **Special note: Before you write the code and upload it, you must
-install the Arduino IDE, please go to the the link:** `5. Arduino
+⚠️ **Special note:** Before you write the code and upload it, you must
+install the Arduino IDE, please go to the the link: `5. Arduino
 Tutorial <https://docs.keyestudio.com/projects/KS5009/en/latest/docs/Arduino/arduino.html>`__\ ，and
 then to see the part of **5.2 Getting started with Arduino** .
+
+How to get the code ?
+
+In folder **..\\Resource compression package\\arduino Code** , open file
+**Initialization-of-window-servo-angle.ino** , or copy and paste the
+following test code into the Arduino IDE.
+
+|Img|
 
 .. code:: c
 
@@ -216,20 +227,20 @@ then to see the part of **5.2 Getting started with Arduino** .
      // put your main code here, to run repeatedly:
    }
 
-How to get it ?
-
-In folder **..\\Resource compression package\\arduino Code** , open file
-**Initialization-of-window-servo-angle.ino** , or copy and paste the
-above test code into the Arduino IDE.
-
-|Img|
-
 **Method 2：MicroPython code**
 
-⚠️ **Special note: Before you write the code and upload it, you must
-install the MicroPython IDE, please go to the the link:** `6. Python
+⚠️ **Special note:** Before you write the code and upload it, you must
+install the MicroPython IDE, please go to the the link: `6. Python
 tutorial <https://docs.keyestudio.com/projects/KS5009/en/latest/docs/Python/Python.html>`__,
 and then to see the part of **6.2 get starter with Thonny** .
+
+How to get the code?
+
+In folder **..\\Resource compression package\\microPython Code** , open
+file **Initialization-of-window-servo-angle.py** , or copy and paste the
+following test code into the Thonny IDE.
+
+|image59|
 
 .. code:: python
 
@@ -258,14 +269,6 @@ and then to see the part of **6.2 get starter with Thonny** .
    time.sleep(1)
 
    # while True:
-
-How to get it?
-
-In folder **..\\Resource compression package\\microPython Code** , open
-file **Initialization-of-window-servo-angle.py** , or copy and paste the
-above test code into the Thonny IDE.
-
-|image59|
 
 After adjusting the angle of the window servo to 0°, proceed to install
 as shown in the following picture)

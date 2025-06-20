@@ -8,8 +8,8 @@
 5.1 Resource compression package
 --------------------------------
 
-The resource package contains code,libraries,and driver files.You must
-have this resourse to continue learing.
+The resource package contains Code, Libraries, APP and Driver files. You
+must have this resourse to continue learing.
 
 :download:`Resource compression package <./Resource-compression-package.7z>`
 
@@ -158,7 +158,7 @@ install. (add version 3.1.3)!!!Very important
 4 Arduino IDE Setting
 ^^^^^^^^^^^^^^^^^^^^^
 
-Click\ |image18|\ icon，open Arduino IDE.
+Click |image18| icon，open Arduino IDE.
 
 |image19|
 
