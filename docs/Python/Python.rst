@@ -1525,6 +1525,6 @@ the connected WiFi name and assigned IP address.
 .. |image45| image:: media/03fd569d64704a7e9705c1891f4d4856.png
 .. |image46| image:: media/1a5e70c0d091e2617acbfc274827b4fd.png
 .. |image47| image:: media/9491f7768f28ee4901e6fdb83632c27c.png
-.. |image48| image:: media/f74baff97695aa2ee33a8c19370d2547.png
+.. |image48| image:: ./media/img-20250620091803.png
 .. |image49| image:: media/278cbdc272b5cc1a6461a7934eabe5c0.png
 .. |image50| image:: media/8c021cf89562d7ee27a6446f54be17bf.png

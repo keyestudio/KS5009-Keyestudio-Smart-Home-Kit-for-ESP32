@@ -228,7 +228,7 @@ above test code into the Arduino IDE.
 
 ⚠️ **Special note: Before you write the code and upload it, you must
 install the MicroPython IDE, please go to the the link:** `6. Python
-tutorial <https://docs.keyestudio.com/projects/KS5009/en/latest/docs/Python/KS5009-Python.html>`__,
+tutorial <https://docs.keyestudio.com/projects/KS5009/en/latest/docs/Python/Python.html>`__,
 and then to see the part of **6.2 get starter with Thonny** .
 
 .. code:: python
@@ -452,77 +452,127 @@ Prototype
 
 temperature and humidity to io17
 
-|image99|
+3P connection line using short: 15cm
 
-yellow led module to io12
+|image99|
 
 |image100|
 
-steam sensor to the io34
+yellow led module to io12
 
 |image101|
 
-fan (IN- to io18，IN+ to io19)
-
 |image102|
 
-PIR motion sensor to the io14
+steam sensor to the io34
+
+3P connection line using short: 15cm
 
 |image103|
 
-left button module to the io16
-
 |image104|
 
-right button module to the io27
+fan (IN- to io18，IN+ to io19)
+
+Dupont wires used: 4 dupont wires spread out
 
 |image105|
 
-RFID module to the IIC
-
 |image106|
 
-LCD1602 display to the IIC
+PIR motion sensor to the io14
+
+3P connection line using short: 15cm
 
 |image107|
 
-6812RGB LED to the io26
-
 |image108|
 
-gas sensor to the io23
+left button module to the io16
+
+3P connection line using long wire: 20cm
 
 |image109|
 
-buzzer sensor to the io25
-
 |image110|
 
-servo controlling windows to io5
+right button module to the io27
+
+3P connection line using long wire: 20cm
 
 |image111|
 
+|image112|
+
+RFID module to the IIC
+
+The 4P merged line
+
+|image113|
+
+|image114|
+
+LCD1602 display to the IIC
+
+The 4P merged line
+
+|image115|
+
+|image116|
+
+6812RGB LED to the io26
+
+3P connection line using short: 15cm
+
+|image117|
+
+|image118|
+
+gas sensor to the io23
+
+3P connection line using long wire: 20cm
+
+|image119|
+
+|image120|
+
+buzzer sensor to the io25
+
+3P connection line using long wire: 20cm
+
+|image121|
+
+|image122|
+
+servo controlling windows to io5
+
+|image123|
+
+|image124|
+
 servo controlling doors to the io13
 
-|image112|
+|image125|
+
+|image126|
 
 power wiring
 
-|image113|
+|image127|
 
 **Step 20**
 
 Components Required
 
-|image114|
+|image128|
 
 Installation Diagram
 
-|image115|
+|image129|
 
 Prototype
 
-|image116|
+|image130|
 
 .. |image1| image:: media/A1.jpeg
 .. |image2| image:: media/Wooden-Board.jpeg
@@ -624,21 +674,35 @@ Prototype
 .. |image96| image:: media/A57.png
 .. |image97| image:: media/A58.png
 .. |image98| image:: media/A59.png
-.. |image99| image:: media/A60.png
-.. |image100| image:: media/A61.png
-.. |image101| image:: media/A62.png
-.. |image102| image:: media/A63.png
-.. |image103| image:: media/A64.png
-.. |image104| image:: media/A65.png
-.. |image105| image:: media/A66.png
-.. |image106| image:: media/A67.png
-.. |image107| image:: media/A68.png
-.. |image108| image:: media/A69.png
-.. |image109| image:: media/A70.png
-.. |image110| image:: media/A71.png
-.. |image111| image:: media/A72.png
-.. |image112| image:: media/A73.png
-.. |image113| image:: media/A74.jpeg
-.. |image114| image:: media/A75.png
-.. |image115| image:: media/A76.png
-.. |image116| image:: media/A77.png
+.. |image99| image:: ./media/A60-1.png
+.. |image100| image:: media/A60.png
+.. |image101| image:: ./media/A61-1.png
+.. |image102| image:: media/A61.png
+.. |image103| image:: ./media/A62-1.png
+.. |image104| image:: media/A62.png
+.. |image105| image:: ./media/A63-1.png
+.. |image106| image:: media/A63.png
+.. |image107| image:: ./media/A64-1.png
+.. |image108| image:: media/A64.png
+.. |image109| image:: ./media/A65-1.png
+.. |image110| image:: media/A65.png
+.. |image111| image:: ./media/A66-1.png
+.. |image112| image:: media/A66.png
+.. |image113| image:: ./media/A67-1.png
+.. |image114| image:: media/A67.png
+.. |image115| image:: ./media/A68-1.png
+.. |image116| image:: media/A68.png
+.. |image117| image:: ./media/A69-1.png
+.. |image118| image:: media/A69.png
+.. |image119| image:: ./media/A70-1.png
+.. |image120| image:: media/A70.png
+.. |image121| image:: ./media/A71-1.png
+.. |image122| image:: media/A71.png
+.. |image123| image:: ./media/A72-1.png
+.. |image124| image:: media/A72.png
+.. |image125| image:: ./media/A73-1.png
+.. |image126| image:: media/A73.png
+.. |image127| image:: media/A74.jpeg
+.. |image128| image:: media/A75.png
+.. |image129| image:: media/A76.png
+.. |image130| image:: media/A77.png

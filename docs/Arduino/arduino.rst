@@ -56,10 +56,10 @@ enter download page, as shown below:
 
 |image4|
 
-⚠️ **Special reminder: If you cannot find the Arduino IDE in the
+⚠️ **Special reminder:** If you cannot find the Arduino IDE in the
 software on the aforementioned official website, you can click on this
-link：\ **\ https://www.arduino.cc/en/software **to directly access the
-Arduino IDE download page.**
+link：\ https://www.arduino.cc/en/software to directly access the
+Arduino IDE download page.
 
 There are various versions of IDE for Arduino. Just download a version
 compatible with your system. Here we will show you how to download and
@@ -2575,21 +2575,24 @@ home will be turned on and at 192.168.0.129/fan/ off will be turned off.
 5.4.22 Project 13.1: Mobile Phone APP test
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Download APP**
-^^^^^^^^^^^^^^^^
+.. _1-download-app:
+
+**1. Download APP**
+^^^^^^^^^^^^^^^^^^^
 
 **Android APP：**
 
-The Android apk installation package is available in our resource pack,
-as shown below:
+**Method One：** The Android apk installation package is available in
+our resource pack, as shown below:
 
 |image64|
 
-Download from Google play:
+You can transfer Android apk to your mobile phone via a USB cable, and
+then install it.
+
+**Method Two：** Download from Google play:
 
 Please search for **keyes IoT home** on Google play to download it.
-
-**Icon:**
 
 |image65|
 
@@ -2601,16 +2604,22 @@ Please search for **keyes IoT home** on Google play to download it.
 
 Please search for **keyes IoT home** on APP Store to download it.
 
-.. _1-description-16:
+|image67|
 
-**1. Description**
+**APP Interface**
+
+|image68|
+
+.. _2-description:
+
+**2. Description**
 ^^^^^^^^^^^^^^^^^^
 
 We will use APP to control the smart home LED lights and fan switches.
 
-.. _2-test-code-6:
+.. _3-test-code-5:
 
-**2. Test Code**
+**3. Test Code**
 ^^^^^^^^^^^^^^^^
 
 ⚠️ \ **ATTENTION:**\  After opening the code file, you need to modify
@@ -2739,9 +2748,9 @@ cannot connect to WiFi.**
      }
    }
 
-.. _3-test-result-6:
+.. _4-test-result-5:
 
-**3. Test Result**
+**4. Test Result**
 ^^^^^^^^^^^^^^^^^^
 
 ⚠️ **Note: The mobile phone or tablet must be connected to the ESP32
@@ -2754,7 +2763,7 @@ not running normally.**
 
 1. Open the APP and select WIFI
 
-|image67|
+|image69|
 
 2. APP controls LED and the fan
 
@@ -2768,22 +2777,21 @@ is displayed.
 Next, you can click the LED, then the smart home LED will be turned on.
 Click the fan button and the fan will be turned on, as shown below:
 
-|image68|
+|image70|
 
 .. _5423-project-132-iot-smart-home:
 
 5.4.23 Project 13.2 IoT Smart Home
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _1-description-17:
+.. _1-description-16:
 
 **1. Description**
 ^^^^^^^^^^^^^^^^^^
 
-The IOT smart home connects to the family WiFi through
-
-WiFi, and the mobile phone used for operation should also be connected
-to the same WiFi.
+The IOT smart home connects to the family WiFi through WiFi, and the
+mobile phone used for operation should also be connected to the same
+WiFi.
 
 What’s more, the smart home also can connect to the hotspot of the
 mobile phone. If the connection is successful, the LCD1602 will display
@@ -2791,7 +2799,7 @@ the IP address. Using the phone APP to input the corresponding IP for
 communication is enable to realize the APP control of various functions
 of the smart home.
 
-.. _2-test-code-7:
+.. _2-test-code-6:
 
 **2. Test Code**
 ^^^^^^^^^^^^^^^^
@@ -3177,7 +3185,7 @@ cannot connect to WiFi.**
      }
    }
 
-.. _3-test-result-7:
+.. _3-test-result-6:
 
 **3. Test Result**
 ^^^^^^^^^^^^^^^^^^
@@ -3201,7 +3209,7 @@ popping up. Please pay attention to it.
 D. After the IP address is connected, click the corresponding button on
 the APP interface to control the corresponding sensor module to work.
 
-|image69|
+|image71|
 
 .. |image1| image:: media/201911d851d2d7fa6e854d6428bb5b67.png
 .. |image2| image:: media/e00562548e84b885ad18510b261ade05.png
@@ -3265,15 +3273,17 @@ the APP interface to control the corresponding sensor module to work.
 .. |image55| image:: media/cc.png
 .. |image56| image:: media/1a5e70c0d091e2617acbfc274827b4fd.png
 .. |image57| image:: media/9491f7768f28ee4901e6fdb83632c27c.png
-.. |image58| image:: media/f74baff97695aa2ee33a8c19370d2547.png
+.. |image58| image:: ./media/img-20250620091221.png
 .. |image59| image:: media/978de9389d1f427010faadcfe2669e08.png
 .. |image60| image:: media/cd11492bc27df711a04eafb7696f0dfb.png
 .. |image61| image:: media/b61227cbbfd35940c62fac04a680484e.png
 .. |image62| image:: media/2788e68263a21922bd1f2178748db72b.png
 .. |image63| image:: media/1af74f12f1a18d08dfc4c88f0b65f89b.png
 .. |image64| image:: media/e1ad649f98cab75e4619b8fc1ca1e24a.png
-.. |image65| image:: media/ce17c63fa9d88b5981779202e4292b36.png
+.. |image65| image:: ./media/img-20250619170100.png
 .. |image66| image:: media/8e7c339852876017b41a39d5a0b31323.png
-.. |image67| image:: media/ac7304f39a53b2318825db72e5085753.png
-.. |image68| image:: media/aba40215ce81fc7c326f6666c67059b8.png
-.. |image69| image:: media/a94cd80683c4eecb3c1bcabd4a60747d.png
+.. |image67| image:: ./media/img-20250619170100.png
+.. |image68| image:: media/8e7c339852876017b41a39d5a0b31323.png
+.. |image69| image:: media/ac7304f39a53b2318825db72e5085753.png
+.. |image70| image:: media/aba40215ce81fc7c326f6666c67059b8.png
+.. |image71| image:: media/a94cd80683c4eecb3c1bcabd4a60747d.png
