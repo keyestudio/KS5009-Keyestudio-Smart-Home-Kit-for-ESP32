@@ -6,4 +6,4 @@
 
    docs/index.rst
    docs/Arduino/arduino.rst
-   docs/Python/KS5009-Python.rst
+   docs/Python/Python.rst
