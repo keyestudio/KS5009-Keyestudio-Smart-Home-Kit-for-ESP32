@@ -1,21 +1,21 @@
-### Proyecto 12: WiFi
+### Projet 12 : WiFi
 
-La forma más fácil de acceder a Internet es usar WiFi para conectarse. La placa de control principal ESP32 viene con un módulo WiFi, lo que hace que nuestra casa inteligente sea accesible a Internet fácilmente.
+La façon la plus simple d'accéder à Internet est d'utiliser une connexion WiFi. La carte principale ESP32 est équipée d'un module WiFi, ce qui rend notre maison intelligente facilement accessible depuis Internet.
 
-![imagen48](../media/img-20250620091803.png)
+![image48](../media/img-20250620091803.png)
 
 
-#### Proyecto 12.1 Estación WiFi
+#### Projet 12.1 : Station WiFi
 
-**Descripción**
+**Description**
 
-Conectamos la casa inteligente a una LAN, que es el WiFi de tu hogar o el punto de acceso de tu teléfono. Después de que la conexión sea exitosa, se asignará una dirección. Imprimiremos la dirección asignada en la consola (shell).
+Nous connectons la maison intelligente à un réseau local (LAN), c'est-à-dire au WiFi de votre domicile ou au hotspot de votre téléphone. Après une connexion réussie, une adresse sera attribuée. Nous afficherons l'adresse attribuée dans la console.
 
-**Código de prueba**
+**Code de test**
 
-Nota: ssiD y password en el código deben rellenarse con el nombre y la contraseña de tu WiFi.
+Remarque : ssiD et password dans le code doivent être remplis avec le nom et le mot de passe de votre propre WiFi.
 
-![imagen49](../media/278cbdc272b5cc1a6461a7934eabe5c0.png)
+![image49](../media/278cbdc272b5cc1a6461a7934eabe5c0.png)
 
 ```python
 import time
@@ -46,8 +46,8 @@ try:
 except:
     sta_if.disconnect()
 ```
-**Resultado de la prueba**
+**Résultat du test**
 
-Si el WiFi se conecta correctamente, el monitor serie imprimirá el nombre del WiFi conectado y la dirección IP asignada.
+Si le WiFi est connecté avec succès, le moniteur série affichera le nom du WiFi connecté et l'adresse IP attribuée.
 
-![imagen50](../media/8c021cf89562d7ee27a6446f54be17bf.png)
+![image50](../media/8c021cf89562d7ee27a6446f54be17bf.png)

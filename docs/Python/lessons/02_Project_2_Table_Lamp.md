@@ -1,29 +1,29 @@
-### Proyecto 2: Lámpara de mesa
+### Projet 2 : Lampe de table
 
-**Descripción**
+**Description**
 
-La lámpara de mesa común usa luces LED y botones, que permiten encender y apagar la luz pulsando el botón.
+La lampe de table courante utilise des LED et des boutons, qui peuvent contrôler l'allumage et l'extinction de la lumière en appuyant sur le bouton.
 
-**Principio del botón**
+**Principe du bouton**
 
-El módulo de botón es un sensor digital, que solo puede leer 0 o 1. Cuando el módulo no está pulsado, está en un estado de nivel alto, es decir, 1; cuando se pulsa, está en nivel bajo 0.
+Le module de bouton est un capteur numérique, qui ne peut lire que 0 ou 1. Lorsque le module n'est pas pressé, il est à un état de niveau haut, c'est-à-dire 1 ; lorsqu'il est pressé, il est à un niveau bas 0.
 
-![imagen22](../media/41f565d4f355abb96e105119660e80ba.png)
+![image22](../media/41f565d4f355abb96e105119660e80ba.png)
 
-**Pines del botón**
+**Broches du bouton**
 
-| **Botón 1** | **16** |
+| **Bouton 1** | **16** |
 | --- | --- |
-| **Botón 2** | **27** |
+| **Bouton 2** | **27** |
 
 
-#### Proyecto 2.1 Leer el botón
+#### Projet 2.1 Lire le bouton
 
-**Descripción**
+**Description**
 
-Vamos a leer el valor de estado del botón y mostrarlo en el monitor serie para verlo de forma intuitiva.
+Nous allons lire la valeur d'état du bouton et l'afficher dans le moniteur série, afin de le voir de manière intuitive.
 
-**Código de prueba**
+**Test Code**
 
 ```python
 from machine import Pin
@@ -39,22 +39,22 @@ while True:
     print("button2 =",btnVal2)
     time.sleep(0.1) #delay 0.1s
 ```
-**Resultado de la prueba**
+**Résultat du test**
 
-Haz clic en el botón Run, entonces podrás ver los valores de estado de button1 y button2 impresos en el shell. Pulsa el botón del hogar inteligente y verás el cambio de los valores de estado.
+Cliquez sur le bouton run, puis vous pourrez voir les valeurs d'état de button1 et button 2 imprimées dans le shell. Appuyez sur le bouton, et vous verrez le changement des valeurs d'état.
 
-![imagen23](../media/1b984da67c0e89a72a9601c39362567d.png)
+![image23](../media/1b984da67c0e89a72a9601c39362567d.png)
 
 
-#### Proyecto 2.2. Lámpara de mesa
+#### Projet 2.2. Lampe de table
 
-**Descripción**
+**Description**
 
-Para una lámpara de mesa simple y común, al pulsar el botón se encenderá; al pulsarlo de nuevo, la lámpara se apagará.
+Pour une lampe de table simple, appuyez sur le bouton pour l'allumer, appuyez de nouveau pour l'éteindre.
 
-**Código de prueba**
+**Test Code**
 
-Calculando las veces que se ha pulsado el botón y tomando el resto al dividir por 2, se pueden obtener los dos valores de estado 0 o 1.
+En calculant le nombre de fois que le bouton a été pressé et en prenant le reste de la division par 2, vous obtenez 0 ou 1, deux états possibles.
 
 ```python
 from machine import Pin
@@ -81,8 +81,8 @@ while True:
         led.value(0)
     time.sleep(0.1) #delay 0.1s
 ```
-**Resultado de la prueba**
+**Résultat du test**
 
-El shell imprimirá el número de veces que se ha pulsado el botón; al pulsarlo una vez, el LED se encenderá; al pulsarlo de nuevo, se apagará.
+Le shell affichera le nombre de fois où le bouton a été pressé ; appuyez une fois sur le bouton, la LED s'allumera, appuyez de nouveau, elle s'éteindra.
 
-![imagen24](../media/1bc079eabd93cb2e8a8e15f0ab7f1367.png)
+![image24](../media/1bc079eabd93cb2e8a8e15f0ab7f1367.png)

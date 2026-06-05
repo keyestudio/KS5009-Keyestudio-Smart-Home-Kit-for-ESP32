@@ -1,39 +1,39 @@
-### Proyecto 10: Módulo RFID RC522
+### Projet 10 : Module RFID RC522
 
-**Conocimientos del componente**
+**Informations sur le composant**
 
-Radio frequency identification, el lector de tarjetas está compuesto por un módulo de radiofrecuencia y un campo magnético de alto nivel. El transpondedor Tag es un dispositivo sensor, que no contiene una batería. Solo contiene pequeños chips de circuitos integrados y medios para almacenar datos y antenas para recibir y transmitir señales.
+L'identification par radiofréquence, le lecteur de cartes est composé d'un module radiofréquence et d'un champ magnétique de haut niveau. Le transpondeur Tag est un dispositif de détection, qui ne contient pas de batterie. Il contient uniquement de minuscules puces de circuit intégré et des supports pour le stockage des données ainsi que des antennes pour recevoir et transmettre les signaux.
 
-Para leer los datos en la etiqueta, primero colóquela dentro del alcance de lectura del lector de tarjetas. El lector generará un campo magnético, que puede producir electricidad según la ley de Lenz, entonces la etiqueta RFID suministrará energía, activando el dispositivo.
+Pour lire les données dans le tag, placez-le d'abord dans la portée de lecture du lecteur de cartes. Le lecteur va générer un champ magnétique, qui peut produire de l'électricité selon la loi de Lenz, puis le tag RFID alimentera le dispositif, activant ainsi l'appareil.
 
-![imagen40](../media/982ac6a9da0e8f55465ca5a969ac0dfe.png)
+![image40](../media/982ac6a9da0e8f55465ca5a969ac0dfe.png)
 
-**Pines de control**
+**Broches de contrôle**
 
-Usar comunicación IIC
+Utiliser la communication IIC
 
 | SDA | SDA |
 | --- | --- |
 | SCL | SCL |
 
 
-#### Proyecto 10.1 Abrir la puerta
+#### Projet 10.1 Ouvrir la porte
 
-Abra la carpeta donde se encuentran mfrc522_config.py , soft_iic.py y mfrc522_i2c.py
+Ouvrez le dossier où se trouvent mfrc522_config.py, soft_iic.py et mfrc522_i2c.py
 
-Abra "Thonny", haga clic en "This computer" → "D:" → "2. Python Projects" → "pj10_rc522_RFID". Seleccione "mfrc522_config.py", haga clic derecho y seleccione "\ **Subir a /**\ ", espere a que "mfrc522_config.py" se cargue en ESP32; y seleccione "soft_iic.py", haga clic derecho y seleccione "\ **Subir a /**\ ", espere a que "soft_iic.py" se cargue en ESP32; y luego seleccione "mfrc522_i2c.py", haga clic derecho y seleccione "\ **Subir a /**\ ", espere a que "mfrc522_i2c.py" se cargue en ESP32.
+Ouvrez “Thonny”, cliquez sur “Cet ordinateur”→“D:”→“2. Python Projects”→“pj10_rc522_RFID”. Sélectionnez “mfrc522_config.py”, faites un clic droit et sélectionnez “\ **Téléverser vers /**\ ”, attendez que “mfrc522_config.py” soit téléversé sur ESP32 ; sélectionnez ensuite “soft_iic.py”, faites un clic droit et sélectionnez “\ **Téléverser vers /**\ ”, attendez que “soft_iic.py” soit téléversé sur ESP32 ; puis sélectionnez “mfrc522_i2c.py”, faites un clic droit et sélectionnez “\ **Téléverser vers /**\ ”, attendez que “mfrc522_i2c.py” soit téléversé sur ESP32.
 
-![imagen41](../media/img-20250603132607.png)
+![image41](../media/img-20250603132607.png)
 
-![imagen42](../media/img-20250603132647.png)
+![image42](../media/img-20250603132647.png)
 
-![imagen43](../media/img-20250603132729.png)
+![image43](../media/img-20250603132729.png)
 
-Los nombres guardados son mfrc522_config.py , soft_iic.py y mfrc522_i2c.py.
+Les noms enregistrés sont mfrc522_config.py, soft_iic.py et mfrc522_i2c.py.
 
-![imagen44](../media/img-20250603132756.png)
+![image44](../media/img-20250603132756.png)
 
-**Código de prueba**
+**Code de test**
 
 ```python
 from machine import Pin, PWM,I2C, Pin
@@ -76,8 +76,8 @@ while True:
         print("close")
     time.sleep(1)
 ```
-**Resultado de la prueba**
+**Résultat du test**
 
-Acerca la tarjeta proporcionada al área de inducción RFID, la puerta girará y se abrirá, y la consola muestra "open". Haga clic en el botón 1 y la puerta gira y se cierra. Sin embargo, al pasar otro bloque de inducción azul, la consola muestra "Error".
+Approchez la carte fournie de la zone d'induction RFID, la porte tournera et s'ouvrira, et la console affiche "open". Appuyez sur le bouton 1 et la porte tourne et se ferme. Cependant, en passant un autre bloc d'induction bleu, la console affiche "Error".
 
-![imagen45](../media/03fd569d64704a7e9705c1891f4d4856.png)
+![image45](../media/03fd569d64704a7e9705c1891f4d4856.png)

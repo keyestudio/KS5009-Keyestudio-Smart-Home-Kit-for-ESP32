@@ -1,21 +1,21 @@
-### Proyecto 9: Sensor de Temperatura y Humedad
+### Projet 9 : Capteur de température et d'humidité
 
-**Información del componente**
+**Informations sur le composant**
 
-Su modo de comunicación es datos seriales y bus único. El rango de medición de temperatura es -20 ~ +60℃, la precisión es ±2℃. El rango de humedad es 5 ~ 95%RH, la precisión es ±5%RH.
+Son mode de communication est des données série et un bus unique. La plage de mesure de la température est de -20 à +60℃, précision ±2℃. La plage d'humidité est de 5 à 95%RH, précision ±5%RH.
 
-![imagen39](../media/0b9c44c3e4f3706638b9cf15871b861c.png)
+![image39](../media/0b9c44c3e4f3706638b9cf15871b861c.png)
 
-**Pin de control**
+**Broche de contrôle**
 
-| Sensor de Temperatura y Humedad | 17 |
+| Capteur de température et d'humidité | 17 |
 | --- | --- |
 | \ |   |
 
 
-#### Proyecto 9.1 Probador de Temperatura y Humedad
+#### Projet 9.1 Testeur de température et d'humidité
 
-**Código de prueba**
+**Code de test**
 
 ```python
 # Import machine, time and dht modules.
@@ -45,6 +45,6 @@ while True:
     lcd.putstr('H= {}'.format(DHT.humidity()))
     time.sleep_ms(1000)
 ```
-**Resultado de la prueba**
+**Résultat du test**
 
-La LCD1602 muestra la temperatura (T = ** ° C) y la humedad (H = ** %RH). Cuando respiras sobre el sensor de T/H, puedes ver que la humedad aumenta.
+Le LCD1602 affiche la température (T = \*\* ° C) et l'humidité (H = \*\* %RH). Lorsque vous soufflez sur le capteur T/H, vous pouvez voir que l'humidité augmente.

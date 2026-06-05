@@ -1,19 +1,19 @@
-### Proyecto 11: Código Morse
+### Projet 11 : Code Morse
 
-El código Morse, también conocido como contraseña Morse, es un código de señales de encendido y apagado que expresa diferentes letras, números y signos de puntuación en distintas secuencias. Ahora lo usamos como nuestro control de acceso por contraseña.
+Le code Morse, également appelé mot de passe Morse, est un code de signalisation constitué d'impulsions courtes et longues qui permet d'exprimer différentes lettres, chiffres et signes de ponctuation selon des séquences différentes. Nous l'utilisons maintenant comme notre porte d'accès par mot de passe.
 
-La correspondencia del código Morse con los siguientes caracteres:
+Le code Morse correspond aux caractères suivants :
 
-![imagen46](../media/1a5e70c0d091e2617acbfc274827b4fd.png)
+![tableau du code Morse](../media/1a5e70c0d091e2617acbfc274827b4fd.png)
 
 
-#### Proyecto 11.1 Abrir la puerta con Código Morse
+#### Projet 11.1 : Ouverture de la porte par code Morse
 
-**Descripción**
+**Description**
 
-Usamos ![imagen47](../media/9491f7768f28ee4901e6fdb83632c27c.png)\ como la contraseña correcta. Además, existe un archivo de biblioteca de botones OneButton, que es muy simple para clic, doble clic, pulsación larga y otras funciones. Para la contraseña Morse, el clic es “.”, y la pulsación larga y liberación es “-”.
+Nous utilisons ![mot de passe correct](../media/9491f7768f28ee4901e6fdb83632c27c.png)\ comme mot de passe correct. De plus, il existe un fichier de bibliothèque OneButton, qui permet très simplement le clic, le double-clic, l'appui long et d'autres fonctions. Pour le mot de passe Morse, un clic correspond à « . », un appui long suivi du relâchement correspond à « - ».
 
-**Test Code**
+**Code de test**
 
 ```python
 # Import machine, time and dht modules.
@@ -80,8 +80,8 @@ while True:
             lcd.putstr("enter again")
             password = ""  # Clear password
 ```
-**Test Result**
+**Résultat du test**
 
-Al principio, la LCD1602 muestra "Enter password", luego haga clic o mantenga pulsado el botón 1 para introducir la contraseña. Si ingresamos la contraseña correcta "-.-", entonces pulse el botón 2, la puerta se abrirá y la LCD1602 mostrará "open".
+Au départ, le LCD1602 affiche « Entrez le mot de passe », puis effectuez un clic ou un appui long sur le bouton 1 pour saisir le mot de passe. Si nous saisissons le mot de passe correct « -.- », puis appuyons sur le bouton 2, la porte s'ouvrira et le LCD1602 affichera « ouvert ».
 
-Si se ingresan otras contraseñas incorrectas, la puerta permanecerá cerrada y la LCD1602 mostrará "error", que mostrará "enter again" 2 segundos después.
+Si d'autres mots de passe incorrects sont saisis, la porte restera fermée et le LCD1602 affichera « erreur », puis affichera « entrez à nouveau » 2 s plus tard.

@@ -1,33 +1,33 @@
-### Proyecto 6: Lámpara ambiental
+### Projet 6 : Lampe d'ambiance
 
-**Descripción**
+**Description**
 
-La lámpara ambiental de la casa inteligente está compuesta por 4 LEDs SK6812RGB. El LED RGB pertenece a un módulo luminoso sencillo, que puede ajustar el color para producir el efecto de iluminación de diferentes colores. Además, puede usarse ampliamente en edificios, puentes, carreteras, jardines, patios, suelos y otros campos de iluminación decorativa y disposición de escenarios, en Navidad, Halloween, San Valentín, Pascua, Día Nacional y otras festividades o escenas ambientales.
+La lampe d'ambiance de la maison intelligente est composée de 4 LED SK6812RGB. La LED RGB est un module lumineux simple, qui peut ajuster la couleur pour produire des effets lumineux de différentes couleurs. De plus, elle peut être largement utilisée dans les bâtiments, ponts, routes, jardins, cours, étages et autres domaines d'éclairage décoratif et d'aménagement de lieux, ainsi que pour créer des ambiances lors de Noël, Halloween, la Saint-Valentin, Pâques, la Fête nationale et d'autres festivités ou scènes.
 
-En este experimento, haremos varios efectos de iluminación.
+Dans cette expérience, nous allons réaliser divers effets d'éclairage.
 
-**Conocimientos del componente**
+**Connaissances sur les composants**
 
-A partir del diagrama esquemático, podemos ver que estos cuatro LEDs RGB están conectados en serie. De hecho, no importa cuántos sean, podemos usar un pin para controlar un LED RGB y hacer que muestre cualquier color. Cada RGBLED es un píxel independiente, compuesto por los colores R, G y B, que puede alcanzar 256 niveles de brillo y completar la visualización de color verdadero completa de 16777216 colores.
+D'après le schéma, on voit que ces quatre LED RGB sont toutes connectées en série. En fait, quel que soit leur nombre, nous pouvons utiliser une broche pour contrôler une LED RGB et lui faire afficher n'importe quelle couleur. Chaque RGBLED est un pixel indépendant, composé des couleurs R, G et B, qui peut afficher 256 niveaux de luminosité et réaliser l'affichage en vraie couleur sur 16777216 couleurs.
 
-Además, el punto píxel contiene un circuito de amplificador de conducción de conformado de señal de retención de datos y un circuito de conformado de señal, que asegura de manera efectiva que el color de la luz del píxel sea altamente consistente.
+De plus, le pixel contient un circuit d'amplification de commande à mise en mémoire du signal et un circuit de mise en forme du signal, ce qui garantit efficacement une grande cohérence des couleurs des pixels lumineux.
 
-![imagen31](../media/86e292d0666046b72a1e0e68adfb17e8.png)
+![image31](../media/86e292d0666046b72a1e0e68adfb17e8.png)
 
-![imagen32](../media/c0df93f61c6b9272f62b1847ccfbdb10.png)
+![image32](../media/c0df93f61c6b9272f62b1847ccfbdb10.png)
 
-**Pin**
+**Broche**
 
 | SK6812 | 26 |
 | --- | --- |
 | \ |   |
 
 
-#### Proyecto 6.1 RGB Sk6812
+#### Projet 6.1 RGB Sk6812
 
-Controlaremos SK6812 para mostrar varios efectos de iluminación.
+Nous contrôlerons le SK6812 pour afficher divers effets lumineux.
 
-**Código de prueba**
+**Code de test**
 
 ```python
 #Import Pin, neopiexl and time modules.
@@ -57,18 +57,18 @@ while True:
         time.sleep_ms(500)
     time.sleep_ms(500)
 ```
-**Resultado de la prueba**
+**Résultat du test**
 
-Las lámparas ambientales de la casa inteligente mostrarán rojo, verde, azul y blanco.
+Les lampes d'ambiance de la maison intelligente afficheront du rouge, du bleu-vert ainsi que du blanc.
 
 
-#### Proyecto 6.2 Control con botones Sk6812
+#### Projet 6.2 Contrôle par bouton Sk6812
 
-**Descripción**
+**Description**
 
-Hay dos botones interruptores para cambiar el color de la lámpara ambiental.
+Il y a deux boutons pour changer la couleur de la lampe d'ambiance.
 
-**Código de prueba**
+**Code de test**
 
 ```python
 #Import Pin, neopiexl and time modules.
@@ -135,6 +135,6 @@ while True:
     elif(count == 4):
         func_color(4)
 ```
-**Resultado de la prueba**
+**Résultat du test**
 
-Podemos cambiar el color de la lámpara ambiental pulsando los botones 1 y 2.
+Nous pouvons changer la couleur de la lampe d'ambiance en appuyant sur les boutons 1 et 2.

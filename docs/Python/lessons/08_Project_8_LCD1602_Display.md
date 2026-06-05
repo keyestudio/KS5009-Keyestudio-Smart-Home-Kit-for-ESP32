@@ -1,41 +1,47 @@
-### Proyecto 8: Pantalla LCD1602
+### Project 8: LCD1602 Display
 
-**Descripción**
+**Description**
 
-Como todos sabemos, la pantalla es una de las mejores formas para que las personas interactúen con dispositivos electrónicos.
+Comme nous le savons tous, l'écran est l'un des meilleurs moyens pour les
+personnes d'interagir avec des dispositifs électroniques.
 
-**Conocimientos del componente**
+**Component Knowledge**
 
-1602 es una línea que puede mostrar 16 caracteres. Hay dos líneas, que usan el protocolo de comunicación IIC.
+1602 est une gamme qui peut afficher 16 caractères par ligne. Il y a deux lignes,
+qui utilisent le protocole de communication IIC.
 
-![imagen34](../media/066e093f1711ada67d3309ddc9bdc66e.png)
+![image34](../media/066e093f1711ada67d3309ddc9bdc66e.png)
 
-**Pines de control**
+**Control Pins**
 
 | SDA | SDA |
 | --- | --- |
 | SCL | SCL |
 
 
-#### Proyecto 8.1 LCD 1602 Mostrar caracteres
+#### Project 8.1 LCD 1602 Display Characters
 
-**Descripción**
+**Description**
 
-Usaremos los archivos de librería i2c_lcd.py y lcd_api.py, los cuales deben guardarse en la memoria del ESP32.
+Nous utiliserons les fichiers de bibliothèque i2c_lcd.py et lcd_api.py, qui doivent être
+enregistrés dans la mémoire ESP32.
 
-![imagen35](../media/b5d74645d450d329aded48064bd599c8.png)
+![image35](../media/b5d74645d450d329aded48064bd599c8.png)
 
-**Operaciones**
+**Operations**
 
-Abra “Thonny”, haga clic en “This computer”→“D:”→“2. Python Projects”→“pj8_1_lcd1602”. Seleccione “i2c_lcd.py”, haga clic derecho y seleccione “\ **Upload to /**\ ”, espere a que “i2c_lcd.py” se cargue en ESP32; y luego seleccione “lcd_api.py”, haga clic derecho y seleccione “\ **Upload to /**\ ”, espere a que “lcd_api.py” se cargue en ESP32.
+Ouvrez “Thonny”，click “This computer”→“D:”→“2. Python Projects”→“pj8_1_lcd1602”. Sélectionnez “i2c_lcd.py”, faites un clic droit
+pour sélectionner “\ **Upload to /**\ ”, attendez que “i2c_lcd.py” soit transféré vers
+ESP32 ; puis sélectionnez “lcd_api.py”, faites un clic droit pour sélectionner
+“\ **Upload to /**\ ”, attendez que “lcd_api.py” soit transféré vers ESP32.
 
-![Imagen](../media/img-20250603131246.png)
+![Image](../media/img-20250603131246.png)
 
-![imagen36](../media/img-20250603131916.png)
+![image36](../media/img-20250603131916.png)
 
-Los nombres guardados son i2c_lcd.py y lcd_api.py
+Le nom enregistré est i2c_lcd.py et lcd_api.py
 
-![imagen37](../media/img-20250603132138.png)
+![image37](../media/img-20250603132138.png)
 
 **Test Code**
 
@@ -86,28 +92,32 @@ lcd.putstr('keyestudio')
 #lcd.custom_char(0, happy_face)
 #lcd.putchar(chr(0))
 ```
-**Resultado de la prueba**
+**Test Result**
 
-La primera línea del LCD1602 muestra hello y la segunda línea muestra keyestudio.
+La première ligne du LCD1602 affiche 'Hello' et la seconde ligne affiche
+'keyestudio'.
 
 
-#### Proyecto 8.2 Alarma de gas peligroso
+#### Project 8.2 Dangerous Gas Alarm
 
-**Descripción**
+**Description**
 
-Cuando un sensor de gas detecta una alta concentración de gas peligroso, el buzzer emitirá una alarma y la pantalla mostrará dangerous.
+Lorsqu'un capteur de gaz détecte une forte concentration de gaz dangereux, le
+buzzer émettra une alarme et l'affichage indiquera dangerous.
 
-**Conocimientos del componente**
+**Component Knowledge**
 
-**Sensor de humo MQ2**:
+**MQ2 Smoke Sensor**:
 
-Es un dispositivo de monitorización de fugas de gas para hogares y fábricas, que es adecuado para gas licuado, benceno, alquilos, alcohol, hidrógeno así como la detección de humo. Nuestro sensor tiene un pin digital D y una salida analógica A, que está conectada a D como sensor digital en este proyecto.
+C'est un dispositif de surveillance des fuites de gaz pour les domiciles et les usines, qui est
+adapté à la détection de gaz liquéfiés, benzène, alkyles, alcool, hydrogène ainsi que
+la fumée. Notre capteur possède une sortie numérique connectée à la broche D et une sortie analogique A, qui est connectée à D en tant que capteur numérique dans ce projet.
 
-![imagen38](../media/4550c4935e6c08e595a1e8707b54b551.png)
+![image38](../media/4550c4935e6c08e595a1e8707b54b551.png)
 
-**Pin de control**
+**Control Pin**
 
-| Sensor de gas | 23 |
+| Gas Sensor | 23 |
 | --- | --- |
 | \ |   |
 
@@ -144,6 +154,6 @@ while True:
         lcd.putstr('dangerous')
     time.sleep(0.1) #delay 0.1s
 ```
-**Resultado de la prueba**
+**Test Result**
 
-La pantalla muestra "safety" en estado normal. Sin embargo, cuando el sensor de gas detecta algunos gases peligrosos, como monóxido de carbono, a cierta concentración, el buzzer emitirá una alarma y la pantalla mostrará "dangerous".
+L'écran affiche "Safety" en état normal. Cependant, lorsque le capteur de gaz détecte certains gaz dangereux, tels que le monoxyde de carbone, à une certaine concentration, le buzzer émettra une alarme et l'écran affichera "dangerous".

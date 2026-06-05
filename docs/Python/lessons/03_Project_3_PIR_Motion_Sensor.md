@@ -1,25 +1,25 @@
-### Proyecto 3: Sensor de movimiento PIR
+### Projet 3 : Capteur de mouvement PIR
 
-**Descripción**
+**Description**
 
-El sensor de movimiento PIR tiene muchas aplicaciones en la vida diaria, como lámparas automáticas para escaleras, grifos automáticos para lavabos, etc.
+Le capteur de mouvement PIR a de nombreux scénarios d'application dans la vie quotidienne, tels que la lampe à détection automatique pour les escaliers, le robinet à détection automatique du lavabo, etc.
 
-También es un sensor digital, al igual que los botones, que tiene dos valores de estado: 0 o 1. Detecta cuando hay movimiento de personas.
+C'est également un capteur numérique comme les boutons, qui possède deux états 0 ou 1. Et il détecte la présence lorsqu'une personne bouge.
 
-![imagen25](../media/c1518252606b111bfa66878a2bfcc965.png)
+![image25](../media/c1518252606b111bfa66878a2bfcc965.png)
 
-**Pin de control**
+**Broche de contrôle**
 
-| Sensor de movimiento PIR | 14 |
+| Capteur de mouvement PIR | 14 |
 | --- | --- |
 | \ |   |
 
 
-#### Proyecto 3.1 Leer el sensor de movimiento PIR
+#### Projet 3.1 Lire le capteur de mouvement PIR
 
-Imprimiremos el valor del sensor de movimiento PIR en el monitor serie.
+Nous afficherons la valeur du capteur de mouvement PIR via le moniteur série.
 
-**Código de prueba**
+**Code de test**
 
 ```python
 from machine import Pin
@@ -35,18 +35,18 @@ while True:
         print("No one!")
     time.sleep(0.1)
 ```
-**Resultado de la prueba**
+**Résultat du test**
 
-Cuando te quedas quieto frente al sensor, el valor leído es 0; si te mueves un poco, cambiará a 1.
+Lorsque vous restez immobile devant le capteur, la valeur lue est 0 ; si vous bougez un peu, elle passe à 1.
 
-![imagen26](../media/f8c6be9a6ad7a6423c1fa1456f771406.png)
+![image26](../media/f8c6be9a6ad7a6423c1fa1456f771406.png)
 
 
-#### Proyecto 3.2 Sensor de movimiento PIR
+#### Projet 3.2 Capteur de mouvement PIR
 
-Si alguien se mueve frente al sensor, el LED se encenderá.
+Si quelqu'un bouge devant le capteur, la LED s'allume.
 
-**Código de prueba**
+**Code de test**
 
 ```python
 from machine import Pin
@@ -64,6 +64,6 @@ while True:
         led.value(0)
     time.sleep(0.1)
 ```
-**Resultado de la prueba**
+**Résultat du test**
 
-Mueve la mano frente al sensor, el LED se encenderá. Tras unos segundos de inmovilidad, el LED se apagará.
+Déplacez votre main devant le capteur, la LED s'allumera. Après quelques secondes d'immobilité, la LED s'éteindra.

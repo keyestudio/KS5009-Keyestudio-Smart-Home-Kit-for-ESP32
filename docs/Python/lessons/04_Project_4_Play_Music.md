@@ -1,27 +1,29 @@
-### Proyecto 4: Reproducir música
+### Projet 4 : Jouer de la musique
 
-**Descripción**
+**Description**
 
-Hay un elemento amplificador de potencia de audio en la placa de expansión del coche, que actúa como un equipo de amplificación externo para reproducir música.
+Il y a un élément amplificateur audio de puissance sur la carte d'extension pour voiture, qui sert d'amplificateur externe pour jouer de la musique.
 
-**Conocimiento del componente**
+Dans ce projet, nous allons l'utiliser pour jouer un morceau de musique.
 
-**Zumbador pasivo:**
+**Connaissances sur le composant**
 
-El amplificador de potencia de audio (como el zumbador pasivo) no tiene oscilación interna. Al controlarlo, necesitamos introducir ondas cuadradas de diferentes frecuencias en el polo positivo del componente y conectar a tierra el polo negativo para controlar que el amplificador produzca sonidos de diferentes frecuencias.
+**Buzzer passif :**
 
-![imagen27](../media/2e6fd6b7975ef84ab94eee896161347b.png)
+L'amplificateur audio de puissance (comme le buzzer passif) n'a pas d'oscillation interne. Lors du contrôle, nous devons fournir des signaux carrés de différentes fréquences à la borne positive du composant et relier la borne négative à la masse pour que l'amplificateur produise des sons de différentes fréquences.
 
-**Pin de control**
+![image27](../media/2e6fd6b7975ef84ab94eee896161347b.png)
 
-| Zumbador pasivo | 25 |
+**Broche de contrôle**
+
+| Buzzer passif | 25 |
 | --- | --- |
 | \ |   |
 
 
-#### Proyecto 4.1 Reproducir 'Happy Birthday'
+#### Projet 4.1 : Jouer 'Happy Birthday'
 
-**Código de prueba**
+**Code de test**
 
 ```python
 from machine import Pin, PWM
@@ -75,6 +77,6 @@ buzzer.freq(532)
 sleep(0.5)
 buzzer.duty(0)
 ```
-**Resultado de la prueba**
+**Résultat du test**
 
-El zumbador pasivo reproducirá 'Happy Birthday'.
+Le buzzer passif jouera 'Happy Birthday'.
