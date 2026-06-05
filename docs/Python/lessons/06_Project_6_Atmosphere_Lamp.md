@@ -1,20 +1,20 @@
-### Projekt 6: Atmosphärenlampe
+### Proyecto 6: Lámpara ambiental
 
-**Description**
+**Descripción**
 
-Die Atmosphärenlampe des Smart Home besteht aus 4 SK6812RGB LEDs. RGB LED gehört zu einem einfachen Leuchtmodul, das die Farbe einstellen kann, um verschiedene Lampeneffekte zu erzeugen. Darüber hinaus kann es in Gebäuden, Brücken, Straßen, Gärten, Höfen, Etagen und anderen Bereichen der dekorativen Beleuchtung und Veranstaltungsanordnung sowie bei Weihnachten, Halloween, Valentinstag, Ostern, Nationalfeiertagen und anderen Festen weit verbreitet eingesetzt werden, um Atmosphäre und andere Szenen zu schaffen.
+La lámpara ambiental de la casa inteligente está compuesta por 4 LEDs SK6812RGB. El LED RGB pertenece a un módulo luminoso sencillo, que puede ajustar el color para producir el efecto de iluminación de diferentes colores. Además, puede usarse ampliamente en edificios, puentes, carreteras, jardines, patios, suelos y otros campos de iluminación decorativa y disposición de escenarios, en Navidad, Halloween, San Valentín, Pascua, Día Nacional y otras festividades o escenas ambientales.
 
-In diesem Experiment werden wir verschiedene Lichteffekte erzeugen.
+En este experimento, haremos varios efectos de iluminación.
 
-**Component Knowledge**
+**Conocimientos del componente**
 
-Aus dem Schaltplan ist ersichtlich, dass diese vier RGB LEDs alle in Reihe geschaltet sind. Tatsächlich können wir, egal wie viele es sind, eine einzige Pin verwenden, um eine RGB LED zu steuern und sie in jeder Farbe anzeigen zu lassen. Jede RGBLED ist ein unabhängiges Pixel, das aus den Farben R, G und B besteht und 256 Helligkeitsstufen erreichen kann und so die vollständige True-Color-Anzeige von 16777216 Farben ermöglicht.
+A partir del diagrama esquemático, podemos ver que estos cuatro LEDs RGB están conectados en serie. De hecho, no importa cuántos sean, podemos usar un pin para controlar un LED RGB y hacer que muestre cualquier color. Cada RGBLED es un píxel independiente, compuesto por los colores R, G y B, que puede alcanzar 256 niveles de brillo y completar la visualización de color verdadero completa de 16777216 colores.
 
-Außerdem enthält der Pixelpunkt eine Datenlatch-Signalformungs-, Verstärkeransteuerungs- und Signalformungsschaltung, die effektiv sicherstellt, dass die Farbe der Pixelbeleuchtung sehr gleichmäßig ist.
+Además, el punto píxel contiene un circuito de amplificador de conducción de conformado de señal de retención de datos y un circuito de conformado de señal, que asegura de manera efectiva que el color de la luz del píxel sea altamente consistente.
 
-![Bild 31](../media/86e292d0666046b72a1e0e68adfb17e8.png)
+![imagen31](../media/86e292d0666046b72a1e0e68adfb17e8.png)
 
-![Bild 32](../media/c0df93f61c6b9272f62b1847ccfbdb10.png)
+![imagen32](../media/c0df93f61c6b9272f62b1847ccfbdb10.png)
 
 **Pin**
 
@@ -23,11 +23,11 @@ Außerdem enthält der Pixelpunkt eine Datenlatch-Signalformungs-, Verstärkeran
 | \ |   |
 
 
-#### Projekt 6.1 RGB Sk6812
+#### Proyecto 6.1 RGB Sk6812
 
-Wir werden SK6812 steuern, um verschiedene Lichteffekte anzuzeigen.
+Controlaremos SK6812 para mostrar varios efectos de iluminación.
 
-**Test Code**
+**Código de prueba**
 
 ```python
 #Import Pin, neopiexl and time modules.
@@ -57,18 +57,18 @@ while True:
         time.sleep_ms(500)
     time.sleep_ms(500)
 ```
-**Test Result**
+**Resultado de la prueba**
 
-Die Atmosphärenlampen des Smart Home werden Rot, Grün, Blau sowie Weiß anzeigen.
+Las lámparas ambientales de la casa inteligente mostrarán rojo, verde, azul y blanco.
 
 
-#### Projekt 6.2 Button Control Sk6812
+#### Proyecto 6.2 Control con botones Sk6812
 
-**Description**
+**Descripción**
 
-Es gibt zwei Tasten, um die Farbe der Atmosphärenlampe zu ändern.
+Hay dos botones interruptores para cambiar el color de la lámpara ambiental.
 
-**Test Code**
+**Código de prueba**
 
 ```python
 #Import Pin, neopiexl and time modules.
@@ -135,6 +135,6 @@ while True:
     elif(count == 4):
         func_color(4)
 ```
-**Test Result**
+**Resultado de la prueba**
 
-Wir können die Farbe der Atmosphärenlampe durch Drücken der Tasten 1 und 2 umschalten.
+Podemos cambiar el color de la lámpara ambiental pulsando los botones 1 y 2.

@@ -10,10 +10,11 @@
 
 
 
-6.3 Python Projekte
+6.3 Python Proyectos
 ---------------------------
 
-Der Code für alle Projekte ist im Resource-compression-package enthalten.
+El código se proporciona para todos los proyectos y está disponible en el paquete comprimido de recursos
+
 
 .. toctree::
     :maxdepth: 2

@@ -1,23 +1,21 @@
-### Projekt 9: Temperatur- und Luftfeuchtigkeitssensor
+### Proyecto 9: Sensor de Temperatura y Humedad
 
-**Komponentenwissen**
+**Información del componente**
 
-Its communication mode is serial data and single bus. The temperature
-measurement range is -20 ~ +60℃, accuracy is ±2℃. However, the humidity
-range is 5 ~ 95%RH, the accuracy is ±5%RH.
+Su modo de comunicación es datos seriales y bus único. El rango de medición de temperatura es -20 ~ +60℃, la precisión es ±2℃. El rango de humedad es 5 ~ 95%RH, la precisión es ±5%RH.
 
-![Bild39](../media/0b9c44c3e4f3706638b9cf15871b861c.png)
+![imagen39](../media/0b9c44c3e4f3706638b9cf15871b861c.png)
 
-**Steuerpin**
+**Pin de control**
 
-| Temperatur- und Luftfeuchtigkeitssensor | 17 |
+| Sensor de Temperatura y Humedad | 17 |
 | --- | --- |
 | \ |   |
 
 
-#### Projekt 9.1 Temperatur- und Luftfeuchtigkeitstester
+#### Proyecto 9.1 Probador de Temperatura y Humedad
 
-**Testcode**
+**Código de prueba**
 
 ```python
 # Import machine, time and dht modules.
@@ -47,8 +45,6 @@ while True:
     lcd.putstr('H= {}'.format(DHT.humidity()))
     time.sleep_ms(1000)
 ```
-**Testergebnis**
+**Resultado de la prueba**
 
-Das LCD1602 zeigt die Temperatur (T = \*\* ° C) und die Luftfeuchtigkeit (H =
-\*\* %RH) an. Wenn Sie in den T/H-Sensor hineinatmen, können Sie sehen, dass die
-Luftfeuchtigkeit ansteigt.
+La LCD1602 muestra la temperatura (T = ** ° C) y la humedad (H = ** %RH). Cuando respiras sobre el sensor de T/H, puedes ver que la humedad aumenta.

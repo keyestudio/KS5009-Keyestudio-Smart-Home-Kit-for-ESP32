@@ -1,29 +1,27 @@
-### Projekt 4: Musik abspielen
+### Proyecto 4: Reproducir música
 
-**Beschreibung**
+**Descripción**
 
-Auf der Erweiterungsplatine des Fahrzeugs befindet sich ein Audio-Leistungsverstärker, der als externes Verstärkungsgerät zum Abspielen von Musik dient.
+Hay un elemento amplificador de potencia de audio en la placa de expansión del coche, que actúa como un equipo de amplificación externo para reproducir música.
 
-In diesem Projekt werden wir damit ein Musikstück abspielen.
+**Conocimiento del componente**
 
-**Komponentenwissen**
+**Zumbador pasivo:**
 
-**Passiver Summer:**
+El amplificador de potencia de audio (como el zumbador pasivo) no tiene oscilación interna. Al controlarlo, necesitamos introducir ondas cuadradas de diferentes frecuencias en el polo positivo del componente y conectar a tierra el polo negativo para controlar que el amplificador produzca sonidos de diferentes frecuencias.
 
-Der Audio-Leistungsverstärker (wie der passive Summer) hat keine interne Schwingung. Bei der Steuerung müssen wir Rechtecksignale mit unterschiedlichen Frequenzen an den positiven Pol der Komponente einspeisen und den negativen Pol auf Masse legen, um den Leistungsverstärker Töne unterschiedlicher Frequenzen erzeugen zu lassen.
+![imagen27](../media/2e6fd6b7975ef84ab94eee896161347b.png)
 
-![Bild 27](../media/2e6fd6b7975ef84ab94eee896161347b.png)
+**Pin de control**
 
-**Steuerpin**
-
-| Passiver Summer | 25 |
+| Zumbador pasivo | 25 |
 | --- | --- |
 | \ |   |
 
 
-#### Projekt 4.1 Happy Birthday abspielen
+#### Proyecto 4.1 Reproducir 'Happy Birthday'
 
-**Testcode**
+**Código de prueba**
 
 ```python
 from machine import Pin, PWM
@@ -77,6 +75,6 @@ buzzer.freq(532)
 sleep(0.5)
 buzzer.duty(0)
 ```
-**Testergebnis**
+**Resultado de la prueba**
 
-Der passive Summer spielt "Happy Birthday".
+El zumbador pasivo reproducirá 'Happy Birthday'.

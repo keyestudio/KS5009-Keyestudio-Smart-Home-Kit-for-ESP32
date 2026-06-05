@@ -1,33 +1,29 @@
-### Projekt 2: Tischlampe
+### Proyecto 2: Lámpara de mesa
 
-**Beschreibung**
+**Descripción**
 
-Eine übliche Tischlampe verwendet LED-Leuchten und Tasten, mit denen das
-Licht durch Drücken der Taste ein- und ausgeschaltet werden kann.
+La lámpara de mesa común usa luces LED y botones, que permiten encender y apagar la luz pulsando el botón.
 
-**Funktionsprinzip der Taste**
+**Principio del botón**
 
-Das Tastenmodul ist ein digitaler Sensor, der nur 0 oder 1 lesen kann. Wenn
-das Modul nicht gedrückt ist, befindet es sich im High-Zustand, also 1; beim
-Drücken ist es im Low-Zustand, also 0.
+El módulo de botón es un sensor digital, que solo puede leer 0 o 1. Cuando el módulo no está pulsado, está en un estado de nivel alto, es decir, 1; cuando se pulsa, está en nivel bajo 0.
 
-![Bild22](../media/41f565d4f355abb96e105119660e80ba.png)
+![imagen22](../media/41f565d4f355abb96e105119660e80ba.png)
 
-**Pins der Taste**
+**Pines del botón**
 
-| **Taste 1** | **16** |
+| **Botón 1** | **16** |
 | --- | --- |
-| **Taste 2** | **27** |
+| **Botón 2** | **27** |
 
 
-#### Projekt 2.1 Taste auslesen
+#### Proyecto 2.1 Leer el botón
 
-**Beschreibung**
+**Descripción**
 
-Wir werden den Statuswert der Taste auslesen und im seriellen Monitor anzeigen,
-um ihn anschaulich zu sehen.
+Vamos a leer el valor de estado del botón y mostrarlo en el monitor serie para verlo de forma intuitiva.
 
-**Testcode**
+**Código de prueba**
 
 ```python
 from machine import Pin
@@ -43,26 +39,22 @@ while True:
     print("button2 =",btnVal2)
     time.sleep(0.1) #delay 0.1s
 ```
-**Testergebnis**
+**Resultado de la prueba**
 
-Klicken Sie auf die Run-Schaltfläche, dann sehen Sie die Statuswerte von button1 und
-button2 in der Konsole ausgegeben. Drücken Sie die Taste am Smart-Home-Modul, und Sie
-können die Änderung der Statuswerte beobachten.
+Haz clic en el botón Run, entonces podrás ver los valores de estado de button1 y button2 impresos en el shell. Pulsa el botón del hogar inteligente y verás el cambio de los valores de estado.
 
-![Bild23](../media/1b984da67c0e89a72a9601c39362567d.png)
+![imagen23](../media/1b984da67c0e89a72a9601c39362567d.png)
 
 
-#### Projekt 2.2: Tischlampe
+#### Proyecto 2.2. Lámpara de mesa
 
-**Beschreibung**
+**Descripción**
 
-Bei einer einfachen Tischlampe: Drückt man die Taste, wird das Licht eingeschaltet;
-drückt man sie erneut, wird es ausgeschaltet.
+Para una lámpara de mesa simple y común, al pulsar el botón se encenderá; al pulsarlo de nuevo, la lámpara se apagará.
 
-**Testcode**
+**Código de prueba**
 
-Zähle die Anzahl der Tastendrücke und bilde den Rest bei Division durch 2, so
-erhältst du die beiden Zustände 0 oder 1.
+Calculando las veces que se ha pulsado el botón y tomando el resto al dividir por 2, se pueden obtener los dos valores de estado 0 o 1.
 
 ```python
 from machine import Pin
@@ -89,9 +81,8 @@ while True:
         led.value(0)
     time.sleep(0.1) #delay 0.1s
 ```
-**Testergebnis**
+**Resultado de la prueba**
 
-Die Konsole gibt die Anzahl der Tastendrücke aus. Drückt man die Taste einmal,
-leuchtet die LED; drückt man sie erneut, erlischt sie.
+El shell imprimirá el número de veces que se ha pulsado el botón; al pulsarlo una vez, el LED se encenderá; al pulsarlo de nuevo, se apagará.
 
-![Bild24](../media/1bc079eabd93cb2e8a8e15f0ab7f1367.png)
+![imagen24](../media/1bc079eabd93cb2e8a8e15f0ab7f1367.png)

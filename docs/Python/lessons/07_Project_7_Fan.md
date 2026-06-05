@@ -1,36 +1,36 @@
-### Projekt 7: Lüfter
+### Proyecto 7: Ventilador
 
-**Beschreibung**
+**Descripción**
 
-In diesem Projekt lernen wir, wie man einen kleinen Lüfter baut.
+En este proyecto, aprenderemos cómo hacer un pequeño ventilador.
 
-**Komponentenkenntnisse**
+**Conocimientos del componente**
 
-Der kleine Lüfter verwendet einen 130 DC-Motor und sichere Lüfterblätter. Sie können den PWM-Ausgang verwenden, um die Lüftergeschwindigkeit zu steuern.
+El pequeño ventilador usa un motor DC 130 y aspas de seguridad. Puedes usar la salida PWM para controlar la velocidad del ventilador.
 
-![Bild33](../media/33da52918e88862a94035d61a9050f2e.png)
+![imagen33](../media/33da52918e88862a94035d61a9050f2e.png)
 
-**Steuerungsmethode**
+**Método de control**
 
-Zum Steuern des Lüftermotors werden zwei Pins benötigt, einer für INA und einer für INB. Der PWM-Wertbereich ist 0~255. Wenn der PWM-Ausgang der beiden Pins unterschiedlich ist, kann sich der Lüfter drehen.
+Se requieren dos pines para controlar el motor del ventilador, uno para INA y dos para INB. El rango de valores de PWM es 0~255. Cuando la salida PWM de los dos pines es diferente, el ventilador puede girar.
 
-| INA - INB <= -45 | Dreht im Uhrzeigersinn |
+| INA - INB <= -45 | Girar en el sentido horario |
 | --- | --- |
-| INA - INB >= 45 | Dreht gegen den Uhrzeigersinn |
-| INA ==0, INB == 0 | Stoppen |
+| INA - INB >= 45 | Girar en sentido antihorario |
+| INA ==0, INB == 0 | Detenerse |
 
-**Steuerpins**
+**Pines de control**
 
 | INA | 19 |
 | --- | --- |
 | INB | 18 |
 
 
-#### Projekt 7.1 Lüfter
+#### Proyecto 7.1 Ventilador
 
-Wir können die Drehgeschwindigkeit des Lüfters gegen den Uhrzeigersinn und im Uhrzeigersinn steuern.
+Podemos controlar la velocidad de rotación en sentido antihorario y horario del ventilador.
 
-**Test Code**
+**Código de prueba**
 
 ```python
 from machine import Pin,PWM
@@ -63,16 +63,16 @@ except:
     INA.deinit()
     INB.deinit()
 ```
-**Testergebnis**
+**Resultado de la prueba**
 
-Der Lüfter dreht sich mit unterschiedlichen Geschwindigkeiten im Uhrzeigersinn und gegen den Uhrzeigersinn.
+El ventilador girará en sentido horario y antihorario a diferentes velocidades.
 
 
-#### Projekt 7.2 Tastersteuerung des Lüfters
+#### Proyecto 7.2 Control del ventilador con botón
 
-Taster 1 steuert den Lüfter.
+El botón 1 controla el encendido del ventilador.
 
-**Test Code**
+**Código de prueba**
 
 ```python
 from machine import Pin,PWM
@@ -106,6 +106,6 @@ except:
     INA.deinit()
     INB.deinit()
 ```
-**Testergebnis**
+**Resultado de la prueba**
 
-Drücken Sie Taster 1, dann beginnt der Lüfter zu drehen. Drücken Sie Taster 1 erneut, stoppt der Lüfter.
+Pulsa el botón 1, el ventilador comienza a girar; pulsa el botón 1 de nuevo y el ventilador se detiene.

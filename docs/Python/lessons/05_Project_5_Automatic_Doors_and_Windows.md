@@ -1,41 +1,41 @@
-### Projekt 5: Automatische Türen und Fenster
+### Proyecto 5: Puertas y Ventanas Automáticas
 
-**Beschreibung**
+**Descripción**
 
-Automatische Türen und Fenster benötigen ein Antriebsgerät, das mit einem 180° Servo und einigen Sensoren automatischer wird. Mit einem Regensensor können Fenster bei Regen automatisch geschlossen werden. Wird ein RFID hinzugefügt, kann man beispielsweise per Auflegen die Tür öffnen.
+Las puertas y ventanas automáticas necesitan un dispositivo de accionamiento, que se volverá más automático con un servo de 180 grados y algunos sensores. Añadiendo un sensor de gotas de lluvia, se puede conseguir el efecto de cerrar las ventanas automáticamente cuando llueve. Si se añade un RFID, podemos realizar el efecto de deslizar para abrir la puerta, entre otros.
 
-**Komponentenwissen**
+**Conocimientos del componente**
 
 **Servo:**
 
-Ein Servo ist ein Positionsantriebsgerät, das aus einem Gehäuse, einer Leiterplatte, einem kernlosen Motor, einem Getriebe und einem Positionsdetektor besteht.
+Un servo es un dispositivo controlador de posición que consiste en una carcasa, una placa de circuito, un motor sin núcleo, un engranaje y un detector de posición.
 
-Sein Funktionsprinzip ist, dass der Servo das vom MCU oder Empfänger gesendete Signal empfängt und ein Referenzsignal mit einer Periode von 20ms und einer Breite von 1.5ms erzeugt, dann die erfasste Gleichspannungs-Offsetspannung mit der Spannung des Potentiometers vergleicht und die Spannungsdifferenz zur Ausgabe bringt.
+Su principio de funcionamiento es que el servo recibe la señal enviada por el MCU o el receptor y produce una señal de referencia con un período de 20 ms y un ancho de 1,5 ms, luego compara la tensión de polarización continua adquirida con la tensión del potenciómetro y obtiene la diferencia de tensión de salida.
 
-Der IC auf der Leiterplatte beurteilt die Drehrichtung und treibt dann den kernlosen Motor zum Start an. Die Kraft wird über das Untersetzungsgetriebe auf den Schwenkarm übertragen, und die Rückmeldung wird vom Positionsdetektor gesendet, um zu prüfen, ob die Position erreicht ist. Das ist geeignet für Steuerungssysteme, die eine konstante Winkeländerung benötigen und gehalten werden können.
+El IC en la placa de circuito juzga la dirección de rotación y luego impulsa el motor sin núcleo para que comience a girar. La potencia se transmite al brazo oscilante a través del engranaje reductor, y el detector de posición envía la señal de retroalimentación para juzgar si se ha alcanzado el posicionamiento, lo que lo hace adecuado para aquellos sistemas de control que requieren un cambio de ángulo constante y que pueda mantenerse.
 
-Wenn die Motordrehzahl konstant ist, wird das Potentiometer über das gestufte Untersetzungsgetriebe angetrieben, wodurch die Spannungsdifferenz 0 wird und der Motor aufhört zu drehen. Allgemein liegt der Drehbereich eines Servos bei 0°–180°.
+Cuando la velocidad del motor es constante, el potenciómetro se hace girar a través del engranaje reductor en cascada, lo que hace que la diferencia de tensión sea 0 y el motor deje de girar. Normalmente, el rango de ángulo de rotación del servo es de 0° a 180°.
 
-Die Impulsperiode des Steuer-Servos beträgt 20ms, die Impulsbreite 0.5ms ~ 2.5ms und die entsprechende Position -90° ~ +90°. Hier ein Beispiel für einen 180° Servo:
+El periodo de pulso del servo de control es de 20 ms, el ancho de pulso es de 0,5 ms ~ 2,5 ms, y la posición correspondiente es -90° ~ +90°. Aquí hay un ejemplo de un servo de 180°:
 
-![image28](../media/708316fde05c62113a3024e0efb0c237.jpeg)
+![imagen28](../media/708316fde05c62113a3024e0efb0c237.jpeg)
 
-Im Allgemeinen hat ein Servo drei Leitungen in Braun, Rot und Orange. Die braune Leitung ist Masse, die rote ist die Versorgungsspannung und die orange ist die Signalleitung.
+En general, el servo tiene tres cables en marrón, rojo y naranja. El cable marrón va a tierra, el rojo es la línea de polo positivo y el naranja es la línea de señal.
 
-![image29](../media/35084ae289a08e35bdb8c89ceb134ba4.png)
+![imagen29](../media/35084ae289a08e35bdb8c89ceb134ba4.png)
 
-![image30](../media/6cbf6f177ea204f7632b872497fde010.png)
+![imagen30](../media/6cbf6f177ea204f7632b872497fde010.png)
 
 **Pin**
 
-| Der Servo des Fensters | 5 |
+| El servo de la ventana | 5 |
 | --- | --- |
-| Der Servo der Tür | 13 |
+| El servo de la puerta | 13 |
 
 
-#### Projekt 5.1 Tür steuern
+#### Proyecto 5.1 Controlar la puerta
 
-**Test Code**
+**Código de prueba**
 
 ```python
 from machine import Pin, PWM
@@ -63,22 +63,22 @@ while True:
     pwm.duty(angle_180)
     time.sleep(1)
 ```
-**Testergebnis**
+**Resultado de la prueba**
 
-Der Servo der Tür bewegt sich zusammen mit der Tür hin und her.
+El servo de la puerta gira con la puerta, de ida y vuelta.
 
 
-#### Projekt 5.2 Fenster schließen
+#### Proyecto 5.2 Cerrar la ventana
 
-**Beschreibung**
+**Descripción**
 
-Wir werden einen Servo und einen Regensensor verwenden, um ein Gerät zu bauen, das Fenster bei Regen automatisch schließt.
+Trabajaremos para usar un servo y un sensor de gotas de lluvia para hacer un dispositivo que cierre las ventanas automáticamente cuando esté lloviendo.
 
-**Komponentenwissen**
+**Conocimientos del componente**
 
-**Regensensor:** Dies ist ein analoges Eingangsmodul; je größer die von Wasser bedeckte Fläche auf der Messoberfläche ist, desto größer ist der zurückgegebene Wert (Bereich 0~4096).
+**Sensor de gotas de lluvia:** Este es un módulo de entrada analógica, cuanto mayor sea el área cubierta por agua en la superficie de detección, mayor será el valor devuelto (rango 0~4096).
 
-**Test Code**
+**Código de prueba**
 
 ```python
 # Import Pin, ADC and DAC modules.
@@ -107,6 +107,6 @@ try:
 except:
     pass
 ```
-**Testergebnis**
+**Resultado de la prueba**
 
-Zuerst öffnet sich das Fenster automatisch, und wenn Sie den Regensensor mit Ihrer Hand (die Wasser auf der Haut hat) berühren, schließt sich das Fenster.
+Al principio, la ventana se abre automáticamente, y cuando tocas el sensor de gotas de lluvia con la mano (que tiene agua en la piel), la ventana se cerrará.

@@ -10,17 +10,14 @@
 
 
 
-5.4 Arduino Projekte
+5.4 Arduino Proyectos
 ---------------------------
 
-Code wird für alle Projekte bereitgestellt und ist im Ressourcenpaket in 5.1
-verfügbar
+El código está provisto para todos los proyectos y está disponible en el paquete de recursos 5.1
 
-Alles klar, kommen wir gleich zu unseren Projekten. Wir werden Ihnen das
-Smart Home von den einfachen Sensoren ausgehend genau erklären.
+Muy bien, vayamos directamente a nuestros proyectos. Te haremos conocer profundamente el Smart Home empezando por el sensor más simple.
 
-**Hinweis: In diesem Kurs bedeutet die Kennzeichnung der Schnittstelle jedes Sensors / Moduls mit (G,-, GND) die negative Strecke, G ist mit G, - oder
-GND des Sensor-Shields oder des Control-Boards verbunden; “V” ist der positive Pol und verbunden mit V, VCC oder 5V.**
+**Nota: En este curso, la interfaz de cada sensor/módulo marcada con (G,-, GND) indica el polo negativo, G se conecta a G, - o GND del shield del sensor o de la placa de control; “V” es el polo positivo y se conecta a V, VCC o 5V.**
 
 
 .. toctree::

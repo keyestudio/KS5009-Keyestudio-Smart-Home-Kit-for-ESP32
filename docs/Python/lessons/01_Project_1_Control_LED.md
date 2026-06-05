@@ -1,34 +1,34 @@
-### Projekt 1: LED steuern
+### Proyecto 1: Control LED
 
-Zuerst lernen wir, wie man eine LED steuert.
+primero aprenderemos cómo controlar LED.
 
-![Bild 16](../media/0cda68ae8719d9b6c1bb79d64160d31d.png)
+![imagen16](../media/0cda68ae8719d9b6c1bb79d64160d31d.png)
 
-**Funktionsprinzip**
+**Principio de funcionamiento**
 
-Eine LED ist eine Leuchtdiode, die als elektronisches Modul ausgeführt sein kann. Sie leuchtet, wenn wir die Pins dazu bringen, einen High-Pegel auszugeben, andernfalls ist sie aus.
+LED es también el diodo emisor de luz, que puede fabricarse como un módulo electrónico. Se encenderá si controlamos los pines para que emitan nivel alto; de lo contrario estará apagado.
 
-**Parameter**
+**Parámetros**
 
-| **Betriebsspannung** | **DC 3~5V** |
+| **Voltaje de funcionamiento** | **DC 3~5V** |
 | --- | --- |
-| **Betriebsstrom** | **<20mA** |
-| **Leistung** | **0.1W** |
+| **Corriente de funcionamiento** | **<20mA** |
+| **Potencia** | **0.1W** |
 
-**Steuerpin**
+**Pin de control**
 
-| Gelbe LED | 12 |
+| LED amarillo | 12 |
 | --- | --- |
 | \ |   |
 
 
-#### Projekt 1.1 LED blinken
+#### Proyecto 1.1 Parpadeo del LED
 
-**Beschreibung**
+**Descripción**
 
-Wir können den LED-Pin so steuern, dass er High- und Low-Pegel ausgibt, damit die LED blinkt.
+Podemos hacer que el pin del LED emita nivel alto y nivel bajo para que el LED parpadee.
 
-**Test Code**
+**Código de prueba**
 
 ```python
 from machine import Pin
@@ -41,32 +41,32 @@ while True:
     led.value(0)# turn off led
     time.sleep(1)# delay 1s
 ```
-Öffne den Beispielcode
+Abra el código de ejemplo
 
-![Bild 17](../media/39658e26aad2c9794bd3db9df3c70732.png)
+![imagen17](../media/39658e26aad2c9794bd3db9df3c70732.png)
 
-![Bild 18](../media/166384572a1fa595858d933aea5af710.png)
+![imagen18](../media/166384572a1fa595858d933aea5af710.png)
 
-**Testergebnis**
+**Resultado de la prueba**
 
-Klicke auf die Schaltfläche
+Haga clic en el botón
 
-![Bild 19](../media/c5e28dda04f63745f59ef351025e82e8.png)
+![imagen19](../media/c5e28dda04f63745f59ef351025e82e8.png)
 
-Wir können sehen, dass die gelbe LED blinkt.
+Podemos ver que el LED amarillo está parpadeando.
 
 
-#### Projekt 1.2 Atmende LED
+#### Proyecto 1.2 LED de respiración
 
-**Beschreibung**
+**Descripción**
 
-Eine "atmende LED" ist ein Phänomen, bei dem die Helligkeit einer LED sanft von dunkel zu hell und wieder zurück zu dunkel wechselt, fortlaufend, sodass der Eindruck entsteht, die LED "atme". Aber wie steuert man die Helligkeit einer LED?
+Un “breathing LED” es un fenómeno donde el brillo de un LED cambia suavemente de oscuro a brillante y de nuevo a oscuro, continuando así y dando la ilusión de que el LED “respira”. Sin embargo, ¿cómo controlar el brillo del LED?
 
-Hier bietet sich PWM an. Es wird in einer Zeiteinheit die Anzahl der High- und Low-Pegel ausgegeben — je mehr Zeit der High-Pegel einnimmt, desto größer der PWM-Wert und desto heller die LED.
+Tiene sentido aprovechar PWM. Se controla la proporción de tiempo en nivel alto y en nivel bajo en una unidad de tiempo; cuanto más tiempo permanezca en nivel alto, mayor es el valor del PWM y más brillante será el LED.
 
-![Bild 20](../media/704984700612966b997127cb9bde5c96.jpeg)
+![imagen20](../media/704984700612966b997127cb9bde5c96.jpeg)
 
-**Test Code**
+**Código de prueba**
 
 ```python
 import time
@@ -93,10 +93,10 @@ except:
 #deinit() needs to be called to turned OFF the timer. Otherwise, the PWM may fail to work next time.
     pwm.deinit()
 ```
-**Testergebnis**
+**Resultado de la prueba**
 
-Klicke auf den Button.
+Haga clic en el botón.
 
-![Bild 21](../media/609b283e0909b5e5c14809c4ccf892ed.png)
+![imagen21](../media/609b283e0909b5e5c14809c4ccf892ed.png)
 
-Die LED wird allmählich dunkler und dann wieder heller, zyklisch, wie beim menschlichen Atmen.
+El LED se atenúa gradualmente y luego se vuelve más brillante, de forma cíclica, como la respiración humana.

@@ -1,91 +1,91 @@
 
-## 6.1 Ressourcen-Komprimierungspaket
+## 6.1 Paquete comprimido de recursos
 
-Das Ressourcenpaket enthält Code, Bibliotheken, Firmware und die Thonny-Software. Sie müssen dieses Paket haben, um mit dem Lernen fortzufahren.
+El paquete de recursos contiene código, bibliotecas, firmware y el software Thonny. Debe tener estos recursos para continuar aprendiendo.
 
 [Resource-compression-package](../Resource-compression-package.7z)
 
 
-## 6.2 Erste Schritte mit Thonny
+## 6.2 Cómo empezar con Thonny
 
 ---
 
-### 6.2.1 Öffnen des Thonny-Pakets
+### 6.2.1 Abrir el paquete de Thonny
 
-Bitte beachten Sie den unten gezeigten Ordner:
+Consulte la carpeta que se muestra a continuación:
 
-![bild1](../media/29fa7a9563dec2dddbfc7ed79d197380.png)
-
----
-
-### 6.2.2 Thonny-Oberfläche
-
-Thonny öffnen
-
-![bild2](../media/d753621b40cd7405ce034e93e0f5678a.png)
-
-Hauptfunktionen der Oberfläche:
-
-![bild3](../media/d41b79772c9846fd8bf295c8451f8321.png)
-
-![bild4](../media/3d04fe6893ca104e4e593a0786cb3799.png)
+![imagen1](../media/29fa7a9563dec2dddbfc7ed79d197380.png)
 
 ---
 
-### 6.2.3 ESP32-Entwicklungsumgebung auswählen
+### 6.2.2 Interfaz de Thonny
 
-Klicken Sie auf Python.exe, dann wählen Sie Interpreter konfigurieren
+Abra Thonny
 
-![bild5](../media/30d66dba96cfabbe2bd3b6c858564ef2.png)
+![imagen2](../media/d753621b40cd7405ce034e93e0f5678a.png)
 
-Wählen Sie MicroPython(ESP32) im Interpreter-Fenster aus
+Funciones principales de la interfaz:
 
-![bild6](../media/5f92c4dd24223cf49d6da075aa53307f.png)
+![imagen3](../media/d41b79772c9846fd8bf295c8451f8321.png)
+
+![imagen4](../media/3d04fe6893ca104e4e593a0786cb3799.png)
 
 ---
 
-### 6.2.4 Firmware installieren
+### 6.2.3 Seleccionar el entorno de desarrollo ESP32
 
-Download-Link：\ https://micropython.org/download/esp32/
+Haga clic en Python.exe, luego seleccione Configurar intérprete
 
-Wählen Sie zum Herunterladen die Version V1.17
+![imagen5](../media/30d66dba96cfabbe2bd3b6c858564ef2.png)
 
-![bild7](../media/4f1f3b0568c3ae2ca3288431df340184.png)
+Seleccione MicroPython(ESP32) en la interfaz de intérprete
 
-Natürlich stellen wir auch die heruntergeladene Firmware zur Verfügung, wie unten gezeigt.
+![imagen6](../media/5f92c4dd24223cf49d6da075aa53307f.png)
 
-![bild-20250408113209943](../media/image-20250408113209943.png)
+---
 
-MicroPython-Firmware flashen
+### 6.2.4 Instalación de firmware
 
-Verbinden Sie das Smart Home mit Ihrem Computer über USB.
+Enlace de descarga：\ https://micropython.org/download/esp32/
 
-Klicken Sie auf Installieren oder Firmware aktualisieren
+Elija descargar la versión V1.17
 
-![bild8](../media/9b8470fee22b3a6aa4ac21d1e1d10eda.png)
+![imagen7](../media/4f1f3b0568c3ae2ca3288431df340184.png)
 
-Port auswählen
+Por supuesto, también proporcionamos el firmware descargado, como se muestra a continuación.
 
-![bild9](../media/d3bff3f1b25076733717273e94616088.png)
+![imagen-20250408113209943](../media/image-20250408113209943.png)
 
-Klicken Sie auf Durchsuchen, um die heruntergeladene Firmware-Version V1.17 zu finden
+Grabar el firmware de MicroPython
 
-![bild10](../media/ad4cfc202f014101ddd9f5373773635f.png)
+Conecte el smart home a su ordenador mediante USB.
 
-![bild11](../media/aef61c4411d53f83685ad570c7d3a075.png)
+Haga clic en Instalar o actualizar firmware
 
-Klicken Sie auf Install
+![imagen8](../media/9b8470fee22b3a6aa4ac21d1e1d10eda.png)
 
-![bild12](../media/507ff0c04761a509f729a8c4e88e4b27.png)
+Seleccione el puerto
 
-Wählen Sie Port oder WebREPL als Treiber für das ESP32-Mainboard CH340(COM)
+![imagen9](../media/d3bff3f1b25076733717273e94616088.png)
 
-![bild13](../media/c1c4ae83635b2c0186b1985aeef844ae.png)
+Haga clic en Examinar para encontrar el firmware de la versión V1.17 descargada
 
-![bild14](../media/19514aef3fdd86fb2c033c6441d8ff6e.png)
+![imagen10](../media/ad4cfc202f014101ddd9f5373773635f.png)
 
-Die ESP32-Umgebung wurde installiert.
+![imagen11](../media/aef61c4411d53f83685ad570c7d3a075.png)
 
-Thonny-Oberfläche
+Haga clic en Instalar
 
-![bild15](../media/c42ed7549ff7ff1f7deabd64710cb98e.png)
+![imagen12](../media/507ff0c04761a509f729a8c4e88e4b27.png)
+
+Elija Puerto o WebREPL como el driver de la placa principal ESP32 CH340(COM)
+
+![imagen13](../media/c1c4ae83635b2c0186b1985aeef844ae.png)
+
+![imagen14](../media/19514aef3fdd86fb2c033c6441d8ff6e.png)
+
+El entorno ESP32 se ha instalado.
+
+Interfaz de Thonny
+
+![imagen15](../media/c42ed7549ff7ff1f7deabd64710cb98e.png)

@@ -1,25 +1,25 @@
-### Projekt 3: PIR-Bewegungssensor
+### Proyecto 3: Sensor de movimiento PIR
 
-**Beschreibung**
+**Descripción**
 
-Der PIR-Bewegungssensor hat viele Anwendungsszenarien im Alltag, wie automatische Treppenbeleuchtung, automatische berührungslose Armaturen am Waschbecken usw.
+El sensor de movimiento PIR tiene muchas aplicaciones en la vida diaria, como lámparas automáticas para escaleras, grifos automáticos para lavabos, etc.
 
-Er ist ebenfalls ein digitaler Sensor wie Tasten, der zwei Zustandswerte 0 oder 1 hat. Er reagiert, wenn sich Personen bewegen.
+También es un sensor digital, al igual que los botones, que tiene dos valores de estado: 0 o 1. Detecta cuando hay movimiento de personas.
 
-![Bild25](../media/c1518252606b111bfa66878a2bfcc965.png)
+![imagen25](../media/c1518252606b111bfa66878a2bfcc965.png)
 
-**Steuerpin**
+**Pin de control**
 
-| PIR-Bewegungssensor | 14 |
+| Sensor de movimiento PIR | 14 |
 | --- | --- |
 | \ |   |
 
 
-#### Projekt 3.1: Den PIR-Bewegungssensor auslesen
+#### Proyecto 3.1 Leer el sensor de movimiento PIR
 
-Wir geben den Wert des PIR-Bewegungssensors über den seriellen Monitor aus.
+Imprimiremos el valor del sensor de movimiento PIR en el monitor serie.
 
-**Test Code**
+**Código de prueba**
 
 ```python
 from machine import Pin
@@ -35,18 +35,18 @@ while True:
         print("No one!")
     time.sleep(0.1)
 ```
-**Testergebnis**
+**Resultado de la prueba**
 
-Wenn Sie still vor dem Sensor stehen, ist der Messwert 0; bewegen Sie sich ein wenig, ändert er sich auf 1.
+Cuando te quedas quieto frente al sensor, el valor leído es 0; si te mueves un poco, cambiará a 1.
 
-![Bild26](../media/f8c6be9a6ad7a6423c1fa1456f771406.png)
+![imagen26](../media/f8c6be9a6ad7a6423c1fa1456f771406.png)
 
 
-#### Projekt 3.2: PIR-Bewegungssensor
+#### Proyecto 3.2 Sensor de movimiento PIR
 
-Bewegt sich jemand vor dem Sensor, leuchtet die LED auf.
+Si alguien se mueve frente al sensor, el LED se encenderá.
 
-**Test Code**
+**Código de prueba**
 
 ```python
 from machine import Pin
@@ -64,6 +64,6 @@ while True:
         led.value(0)
     time.sleep(0.1)
 ```
-**Testergebnis**
+**Resultado de la prueba**
 
-Bewegen Sie Ihre Hand vor dem Sensor, die LED schaltet sich ein. Nach einigen Sekunden ohne Bewegung schaltet sie sich wieder aus.
+Mueve la mano frente al sensor, el LED se encenderá. Tras unos segundos de inmovilidad, el LED se apagará.

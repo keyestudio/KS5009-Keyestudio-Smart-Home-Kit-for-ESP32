@@ -1,39 +1,39 @@
-### Projekt 10: RFID RC522 Modul
+### Proyecto 10: Módulo RFID RC522
 
-**Komponentenwissen**
+**Conocimientos del componente**
 
-Radiofrequenz-Identifikation: Das Kartenlesegerät besteht aus einem Radiofrequenzmodul und einem hochfrequenten Magnetfeld. Der Tag-Transponder ist ein Sensorsystem, das keine Batterie enthält. Er enthält lediglich kleine integrierte Schaltkreise zur Datenspeicherung und Antennen zum Empfangen und Senden von Signalen.
+Radio frequency identification, el lector de tarjetas está compuesto por un módulo de radiofrecuencia y un campo magnético de alto nivel. El transpondedor Tag es un dispositivo sensor, que no contiene una batería. Solo contiene pequeños chips de circuitos integrados y medios para almacenar datos y antenas para recibir y transmitir señales.
 
-Um die Daten im Tag zu lesen, bringen Sie ihn zunächst in die Lesereichweite des Kartenlesers. Der Leser erzeugt ein Magnetfeld, das nach dem Lenzschen Gesetz elektrische Energie erzeugen kann; der RFID-Tag versorgt sich dadurch selbst mit Strom und aktiviert so das Gerät.
+Para leer los datos en la etiqueta, primero colóquela dentro del alcance de lectura del lector de tarjetas. El lector generará un campo magnético, que puede producir electricidad según la ley de Lenz, entonces la etiqueta RFID suministrará energía, activando el dispositivo.
 
-![Bild40](../media/982ac6a9da0e8f55465ca5a969ac0dfe.png)
+![imagen40](../media/982ac6a9da0e8f55465ca5a969ac0dfe.png)
 
-**Steuerpins**
+**Pines de control**
 
-Verwenden Sie IIC-Kommunikation
+Usar comunicación IIC
 
 | SDA | SDA |
 | --- | --- |
 | SCL | SCL |
 
 
-#### Projekt 10.1 Tür öffnen
+#### Proyecto 10.1 Abrir la puerta
 
-Öffnen Sie den Ordner, in dem sich mfrc522_config.py, soft_iic.py und mfrc522_i2c.py befinden
+Abra la carpeta donde se encuentran mfrc522_config.py , soft_iic.py y mfrc522_i2c.py
 
-Öffnen Sie „Thonny“, klicken Sie auf „This computer“→„D:“→„2. Python Projects“→„pj10_rc522_RFID“. Wählen Sie „mfrc522_config.py“ aus, klicken Sie mit der rechten Maustaste und wählen Sie „\ **Upload to /**\ “, warten Sie, bis „mfrc522_config.py“ auf ESP32 hochgeladen wurde; wählen Sie „soft_iic.py“ aus, klicken Sie mit der rechten Maustaste und wählen Sie „\ **Upload to /**\ “, warten Sie, bis „soft_iic.py“ auf ESP32 hochgeladen wurde; und wählen Sie dann „mfrc522_i2c.py“ aus, klicken Sie mit der rechten Maustaste und wählen Sie „\ **Upload to /**\ “, warten Sie, bis „mfrc522_i2c.py“ auf ESP32 hochgeladen wurde.
+Abra "Thonny", haga clic en "This computer" → "D:" → "2. Python Projects" → "pj10_rc522_RFID". Seleccione "mfrc522_config.py", haga clic derecho y seleccione "\ **Subir a /**\ ", espere a que "mfrc522_config.py" se cargue en ESP32; y seleccione "soft_iic.py", haga clic derecho y seleccione "\ **Subir a /**\ ", espere a que "soft_iic.py" se cargue en ESP32; y luego seleccione "mfrc522_i2c.py", haga clic derecho y seleccione "\ **Subir a /**\ ", espere a que "mfrc522_i2c.py" se cargue en ESP32.
 
-![Bild41](../media/img-20250603132607.png)
+![imagen41](../media/img-20250603132607.png)
 
-![Bild42](../media/img-20250603132647.png)
+![imagen42](../media/img-20250603132647.png)
 
-![Bild43](../media/img-20250603132729.png)
+![imagen43](../media/img-20250603132729.png)
 
-Die gespeicherten Namen sind mfrc522_config.py, soft_iic.py und mfrc522_i2c.py.
+Los nombres guardados son mfrc522_config.py , soft_iic.py y mfrc522_i2c.py.
 
-![Bild44](../media/img-20250603132756.png)
+![imagen44](../media/img-20250603132756.png)
 
-**Testcode**
+**Código de prueba**
 
 ```python
 from machine import Pin, PWM,I2C, Pin
@@ -76,8 +76,8 @@ while True:
         print("close")
     time.sleep(1)
 ```
-**Testergebnis**
+**Resultado de la prueba**
 
-Halten Sie die mitgelieferte Karte an den RFID-Erfassungsbereich, die Tür dreht sich und öffnet sich, und die Konsole zeigt "open" an. Drücken Sie Taste 1 und die Tür dreht sich und schließt. Wenn Sie jedoch mit einem anderen blauen Erkennungsblock wischen, zeigt die Konsole "Error" an.
+Acerca la tarjeta proporcionada al área de inducción RFID, la puerta girará y se abrirá, y la consola muestra "open". Haga clic en el botón 1 y la puerta gira y se cierra. Sin embargo, al pasar otro bloque de inducción azul, la consola muestra "Error".
 
-![Bild45](../media/03fd569d64704a7e9705c1891f4d4856.png)
+![imagen45](../media/03fd569d64704a7e9705c1891f4d4856.png)
