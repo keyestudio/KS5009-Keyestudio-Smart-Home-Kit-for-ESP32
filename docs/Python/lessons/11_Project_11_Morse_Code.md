@@ -1,19 +1,19 @@
-### プロジェクト11: モールス信号
+### Project 11: Morsecode
 
-モールス信号（Morse code）はモールス記号とも呼ばれ、オンとオフの信号で文字、数字、句読点などを異なる配列で表現する符号です。ここではこれをパスワードゲートとして使用します。
+Morsecode, ook bekend als Morse-wachtwoord, is een pulserend signaalcode die verschillende letters, cijfers en leestekens in verschillende reeksen uitdrukt. Nu gebruiken we het als onze wachtwoordpoort.
 
-The Morse code corresponds to the following characters:
+De Morsecode komt overeen met de volgende tekens:
 
-![画像46](../media/1a5e70c0d091e2617acbfc274827b4fd.png)
+![afbeelding46](../media/1a5e70c0d091e2617acbfc274827b4fd.png)
 
 
-#### プロジェクト11.1 モールス信号でドアを開ける
+#### Project 11.1 Morsecode: Deur openen
 
-**説明**
+**Beschrijving**
 
-正しいパスワードとして ![画像47](../media/9491f7768f28ee4901e6fdb83632c27c.png) を使用します。さらに、OneButtonというボタン用ライブラリファイルがあり、クリック、ダブルクリック、長押しなどの機能を簡単に扱えます。モールスパスワードでは、クリックが「.」、長押しして離すのが「-」です。
+We gebruiken ![afbeelding47](../media/9491f7768f28ee4901e6fdb83632c27c.png)\ als het correcte wachtwoord. Daarnaast is er een knopbibliotheekbestand OneButton, waarmee klikken, dubbelklikken, lang indrukken en andere functies heel eenvoudig zijn. Voor het Morse-wachtwoord is een klik "." en een lang indrukken en loslaten "-".
 
-**Test Code**
+**Testcode**
 
 ```python
 # Import machine, time and dht modules.
@@ -80,8 +80,8 @@ while True:
             lcd.putstr("enter again")
             password = ""  # Clear password
 ```
-**テスト結果**
+**Testresultaat**
 
-最初にLCD1602には "Enter password" と表示され、ボタン1をクリックまたは長押ししてパスワードを入力します。正しいパスワード "-.-" を入力してボタン2を押すと、ドアが開き、LCD1602には "open" と表示されます。
+Eerst toont de LCD1602 "Voer wachtwoord in", daarna klik of houd knop 1 ingedrukt om het wachtwoord in te voeren. Als we het correcte wachtwoord "-.-" invoeren en vervolgens knop 2 indrukken, opent de deur en toont de LCD1602 "open".
 
-もし他の誤ったパスワードが入力された場合、ドアは閉じられ、LCD1602には "error" と表示され、2秒後に "enter again" と表示されます。
+Als er andere onjuiste wachtwoorden worden ingevoerd, blijft de deur gesloten en toont de LCD1602 "fout", waarna 2 s later "voer opnieuw in" wordt weergegeven.

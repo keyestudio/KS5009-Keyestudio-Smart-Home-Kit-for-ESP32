@@ -1,29 +1,30 @@
-### Project 4: 音楽を再生
+### Project 4: Muziek afspelen
 
-**説明**
+**Beschrijving**
 
-車用拡張ボードにはオーディオパワーアンプ素子が搭載されており、外部の増幅装置として音楽を再生します。
+There is a audio power amplifier element in the car expansion board,
+which is as an external amplification equipment to play music.
 
-このプロジェクトでは、それを使って曲を再生します。
+In this project, we will work to play a piece of music by using it.
 
-**部品の知識**
+**Componentkennis**
 
-**パッシブブザー：**
+**Passieve zoemer:**
 
-オーディオパワーアンプ（パッシブブザーなど）には内部発振回路がありません。制御する際は、部品の正極に異なる周波数の矩形波を入力し、負極を接地して、パワーアンプに異なる周波数の音を鳴らすよう制御する必要があります。
+De audioversterker (zoals een passieve zoemer) heeft geen interne oscillator. Bij aansturing moeten we vierkante golven met verschillende frequenties naar de positieve pool van het component sturen en de negatieve pool naar massa verbinden, zodat de versterker tonen met verschillende frequenties produceert.
 
-![画像27](../media/2e6fd6b7975ef84ab94eee896161347b.png)
+![afbeelding27](../media/2e6fd6b7975ef84ab94eee896161347b.png)
 
-**制御ピン**
+**Besturingspin**
 
-| パッシブブザー | 25 |
+| Passieve zoemer | 25 |
 | --- | --- |
 | \ |   |
 
 
-#### Project 4.1 ハッピーバースデーを再生
+#### Project 4.1 Speel Happy Birthday
 
-**テストコード**
+**Testcode**
 
 ```python
 from machine import Pin, PWM
@@ -77,6 +78,6 @@ buzzer.freq(532)
 sleep(0.5)
 buzzer.duty(0)
 ```
-**テスト結果**
+**Testresultaat**
 
-パッシブブザーが「ハッピーバースデー」を再生します。
+De passieve zoemer zal 'Happy Birthday' afspelen.

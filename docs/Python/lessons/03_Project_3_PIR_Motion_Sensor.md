@@ -1,25 +1,25 @@
-### プロジェクト 3: PIRモーションセンサー
+### Project 3: PIR-bewegingssensor
 
-**説明**
+**Beschrijving**
 
-PIRモーションセンサーは、階段の自動点灯や洗面台の自動水栓など、日常生活で多くの応用例があります。
+De PIR-bewegingssensor kent veel toepassingsscenario's in het dagelijks leven, zoals automatische sensorlampen bij trappen, automatische kranen bij wastafels, enz.
 
-ボタンのようなデジタルセンサーで、状態は0か1の二値です。人が動いているときに検知されます。
+Het is ook een digitale sensor, net als knoppen, die twee toestanden heeft: 0 of 1. De sensor geeft een signaal wanneer er beweging is.
 
-![画像25](../media/c1518252606b111bfa66878a2bfcc965.png)
+![afbeelding25](../media/c1518252606b111bfa66878a2bfcc965.png)
 
-**制御ピン**
+**Besturingspin**
 
-| PIRモーションセンサー | 14 |
+| PIR-bewegingssensor | 14 |
 | --- | --- |
 | \ |   |
 
 
-#### プロジェクト 3.1 PIRモーションセンサーの読み取り
+#### Project 3.1 Uitlezen van de PIR-bewegingssensor
 
-シリアルモニタを通してPIRモーションセンサーの値を出力します。
+We zullen de waarde van de PIR-bewegingssensor afdrukken via de seriële monitor.
 
-**テストコード**
+**Testcode**
 
 ```python
 from machine import Pin
@@ -35,18 +35,18 @@ while True:
         print("No one!")
     time.sleep(0.1)
 ```
-**テスト結果**
+**Testresultaat**
 
-センサーの前にじっと立っていると読み取り値は0で、少し動くと1に変わります。
+Als je stil voor de sensor staat, is de uitgelezen waarde 0; beweeg je iets, dan verandert deze naar 1.
 
-![画像26](../media/f8c6be9a6ad7a6423c1fa1456f771406.png)
+![afbeelding26](../media/f8c6be9a6ad7a6423c1fa1456f771406.png)
 
 
-#### プロジェクト 3.2 PIRモーションセンサー
+#### Project 3.2 PIR-bewegingssensor
 
-誰かがセンサーの前で動くと、LEDが点灯します。
+Als iemand voor de sensor beweegt, gaat de LED branden.
 
-**テストコード**
+**Testcode**
 
 ```python
 from machine import Pin
@@ -64,6 +64,6 @@ while True:
         led.value(0)
     time.sleep(0.1)
 ```
-**テスト結果**
+**Testresultaat**
 
-センサーの前で手を動かすとLEDが点灯します。数秒間動きがないと、LEDは消灯します。
+Beweeg je hand voor de sensor, dan gaat de LED aan. Na een paar seconden zonder beweging gaat de LED weer uit.

@@ -1,21 +1,21 @@
-### プロジェクト9: 温湿度センサー
+### Project 9: Temperatuur- en vochtigheidssensor
 
-**コンポーネントの知識**
+**Componentkennis**
 
-通信方式はシリアルデータとシングルバスです。温度測定範囲は -20 ~ +60℃、精度は ±2℃です。湿度測定範囲は 5 ~ 95%RH、精度は ±5%RH です。
+De communicatiemodus is seriële data en single-bus. Het temperatuurbereik is -20 ~ +60℃, de nauwkeurigheid is ±2℃. Het vochtigheidsbereik is 5 ~ 95%RH, de nauwkeurigheid is ±5%RH.
 
-![画像39](../media/0b9c44c3e4f3706638b9cf15871b861c.png)
+![afbeelding39](../media/0b9c44c3e4f3706638b9cf15871b861c.png)
 
-**制御ピン**
+**Besturingspin**
 
-| 温湿度センサー | 17 |
+| Temperatuur- en vochtigheidssensor | 17 |
 | --- | --- |
 | \ |   |
 
 
-#### プロジェクト9.1 温湿度テスター
+#### Project 9.1 Temperatuur- en vochtigheidstester
 
-**テストコード**
+**Testcode**
 
 ```python
 # Import machine, time and dht modules.
@@ -45,6 +45,6 @@ while True:
     lcd.putstr('H= {}'.format(DHT.humidity()))
     time.sleep_ms(1000)
 ```
-**テスト結果**
+**Testresultaat**
 
-LCD1602 は温度（T = \*\* ° C）と湿度（H = \*\* %RH）を表示します。温湿度センサーに息を吹きかけると、湿度が上昇するのが確認できます。
+De LCD1602 toont de temperatuur (T = \*\* ° C) en luchtvochtigheid (H = \*\* %RH). Wanneer je in de T/H-sensor blaast, zie je dat de luchtvochtigheid stijgt.

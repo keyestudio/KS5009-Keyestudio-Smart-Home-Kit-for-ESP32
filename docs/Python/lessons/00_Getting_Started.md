@@ -1,91 +1,91 @@
 
-## 6.1 リソース圧縮パッケージ
+## 6.1 Resource compressiepakket
 
-このリソースパッケージにはコード、ライブラリ、ファームウェア、および Thonny ソフトウェアが含まれています。続けて学習するにはこのリソースが必要です。
+Het resourcepakket bevat code, libraries, firmware en Thonny-software. Je moet dit resourcepakket hebben om verder te kunnen leren.
 
-リソース圧縮パッケージ
+[Resource-compression-package](../Resource-compression-package.7z)
 
 
-## 6.2 Thonnyの始め方
-
----
-
-### 6.2.1 Thonnyパッケージを開く
-
-下のフォルダを参照してください：
-
-![画像1](../media/29fa7a9563dec2dddbfc7ed79d197380.png)
+## 6.2 Aan de slag met Thonny
 
 ---
 
-### 6.2.2 Thonnyインターフェース
+### 6.2.1 Open het Thonny-pakket
 
-Thonnyを開く
+Raadpleeg de onderstaande map:
 
-![画像2](../media/d753621b40cd7405ce034e93e0f5678a.png)
-
-メインインターフェースの機能：
-
-![画像3](../media/d41b79772c9846fd8bf295c8451f8321.png)
-
-![画像4](../media/3d04fe6893ca104e4e593a0786cb3799.png)
+![afbeelding1](../media/29fa7a9563dec2dddbfc7ed79d197380.png)
 
 ---
 
-### 6.2.3 ESP32開発環境を選択
+### 6.2.2 Thonny-interface
 
-Python.exe をクリックし、次に「インタプリタの設定」を選択してください
+Open Thonny
 
-![画像5](../media/30d66dba96cfabbe2bd3b6c858564ef2.png)
+![afbeelding2](../media/d753621b40cd7405ce034e93e0f5678a.png)
 
-インタプリタの画面で MicroPython(ESP32) を選択してください
+Hoofdfuncties van de interface:
 
-![画像6](../media/5f92c4dd24223cf49d6da075aa53307f.png)
+![afbeelding3](../media/d41b79772c9846fd8bf295c8451f8321.png)
+
+![afbeelding4](../media/3d04fe6893ca104e4e593a0786cb3799.png)
 
 ---
 
-### 6.2.4 ファームウェアのインストール
+### 6.2.3 Selecteer de ESP32-ontwikkelomgeving
 
-Download link：\ https://micropython.org/download/esp32/
+Klik op Python.exe, selecteer vervolgens Configure interpreter
 
-バージョン V1.17 をダウンロードしてください
+![afbeelding5](../media/30d66dba96cfabbe2bd3b6c858564ef2.png)
 
-![画像7](../media/4f1f3b0568c3ae2ca3288431df340184.png)
+Selecteer MicroPython(ESP32) in het Interpreter-venster
 
-もちろん、以下のようにダウンロード済みのファームウェアも提供しています。
+![afbeelding6](../media/5f92c4dd24223cf49d6da075aa53307f.png)
 
-![画像-20250408113209943](../media/image-20250408113209943.png)
+---
 
-MicroPythonファームウェアを書き込む
+### 6.2.4 Firmware installeren
 
-スマートホームをUSBでコンピュータに接続してください。
+Downloadlink：\ https://micropython.org/download/esp32/
 
-「Install or update firmware」をクリック
+Kies om versie V1.17 te downloaden
 
-![画像8](../media/9b8470fee22b3a6aa4ac21d1e1d10eda.png)
+![afbeelding7](../media/4f1f3b0568c3ae2ca3288431df340184.png)
 
-ポートを選択
+Natuurlijk leveren wij ook de gedownloade firmware, zoals hieronder weergegeven.
 
-![画像9](../media/d3bff3f1b25076733717273e94616088.png)
+![afbeelding-20250408113209943](../media/image-20250408113209943.png)
 
-「Browser」をクリックしてダウンロードしたバージョン V1.17 のファームウェアを選択してください
+MicroPython-firmware flashen
 
-![画像10](../media/ad4cfc202f014101ddd9f5373773635f.png)
+Verbind het smart home met je computer via USB.
 
-![画像11](../media/aef61c4411d53f83685ad570c7d3a075.png)
+Klik op Install or update firmware
 
-「Install」をクリック
+![afbeelding8](../media/9b8470fee22b3a6aa4ac21d1e1d10eda.png)
 
-![画像12](../media/507ff0c04761a509f729a8c4e88e4b27.png)
+Selecteer Port
 
-ESP32 メインボード（CH340(COM)）のドライバとして Port または WebREPL を選択してください
+![afbeelding9](../media/d3bff3f1b25076733717273e94616088.png)
 
-![画像13](../media/c1c4ae83635b2c0186b1985aeef844ae.png)
+Klik op Browser om de gedownloade firmwareversie V1.17 te vinden
 
-![画像14](../media/19514aef3fdd86fb2c033c6441d8ff6e.png)
+![afbeelding10](../media/ad4cfc202f014101ddd9f5373773635f.png)
 
-ESP32 環境がインストールされました。
+![afbeelding11](../media/aef61c4411d53f83685ad570c7d3a075.png)
 
-Thonny インターフェース
+Klik op Install
 
-![画像15](../media/c42ed7549ff7ff1f7deabd64710cb98e.png)
+![afbeelding12](../media/507ff0c04761a509f729a8c4e88e4b27.png)
+
+Kies Port of WebREPL als driver voor het ESP32-mainboard CH340(COM)
+
+![afbeelding13](../media/c1c4ae83635b2c0186b1985aeef844ae.png)
+
+![afbeelding14](../media/19514aef3fdd86fb2c033c6441d8ff6e.png)
+
+De ESP32-omgeving is geïnstalleerd.
+
+Thonny-interface
+
+![afbeelding15](../media/c42ed7549ff7ff1f7deabd64710cb98e.png)

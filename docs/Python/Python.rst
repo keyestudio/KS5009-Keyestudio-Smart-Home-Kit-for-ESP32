@@ -1,4 +1,4 @@
-6. Pythonチュートリアル
+6. Python Handleiding
 =============================
 
 .. toctree::
@@ -10,10 +10,10 @@
 
 
 
-6.3 Pythonプロジェクト
+6.3 Python Projecten
 ---------------------------
 
-すべてのプロジェクトにはコードが提供されており、リソース圧縮パッケージに含まれています
+Code wordt geleverd voor alle projecten en is beschikbaar in het Resource-compression-package
 
 .. toctree::
     :maxdepth: 2

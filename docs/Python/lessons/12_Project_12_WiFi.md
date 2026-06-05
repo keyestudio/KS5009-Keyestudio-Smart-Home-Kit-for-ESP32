@@ -1,27 +1,21 @@
 ### Project 12: WiFi
 
-The easiest way to access the Internet is to use a WiFi to connect. The
-ESP32 main control board comes with a WiFi module, making our smart home
-accessible to the Internet easily.
+De gemakkelijkste manier om toegang te krijgen tot het Internet is door verbinding te maken via WiFi. De ESP32 hoofdcontrollerkaart wordt geleverd met een WiFi-module, waardoor ons slimme huis eenvoudig toegankelijk wordt voor het Internet.
 
-![画像48](../media/img-20250620091803.png)
+![afbeelding48](../media/img-20250620091803.png)
 
 
-#### Project 12.1 WiFi Station
+#### Project 12.1 WiFi-station
 
-**説明**
+**Beschrijving**
 
-We connect the smart home to a LAN, which is the WiFi in your home or
-the hot spot of your phone. After the connection is successful, an
-address will be assigned. We will print the assigned address in the
-shell.
+We verbinden het slimme huis met een LAN, dat de WiFi in je huis of de hotspot van je telefoon is. Nadat de verbinding succesvol is, wordt er een adres toegewezen. We zullen het toegewezen adres in de shell afdrukken.
 
-**テストコード**
+**Testcode**
 
-Note: ssiD and password in the code should be filled with your own WiFi
-name and password.
+Opmerking: ssiD en password in de code moeten worden ingevuld met uw eigen WiFi-naam en wachtwoord.
 
-![画像49](../media/278cbdc272b5cc1a6461a7934eabe5c0.png)
+![afbeelding49](../media/278cbdc272b5cc1a6461a7934eabe5c0.png)
 
 ```python
 import time
@@ -52,9 +46,8 @@ try:
 except:
     sta_if.disconnect()
 ```
-**テスト結果**
+**Testresultaat**
 
-If the WiFi is connected successfully, the serial monitor will print out
-the connected WiFi name and assigned IP address.
+Als de WiFi succesvol is verbonden, zal de seriële monitor de verbonden WiFi-naam en het toegewezen IP-adres afdrukken.
 
-![画像50](../media/8c021cf89562d7ee27a6446f54be17bf.png)
+![afbeelding50](../media/8c021cf89562d7ee27a6446f54be17bf.png)

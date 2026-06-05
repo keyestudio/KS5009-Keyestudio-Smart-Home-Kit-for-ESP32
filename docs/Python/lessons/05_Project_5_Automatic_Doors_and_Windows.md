@@ -1,41 +1,41 @@
-### Project 5: 自動ドアと窓
+### Project 5: Automatische deuren en ramen
 
-**説明**
+**Beschrijving**
 
-自動ドアや窓は電動化が必要で、180度のServoといくつかのセンサーを使うことでより自動化できます。雨滴センサーを追加すれば、雨が降ったときに自動的に窓を閉めることができます。RFIDを追加すれば、カードをかざしてドアを開けるといった機能を実現できます。
+Automatische deuren en ramen hebben een aandrijfapparaat nodig, dat geautomatiseerder kan worden met een 180° servo en enkele sensoren. Door een raindrop sensor toe te voegen, kun je het effect bereiken dat ramen automatisch sluiten wanneer het regent. Als je een RFID toevoegt, kunnen we het effect realiseren van swipen om de deur te openen, enzovoort.
 
-**コンポーネントの知識**
+**Componentkennis**
 
 **Servo:**
 
-Servoは筐体、回路基板、コアレスモーター、ギア、位置検出器で構成される位置制御用のドライバ装置です。
+Servo is een position servo driver device bestaat uit een behuizing, een circuit board, een coreless motor, een gear en een position detector.
 
-その動作原理は、ServoがMCUや受信機から送られた信号を受信し、周期20ms・幅1.5msの基準信号を生成し、取得した直流バイアス電圧とポテンショメータの電圧を比較して電圧差を出力することです。
+Het werkingsprincipe is dat de servo het signaal ontvangt dat door de MCU of ontvanger wordt gestuurd en een referentiesignaal produceert met een periode van 20ms en een breedte van 1.5ms, daarna vergelijkt het de verkregen DC bias spanning met de spanning van de potentiometer en bepaalt het spanningsverschil als output.
 
-基板上のICは回転方向を判断し、コアレスモーターを駆動して回転を開始します。減速ギアを介して出力がスイングアームに伝えられ、位置検出器によって信号が返され、所定の位置に達したかどうかを判断します。これは一定角度の変化が必要で維持できる制御システムに適しています。
+De IC op de circuit board beoordeelt de draairichting en drijft vervolgens de coreless motor aan om te beginnen met draaien. Het vermogen wordt via het reduction gear overgebracht naar de swing arm, en het signaal wordt teruggestuurd door de position detector om te beoordelen of de positionering is bereikt, wat geschikt is voor die besturingssystemen die een constante hoekverandering vereisen en kunnen worden vastgehouden.
 
-モーターの速度が一定になると、カスケード減速ギアを介してポテンショメータが回転され、電圧差が0になりモーターが回転を停止します。一般に、Servoの回転角度範囲は0°～180°です。
+Wanneer de motorsnelheid constant is, wordt de potentiometer via het cascade reduction gear in draaiing gebracht, wat leidt tot dat het spanningsverschil 0 is en de motor stopt met draaien. Over het algemeen is het hoekomvang van de servo rotatie 0° --180 °.
 
-制御Servoのパルス周期は20ms、パルス幅は0.5ms～2.5msで、対応する位置は-90°～+90°です。以下は180°Servoの例です:
+De pulsperiode van de control servo is 20ms, de pulsbreedte is 0.5ms ~ 2.5ms, en de overeenkomstige positie is -90°~ +90°. Hier is een voorbeeld van een 180° servo:
 
-![画像28](../media/708316fde05c62113a3024e0efb0c237.jpeg)
+![afbeelding28](../media/708316fde05c62113a3024e0efb0c237.jpeg)
 
-一般的にServoは茶色、赤、橙の3本の線があります。茶色の線は接地、赤は電源線、橙は信号線です。
+In het algemeen heeft de servo drie draden in bruin, rood en oranje. De bruine draad is aardedraad, de rode is de positieve voedingsdraad en de oranje is een signaaldraad.
 
-![画像29](../media/35084ae289a08e35bdb8c89ceb134ba4.png)
+![afbeelding29](../media/35084ae289a08e35bdb8c89ceb134ba4.png)
 
-![画像30](../media/6cbf6f177ea204f7632b872497fde010.png)
+![afbeelding30](../media/6cbf6f177ea204f7632b872497fde010.png)
 
 **Pin**
 
-| 窓の Servo | 5 |
+| De servo van het raam | 5 |
 | --- | --- |
-| 扉の Servo | 13 |
+| De servo van de deur | 13 |
 
 
-#### Project 5.1 ドアを制御する
+#### Project 5.1 De deur besturen
 
-**テストコード**
+**Testcode**
 
 ```python
 from machine import Pin, PWM
@@ -63,22 +63,22 @@ while True:
     pwm.duty(angle_180)
     time.sleep(1)
 ```
-**テスト結果**
+**Testresultaat**
 
-扉のServoは扉と一緒に前後に回転します。
+De servo van de deur draait mee met de deur, heen en weer
 
 
-#### Project 5.2 窓を閉める
+#### Project 5.2 Het raam sluiten
 
-**説明**
+**Beschrijving**
 
-ここでは、Servoと雨滴センサーを使って、雨のときに自動で窓を閉める装置を作ります。
+We gaan een servo en een raindrop sensor gebruiken om een apparaat te maken dat ramen automatisch sluit wanneer het regent.
 
-**コンポーネントの知識**
+**Componentkennis**
 
-**雨滴センサー:** これはアナログ入力モジュールで、検出面に水が広く付着しているほど返される値が大きくなります（範囲 0~4096）。
+**Raindrop Sensor:** Dit is een analoge ingangsmodule; hoe groter het door water bedekte gebied op het detectievlak, hoe groter de teruggegeven waarde (bereik 0~4096).
 
-**テストコード**
+**Testcode**
 
 ```python
 # Import Pin, ADC and DAC modules.
@@ -107,6 +107,6 @@ try:
 except:
     pass
 ```
-**テスト結果**
+**Testresultaat**
 
-最初は窓が自動で開き、手（肌に水が付いている状態）で雨滴センサーに触れると、窓が閉まります。
+Aanvankelijk opent het raam automatisch, en wanneer je met je hand (die water op de huid heeft) de raindrop sensor aanraakt, zal het raam sluiten.

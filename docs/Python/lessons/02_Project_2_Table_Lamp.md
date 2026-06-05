@@ -1,29 +1,32 @@
-### プロジェクト2: テーブルランプ
+### Project 2: Tafellamp
 
-**説明**
+**Beschrijving**
 
-一般的なテーブルランプはLEDとボタンを使い、ボタンを押すことでランプのオン/オフを制御できます。
+De gewone tafellamp gebruikt LED-verlichting en knoppen, waarmee je het
+licht kunt aan- en uitzetten door op de knop te drukken.
 
-**ボタンの原理**
+**Principe van de knop**
 
-ボタンモジュールはデジタルセンサーで、0か1しか読み取れません。モジュールが押されていないときは高レベル（1）で、押されると低レベル（0）になります。
+De knopmodule is een digitale sensor, die alleen 0 of 1 kan lezen. Wanneer
+de module niet is ingedrukt, is de uitgang hoog (1); wanneer hij
+ingedrukt is, is hij laag (0).
 
-![画像22](../media/41f565d4f355abb96e105119660e80ba.png)
+![afbeelding22](../media/41f565d4f355abb96e105119660e80ba.png)
 
-**ボタンのピン**
+**Pinnen van de knop**
 
-| **ボタン1** | **16** |
+| **Knop 1** | **16** |
 | --- | --- |
-| **ボタン2** | **27** |
+| **Knop 2** | **27** |
 
 
-#### プロジェクト2.1 ボタンの読み取り
+#### Project 2.1 Lees de knop
 
-**説明**
+**Beschrijving**
 
-ボタンの状態値を読み取り、それをシリアルモニタに表示して直感的に確認します。
+We gaan de statuswaarde van de knop lezen en deze op de seriële monitor weergeven, zodat je het intuïtief kunt zien.
 
-**テストコード**
+**Test Code**
 
 ```python
 from machine import Pin
@@ -39,22 +42,22 @@ while True:
     print("button2 =",btnVal2)
     time.sleep(0.1) #delay 0.1s
 ```
-**テスト結果**
+**Testresultaat**
 
-実行ボタンをクリックすると、button1とbutton2の状態値がシェルに表示されます。スマートホームのボタンを押すと、状態値の変化が確認できます。
+Klik op de run-knop, dan zie je de statuswaarden van button1 en button 2 in de shell afgedrukt. Druk op de knop van het slimme huis en je ziet de verandering van de statuswaarden.
 
-![画像23](../media/1b984da67c0e89a72a9601c39362567d.png)
+![afbeelding23](../media/1b984da67c0e89a72a9601c39362567d.png)
 
 
-#### プロジェクト2.2 テーブルランプ
+#### Project 2.2. Tafellamp
 
-**説明**
+**Beschrijving**
 
-一般的なシンプルなテーブルランプは、ボタンを押すと点灯し、もう一度押すと消灯します。
+Bij een eenvoudige tafellamp druk je eenmaal op de knop om hem aan te doen, druk je nogmaals om de lamp uit te doen.
 
-**テストコード**
+**Testcode**
 
-ボタンが押された回数を数え、2で割った余りをとることで、0または1の2状態を得ることができます。
+Tel het aantal keren dat op de knop is gedrukt en neem de rest bij deling door 2; zo krijg je twee toestandswaarden: 0 of 1.
 
 ```python
 from machine import Pin
@@ -81,8 +84,8 @@ while True:
         led.value(0)
     time.sleep(0.1) #delay 0.1s
 ```
-**テスト結果**
+**Testresultaat**
 
-シェルにはボタンが押された回数が表示されます。ボタンを1回押すとLEDが点灯し、もう1回押すと消灯します。
+De shell zal het aantal keren dat op de knop is gedrukt afdrukken; klik eenmaal op de knop, de LED gaat aan, klik nogmaals, dan gaat deze uit.
 
-![画像24](../media/1bc079eabd93cb2e8a8e15f0ab7f1367.png)
+![afbeelding24](../media/1bc079eabd93cb2e8a8e15f0ab7f1367.png)

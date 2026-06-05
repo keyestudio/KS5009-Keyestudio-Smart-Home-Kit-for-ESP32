@@ -1,34 +1,34 @@
-### Project 1: LEDの制御
+### Project 1: LED besturen
 
-we will first learn how to control LED.
+We zullen eerst leren hoe een LED te besturen.
 
-![画像16](../media/0cda68ae8719d9b6c1bb79d64160d31d.png)
+![afbeelding16](../media/0cda68ae8719d9b6c1bb79d64160d31d.png)
 
-**動作原理**
+**Werkingsprincipe**
 
-LEDは光を放つダイオードで、電子モジュールにすることができます。ピンを制御して高レベルを出力すると光り、そうでなければ消灯します。
+LED is een lichtuitstralende diode die als een elektronisch module kan worden gemaakt. Hij zal oplichten wanneer we de pinnen een hoge uitgang geven; anders is hij uit.
 
-**パラメータ**
+**Parameters**
 
-| **動作電圧** | **DC 3~5V** |
+| **Werkspanning** | **DC 3~5V** |
 | --- | --- |
-| **動作電流** | **<20mA** |
-| **消費電力** | **0.1W** |
+| **Werkstroom** | **<20mA** |
+| **Vermogen** | **0.1W** |
 
-**制御ピン**
+**Controlepin**
 
-| 黄色 LED | 12 |
+| Gele LED | 12 |
 | --- | --- |
 | \ |   |
 
 
-#### Project 1.1 LED 点滅
+#### Project 1.1 LED knipperen
 
-**説明**
+**Beschrijving**
 
-LEDのピンを高レベルと低レベルに出力させることでLEDを点滅させることができます。
+We kunnen de LED-pin een hoog en laag uitgangsniveau laten geven om de LED te laten knipperen.
 
-**テストコード**
+**Testcode**
 
 ```python
 from machine import Pin
@@ -41,32 +41,32 @@ while True:
     led.value(0)# turn off led
     time.sleep(1)# delay 1s
 ```
-Open the sample code
+Open de voorbeeldcode
 
-![画像17](../media/39658e26aad2c9794bd3db9df3c70732.png)
+![afbeelding17](../media/39658e26aad2c9794bd3db9df3c70732.png)
 
-![画像18](../media/166384572a1fa595858d933aea5af710.png)
+![afbeelding18](../media/166384572a1fa595858d933aea5af710.png)
 
-**テスト結果**
+**Testresultaat**
 
-Click the button
+Klik op de knop
 
-![画像19](../media/c5e28dda04f63745f59ef351025e82e8.png)
+![afbeelding19](../media/c5e28dda04f63745f59ef351025e82e8.png)
 
-黄色のLEDが点滅しているのが確認できます。
+We kunnen zien dat de gele LED knippert.
 
 
-#### Project 1.2 ブリージングLED
+#### Project 1.2 Ademende LED
 
-**説明**
+**Beschrijving**
 
-「ブリージングLED」とは、LEDの明るさが暗から明へ、そして再び暗へと滑らかに変化し続ける現象で、まるでLEDが呼吸しているかのような錯覚を与えます。しかし、LEDの明るさはどのように制御すればよいでしょうか？
+Een "breathing LED" is een verschijnsel waarbij de helderheid van een LED geleidelijk verandert van donker naar helder en weer naar donker, dit blijft zich herhalen en geeft de illusie dat de LED "ademt". Maar hoe bestuur je de helderheid van een LED?
 
-PWMを利用するのが合理的です。単位時間内の高レベルと低レベルの出力時間比を出力します。高レベルが占める時間が長いほどPWM値は大きくなり、LEDはより明るくなります。
+Het is logisch om gebruik te maken van PWM. Door in een tijdseenheid het aantal hoge en lage niveaus uit te geven — hoe meer tijd het hoge niveau inneemt, hoe groter de PWM-waarde en hoe helderder de LED.
 
-![画像20](../media/704984700612966b997127cb9bde5c96.jpeg)
+![afbeelding20](../media/704984700612966b997127cb9bde5c96.jpeg)
 
-**テストコード**
+**Testcode**
 
 ```python
 import time
@@ -93,10 +93,10 @@ except:
 #deinit() needs to be called to turned OFF the timer. Otherwise, the PWM may fail to work next time.
     pwm.deinit()
 ```
-**テスト結果**
+**Testresultaat**
 
-Click the button.
+Klik op de knop.
 
-![画像21](../media/609b283e0909b5e5c14809c4ccf892ed.png)
+![afbeelding21](../media/609b283e0909b5e5c14809c4ccf892ed.png)
 
-LEDは徐々に暗くなり、再び明るくなることを周期的に繰り返し、人の呼吸のような動きをします。
+De LED wordt geleidelijk donkerder en vervolgens helderder, cyclisch, alsof hij ademt.

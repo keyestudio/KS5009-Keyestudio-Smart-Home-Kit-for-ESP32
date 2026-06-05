@@ -1,229 +1,270 @@
 
-## 5.1 リソース圧縮パッケージ
+## 5.1 Resource compressiepakket
 
-リソースパッケージには Code、Libraries、APP、Driver ファイルが含まれています。学習を続けるにはこのリソースが必要です。
+Het resourcepakket bevat Code, Libraries, APP en Driver-bestanden. Je
+moet dit resourcepakket hebben om verder te kunnen leren.
 
-[Resource compression package](../Resource-compression-package.7z)
+[Resource compressiepakket](../Resource-compression-package.7z)
 
 
-## 5.2 Getting started with Arduino
+## 5.2 Aan de slag met Arduino
 
 ---
 
 ### 5.2.1 ESP32 PLUS Development board
 
-![1](../media/201911d851d2d7fa6e854d6428bb5b67.png)
+![afbeelding1](../media/201911d851d2d7fa6e854d6428bb5b67.png)
 
-ESP32PLUS は ESP32 をベースにした汎用の WiFi プラス Bluetooth 開発ボードで、ESP32-WOROOM-32 モジュールを統合しており Arduino と互換性があります。
+ESP32PLUS is een universeel WiFi plus Bluetooth ontwikkelbord gebaseerd
+op ESP32, geïntegreerd met het ESP32-WOROOM-32 module en compatibel met
+Arduino.
 
-ホールセンサ、高速 SDIO/SPI、UART、I2S および I2C を備えています。さらに、freeRTOS オペレーティングシステムを搭載しており、IoT やスマートホームに非常に適しています。
+Het heeft een hallsensor, high-speed SDIO/SPI, UART, I2S en ook I2C.
+Verder is het uitgerust met het freeRTOS besturingssysteem, wat het zeer
+geschikt maakt voor het Internet of Things en smart home toepassingen.
 
-![2](../media/e00562548e84b885ad18510b261ade05.png)
+![afbeelding2](../media/e00562548e84b885ad18510b261ade05.png)
 
 ---
 
-### 5.2.2 Windows システム
+### 5.2.2 Windows-systeem
 
-![3](../media/6cf6312dc7c7db27794b54d58a8bf80c.png)
-
-
-#### 1 Arduino IDE のインストール
-
-コントロールボードを入手したら、まず Arduino IDE とドライバをダウンロードする必要があります。
-
-公式サイトから Arduino IDE をダウンロードできます: https://www.arduino.cc/、ブラウザバーの **SOFTWARE** をクリックしてダウンロードページにアクセスしてください。以下のように表示されます:
-
-![4](../media/83a843a56d49e93ec9f99bfb33fee269.png)
-
-⚠️ **特別な注意:** 前述の公式サイトの SOFTWARE 内で Arduino IDE が見つからない場合は、次のリンクをクリックして直接 Arduino IDE のダウンロードページにアクセスできます：\ https://www.arduino.cc/en/software
-
-Arduino には様々なバージョンの IDE があります。お使いのシステムに対応したバージョンをダウンロードしてください。ここでは Windows 版 Arduino IDE のダウンロードとインストール方法を示します。
-
-![5](../media/fac59eb6f401fa9e6ce711bb5f3f62f2.png)
-
-Installer (.exe) と Zip パッケージのどちらかを選べます。インストーラー（最初のもの）を使用することをおすすめします。これにより使用に必要なすべて（ドライバを含む）が直接インストールされます。Zip パッケージではドライバを手動でインストールする必要があります。Zip ファイルはポータブルインストールを作成したい場合にも便利です。
-
-![6](../media/0ab58d5303a100e9638be44131a34b51.png)
-
-JUST DOWNLOAD をクリックするだけです。
+![afbeelding3](../media/6cf6312dc7c7db27794b54d58a8bf80c.png)
 
 
-#### 2 ドライバをインストールする
+#### 1 Arduino IDE installeren
 
-⚠️ **特別な注意: CH340 ドライバを既にインストールしている場合は、この手順をスキップしてください。**
+Wanneer je het control board ontvangt, moet je eerst de Arduino IDE en
+de driver downloaden.
 
-USB ケーブルでメインコントロールボードをコンピュータに接続すると、MacOS と Windows10 ではドライバが自動的にインストールされます。ドライバのインストールが失敗した場合は、手動でドライバをインストールする必要があります。
+Je kunt de Arduino IDE downloaden van de officiële website:
+https://www.arduino.cc/, klik op **SOFTWARE** in de browsebalk om de
+downloadpagina te openen, zoals hieronder weergegeven:
 
-(1) コンピュータがドライバを自動インストールするか確認する：
+![afbeelding4](../media/83a843a56d49e93ec9f99bfb33fee269.png)
 
-Computer を右クリック----- プロパティをクリック----- デバイス マネージャーをクリック、以下のはインストール成功を示しています:
+⚠️ **Bijzondere herinnering:** Als je de Arduino IDE niet kunt vinden in
+de software op de eerder genoemde officiële website, kun je op deze
+link klikken：\ https://www.arduino.cc/en/software om direct naar de
+Arduino IDE downloadpagina te gaan.
 
-![7](../media/789a5b530a3e6c44687099a219575666.png)
+Er zijn verschillende versies van de IDE voor Arduino. Download gewoon
+een versie die compatibel is met jouw systeem. Hier laten we zien hoe je
+de Windows-versie van de Arduino IDE downloadt en installeert.
 
-(2) 手動インストール:
+![afbeelding5](../media/fac59eb6f401fa9e6ce711bb5f3f62f2.png)
 
-“USB2.0-Serial” を右クリックして “Update drive...” をクリックします
+Je kunt kiezen tussen de Installer (.exe) en de Zip-pakketten. Wij raden
+aan de eerste te gebruiken die direct alles installeert wat je nodig
+hebt om de Arduino-software (IDE) te gebruiken, inclusief de drivers.
+Met het Zip-pakket moet je de drivers handmatig installeren. Het Zip-bestand
+is ook handig als je een draagbare installatie wilt maken.
 
-![8](../media/378b65e69d5a926721245ecb4d2209a7.png)
+![afbeelding6](../media/0ab58d5303a100e9638be44131a34b51.png)
 
-“Browse my computer for driver software” をクリックします
-
-![9](../media/dc27c46ecc96141df0ff60cf605875f3.png)
-
-“Browse...” をクリックして “usb_ch341_3.1.2009.06 folder” を選択します。
-
-![10](../media/32e5e41e0c42893596d82c48e8914802.png)
-
-シリアルポートの接続状況を再確認すると、以下の図のようにドライバが正常にインストールされています。
-
-![11](../media/789a5b530a3e6c44687099a219575666.png)
-
-
-#### 3 ESP32 環境の追加（バージョン 3.1.0 を追加）
-
-（1）Arduino IDE を開き、File > Preferences をクリックします。以下のように表示されます:
-
-![12](../media/cd670e08b43572b8b90f11a3d1edd61c.png)
-
-（2）次のリンクをコピーします：
-`https://espressif.github.io/arduino-esp32/package_esp32_index.json`。
-
-（3）下記でマークされたボタンを開きます:
-
-![13](../media/bb39b0b271fcdfb85e6a7ff284c290dd.png)
-
-(4) それを内部に貼り付けて OK をクリックします。以下のように表示されます
-
-![14](../media/58a1317f28e334e6fcdc833bf7161f29.png)
-
-![](../media/img-20250603083908.png)
-
-(5) Tools > Board > Boards Manager をクリックします
-
-![15](../media/dab13b40132ce5c687ca4726b75733f6.png)
-
-(6) ポップアップした Boards Manager で ESP32 を見つけてインストールをクリックします。（バージョン 3.1.3 を追加）!!!非常に重要
-
-![16](../media/aa.png)
-
-(7) Tools > Board > esp32 をクリックして ESP32 Dev Module を選択します。
-
-![17](../media/677ff80219f4525f8aea366eec9a03af.png)
+Je hoeft alleen maar op JUST DOWNLOAD te klikken.
 
 
-#### 4 Arduino IDE の設定
+#### 2 Een driver installeren
 
-![18](../media/9035a01879f001b75827e908d7dceb2d.png) アイコンをクリックして、Arduino IDE を開きます。
+⚠️ **Bijzondere herinnering: Als je de CH340-driver al hebt
+geïnstalleerd, sla deze stap dan over.**
 
-![19](../media/843b5bb2d4c1d33c215e8d0c76c07abf.png)
+Verbind het main control board met je computer met een USB-kabel, en de
+driver wordt automatisch geïnstalleerd op MacOS en Windows10 systemen. Als
+het installatieproces van de driver faalt, moet je de driver handmatig
+installeren.
 
-プログラムをボードにアップロードするときのエラーを避けるために、コンピュータに接続されたボードと一致する正しい Arduino ボードを選択する必要があります。
+(1) Controleer of de computer de driver automatisch installeert:
 
-Arduino ソフトに戻り、Tools→Board をクリックしてボードを選択してください。（下図参照）
+Klik met de rechtermuisknop op Computer----- Klik Eigenschappen-----Klik
+Apparaatbeheer, de volgende afbeelding toont de succesvolle installatie:
 
-![20](../media/82243fba22e2575044b1c29decef18d9.png)
+![afbeelding7](../media/789a5b530a3e6c44687099a219575666.png)
 
-次に正しい COM ポートを選択します（ドライバが正しくインストールされると対応する COM ポートが表示されます）
+(2) Handmatige installatie:
 
-![21](../media/d8fe59d73cdbce2afc74b37eb5f8e8c0.png)
+Klik met de rechtermuisknop op “\ **USB2.0-Serial**\ ” en klik “\ **Update
+driver...**\ ”
 
-ボードにプログラムをアップロードする前に、Arduino IDE ツールバーの各アイコンの機能を説明します。
+![afbeelding8](../media/378b65e69d5a926721245ecb4d2209a7.png)
 
-![22](../media/3d76bbceb5014e1413c7c8d43ea52eb0.png)
+Klik “\ **Browse my computer for driver software**\ ”
 
-1- コンパイルエラーがないか検証するために使用します。
+![afbeelding9](../media/dc27c46ecc96141df0ff60cf605875f3.png)
 
-2- スケッチを ESP32 ボードにアップロードするために使用します。
+Klik“\ **Browse...**\ ”en selecteer de“\ **usb_ch341_3.1.2009.06
+folder**\ ”.
 
-3- ボードから受信したシリアルデータをシリアルプロッタに送るために使用します。
+![afbeelding10](../media/32e5e41e0c42893596d82c48e8914802.png)
 
-4- ボードから受信したシリアルデータをシリアルモニタに送るために使用します。
+Controleer de seriële poortverbinding opnieuw, zoals weergegeven in de
+volgende figuur; de driver is succesvol geïnstalleerd.
+
+![afbeelding11](../media/789a5b530a3e6c44687099a219575666.png)
+
+
+#### 3 Voeg de ESP32-omgeving toe (voeg versie 3.1.0 toe)
+
+（1）Open de arduino IDE，click File > Preferences，zoals hieronder:
+
+![afbeelding12](../media/cd670e08b43572b8b90f11a3d1edd61c.png)
+
+（2）Kopieer de link：\ `https://espressif.github.io/arduino-esp32/package_esp32_index.json`
+.
+
+（3）Open de knop die hieronder is gemarkeerd:
+
+![afbeelding13](../media/bb39b0b271fcdfb85e6a7ff284c290dd.png)
+
+(4) Plak deze erin en klik OK, zoals hieronder
+
+![afbeelding14](../media/58a1317f28e334e6fcdc833bf7161f29.png)
+
+![Afbeelding](../media/img-20250603083908.png)
+
+(5) Klik Tools > Board > Boards Manager
+
+![afbeelding15](../media/dab13b40132ce5c687ca4726b75733f6.png)
+
+(6) Zoek de ESP32 in de pop-up Boards Manager en klik vervolgens op
+installeren. (voeg versie 3.1.3 toe)!!! Zeer belangrijk
+
+![afbeelding16](../media/aa.png)
+
+(7) Klik Tools > Board >esp32 om de ESP32 Dev Module te kiezen.
+
+![afbeelding17](../media/677ff80219f4525f8aea366eec9a03af.png)
+
+
+#### 4 Arduino IDE-instellingen
+
+Klik ![afbeelding18](../media/9035a01879f001b75827e908d7dceb2d.png) icoon, open Arduino IDE.
+
+![afbeelding19](../media/843b5bb2d4c1d33c215e8d0c76c07abf.png)
+
+Om fouten te voorkomen bij het uploaden van het programma naar het bord,
+moet je het juiste Arduino-bord selecteren dat overeenkomt met het bord
+dat met je computer is verbonden.
+
+Ga daarna terug naar de Arduino-software, je moet klikken op Tools→Board
+en het bord selecteren. (zoals hieronder weergegeven)
+
+![afbeelding20](../media/82243fba22e2575044b1c29decef18d9.png)
+
+Selecteer vervolgens de juiste COM-poort (je kunt de bijbehorende COM-poort
+zien nadat de driver succesvol is geïnstalleerd)
+
+![afbeelding21](../media/d8fe59d73cdbce2afc74b37eb5f8e8c0.png)
+
+Voordat je het programma naar het bord uploadt, laten we de functie van
+elk symbool in de Arduino IDE werkbalk demonstreren.
+
+![afbeelding22](../media/3d76bbceb5014e1413c7c8d43ea52eb0.png)
+
+1- Wordt gebruikt om te verifiëren of er compilerfouten zijn.
+
+2- Wordt gebruikt om de sketch naar je ESP32 bord te uploaden.
+
+3- Wordt gebruikt om de seriële data die vanaf het bord ontvangen wordt
+naar de serial plotter te sturen.
+
+4- Wordt gebruikt om de seriële data die vanaf het bord ontvangen wordt
+naar de serial monitor te sturen.
 
 ---
 
-### 5.2.3 Mac システム
+### 5.2.3 Mac-systeem
 
-![23](../media/a6fc83596009c574d8e29ef383748549.png)
-
-
-#### 1 Arduino IDE をダウンロード
-
-![24](../media/77c03a9d0b23a0cc760d32095fa08e21.png)
+![afbeelding23](../media/a6fc83596009c574d8e29ef383748549.png)
 
 
-#### 2 CH340 ドライバをダウンロード
+#### 1 Arduino IDE downloaden
 
-提供しています。5.1 リソースパックを参照してください。
-
-![-20250408105719588](../media/image-20250408105719588.png)
+![afbeelding24](../media/77c03a9d0b23a0cc760d32095fa08e21.png)
 
 
-#### 3 CH340 ドライバのインストール方法
+#### 2 Download de CH340-driver
 
-ダウンロード後は、以下のように表示されます:
+We leveren deze; ga naar het 5.1 resource-pakket om deze te halen
 
-![25](../media/63eee4c4643c4638a659346edbd2500f.png)
-
-インストールパッケージをダブルクリックして Continue をタップします
-
-![26](../media/c51b1c3d15affa4d754770184d5151df.png)
-
-Install をクリックします
-
-![27](../media/de96ded3dc9582e151dd7713d3ef33a1.png)
-
-ユーザーパスワードを入力して Install Software をクリックします
-
-![28](../media/fafdebb694a110227b53ca6369ebc96a.png)
-
-Continue Installation をタップします
-
-![29](../media/55c6bd90dc3ce4762e2598f76700e978.png)
-
-インストールが完了するまで待ちます
-
-![30](../media/535f31eba84df8664c4566e1b9ecd767.png)
-
-インストール完了後に Restart をクリックします
-
-![31](../media/7416a8a6aedcae63e931880a1f033db6.png)
+![afbeelding-20250408105719588](../media/image-20250408105719588.png)
 
 
-#### 4 Arduino IDE の設定:
+#### 3 Hoe de CH340-driver te installeren
 
-COM ポート以外の設定方法は 1.4 章と同じです:
+Na het downloaden zie je het volgende:
 
-![32](../media/37972c9e070bd6bcf9cdcb3f84679223.jpeg)
+![afbeelding25](../media/63eee4c4643c4638a659346edbd2500f.png)
+
+Dubbelklik op het installatiepakket en tik op Doorgaan
+
+![afbeelding26](../media/c51b1c3d15affa4d754770184d5151df.png)
+
+Klik op Install
+
+![afbeelding27](../media/de96ded3dc9582e151dd7713d3ef33a1.png)
+
+Voer je gebruikerswachtwoord in en klik op Install Software
+
+![afbeelding28](../media/fafdebb694a110227b53ca6369ebc96a.png)
+
+Tik op Continue Installation
+
+![afbeelding29](../media/55c6bd90dc3ce4762e2598f76700e978.png)
+
+Wacht tot de installatie is voltooid
+
+![afbeelding30](../media/535f31eba84df8664c4566e1b9ecd767.png)
+
+Klik op Restart nadat de installatie is voltooid
+
+![afbeelding31](../media/7416a8a6aedcae63e931880a1f033db6.png)
 
 
-## 5.3 ライブラリの追加方法
+#### 4 Arduino IDE-instellingen:
+
+Behalve voor COM-poorten is de instelling hetzelfde als in hoofdstuk 1.4:
+
+![afbeelding32](../media/37972c9e070bd6bcf9cdcb3f84679223.jpeg)
+
+
+## 5.3 Hoe bibliotheken toe te voegen?
 
 ---
 
-### 5.3.1 ライブラリとは？
+### 5.3.1 Wat zijn bibliotheken?
 
-[Libraries](https://www.arduino.cc/en/Reference/Libraries) は、センサ、ディスプレイ、モジュールなどを簡単に制御するためのコードの集合です。
+[Libraries](https://www.arduino.cc/en/Reference/Libraries) zijn een
+verzameling code die het eenvoudig maakt om een sensor, display,
+module, enz. aan te sturen.
 
-たとえば、組み込みの LiquidCrystal ライブラリは LCD ディスプレイとの通信を助けます。インターネット上にはダウンロード可能な追加のライブラリが数百あります。
+Bijvoorbeeld, de ingebouwde LiquidCrystal library helpt bij het communiceren
+met LCD-displays. Er zijn honderden extra bibliotheken beschikbaar op het
+Internet om te downloaden.
 
-組み込みライブラリとこれらの追加ライブラリの一部はリファレンスに一覧されています。
+De ingebouwde bibliotheken en enkele van deze extra bibliotheken worden
+opgenomen in de reference.
 
 https://www.arduino.cc/en/Reference/Libraries
 
 ---
 
-### 5.3.2 ZIP ライブラリの追加
+### 5.3.2 ZIP-bibliotheken toevoegen
 
-ZIP ライブラリを追加する場合は、ZIP ファイルとしてダウンロードし、適切なディレクトリに置く必要があります。Smart Home を実行するために必要な Libraries は以下で見つけることができます：
+Wanneer je een zip-bibliotheek wilt toevoegen, moet je deze als een ZIP
+bestand downloaden en in de juiste map plaatsen. De bibliotheken die
+nodig zijn om de Smart Home te laten werken zijn te vinden op：
 
-![33](../media/dd.png)
+![afbeelding33](../media/dd.png)
 
-Sketch---->Include Library—>Add.ZIP Library をクリックし、ダウンロードしたライブラリファイルへ移動して "open" をクリックします。
+Klik Sketch---->Include Library—>Add.ZIP Library，ga vervolgens naar het
+bibliotheekbestand dat je hebt gedownload en klik "open."
 
-![34](../media/baef5ce61ba8567f4a18fec16a2e3dae.png)
+![afbeelding34](../media/baef5ce61ba8567f4a18fec16a2e3dae.png)
 
-![-20250329140352208](../media/image-20250329140352208.png)
+![afbeelding-20250329140352208](../media/image-20250329140352208.png)
 
-ライブラリがインポートされます。Include Library リストで確認できます。
+Importeer de bibliotheek. Je kunt deze vinden in de include library-lijst.
 
-![35](../media/fda284b603a4b6b5c14ce3d58788326d.png)
+![afbeelding35](../media/fda284b603a4b6b5c14ce3d58788326d.png)

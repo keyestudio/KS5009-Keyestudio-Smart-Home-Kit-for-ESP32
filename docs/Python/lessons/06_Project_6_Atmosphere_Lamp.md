@@ -1,33 +1,33 @@
-### プロジェクト 6: 雰囲気ランプ
+### Project 6: Sfeerlamp
 
-**説明**
+**Beschrijving**
 
-スマートホームの雰囲気ランプは4つのSK6812RGB LEDsで構成されています。RGB LEDは単純な発光モジュールで、色を調整してさまざまな色の照明効果を表現できます。さらに、建物、橋、道路、庭、中庭、フロアなどの装飾照明や会場演出、クリスマス、ハロウィン、バレンタインデー、イースター、国慶節などの祝祭時の演出といったさまざまなシーンで広く使用できます。
+De sfeerlamp van het slimme huis bestaat uit 4 SK6812RGB LEDs. RGB LED behoort tot een eenvoudige lichtmodule, die de kleur kan aanpassen om het lamp-effect van verschillende kleuren te creëren. Verder kan het op grote schaal worden gebruikt in gebouwen, bruggen, wegen, tuinen, binnenplaatsen, verdiepingen en andere gebieden van decoratieve verlichting en locatie-indeling, tijdens Kerstmis, Halloween, Valentijnsdag, Pasen, de Nationale Feestdag en andere feestdagen en scènes voor sfeer.
 
-この実験では、さまざまなライティング効果を作成します。
+In dit experiment zullen we verschillende lichteffecten maken.
 
-**コンポーネントについて**
+**Componentkennis**
 
-回路図から、これら4つのRGB LEDsがすべて直列に接続されていることがわかります。実際には、個数がいくつであっても、1つのピンでRGB LEDを制御して任意の色を表示させることができます。各RGBLEDは独立したピクセルで、R、G、Bの各色で構成され、256段階の輝度表示を実現し、16777216色のフルフルカラー表示を完了できます。
+Uit het schema kunnen we zien dat deze vier RGB LEDs allemaal in serie zijn aangesloten. In feite, hoeveel het er ook zijn, we kunnen één pin gebruiken om een SK6812 RGB LED te regelen en deze elke kleur laten weergeven. Elke RGBLED is een onafhankelijk pixel, bestaande uit R, G en B kleuren, die 256 helderheidsniveaus kunnen bereiken en de volledige waarheidsgetrouwe kleurdweergave van 16777216 kleuren kunnen voltooien.
 
-さらに、ピクセルはデータラッチ、信号整形/増幅のドライブ回路および信号整形回路を含んでおり、ピクセルの発色が高い一致性を保つことを効果的に保証します。
+Bovendien bevat het pixelpunt een data-latch signaalvormende versterker/drive-circuit en een signaalvormingscircuit, wat effectief waarborgt dat de kleur van het pixellicht zeer consistent is.
 
-![図31](../media/86e292d0666046b72a1e0e68adfb17e8.png)
+![afbeelding31](../media/86e292d0666046b72a1e0e68adfb17e8.png)
 
-![図32](../media/c0df93f61c6b9272f62b1847ccfbdb10.png)
+![afbeelding32](../media/c0df93f61c6b9272f62b1847ccfbdb10.png)
 
-**ピン**
+**Pin**
 
 | SK6812 | 26 |
 | --- | --- |
 | \ |   |
 
 
-#### プロジェクト 6.1 RGB Sk6812
+#### Project 6.1 RGB Sk6812
 
-SK6812を制御してさまざまなライティング効果を表示します。
+We zullen SK6812 aansturen om verschillende lichteffecten weer te geven.
 
-**テストコード**
+**Testcode**
 
 ```python
 #Import Pin, neopiexl and time modules.
@@ -57,18 +57,18 @@ while True:
         time.sleep_ms(500)
     time.sleep_ms(500)
 ```
-**テスト結果**
+**Testresultaat**
 
-スマートホームの雰囲気ランプは赤、緑、青、および白を表示します。
+De sfeerlampen van het slimme huis tonen rood, groen, blauw en wit.
 
 
-#### プロジェクト 6.2 Sk6812のボタン制御
+#### Project 6.2 Button Control Sk6812
 
-**説明**
+**Beschrijving**
 
-雰囲気ランプの色を切り替えるためのスイッチボタンが2つあります。
+Er zijn twee schakelaars om de kleur van de sfeerlamp te veranderen.
 
-**テストコード**
+**Testcode**
 
 ```python
 #Import Pin, neopiexl and time modules.
@@ -135,6 +135,6 @@ while True:
     elif(count == 4):
         func_color(4)
 ```
-**テスト結果**
+**Testresultaat**
 
-ボタン1とボタン2を押すことで雰囲気ランプの色を切り替えられます。
+We kunnen de kleur van de sfeerlamp wisselen door op knoppen 1 en 2 te drukken.

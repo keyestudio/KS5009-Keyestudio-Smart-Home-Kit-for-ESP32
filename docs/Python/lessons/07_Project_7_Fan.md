@@ -1,36 +1,36 @@
-### プロジェクト 7: ファン
+### Project 7: Ventilator
 
-**説明**
+**Beschrijving**
 
-このプロジェクトでは、小型ファンの作り方を学びます。
+In dit project leren we hoe we een kleine ventilator kunnen maken.
 
-**コンポーネントの知識**
+**Kennis van componenten**
 
-この小型ファンは130のDCモーターと安全なファンブレードを使用します。PWM出力を使用してファンの速度を制御できます。
+De kleine ventilator gebruikt een 130 DC motor en veilige ventilatorbladen. Je kunt PWM-uitgang gebruiken om de ventilatorsnelheid te regelen.
 
-![画像33](../media/33da52918e88862a94035d61a9050f2e.png)
+![afbeelding33](../media/33da52918e88862a94035d61a9050f2e.png)
 
-**制御方法**
+**Bedieningsmethode**
 
-ファンのモーターを制御するには2つのピンが必要で、1つはINA用、もう1つはINB用です。PWMの値の範囲は0~255です。2つのピンのPWM出力が異なると、ファンは回転します。
+Twee pinnen zijn vereist om de motor van de ventilator te besturen, één voor INA en twee voor INB. Het PWM-waardebereik is 0~255. Wanneer de PWM-uitgang van de twee pinnen verschillend is, kan de ventilator draaien.
 
-| INA - INB <= -45 | 時計回りに回転する |
+| INA - INB <= -45 | Draai met de klok mee |
 | --- | --- |
-| INA - INB >= 45 | 反時計回りに回転する |
-| INA ==0, INB == 0 | 停止 |
+| INA - INB >= 45 | Draai tegen de klok in |
+| INA ==0, INB == 0 | Stop |
 
-**制御ピン**
+**Besturingspinnen**
 
 | INA | 19 |
 | --- | --- |
 | INB | 18 |
 
 
-#### プロジェクト 7.1: ファン
+#### Project 7.1 Ventilator
 
-ファンの反時計回りおよび時計回りの回転速度を制御できます。
+We kunnen de rotatiesnelheid van de ventilator zowel tegen de klok in als met de klok mee regelen.
 
-**テストコード**
+**Testcode**
 
 ```python
 from machine import Pin,PWM
@@ -63,16 +63,16 @@ except:
     INA.deinit()
     INB.deinit()
 ```
-**テスト結果**
+**Testresultaat**
 
-ファンは異なる速度で時計回りおよび反時計回りに回転します。
+De ventilator zal met verschillende snelheden met de klok mee en tegen de klok in draaien.
 
 
-#### プロジェクト 7.2: ボタン制御ファン
+#### Project 7.2 Ventilator met knopbediening
 
-ボタン1がファンのスイッチを制御します。
+Knop 1 bestuurt de ventilatorschakelaar.
 
-**テストコード**
+**Testcode**
 
 ```python
 from machine import Pin,PWM
@@ -106,6 +106,6 @@ except:
     INA.deinit()
     INB.deinit()
 ```
-**テスト結果**
+**Testresultaat**
 
-ボタン1を押すとファンが回転を開始し、再度ボタン1を押すとファンが停止します。
+Druk op knop 1, de ventilator begint te draaien; druk nogmaals op knop 1, de ventilator stopt.
