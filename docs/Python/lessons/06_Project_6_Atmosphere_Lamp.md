@@ -1,33 +1,33 @@
-### Projet 6 : Lampe d'ambiance
+### Progetto 6: Lampada d'atmosfera
 
-**Description**
+**Descrizione**
 
-La lampe d'ambiance de la maison intelligente est composée de 4 LED SK6812RGB. La LED RGB est un module lumineux simple, qui peut ajuster la couleur pour produire des effets lumineux de différentes couleurs. De plus, elle peut être largement utilisée dans les bâtiments, ponts, routes, jardins, cours, étages et autres domaines d'éclairage décoratif et d'aménagement de lieux, ainsi que pour créer des ambiances lors de Noël, Halloween, la Saint-Valentin, Pâques, la Fête nationale et d'autres festivités ou scènes.
+La lampada d'atmosfera della casa intelligente è composta da 4 SK6812RGB LED. Un RGB LED appartiene a un semplice modulo luminoso, che può regolare il colore per ottenere l'effetto luminario di diverse tonalità. Inoltre, può essere ampiamente utilizzata in edifici, ponti, strade, giardini, cortili, piani e altri campi di illuminazione decorativa e allestimento di locali, durante Natale, Halloween, San Valentino, Pasqua, la Festa nazionale nonché in altre festività e scene d'atmosfera.
 
-Dans cette expérience, nous allons réaliser divers effets d'éclairage.
+In questo esperimento realizzeremo vari effetti di illuminazione.
 
-**Connaissances sur les composants**
+**Conoscenze sul componente**
 
-D'après le schéma, on voit que ces quatre LED RGB sont toutes connectées en série. En fait, quel que soit leur nombre, nous pouvons utiliser une broche pour contrôler une LED RGB et lui faire afficher n'importe quelle couleur. Chaque RGBLED est un pixel indépendant, composé des couleurs R, G et B, qui peut afficher 256 niveaux de luminosité et réaliser l'affichage en vraie couleur sur 16777216 couleurs.
+Dal diagramma schematico possiamo vedere che questi quattro RGB LED sono tutti collegati in serie. In realtà, indipendentemente dal loro numero, possiamo usare un pin per controllare un RGB LED e farlo visualizzare qualsiasi colore. Ogni RGBLED è un pixel indipendente, composto dai colori R, G e B, che può raggiungere 256 livelli di luminosità e completare la riproduzione a colori vera di 16777216 colori.
 
-De plus, le pixel contient un circuit d'amplification de commande à mise en mémoire du signal et un circuit de mise en forme du signal, ce qui garantit efficacement une grande cohérence des couleurs des pixels lumineux.
+Inoltre, il pixel contiene un circuito driver amplificatore per il condizionamento del segnale di latch dei dati e un circuito di rimodellamento del segnale, che garantiscono efficacemente un'elevata coerenza del colore del punto luce.
 
-![image31](../media/86e292d0666046b72a1e0e68adfb17e8.png)
+![immagine31](../media/86e292d0666046b72a1e0e68adfb17e8.png)
 
-![image32](../media/c0df93f61c6b9272f62b1847ccfbdb10.png)
+![immagine32](../media/c0df93f61c6b9272f62b1847ccfbdb10.png)
 
-**Broche**
+**Pin**
 
 | SK6812 | 26 |
 | --- | --- |
 | \ |   |
 
 
-#### Projet 6.1 RGB Sk6812
+#### Progetto 6.1 RGB Sk6812
 
-Nous contrôlerons le SK6812 pour afficher divers effets lumineux.
+Controlleremo gli SK6812 per mostrare vari effetti di illuminazione.
 
-**Code de test**
+**Codice di test**
 
 ```python
 #Import Pin, neopiexl and time modules.
@@ -57,18 +57,18 @@ while True:
         time.sleep_ms(500)
     time.sleep_ms(500)
 ```
-**Résultat du test**
+**Risultato del test**
 
-Les lampes d'ambiance de la maison intelligente afficheront du rouge, du bleu-vert ainsi que du blanc.
+Le lampade d'atmosfera della casa intelligente mostreranno rosso, verde, blu e bianco.
 
 
-#### Projet 6.2 Contrôle par bouton Sk6812
+#### Progetto 6.2 Controllo con pulsanti Sk6812
 
-**Description**
+**Descrizione**
 
-Il y a deux boutons pour changer la couleur de la lampe d'ambiance.
+Ci sono due pulsanti a interruttore per cambiare il colore della lampada d'atmosfera.
 
-**Code de test**
+**Codice di test**
 
 ```python
 #Import Pin, neopiexl and time modules.
@@ -135,6 +135,6 @@ while True:
     elif(count == 4):
         func_color(4)
 ```
-**Résultat du test**
+**Risultato del test**
 
-Nous pouvons changer la couleur de la lampe d'ambiance en appuyant sur les boutons 1 et 2.
+Possiamo cambiare il colore della lampada d'atmosfera premendo i pulsanti 1 e 2.

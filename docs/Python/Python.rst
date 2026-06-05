@@ -1,4 +1,4 @@
-6. Python Tutoriel
+6. Python Tutorial
 =============================
 
 .. toctree::
@@ -10,10 +10,10 @@
 
 
 
-6.3 Python Projets
+6.3 Python Progetti
 ---------------------------
 
-Le code est fourni pour tous les projets et est disponible dans le Resource-compression-package
+Il codice è fornito per tutti i progetti ed è disponibile nel Resource-compression-package
 
 .. toctree::
     :maxdepth: 2

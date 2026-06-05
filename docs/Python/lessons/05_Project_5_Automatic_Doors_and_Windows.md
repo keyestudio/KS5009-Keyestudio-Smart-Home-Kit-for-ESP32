@@ -1,41 +1,41 @@
-### Projet 5 : Portes et fenêtres automatiques
+### Progetto 5: Porte e Finestre Automatiche
 
-**Description**
+**Descrizione**
 
-Les portes et fenêtres automatiques nécessitent un dispositif d'alimentation, qui devient plus automatisé avec un servo à 180 degrés et quelques capteurs. En ajoutant un capteur de pluie, vous pouvez obtenir la fermeture automatique des fenêtres lorsqu'il pleut. En ajoutant un module RFID, on peut réaliser l'ouverture de la porte par lecture, etc.
+Porte e finestre automatiche necessitano di un dispositivo motorizzato, che può diventare più automatico con un servo da 180 gradi e alcuni sensori. Aggiungendo un sensore di pioggia, è possibile ottenere l'effetto di chiudere automaticamente le finestre quando piove. Se si aggiunge un RFID, possiamo realizzare l'effetto di strisciare una tessera per aprire la porta e così via.
 
-**Connaissances des composants**
+**Conoscenze sui componenti**
 
-**Servo :**
+**Servo:**
 
-Le servo est un actionneur de position constitué d'un boîtier, d'une carte électronique, d'un moteur sans noyau, d'un engrenage et d'un détecteur de position.
+Servo è un dispositivo driver di posizionamento che consiste in un involucro, una scheda elettronica, un motore senza nucleo, un ingranaggio e un rilevatore di posizione.
 
-Son principe de fonctionnement est que le servo reçoit le signal envoyé par le MCU ou le récepteur et produit un signal de référence d'une période de 20 ms et d'une largeur de 1,5 ms, puis compare la tension continue acquise au potentiomètre et obtient la différence de tension en sortie.
+Il suo principio di funzionamento è che il servo riceve il segnale inviato dal MCU o dal ricevitore e genera un segnale di riferimento con periodo di 20ms e larghezza di 1.5ms, quindi confronta la tensione di polarizzazione continua acquisita con la tensione del potenziometro e ottiene la differenza di tensione in uscita.
 
-L'IC sur la carte juge le sens de rotation, puis commande le moteur sans noyau pour démarrer la rotation. La puissance est transmise au bras oscillant via l'engrenage de réduction, et le signal est renvoyé par le détecteur de position pour juger si le positionnement a été atteint, ce qui convient aux systèmes de contrôle nécessitant un changement d'angle constant et pouvant être maintenu.
+L'IC sulla scheda giudica la direzione di rotazione, e poi aziona il motore senza nucleo per avviare la rotazione. La potenza viene trasmessa al braccio oscillante attraverso l'ingranaggio di riduzione, e il segnale viene restituito dal rilevatore di posizione per verificare se il posizionamento è stato raggiunto, il che è adatto per quei sistemi di controllo che richiedono un cambiamento angolare preciso e che possono essere mantenuti.
 
-Lorsque la vitesse du moteur est constante, le potentiomètre est entraîné à tourner via l'engrenage de réduction en cascade, ce qui fait que la différence de tension est nulle, et le moteur s'arrête de tourner. En général, l'intervalle d'angle de rotation du servo est de 0° à 180°.
+Quando la velocità del motore è costante, il potenziometro viene fatto ruotare attraverso il riduttore a cascata, il che porta la differenza di tensione a 0, e il motore smette di ruotare. Generalmente, l'intervallo di rotazione del servo è 0° --180°.
 
-La période d'impulsion du servo de commande est de 20 ms, la largeur d'impulsion est de 0,5 ms à 2,5 ms, et la position correspondante est de -90° à +90°. Voici un exemple de servo 180° :
+Il periodo dell'impulso di controllo del servo è 20ms, la larghezza dell'impulso è 0.5ms ~ 2.5ms, e la posizione corrispondente è -90°~ +90°. Ecco un esempio di un servo a 180°:
 
-![image28](../media/708316fde05c62113a3024e0efb0c237.jpeg)
+![immagine28](../media/708316fde05c62113a3024e0efb0c237.jpeg)
 
-En général, le servo possède trois fils : marron, rouge et orange. Le fil marron est la masse, le fil rouge est le pôle positif et le fil orange est le fil de signal.
+In generale, il servo ha tre fili di colore marrone, rosso e arancione. Il filo marrone è collegato a massa, quello rosso è il polo positivo e quello arancione è il filo di segnale.
 
-![image29](../media/35084ae289a08e35bdb8c89ceb134ba4.png)
+![immagine29](../media/35084ae289a08e35bdb8c89ceb134ba4.png)
 
-![image30](../media/6cbf6f177ea204f7632b872497fde010.png)
+![immagine30](../media/6cbf6f177ea204f7632b872497fde010.png)
 
 **Pin**
 
-| Servomoteur de la fenêtre | 5 |
+| Servo della finestra | 5 |
 | --- | --- |
-| Servomoteur de la porte | 13 |
+| Servo della porta | 13 |
 
 
-#### Projet 5.1 Contrôler la porte
+#### Progetto 5.1 Controllo della porta
 
-**Code de test**
+**Codice di test**
 
 ```python
 from machine import Pin, PWM
@@ -63,22 +63,22 @@ while True:
     pwm.duty(angle_180)
     time.sleep(1)
 ```
-**Résultat du test**
+**Risultato del test**
 
-Le servomoteur de la porte fait bouger la porte d'avant en arrière.
+Il servo della porta si muove insieme alla porta, avanti e indietro
 
 
-#### Projet 5.2 Fermer la fenêtre
+#### Progetto 5.2 Chiusura della finestra
 
-**Description**
+**Descrizione**
 
-Nous allons utiliser un servo et un capteur de pluie pour réaliser un dispositif fermant automatiquement les fenêtres lorsqu'il pleut.
+Lavoreremo per utilizzare un servo e un sensore di pioggia per realizzare un dispositivo che chiude automaticamente le finestre quando piove.
 
-**Connaissances des composants**
+**Conoscenze sui componenti**
 
-**Capteur de pluie :** Il s'agit d'un module d'entrée analogique : plus la surface de détection couverte d'eau est grande, plus la valeur renvoyée est élevée (plage 0~4096).
+**Sensore di pioggia:** Questo è un modulo di ingresso analogico: maggiore è l'area coperta dall'acqua sulla superficie di rilevamento, maggiore è il valore restituito (intervallo 0~4096).
 
-**Code de test**
+**Codice di test**
 
 ```python
 # Import Pin, ADC and DAC modules.
@@ -107,6 +107,6 @@ try:
 except:
     pass
 ```
-**Résultat du test**
+**Risultato del test**
 
-Au départ, la fenêtre s'ouvre automatiquement ; si vous touchez le capteur de pluie avec une main mouillée, la fenêtre se fermera.
+All'inizio la finestra si apre automaticamente, e quando tocchi il sensore di pioggia con la mano (che ha acqua sulla pelle), la finestra si chiuderà.

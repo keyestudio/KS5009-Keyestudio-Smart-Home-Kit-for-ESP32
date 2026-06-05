@@ -1,29 +1,29 @@
-### Projet 2 : Lampe de table
+### Progetto 2: Lampada da tavolo
 
-**Description**
+**Descrizione**
 
-La lampe de table courante utilise des LED et des boutons, qui peuvent contrôler l'allumage et l'extinction de la lumière en appuyant sur le bouton.
+La comune lampada da tavolo usa luci LED e pulsanti, che possono controllare l'accensione e lo spegnimento premendo il pulsante.
 
-**Principe du bouton**
+**Principio del pulsante**
 
-Le module de bouton est un capteur numérique, qui ne peut lire que 0 ou 1. Lorsque le module n'est pas pressé, il est à un état de niveau haut, c'est-à-dire 1 ; lorsqu'il est pressé, il est à un niveau bas 0.
+Il modulo pulsante è un sensore digitale, che può leggere solo 0 o 1. Quando il modulo non è premuto, è in stato ad alto livello, cioè 1; quando è premuto, è a basso livello 0.
 
-![image22](../media/41f565d4f355abb96e105119660e80ba.png)
+![immagine22](../media/41f565d4f355abb96e105119660e80ba.png)
 
-**Broches du bouton**
+**Pin del pulsante**
 
-| **Bouton 1** | **16** |
+| **Pulsante 1** | **16** |
 | --- | --- |
-| **Bouton 2** | **27** |
+| **Pulsante 2** | **27** |
 
 
-#### Projet 2.1 Lire le bouton
+#### Progetto 2.1 Leggere il pulsante
 
-**Description**
+**Descrizione**
 
-Nous allons lire la valeur d'état du bouton et l'afficher dans le moniteur série, afin de le voir de manière intuitive.
+Lavoreremo per leggere il valore di stato del pulsante e visualizzarlo sul monitor seriale, in modo da vederlo in modo intuitivo.
 
-**Test Code**
+**Codice di prova**
 
 ```python
 from machine import Pin
@@ -39,22 +39,22 @@ while True:
     print("button2 =",btnVal2)
     time.sleep(0.1) #delay 0.1s
 ```
-**Résultat du test**
+**Risultato del test**
 
-Cliquez sur le bouton run, puis vous pourrez voir les valeurs d'état de button1 et button 2 imprimées dans le shell. Appuyez sur le bouton, et vous verrez le changement des valeurs d'état.
+Clicca il pulsante di esecuzione, poi vedrai i valori di stato di button1 e button2 stampati nella shell. Premi il pulsante e vedrai la variazione dei valori di stato.
 
-![image23](../media/1b984da67c0e89a72a9601c39362567d.png)
+![immagine23](../media/1b984da67c0e89a72a9601c39362567d.png)
 
 
-#### Projet 2.2. Lampe de table
+#### Progetto 2.2. Lampada da tavolo
 
-**Description**
+**Descrizione**
 
-Pour une lampe de table simple, appuyez sur le bouton pour l'allumer, appuyez de nouveau pour l'éteindre.
+Per una comune lampada da tavolo semplice, premendo il pulsante si accende, premendolo di nuovo si spegne.
 
-**Test Code**
+**Codice di prova**
 
-En calculant le nombre de fois que le bouton a été pressé et en prenant le reste de la division par 2, vous obtenez 0 ou 1, deux états possibles.
+Calcolando il numero di volte che il pulsante è stato premuto e prendendo il resto della divisione per 2, si ottengono i due stati 0 o 1.
 
 ```python
 from machine import Pin
@@ -81,8 +81,8 @@ while True:
         led.value(0)
     time.sleep(0.1) #delay 0.1s
 ```
-**Résultat du test**
+**Risultato del test**
 
-Le shell affichera le nombre de fois où le bouton a été pressé ; appuyez une fois sur le bouton, la LED s'allumera, appuyez de nouveau, elle s'éteindra.
+La shell stamperà il numero di volte che il pulsante è stato premuto; premendo il pulsante una volta, il LED si accende; premendolo di nuovo, si spegne.
 
-![image24](../media/1bc079eabd93cb2e8a8e15f0ab7f1367.png)
+![immagine24](../media/1bc079eabd93cb2e8a8e15f0ab7f1367.png)

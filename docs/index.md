@@ -3,183 +3,176 @@
 ![image1](media/A1.jpeg)
 
 
-# 1. Description
+# 1. Descrizione
 
-Avec le développement rapide d'Internet, divers appareils intelligents s'intègrent progressivement à notre quotidien. Par exemple, nous pouvons utiliser la technologie RFID pour ouvrir les portes. De plus, la cuisine est équipée d'une alarme de détection de gaz qui alerte en cas de présence de gaz dangereux ou de forte fumée. Lorsqu'elle détecte la pluie, elle peut ranger automatiquement le linge et fermer les fenêtres. Toutes sortes d'appareils électriques peuvent être contrôlés par téléphone portable : éclairage, ventilateurs, climatisation, etc.
+Con il rapido sviluppo di Internet, vari dispositivi intelligenti sono gradualmente integrati nella nostra vita quotidiana. Ad esempio, possiamo usare RFID per aprire la porta. Inoltre, la cucina è dotata di un allarme rilevatore di gas, che avvisa le persone del pericolo quando vengono rilevati gas pericolosi o grandi quantità di fumo. Quando rileva la pioggia, può raccogliere automaticamente i panni e chiudere le finestre. Tutti i tipi di apparecchi elettrici possono essere controllati tramite telefono cellulare, come luci, ventilatori, aria condizionata e così via.
 
-Dans ce contexte, nous souhaitons lancer ce produit pour la maison connectée, contrôlé par ESP32, qui intègre de nombreux capteurs et modules ainsi qu'une fonction réseau, vous permettant ainsi d'accéder plus facilement aux connaissances disponibles sur Internet.
-
-
-# 2. Caractéristiques
-
-1. Aspect élégant
-
-2. Une multitude de modules de capteurs
-
-3. Contrôle du réseau APP pour téléphone portable
-
-4. Porte avec mot de passe Morse
-
-5. Il peut fermer automatiquement les fenêtres
-
-6. Fonction RFID
-
-7. Langage C et MicroPython
+In questo contesto, desideriamo lanciare questo prodotto per la smart home con controllo ESP32, che dispone di numerosi sensori e moduli oltre alla funzione di rete, rendendo le conoscenze relative a Internet più accessibili per voi.
 
 
-# 3. Liste du matériel
+# 2. Caratteristiche
 
-| # | Image | Nom | quantité |
+1. Aspetto elegante
+1. Un'ampia gamma di moduli sensore
+1. Controllo di rete tramite app per smartphone
+1. Porta con password Morse
+1. Può chiudere automaticamente le finestre
+1. Funzione RFID
+1. C language e MicroPython
+
+
+# 3. Lista del kit
+
+| # | Immagine | Nome | Q.tà |
 | --- | --- | --- | --- |
-| 1 | ![image2](media/Wooden-Board.jpeg) | Planche en bois | 1 |
-| 2 | ![image3](media/Acrylic-Board.jpeg) | panneau acrylique                          | 1 |
-| 3 | ![image4](media/ESP32-Board.jpeg) | Carte de développement ESP32 PLUS | 1 |
+| 1 | ![image2](media/Wooden-Board.jpeg) | Wooden Board | 1 |
+| 2 | ![image3](media/Acrylic-Board.jpeg) | Acrylic Board | 1 |
+| 3 | ![image4](media/ESP32-Board.jpeg) | ESP32 PLUS Development Board | 1 |
 | 4 | ![image5](media/6812-RGB.png) | 6812 RGB Module | 1 |
-| 5 | ![image6](media/Gas-Sensor.png) | Capteur de gaz analogique | 1 |
-| 6 | ![image7](media/Button-Module.png) | Module de bouton | 2 |
+| 5 | ![image6](media/Gas-Sensor.png) | Analog Gas Sensor | 1 |
+| 6 | ![image7](media/Button-Module.png) | Button Module | 2 |
 | 7 | ![image8](media/RFID-Module.png) | RFID Module | 1 |
-| 8 | ![image9](media/Buzzer-Module.png) | Module de buzzer passif | 1 |
-| 9 | ![image10](media/Motor.png) | 130 Moteur | 1 |
-| 10 | ![image11](media/Steam-Sensor.png) | Capteur de vapeur | 1 |
-| 11 | ![image12](media/XHT11.png) | XHT11 Capteur de température et d'humidité | 1 |
-| 12 | ![image13](media/PIR-Sensor.png) | Détecteur de mouvement PIR | 1 |
-| 13 | ![image14](media/LED-Module.png) | Module LED jaune | 1 |
+| 8 | ![image9](media/Buzzer-Module.png) | Passive Buzzer Module | 1 |
+| 9 | ![image10](media/Motor.png) | 130 Motor | 1 |
+| 10 | ![image11](media/Steam-Sensor.png) | Steam Sensor | 1 |
+| 11 | ![image12](media/XHT11.png) | XHT11 Temperature and Humidity Sensor | 1 |
+| 12 | ![image13](media/PIR-Sensor.png) | PIR Motion Sensor | 1 |
+| 13 | ![image14](media/LED-Module.png) | Yellow LED Module | 1 |
 | 14 | ![image15](media/Servo.png) | Servo | 2 |
 | 15 | ![image16](media/I2C1602-LCD.png) | I2C1602 LCD Module | 1 |
-| 16 | ![image17](media/3P-150-mm-Wire.png) | 3P F-F 150 mm Fil Dupont | 5 |
-| 17 | ![image18](media/3P-200-mm-Wire.png) | 3P F-F 200 mm Fil Dupont | 4 |
+| 16 | ![image17](media/3P-150-mm-Wire.png) | 3P F-F 150 mm Dupont Wire | 5 |
+| 17 | ![image18](media/3P-200-mm-Wire.png) | 3P F-F 200 mm Dupont Wire | 4 |
 | 18 | ![image19](media/F-F-200-mm.png) | F-F 200 mm /40P/2.54 Wires | 0.1 （4 strands） |
-| 19 | ![image20](media/4P-200-mm-Wire.png) | 4P F-F 200 mm Splicing Fil Dupont | 2 |
-| 20 | ![image21](media/M1.4-6MM-Screws.png) | M1.4*6MM Vis à tête ronde | 4 |
-| 21 | ![img](media/wps1.jpg) | M1.2*4MM Vis à tête ronde | 4 |
-| 22 | ![image22](media/M3-Nickle-plated.png) | M3 Écrou nickelé(autobloquant) | 5 |
-| 23 | ![image23](media/M4-8MM-Screws.png) | M4*8MM Vis à tête ronde | 24 |
-| 24 | ![image24](media/M3-6MM-Screws.png) | M3*6MM Vis à tête ronde | 9 |
-| 25 | ![image25](media/M3-6MM-Screws.png) | M3*10MM Vis à tête ronde | 5 |
-| 26 | ![image26](media/M3-6MM-Screws.png) | M2*12MM Vis à tête ronde | 5 |
-| 27 | ![image27](media/M4-Nut.png) | M4 Écrou nickelé | 24 |
-| 28 | ![image28](media/M4-Nut.png) | M3 Écrou nickelé | 7 |
-| 29 | ![image29](media/M4-Nut.png) | M2 Écrou nickelé | 6 |
-| 30 | ![image30](media/M3-8MM.png) | M3*8MM Vis à tête plate | 3 |
-| 31 | ![image31](media/Cross-Wrench.jpeg) | Clé en croix | 1 |
-| 32 | ![image32](media/3.0-40MM-Screwdriver.png) | 3.0*40MM Tournevis | 1 |
-| 33 | ![image33](media/2.0-40MM-Screwdriver.png) | 2.0*40MM Tournevis | 1 |
-| 34 | ![image34](media/M3-10MM.png) | M3*10MM Pilier en cuivre à double passage | 4 |
-| 35 | ![image35](media/USB-Cable.png) | Câble USB | 1 |
-| 36 | ![image36](media/AA-Battery-Holder.png) | Porte-piles AA à 6 emplacements | 1 |
-| 37 | ![image37](media/M3-6MM-Screws.png) | M3*12MM Vis à tête ronde | 4 |
-| 38 | ![image38](media/White-Card.png) | Carte blanche | 1 |
+| 19 | ![image20](media/4P-200-mm-Wire.png) | 4P F-F 200 mm Splicing Dupont Wire | 2 |
+| 20 | ![image21](media/M1.4-6MM-Screws.png) | M1.4*6MM Round Head Screws | 4 |
+| 21 | ![img](media/wps1.jpg) | M1.2*4MM Round Head Screws | 4 |
+| 22 | ![image22](media/M3-Nickle-plated.png) | M3 Nickle-plated Nut(self-locking) | 5 |
+| 23 | ![image23](media/M4-8MM-Screws.png) | M4*8MM Round Head Screws | 24 |
+| 24 | ![image24](media/M3-6MM-Screws.png) | M3*6MM Round Head Screws | 9 |
+| 25 | ![image25](media/M3-6MM-Screws.png) | M3*10MM Round Head Screws | 5 |
+| 26 | ![image26](media/M3-6MM-Screws.png) | M2*12MM Round Head Screws | 5 |
+| 27 | ![image27](media/M4-Nut.png) | M4 Nickle-plated Nut | 24 |
+| 28 | ![image28](media/M4-Nut.png) | M3 Nickle-plated Nut | 7 |
+| 29 | ![image29](media/M4-Nut.png) | M2 Nickle-plated Nut | 6 |
+| 30 | ![image30](media/M3-8MM.png) | M3*8MM Flat Head Screws | 3 |
+| 31 | ![image31](media/Cross-Wrench.jpeg) | Cross Wrench | 1 |
+| 32 | ![image32](media/3.0-40MM-Screwdriver.png) | 3.0*40MM Screwdriver | 1 |
+| 33 | ![image33](media/2.0-40MM-Screwdriver.png) | 2.0*40MM Screwdriver | 1 |
+| 34 | ![image34](media/M3-10MM.png) | M3*10MM Dual-pass Copper Pillar | 4 |
+| 35 | ![image35](media/USB-Cable.png) | USB Cable | 1 |
+| 36 | ![image36](media/AA-Battery-Holder.png) | 6-Slot AA Battery Holder | 1 |
+| 37 | ![image37](media/M3-6MM-Screws.png) | M3*12MM Round Head Screws | 4 |
+| 38 | ![image38](media/White-Card.png) | White Card | 1 |
 | 39 | ![image39](media/ABS-RFID-Key.png) | ABS RFID Key | 1 |
 
 
-# 4. Comment installer une maison intelligente
+# 4. Come installare la smart home
 
-**Étape1**
-
-Composants requis
+**Passo 1**
+Componenti necessari
 
 ![image40](media/A01.png)
 
-Schéma d'installation
+Schema di installazione
 
 ![image41](media/A02.png)
 
-Prototype
+Prototipo
 
 ![image42](media/A03.png)
 
-**Étape 2**
+**Passo 2**
 
-Composants requis
+Componenti necessari
 
 ![image43](media/A04.png)
 
-Schéma d'installation
+Schema di installazione
 
 ![image44](media/A05.png)
 
-Prototype
+Prototipo
 
 ![image45](media/A06.png)
 
-**Étape 3**
+**Passo 3**
 
-Composants requis
+Componenti necessari
 
 ![image46](media/A07.png)
 
-Installation
+Installazione
 
 ![image47](media/A08.png)
 
-Prototype
+Prototipo
 
 ![image48](media/A09.png)
 
-**Étape 4**
+**Passo 4**
 
-Composants requis
+Componenti necessari
 
 ![image49](media/A10.png)
 
-Schéma d'installation
+Schema di installazione
 
 ![image50](media/A11.png)
 
-Prototype
+Prototipo
 
 ![image51](media/A12.png)
 
-**Étape 5**
+**Passo 5**
 
-Composants requis
+Componenti necessari
 
 ![image52](media/A13.png)
 
-Schéma d'installation
+Schema di installazione
 
 ![image53](media/A14.png)
 
-Prototype
+Prototipo
 
 ![image54](media/A15.png)
 
-**Étape 6**
-Composants requis
+**Passo 6**
+Componenti necessari
 
 ![image55](media/A16.png)
 
-Installation (Ne serrez pas les écrous autobloquants)
+Installazione (Non stringere i dadi autobloccanti)
 
 ![image56](media/A17.png)
 
-Prototype
+Prototipo
 
 ![image57](media/A18.png)
 
-**Étape 7**
+**Passo 7**
 
-Composants requis
+Componenti necessari
 
 ![image58](media/A19.png)
 
-⚠️ **Remarque spéciale :** Réglez le servo de la fenêtre à 0° avant l'installation
+⚠️ **Nota speciale:** Regolare il servo della finestra a 0 gradi prima dell'installazione
 
 | Servo | PCB |
 | --- | --- |
-| Fil marron | G |
-| Fil rouge | 5V |
-| Fil orange | GPIO5 |
+| Filo marrone | G |
+| Filo rosso | 5V |
+| Filo arancione | GPIO5 |
 
-⚠️ **Rappel important :** Les deux méthodes suivantes peuvent être choisies librement selon votre situation.
+⚠️ **Promemoria importante:** Le due seguenti modalità possono essere scelte liberamente in base alla tua situazione.
 
-**Méthode 1：code Arduino**
+**Metodo 1：codice Arduino**
 
-⚠️ **Remarque spéciale :** Avant d'écrire le code et de le téléverser, vous devez installer l'IDE Arduino, veuillez consulter le lien : `5. Arduino Tutorial <https://docs.keyestudio.com/projects/KS5009/en/latest/docs/Arduino/arduino.html>`__ ，puis voir la section **5.2 Premiers pas avec Arduino**.
+⚠️ **Nota speciale:** Prima di scrivere il codice e caricarlo, devi installare l'Arduino IDE, per favore vai al link: `5. Arduino Tutorial <https://docs.keyestudio.com/projects/KS5009/en/latest/docs/Arduino/arduino.html>`__\ ，e poi consulta la parte di **5.2 Getting started with Arduino** .
 
-Comment obtenir le code ?
+Come ottenere il codice?
 
-Dans le dossier **..\\Resource compression package\\arduino Code** , ouvrez le fichier **Initialization-of-window-servo-angle.ino** , ou copiez et collez le code de test suivant dans l'IDE Arduino.
+Nella cartella **..\\Resource compression package\\arduino Code** , apri il file **Initialization-of-window-servo-angle.ino** , oppure copia e incolla il seguente codice di prova nell'Arduino IDE.
 
 ![Img](./media/A20.png)
 
@@ -202,13 +195,13 @@ void loop() {
   // put your main code here, to run repeatedly:
 }
 ```
-**Méthode 2：code MicroPython**
+**Metodo 2：codice MicroPython**
 
-⚠️ **Remarque spéciale :** Avant d'écrire le code et de le téléverser, vous devez installer l'IDE MicroPython, veuillez consulter le lien : `6. Python tutorial <https://docs.keyestudio.com/projects/KS5009/en/latest/docs/Python/Python.html>`__ ，puis voir la section **6.2 Premiers pas avec Thonny**.
+⚠️ **Nota speciale:** Prima di scrivere il codice e caricarlo, devi installare l'IDE MicroPython, vai al link: `6. Python tutorial <https://docs.keyestudio.com/projects/KS5009/en/latest/docs/Python/Python.html>`__, e poi consulta la parte di **6.2 get starter with Thonny** .
 
-Comment obtenir le code?
+Come ottenere il codice?
 
-Dans le dossier **..\\Resource compression package\\MicroPython Code** , ouvrez le fichier **Initialization-of-window-servo-angle.py** , ou copiez et collez le code de test suivant dans l'IDE Thonny.
+Nella cartella **..\\Resource compression package\\MicroPython Code** , apri il file **Initialization-of-window-servo-angle.py** , oppure copia e incolla il seguente codice di prova nell'IDE Thonny.
 
 ![image59](./media/A21.png)
 
@@ -239,306 +232,306 @@ time.sleep(1)
 
 # while True:
 ```
-Après avoir réglé l'angle du servo de la fenêtre à 0°, procédez à l'installation comme indiqué sur l'image suivante)
+Dopo aver regolato l'angolo del servo della finestra a 0°, procedere all'installazione come mostrato nella seguente immagine)
 
 ![image60](media/wps1-1.jpg)
 
-Installez des vis autotaraudeuses M1.4*6MM comme indiqué ci-dessous
+Installare le viti autofilettanti M1.4*6MM come mostrato di seguito
 
 ![image61](media/wps2.jpg)
 
-Prototype
+Prototipo
 
 ![image62](media/A22.png)
 
-**Étape 8**
+**Passo 8**
 
-Composants requis
+Componenti necessari
 
 ![image63](media/A23.png)
 
-Schéma d'installation
+Diagramma di installazione
 
 ![image64](media/A24.png)
 
-Prototype
+Prototipo
 
 ![image65](media/A25.png)
 
-**Étape 9**
+**Passo 9**
 
-Composants requis
+Componenti necessari
 
 ![image66](media/A26.png)
 
-Schéma d'installation
+Diagramma di installazione
 
 ![image67](media/A27.png)
 
-Prototype
+Prototipo
 
 ![image68](media/A28.png)
 
-**Étape 10**
-Composants requis
+**Passo 10**
+Componenti necessari
 
 ![image69](media/A29.png)
 
-Diagramme d'installation
+Diagramma di installazione
 
 ![image70](media/A30.png)
 
-Prototype
+Prototipo
 
 ![image71](media/A31.png)
 
-**Étape 11**
+**Passo 11**
 
-Composants requis
+Componenti necessari
 
 ![image72](media/A32.png)
 
-Diagramme d'installation
+Diagramma di installazione
 
 ![image73](media/A33.png)
 
-Prototype
+Prototipo
 
 ![image74](media/A34.png)
 
-**Étape 12**
+**Passo 12**
 
-Composants requis
+Componenti necessari
 
 ![image75](media/A35.png)
 
-Diagramme d'installation
+Diagramma di installazione
 
 ![image76](media/A36.png)
 
-Prototype
+Prototipo
 
 ![image77](media/A37.png)
 
-**Étape 13**
+**Passo 13**
 
-Composants requis
+Componenti necessari
 
 ![image78](media/A38.png)
 
-Diagramme d'installation
+Diagramma di installazione
 
 ![image79](media/A39.png)
 
-Prototype
+Prototipo
 
 ![image80](media/A40.png)
 
-**Étape 14**
+**Passo 14**
 
-Composants requis
+Componenti necessari
 
 ![image81](media/A41.png)
 
-Diagramme d'installation
+Diagramma di installazione
 
 ![image82](media/A43.png)
 
-Prototype
+Prototipo
 
 ![image83](media/A44.png)
 
-**Étape 15**
+**Passo 15**
 
-Composants requis
+Componenti necessari
 
 ![image84](media/A45.png)
 
-Diagramme d'installation
+Diagramma di installazione
 
 ![image85](media/A46.png)
 
-Prototype
+Prototipo
 
 ![image86](media/A47.png)
 
-**Étape 16**
+**Passo 16**
 
-Composants requis
+Componenti necessari
 
 ![image87](media/A48.png)
 
-Diagramme d'installation
+Diagramma di installazione
 
 ![image88](media/A49.png)
 
-Prototype
+Prototipo
 
 ![image89](media/A50.png)
 
-**Étape 17**
+**Passo 17**
 
-Composants requis
+Componenti necessari
 
 ![image90](media/A51.png)
 
-Diagramme d'installation
+Diagramma di installazione
 
 ![image91](media/A52.png)
 
-Prototype
+Prototipo
 
 ![image92](media/A53.png)
 
-**Étape 18**
+**Passo 18**
 
-Composants requis
+Componenti necessari
 
 ![image93](media/A54.png)
 
-Diagramme d'installation
+Diagramma di installazione
 
 ![image94](media/A55.png)
 
-Prototype
+Prototipo
 
 ![image95](media/A56.png)
 
-**Étape 19**
+**Passo 19**
 
-Composants requis
+Componenti necessari
 
 ![image96](media/A57.png)
 
-Diagramme d'installation
+Diagramma di installazione
 
 ![image97](media/A58.png)
 
-Prototype
+Prototipo
 
 ![image98](media/A59.png)
 
-**Partie câblage**
+**Parte di cablaggio**
 
-température et humidité vers io17
+Collegare il sensore di temperatura e umidità a io17
 
-Fil de connexion 3P court : 15cm
+Usare un cavo di collegamento 3P corto: 15cm
 
 ![image99](./media/A60-1.png)
 
 ![image100](media/A60.png)
 
-module LED jaune vers io12
+Collegare il modulo LED giallo a io12
 ![image101](./media/A61-1.png)
 
 ![image102](media/A61.png)
 
-capteur de vapeur à l'io34
+sensore di vapore a io34
 
-3P connection line using short: 15cm
+Linea di connessione 3P, corta: 15cm
 
 ![image103](./media/A62-1.png)
 
 ![image104](media/A62.png)
 
-ventilateur (IN- to io18，IN+ to io19)
+ventola (IN- to io18，IN+ to io19)
 
-Fil Duponts used: 4 Fil Duponts spread out
+Cavi Dupont usati: 4 cavi Dupont distribuiti
 
 ![image105](./media/A63-1.png)
 
-![image106](media/A63.png)
+![image106](./media/A63.png)
 
-Capteur de mouvement PIR à l'io14
+sensore di movimento PIR a io14
 
-3P connection line using short: 15cm
+Linea di connessione 3P, corta: 15cm
 
 ![image107](./media/A64-1.png)
 
-![image108](media/A64.png)
+![image108](./media/A64.png)
 
-module bouton gauche à l'io16
+modulo pulsante sinistro a io16
 
-3P connection line using long wire: 20cm
+Linea di connessione 3P, filo lungo: 20cm
 
 ![image109](./media/A65-1.png)
 
-![image110](media/A65.png)
+![image110](./media/A65.png)
 
-module bouton droit à l'io27
+modulo pulsante destro a io27
 
-3P connection line using long wire: 20cm
+Linea di connessione 3P, filo lungo: 20cm
 
 ![image111](./media/A66-1.png)
 
-![image112](media/A66.png)
+![image112](./media/A66.png)
 
-Module RFID au bus IIC
+modulo RFID all'IIC
 
-The 4P merged line
+La linea 4P unificata
 
 ![image113](./media/A67-1.png)
 
-![image114](media/A67.png)
+![image114](./media/A67.png)
 
-Afficheur LCD1602 au bus IIC
+display LCD1602 all'IIC
 
-The 4P merged line
+La linea 4P unificata
 
 ![image115](./media/A68-1.png)
 
-![image116](media/A68.png)
+![image116](./media/A68.png)
 
-LED 6812RGB à l'io26
+LED 6812RGB a io26
 
-3P connection line using short: 15cm
+Linea di connessione 3P, corta: 15cm
 
 ![image117](./media/A69-1.png)
 
-![image118](media/A69.png)
+![image118](./media/A69.png)
 
-capteur de gaz à l'io23
+sensore di gas a io23
 
-3P connection line using long wire: 20cm
+Linea di connessione 3P, filo lungo: 20cm
 
 ![image119](./media/A70-1.png)
 
-![image120](media/A70.png)
+![image120](./media/A70.png)
 
-buzzer à l'io25
+buzzer (sensore) a io25
 
-3P connection line using long wire: 20cm
+Linea di connessione 3P, filo lungo: 20cm
 
 ![image121](./media/A71-1.png)
 
-![image122](media/A71.png)
+![image122](./media/A71.png)
 
-servo contrôlant les fenêtres à l'io5
+servo per il controllo delle finestre a io5
 
 ![image123](./media/A72-1.png)
 
-![image124](media/A72.png)
+![image124](./media/A72.png)
 
-servo contrôlant les portes à l'io13
+servo per il controllo delle porte a io13
 
 ![image125](./media/A73-1.png)
 
-![image126](media/A73.png)
+![image126](./media/A73.png)
 
-Câblage d'alimentation
+cablaggio di alimentazione
 
 ![image127](media/A74.jpeg)
 
-**Étape 20**
+**Passo 20**
 
-Composants requis
+Componenti richiesti
 
 ![image128](media/A75.png)
 
-Schéma d'installation
+Diagramma di installazione
 
 ![image129](media/A76.png)
 
-Prototype
+Prototipo
 
 ![image130](media/A77.png)

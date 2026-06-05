@@ -1,46 +1,48 @@
 
 ## 6.1 Resource compression package
 
-Le package de ressources contient du code, des bibliothèques, du firmware et le logiciel Thonny. Vous devez disposer de cette ressource pour continuer à apprendre.
+Il pacchetto delle risorse contiene codice, librerie, firmware e il software Thonny. Devi avere questo pacchetto di risorse per continuare a imparare.
 
 [Resource-compression-package](../Resource-compression-package.7z)
 
 
-## 6.2 get starter with Thonny
+## 6.2 Iniziare con Thonny
 
 ---
 
 ### 6.2.1 Open the Thonny Package
 
-Veuillez vous référer au dossier montré ci-dessous :
+Fare riferimento alla cartella mostrata di seguito:
 
-![image1](../media/29fa7a9563dec2dddbfc7ed79d197380.png)
+![immagine1](../media/29fa7a9563dec2dddbfc7ed79d197380.png)
 
 ---
 
 ### 6.2.2 Thonny Interface
 
-Ouvrez Thonny
+Aprire Thonny
 
-![image2](../media/d753621b40cd7405ce034e93e0f5678a.png)
+![immagine2](../media/d753621b40cd7405ce034e93e0f5678a.png)
 
-Fonctions principales de l'interface :
+Funzioni principali dell'interfaccia:
 
-![image3](../media/d41b79772c9846fd8bf295c8451f8321.png)
+![immagine3](../media/d41b79772c9846fd8bf295c8451f8321.png)
 
-![image4](../media/3d04fe6893ca104e4e593a0786cb3799.png)
+![immagine4](../media/3d04fe6893ca104e4e593a0786cb3799.png)
 
 ---
 
 ### 6.2.3 Select ESP32 Development Environment
 
-Cliquez sur Python.exe, puis sélectionnez Configure interpreter
+Selezionare l'ambiente di sviluppo ESP32
 
-![image5](../media/30d66dba96cfabbe2bd3b6c858564ef2.png)
+Fare clic su Python.exe, quindi selezionare Configura interprete
 
-Sélectionnez MicroPython(ESP32) depuis l'interface Interpreter
+![immagine5](../media/30d66dba96cfabbe2bd3b6c858564ef2.png)
 
-![image6](../media/5f92c4dd24223cf49d6da075aa53307f.png)
+Selezionare MicroPython(ESP32) dall'interfaccia dell'interprete
+
+![immagine6](../media/5f92c4dd24223cf49d6da075aa53307f.png)
 
 ---
 
@@ -48,44 +50,44 @@ Sélectionnez MicroPython(ESP32) depuis l'interface Interpreter
 
 Download link：\ https://micropython.org/download/esp32/
 
-Choisissez de télécharger la version V1.17
+Scegliere la versione V1.17 da scaricare
 
-![image7](../media/4f1f3b0568c3ae2ca3288431df340184.png)
+![immagine7](../media/4f1f3b0568c3ae2ca3288431df340184.png)
 
-Bien sûr, nous fournissons également le firmware téléchargé, comme montré ci-dessous.
+Naturalmente, forniamo anche il firmware già scaricato, come mostrato di seguito.
 
-![image-20250408113209943](../media/image-20250408113209943.png)
+![immagine-20250408113209943](../media/image-20250408113209943.png)
 
-Flasher le firmware MicroPython
+Effettuare il flashing del firmware MicroPython
 
-Connectez le smart home à votre ordinateur via USB.
+Collegare lo smart home al computer tramite USB.
 
-Cliquez sur Install or update firmware
+Fare clic su Installa o aggiorna firmware
 
-![image8](../media/9b8470fee22b3a6aa4ac21d1e1d10eda.png)
+![immagine8](../media/9b8470fee22b3a6aa4ac21d1e1d10eda.png)
 
-Sélectionnez le Port
+Selezionare la porta
 
-![image9](../media/d3bff3f1b25076733717273e94616088.png)
+![immagine9](../media/d3bff3f1b25076733717273e94616088.png)
 
-Cliquez sur Browser pour trouver le firmware V1.17 téléchargé
+Fare clic su Browser per trovare il firmware V1.17 scaricato
 
-![image10](../media/ad4cfc202f014101ddd9f5373773635f.png)
+![immagine10](../media/ad4cfc202f014101ddd9f5373773635f.png)
 
-![image11](../media/aef61c4411d53f83685ad570c7d3a075.png)
+![immagine11](../media/aef61c4411d53f83685ad570c7d3a075.png)
 
-Cliquez sur install
+Fare clic su Installa
 
-![image12](../media/507ff0c04761a509f729a8c4e88e4b27.png)
+![immagine12](../media/507ff0c04761a509f729a8c4e88e4b27.png)
 
-Choisissez Port ou WebREPL comme pilote de la carte principale ESP32 CH340(COM)
+Scegliere Port o WebREPL come driver della scheda principale ESP32 CH340 (COM)
 
-![image13](../media/c1c4ae83635b2c0186b1985aeef844ae.png)
+![immagine13](../media/c1c4ae83635b2c0186b1985aeef844ae.png)
 
-![image14](../media/19514aef3fdd86fb2c033c6441d8ff6e.png)
+![immagine14](../media/19514aef3fdd86fb2c033c6441d8ff6e.png)
 
-L'environnement ESP32 a été installé.
+L'ambiente ESP32 è stato installato.
 
-Interface de Thonny
+Interfaccia di Thonny
 
-![image15](../media/c42ed7549ff7ff1f7deabd64710cb98e.png)
+![immagine15](../media/c42ed7549ff7ff1f7deabd64710cb98e.png)

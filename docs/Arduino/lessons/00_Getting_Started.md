@@ -1,247 +1,229 @@
 
-## 5.1 Package de compression de ressources
+## 5.1 Resource compression package
 
-Ce pack de ressources contient le code, les bibliothèques, l'application et les fichiers du pilote. Vous devez disposer de cette ressource pour poursuivre votre apprentissage.
+Il pacchetto delle risorse contiene Code, Libraries, APP e file Driver. Devi avere questo pacchetto di risorse per continuare l'apprendimento.
 
-[package de compression de ressources](../Resource-compression-package.7z)
+[Resource compression package](../Resource-compression-package.7z)
 
 
-## 5.2 Premiers pas avec Arduino
+## 5.2 Getting started with Arduino
 
 ---
 
-### 5.2.1 Carte de développement ESP32 PLUS
+### 5.2.1 ESP32 PLUS Development board
 
-![image1](../media/201911d851d2d7fa6e854d6428bb5b67.png)
+![immagine1](../media/201911d851d2d7fa6e854d6428bb5b67.png)
 
-L'ESP32PLUS est une carte de développement universelle WiFi et Bluetooth basée sur l'ESP32, intégrant le module ESP32-WOROOM-32 et compatible avec Arduino.
+ESP32PLUS è una scheda di sviluppo universale WiFi plus Bluetooth basata su ESP32, integrata con il modulo ESP32-WOROOM-32 e compatibile con Arduino.
 
-Elle dispose d'un capteur à effet Hall, d'interfaces SDIO/SPI haut débit, UART, I2S et I2C.
+Ha un sensore hall, SDIO/SPI ad alta velocità, UART, I2S e anche I2C. Inoltre è dotata del sistema operativo freeRTOS, che è molto adatto per l'Internet delle cose e la smart home.
 
-De plus, elle est équipée du système d'exploitation FreeRTOS, particulièrement adapté à l'Internet des objets et à la domotique.
-
-![image2](../media/e00562548e84b885ad18510b261ade05.png)
+![immagine2](../media/e00562548e84b885ad18510b261ade05.png)
 
 ---
 
 ### 5.2.2 Windows System
 
-![image3](../media/6cf6312dc7c7db27794b54d58a8bf80c.png)
+![immagine3](../media/6cf6312dc7c7db27794b54d58a8bf80c.png)
 
 
 #### 1 Installing Arduino IDE
 
-Lorsque vous obtenez la carte de contrôle, vous devez télécharger l'IDE Arduino et le pilote d'abord.
+Quando ricevi la scheda di controllo, devi prima scaricare Arduino IDE e il driver.
 
-Vous pouvez télécharger l'IDE Arduino depuis le site officiel :
-https://www.arduino.cc/, cliquez sur **LOGICIEL** dans la barre de navigation pour
-entrez dans la page de téléchargement, comme indiqué ci-dessous :
+Puoi scaricare Arduino IDE dal sito ufficiale: https://www.arduino.cc/, clicca su **SOFTWARE** nella barra di navigazione per entrare nella pagina di download, come mostrato sotto:
 
-![image4](../media/83a843a56d49e93ec9f99bfb33fee269.png)
+![immagine4](../media/83a843a56d49e93ec9f99bfb33fee269.png)
 
-⚠️ **Rappel spécial :** Si vous ne trouvez pas l'IDE Arduino dans la
-section software du site officiel mentionné ci‑dessus, vous pouvez cliquer
-sur ce lien：\ https://www.arduino.cc/en/software pour accéder
-directement à la page de téléchargement de l'IDE Arduino.
+⚠️ **Promemoria speciale:** Se non riesci a trovare Arduino IDE nella sezione software del sito ufficiale sopra menzionato, puoi cliccare su questo link：\ https://www.arduino.cc/en/software per accedere direttamente alla pagina di download di Arduino IDE.
 
-Il existe différentes versions de l'IDE Arduino. Téléchargez simplement une version compatible avec votre système. Nous allons vous montrer comment télécharger et installer la version Windows de l'IDE Arduino.
+Esistono varie versioni dell'IDE per Arduino. Scarica semplicemente una versione compatibile con il tuo sistema. Qui ti mostreremo come scaricare e installare la versione Windows di Arduino IDE.
 
-![image5](../media/fac59eb6f401fa9e6ce711bb5f3f62f2.png)
+![immagine5](../media/fac59eb6f401fa9e6ce711bb5f3f62f2.png)
 
-Vous pouvez choisir entre le programme d'installation (.exe) et le fichier ZIP.
-Nous vous conseillons d'utiliser le premier, qui installe directement tout le nécessaire pour utiliser le logiciel Arduino (IDE), y compris les pilotes. Avec le fichier ZIP, vous devrez installer les pilotes manuellement.
-Le fichier ZIP est également utile si vous souhaitez créer une installation portable.
+Puoi scegliere tra l'Installer (.exe) e i pacchetti Zip. Ti suggeriamo di usare il primo che installa direttamente tutto il necessario per usare il Software Arduino (IDE), inclusi i driver. Con il pacchetto Zip dovrai installare i driver manualmente. Il file Zip è utile anche se vuoi creare un'installazione portatile.
 
-![image6](../media/0ab58d5303a100e9638be44131a34b51.png)
+![immagine6](../media/0ab58d5303a100e9638be44131a34b51.png)
 
-Il vous suffit de cliquer sur JUST DOWNLOAD.
+Devi solo cliccare JUST DOWNLOAD.
 
 
-#### 2 Installer un pilote
+#### 2 Install a driver
 
-⚠️ **Rappel spécial : Si vous avez installé le pilote CH340, passez cette étape.**
+⚠️ **Promemoria speciale: Se hai già installato il driver CH340, salta questo passo.**
 
-Connectez la carte de contrôle principale à votre ordinateur à l'aide d'un câble USB.
+Collega la scheda di controllo al tuo computer con un cavo USB, e il driver verrà installato automaticamente su MacOS e Windows10. Se il processo di installazione del driver fallisce, devi installare il driver manualmente.
 
-Le pilote s'installera automatiquement sous macOS et Windows 10.
+(1) Verifica se il computer installa automaticamente il driver:
 
-Si l'installation du pilote échoue, vous devrez l'installer manuellement.
+Clic destro su Computer----- Clicca Proprietà-----Clicca Gestione dispositivi, l'immagine seguente mostra l'installazione avvenuta con successo:
 
-(1) Vérifiez si l'ordinateur installe automatiquement le pilote :
+![immagine7](../media/789a5b530a3e6c44687099a219575666.png)
 
-Cliquez droit sur Ordinateur----- Cliquez sur Propriétés-----Cliquez sur Gestionnaire de périphériques, l'image suivante montre l'installation réussie :
+(2) Installazione manuale:
 
-![image7](../media/789a5b530a3e6c44687099a219575666.png)
+Fai clic destro su “\ **USB2.0-Serial**\ ” e clicca “\ **Update drive...**\ ”
 
-(2) Installation manuelle :
+![immagine8](../media/378b65e69d5a926721245ecb4d2209a7.png)
 
-Cliquez avec le bouton droit sur “\ **USB2.0-Serial**\ ” et cliquez sur “\ **Update drive...**\ ”
+Clicca “\ **Browse my computer for driver software**\ ”
 
-![image8](../media/378b65e69d5a926721245ecb4d2209a7.png)
+![immagine9](../media/dc27c46ecc96141df0ff60cf605875f3.png)
 
-Cliquez sur “\ **Browse my computer for driver software**\ ”
+Clicca“\ **Browse...**\ ”e seleziona la “\ **usb_ch341_3.1.2009.06 folder**\ ”.
 
-![image9](../media/dc27c46ecc96141df0ff60cf605875f3.png)
+![immagine10](../media/32e5e41e0c42893596d82c48e8914802.png)
 
-Cliquez sur “\ **Browse...**\ ” et sélectionnez le “\ **usb_ch341_3.1.2009.06 folder**\ ”.
+Controlla di nuovo lo stato della connessione della porta seriale, come mostrato nella figura seguente, il driver è stato installato con successo.
 
-![image10](../media/32e5e41e0c42893596d82c48e8914802.png)
-
-Vérifiez à nouveau l'état de la connexion du port série, comme montré dans la figure suivante, le pilote est installé avec succès.
-
-![image11](../media/789a5b530a3e6c44687099a219575666.png)
+![immagine11](../media/789a5b530a3e6c44687099a219575666.png)
 
 
-#### 3 Ajouter l'environnement ESP32 (ajouter la version 3.1.0)
+#### 3 Add the ESP32 Environment(add version 3.1.0)
 
-（1）Ouvrez l'IDE Arduino, cliquez sur Fichier > Préférences, comme indiqué ci-dessous :
+（1）Apri l'arduino IDE，clicca File > Preferences，come mostrato sotto:
 
-![image12](../media/cd670e08b43572b8b90f11a3d1edd61c.png)
+![immagine12](../media/cd670e08b43572b8b90f11a3d1edd61c.png)
 
-（2）Copiez le lien：`https://espressif.github.io/arduino-esp32/package_esp32_index.json`
+（2）Copia il link：\ `https://espressif.github.io/arduino-esp32/package_esp32_index.json`
 .
 
-（3）Ouvrez le bouton indiqué ci-dessous :
+（3）Apri il pulsante segnato qui sotto:
 
-![image13](../media/bb39b0b271fcdfb85e6a7ff284c290dd.png)
+![immagine13](../media/bb39b0b271fcdfb85e6a7ff284c290dd.png)
 
-(4) Collez-le à l'intérieur et cliquez sur OK, comme indiqué ci-dessous
+(4) Incollalo all'interno e clicca OK, come mostrato sotto
 
-![image14](../media/58a1317f28e334e6fcdc833bf7161f29.png)
+![immagine14](../media/58a1317f28e334e6fcdc833bf7161f29.png)
 
-![Image](../media/img-20250603083908.png)
+![Immagine](../media/img-20250603083908.png)
 
-(5) Cliquez Tools > Board > Boards Manager
+(5) Clicca Tools > Board > Boards Manager
 
-![image15](../media/dab13b40132ce5c687ca4726b75733f6.png)
+![immagine15](../media/dab13b40132ce5c687ca4726b75733f6.png)
 
-(6) Dans le Gestionnaire de cartes qui s'affiche, sélectionnez l'ESP32, puis cliquez sur Installer. (Ajoutez la version 3.1.3 !) ! Très important
+(6) Trova ESP32 nel pop-up Boards Manager e poi clicca install. (add version 3.1.3)!!! Molto importante
 
-![image16](../media/aa.png)
+![immagine16](../media/aa.png)
 
-(7) Cliquez Tools > Board >esp32, choisir ESP32 Dev Module.
+(7) Clicca Tools > Board >esp32 per scegliere ESP32 Dev Module.
 
-![image17](../media/677ff80219f4525f8aea366eec9a03af.png)
+![immagine17](../media/677ff80219f4525f8aea366eec9a03af.png)
 
 
 #### 4 Arduino IDE Setting
 
-Cliquez ![image18](../media/9035a01879f001b75827e908d7dceb2d.png) icône, ouvrir l'IDE Arduino.
+Clicca ![immagine18](../media/9035a01879f001b75827e908d7dceb2d.png) icona，apri Arduino IDE.
 
-![image19](../media/843b5bb2d4c1d33c215e8d0c76c07abf.png)
+![immagine19](../media/843b5bb2d4c1d33c215e8d0c76c07abf.png)
 
-Pour éviter les erreurs lors du téléversement du programme sur la carte, vous devez sélectionner la carte Arduino compatible avec celle connectée à votre ordinateur.
+Per evitare errori durante il caricamento del programma sulla scheda, devi selezionare la scheda Arduino corretta che corrisponde alla scheda collegata al tuo computer.
 
-Ensuite, retournez dans le logiciel Arduino, cliquez sur Outils → Carte, puis sélectionnez la carte. (Voir ci-dessous.)
+Poi torna al software Arduino, dovresti cliccare Tools→Board, selezionare la scheda. (come mostrato sotto)
 
-![image20](../media/82243fba22e2575044b1c29decef18d9.png)
+![immagine20](../media/82243fba22e2575044b1c29decef18d9.png)
 
-Sélectionnez ensuite le port COM approprié (vous pourrez voir le port COM correspondant une fois le pilote installé avec succès).
+Quindi seleziona la porta COM corretta (puoi vedere la corrispondente porta COM dopo che il driver è stato installato con successo)
 
-![image21](../media/d8fe59d73cdbce2afc74b37eb5f8e8c0.png)
+![immagine21](../media/d8fe59d73cdbce2afc74b37eb5f8e8c0.png)
 
-Avant de téléverser le programme sur la carte, démontrons la
-fonction de chaque symbole de la barre d'outils de l'IDE Arduino.
+Prima di caricare il programma sulla scheda, presentiamo la funzione di ogni simbolo nella barra degli strumenti di Arduino IDE.
 
-![image22](../media/3d76bbceb5014e1413c7c8d43ea52eb0.png)
+![immagine22](../media/3d76bbceb5014e1413c7c8d43ea52eb0.png)
 
-1- Sert à vérifier s'il y a des erreurs de compilation.
+1- Serve per verificare se ci sono errori di compilazione.
 
-2- Sert à téléverser le sketch sur votre carte ESP32.
+2- Serve per caricare lo sketch sulla tua scheda ESP32.
 
-3- Sert à envoyer les données série reçues depuis la carte vers le traceur série.
+3- Serve per inviare i dati seriali ricevuti dalla scheda al serial plotter.
 
-4- Sert à envoyer les données série reçues depuis la carte vers le moniteur série.
+4- Serve per inviare i dati seriali ricevuti dalla scheda al serial monitor.
 
 ---
 
 ### 5.2.3 Mac System
 
-![image23](../media/a6fc83596009c574d8e29ef383748549.png)
+![immagine23](../media/a6fc83596009c574d8e29ef383748549.png)
 
 
-#### 1 Télécharger Arduino IDE
+#### 1 Download Arduino IDE
 
-![image24](../media/77c03a9d0b23a0cc760d32095fa08e21.png)
-
-
-#### 2 Télécharger CH340 driver
-
-Nous fournissons, veuillez consulter le pack de ressources 5.1 pour obtenir
-
-![image-20250408105719588](../media/image-20250408105719588.png)
+![immagine24](../media/77c03a9d0b23a0cc760d32095fa08e21.png)
 
 
-#### 3 Comment installer le pilote CH340
+#### 2 Download the CH340 driver
 
-Après le téléchargement, voir ci-dessous :
+Lo forniamo, per favore vai al pacchetto risorse 5.1 per ottenerlo
 
-![image25](../media/63eee4c4643c4638a659346edbd2500f.png)
+![immagine-20250408105719588](../media/image-20250408105719588.png)
 
-Double-cliquez sur le package d'installation et appuyez sur Continuer
 
-![image26](../media/c51b1c3d15affa4d754770184d5151df.png)
+#### 3 How to install the CH340 driver
 
-Cliquez Install
+Dopo il download, appare come sotto:
 
-![image27](../media/de96ded3dc9582e151dd7713d3ef33a1.png)
+![immagine25](../media/63eee4c4643c4638a659346edbd2500f.png)
 
-Saisissez votre mot de passe utilisateur et cliquez sur Installer le logiciel
+Doppio clic sul pacchetto di installazione e premi Continue
 
-![image28](../media/fafdebb694a110227b53ca6369ebc96a.png)
+![immagine26](../media/c51b1c3d15affa4d754770184d5151df.png)
 
-Continue Installation
+Clicca Install
 
-![image29](../media/55c6bd90dc3ce4762e2598f76700e978.png)
+![immagine27](../media/de96ded3dc9582e151dd7713d3ef33a1.png)
 
-Attendez l'installation
+Inserisci la password dell'utente e clicca Install Software
 
-![image30](../media/535f31eba84df8664c4566e1b9ecd767.png)
+![immagine28](../media/fafdebb694a110227b53ca6369ebc96a.png)
 
-Cliquez sur Redémarrer une fois l'installation terminée.
+Premi Continue Installation
 
-![image31](../media/7416a8a6aedcae63e931880a1f033db6.png)
+![immagine29](../media/55c6bd90dc3ce4762e2598f76700e978.png)
+
+Attendi l'installazione
+
+![immagine30](../media/535f31eba84df8664c4566e1b9ecd767.png)
+
+Clicca Restart dopo che l'installazione è terminata
+
+![immagine31](../media/7416a8a6aedcae63e931880a1f033db6.png)
 
 
 #### 4 Arduino IDE Setting:
 
-À l'exception des ports COM, la méthode de configuration est la même que dans le chapitre 1.4 :
+Ad eccezione delle porte COM, il metodo di impostazione è lo stesso del capitolo 1.4:
 
-![image32](../media/37972c9e070bd6bcf9cdcb3f84679223.jpeg)
+![immagine32](../media/37972c9e070bd6bcf9cdcb3f84679223.jpeg)
 
 
-## 5.3 Comment ajouter des bibliothèques ?
+## 5.3 How to Add Libraries?
 
 ---
 
-### 5.3.1 Que sont les bibliothèques ?
+### 5.3.1 What are Libraries ?
 
-Les [bibliothèques](https://www.arduino.cc/en/Reference/Libraries) sont un ensemble de code facilitant le pilotage de capteurs, d'écrans, de modules, etc.
+[Libraries](https://www.arduino.cc/en/Reference/Libraries) sono una raccolta di codice che rende facile pilotare un sensore, display, modulo, ecc.
 
-Par exemple, la bibliothèque intégrée LiquidCrystal permet de communiquer avec les écrans LCD.
+Per esempio, la libreria integrata LiquidCrystal aiuta a comunicare con i display LCD. Ci sono centinaia di librerie aggiuntive disponibili su Internet per il download.
 
-Des centaines de bibliothèques supplémentaires sont disponibles en téléchargement sur Internet.
-
-Les bibliothèques intégrées et certaines de ces bibliothèques supplémentaires sont répertoriées dans la documentation de référence.
+Le librerie integrate e alcune di queste librerie aggiuntive sono elencate nella reference.
 
 https://www.arduino.cc/en/Reference/Libraries
 
 ---
 
-### 5.3.2 Ajouter des bibliothèques ZIP
+### 5.3.2 Add ZIP Libraries
 
-Pour ajouter une bibliothèque ZIP, vous devez la télécharger au format ZIP.
+Quando vuoi aggiungere una libreria zip, devi scaricarla come file ZIP e metterla nella directory appropriata. Le Libraries necessarie per eseguire lo Smart Home si possono trovare su：
 
-Placez-la ensuite dans le répertoire approprié. Les bibliothèques nécessaires au fonctionnement de la maison connectée se trouvent ici :
+![immagine33](../media/dd.png)
 
-![image33](../media/dd.png)
+Clicca Sketch---->Include Library—>Add.ZIP Library，poi naviga fino al file della libreria che hai scaricato e clicca "open."
 
-Cliquez sur Sketch---->Inclure la bibliothèque—>Ajouter une bibliothèque .ZIP，puis naviguez jusqu'au fichier de bibliothèque que vous avez téléchargé et cliquez sur "open."
+![immagine34](../media/baef5ce61ba8567f4a18fec16a2e3dae.png)
 
-![image34](../media/baef5ce61ba8567f4a18fec16a2e3dae.png)
+![immagine-20250329140352208](../media/image-20250329140352208.png)
 
-![image-20250329140352208](../media/image-20250329140352208.png)
+Importa la libreria. Puoi trovarla nella lista include library.
 
-Importez la bibliothèque. Vous la trouverez dans la liste des bibliothèques à inclure.
-
-![image35](../media/fda284b603a4b6b5c14ce3d58788326d.png)
+![immagine35](../media/fda284b603a4b6b5c14ce3d58788326d.png)

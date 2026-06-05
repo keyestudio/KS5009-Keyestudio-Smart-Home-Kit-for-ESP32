@@ -1,21 +1,21 @@
-### Projet 12 : WiFi
+### Progetto 12: WiFi
 
-La façon la plus simple d'accéder à Internet est d'utiliser une connexion WiFi. La carte principale ESP32 est équipée d'un module WiFi, ce qui rend notre maison intelligente facilement accessible depuis Internet.
+Il modo più semplice per accedere a Internet è utilizzare una connessione WiFi. La scheda di controllo principale ESP32 è dotata di un modulo WiFi, rendendo la nostra casa intelligente facilmente accessibile a Internet.
 
-![image48](../media/img-20250620091803.png)
+![immagine48](../media/img-20250620091803.png)
 
 
-#### Projet 12.1 : Station WiFi
+#### Progetto 12.1 Stazione WiFi
 
-**Description**
+**Descrizione**
 
-Nous connectons la maison intelligente à un réseau local (LAN), c'est-à-dire au WiFi de votre domicile ou au hotspot de votre téléphone. Après une connexion réussie, une adresse sera attribuée. Nous afficherons l'adresse attribuée dans la console.
+Colleghiamo la casa intelligente a una LAN, che può essere il WiFi di casa tua o l'hotspot del tuo telefono. Dopo che la connessione è avvenuta con successo, verrà assegnato un indirizzo. Stamperemo l'indirizzo assegnato nella shell.
 
-**Code de test**
+![immagine49](../media/278cbdc272b5cc1a6461a7934eabe5c0.png)
 
-Remarque : ssiD et password dans le code doivent être remplis avec le nom et le mot de passe de votre propre WiFi.
+**Codice di test**
 
-![image49](../media/278cbdc272b5cc1a6461a7934eabe5c0.png)
+Nota: ssiD e password nel codice devono essere compilati con il nome e la password del tuo WiFi.
 
 ```python
 import time
@@ -46,8 +46,8 @@ try:
 except:
     sta_if.disconnect()
 ```
-**Résultat du test**
+**Risultato del test**
 
-Si le WiFi est connecté avec succès, le moniteur série affichera le nom du WiFi connecté et l'adresse IP attribuée.
+Se il WiFi si connette correttamente, il monitor seriale stamperà il nome della rete WiFi connessa e l'indirizzo IP assegnato.
 
-![image50](../media/8c021cf89562d7ee27a6446f54be17bf.png)
+![immagine50](../media/8c021cf89562d7ee27a6446f54be17bf.png)

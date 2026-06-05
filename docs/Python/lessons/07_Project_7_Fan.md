@@ -1,36 +1,36 @@
-### Projet 7 : Ventilateur
+### Progetto 7: Ventola
 
-**Description**
+**Descrizione**
 
-Dans ce projet, nous allons apprendre comment fabriquer un petit ventilateur.
+In questo progetto impareremo come realizzare una piccola ventola.
 
-**Connaissances sur les composants**
+**Conoscenze sui componenti**
 
-Le petit ventilateur utilise un moteur DC 130 et des pales de ventilateur sécurisées. Vous pouvez utiliser la sortie PWM pour contrôler la vitesse du ventilateur.
+La piccola ventola utilizza un motore DC 130 e pale della ventola sicure. Puoi usare l'uscita PWM per controllare la velocità della ventola.
 
-![image33](../media/33da52918e88862a94035d61a9050f2e.png)
+![immagine33](../media/33da52918e88862a94035d61a9050f2e.png)
 
-**Méthode de contrôle**
+**Metodo di controllo**
 
-Deux broches sont nécessaires pour contrôler le moteur du ventilateur, une pour INA et une pour INB. La plage de valeurs PWM est 0~255. Lorsque la sortie PWM des deux broches est différente, le ventilateur peut tourner.
+Sono necessari due pin per controllare il motore della ventola, uno per INA e due per INB. L'intervallo di valori PWM è 0~255. Quando l'uscita PWM dei due pin è diversa, la ventola può ruotare.
 
-| INA - INB <= -45 | Rotation dans le sens horaire |
+| INA - INB <= -45 | Ruota in senso orario |
 | --- | --- |
-| INA - INB >= 45 | Rotation dans le sens anti-horaire |
-| INA ==0, INB == 0 | Arrêt |
+| INA - INB >= 45 | Ruota in senso antiorario |
+| INA ==0, INB == 0 | Si ferma |
 
-**Broches de contrôle**
+**Pin di controllo**
 
 | INA | 19 |
 | --- | --- |
 | INB | 18 |
 
 
-#### Projet 7.1 Ventilateur
+#### Progetto 7.1 Ventola
 
-Nous pouvons contrôler la vitesse de rotation du ventilateur dans les sens anti-horaire et horaire.
+Possiamo controllare la velocità di rotazione della ventola in senso antiorario e orario.
 
-**Code de test**
+**Codice di test**
 
 ```python
 from machine import Pin,PWM
@@ -63,16 +63,16 @@ except:
     INA.deinit()
     INB.deinit()
 ```
-**Résultat du test**
+**Risultato del test**
 
-Le ventilateur tournera dans les sens horaire et anti-horaire à différentes vitesses.
+La ventola ruoterà in senso orario e antiorario a velocità diverse.
 
 
-#### Projet 7.2 Ventilateur contrôlé par bouton
+#### Progetto 7.2 Controllo della ventola con pulsante
 
-Le bouton 1 contrôle l'interrupteur du ventilateur.
+Il pulsante 1 controlla l'accensione/spegnimento della ventola.
 
-**Code de test**
+**Codice di test**
 
 ```python
 from machine import Pin,PWM
@@ -106,6 +106,6 @@ except:
     INA.deinit()
     INB.deinit()
 ```
-**Résultat du test**
+**Risultato del test**
 
-Appuyez sur le bouton 1, le ventilateur commence à tourner ; appuyez à nouveau sur le bouton 1, le ventilateur s'arrête.
+Premendo il pulsante 1, la ventola inizia a ruotare; premendo di nuovo il pulsante 1, la ventola si ferma.

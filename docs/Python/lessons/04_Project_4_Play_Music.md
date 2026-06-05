@@ -1,29 +1,33 @@
-### Projet 4 : Jouer de la musique
+### Progetto 4: Riprodurre musica
 
-**Description**
+**Descrizione**
 
-Il y a un élément amplificateur audio de puissance sur la carte d'extension pour voiture, qui sert d'amplificateur externe pour jouer de la musique.
+Sulla scheda di espansione per auto è presente un elemento amplificatore audio,
+che funge da dispositivo di amplificazione esterno per riprodurre musica.
 
-Dans ce projet, nous allons l'utiliser pour jouer un morceau de musique.
+In questo progetto useremo questo elemento per riprodurre un brano musicale.
 
-**Connaissances sur le composant**
+**Conoscenze sul componente**
 
-**Buzzer passif :**
+**Cicalino passivo:**
 
-L'amplificateur audio de puissance (comme le buzzer passif) n'a pas d'oscillation interne. Lors du contrôle, nous devons fournir des signaux carrés de différentes fréquences à la borne positive du composant et relier la borne négative à la masse pour que l'amplificateur produise des sons de différentes fréquences.
+L'amplificatore audio (come il cicalino passivo) non dispone di
+oscillazione interna. Per il controllo è necessario inviare onde quadre di
+diverse frequenze al polo positivo del componente e collegare a massa
+il polo negativo per far suonare l'amplificatore a frequenze diverse.
 
-![image27](../media/2e6fd6b7975ef84ab94eee896161347b.png)
+![immagine27](../media/2e6fd6b7975ef84ab94eee896161347b.png)
 
-**Broche de contrôle**
+**Pin di controllo**
 
-| Buzzer passif | 25 |
+| Cicalino passivo | 25 |
 | --- | --- |
 | \ |   |
 
 
-#### Projet 4.1 : Jouer 'Happy Birthday'
+#### Progetto 4.1 Riprodurre Happy Birthday
 
-**Code de test**
+**Codice di test**
 
 ```python
 from machine import Pin, PWM
@@ -77,6 +81,6 @@ buzzer.freq(532)
 sleep(0.5)
 buzzer.duty(0)
 ```
-**Résultat du test**
+**Risultato del test**
 
-Le buzzer passif jouera 'Happy Birthday'.
+Il cicalino passivo riprodurrà Happy Birthday.

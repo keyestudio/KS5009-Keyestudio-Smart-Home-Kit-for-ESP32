@@ -1,4 +1,4 @@
-5. Arduino Tutoriel
+5. Arduino Tutorial
 =============================
 
 .. toctree::
@@ -10,16 +10,14 @@
 
 
 
-5.4 Arduino Projets
+5.4 Arduino Progetti
 ---------------------------
 
-Le code est fourni pour tous les projets et est disponible dans le pack de ressources 5.1.
+Il codice è fornito per tutti i progetti ed è disponibile nel pacchetto risorse 5.1
 
-Bien, passons directement à nos projets. Nous allons vous faire découvrir en détail la maison connectée, en commençant par un simple capteur.
+Bene, andiamo subito ai nostri progetti. Ti faremo conoscere a fondo la smart home a partire dai sensori più semplici.
 
-**Remarque : Dans ce cours, l’interface de chaque capteur/module marquée
-(G, -, GND) indique la borne négative. G est connecté à G, - ou à la masse (GND) de la carte d’extension du capteur ou de la carte de contrôle ; « V » est la borne positive et est connecté à V, VCC ou 5 V.**
-
+**Nota: In questo corso, l'interfaccia di ogni sensore / modulo contrassegnata con (G,-, GND) indica il polo negativo, G è collegato a G, - o GND dello shield sensore o della scheda di controllo; “V” è il polo positivo ed è collegato con V, VCC o 5V.**
 
 .. toctree::
     :maxdepth: 2
