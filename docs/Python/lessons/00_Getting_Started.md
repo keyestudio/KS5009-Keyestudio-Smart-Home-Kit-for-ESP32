@@ -1,92 +1,91 @@
 
-## 6.1 Resource compression package
+## 6.1 Ressourcen-Komprimierungspaket
 
-The resource package contains code,libraries,firmware and Thonny
-software. You must have this resource to continue learning.
+Das Ressourcenpaket enthält Code, Bibliotheken, Firmware und die Thonny-Software. Sie müssen dieses Paket haben, um mit dem Lernen fortzufahren.
 
 [Resource-compression-package](../Resource-compression-package.7z)
 
 
-## 6.2 get starter with Thonny
+## 6.2 Erste Schritte mit Thonny
 
 ---
 
-### 6.2.1 Open the Thonny Package
+### 6.2.1 Öffnen des Thonny-Pakets
 
-Please refer to the folder shown below:
+Bitte beachten Sie den unten gezeigten Ordner:
 
-![image1](../media/29fa7a9563dec2dddbfc7ed79d197380.png)
-
----
-
-### 6.2.2 Thonny Interface
-
-Open the Thonny
-
-![image2](../media/d753621b40cd7405ce034e93e0f5678a.png)
-
-Main interface functions:
-
-![image3](../media/d41b79772c9846fd8bf295c8451f8321.png)
-
-![image4](../media/3d04fe6893ca104e4e593a0786cb3799.png)
+![bild1](../media/29fa7a9563dec2dddbfc7ed79d197380.png)
 
 ---
 
-### 6.2.3 Select ESP32 Development Environment
+### 6.2.2 Thonny-Oberfläche
 
-Click Python.exe，then select Configure interpreter
+Thonny öffnen
 
-![image5](../media/30d66dba96cfabbe2bd3b6c858564ef2.png)
+![bild2](../media/d753621b40cd7405ce034e93e0f5678a.png)
 
-Select MicroPython(ESP32) from the Interpreter interface
+Hauptfunktionen der Oberfläche:
 
-![image6](../media/5f92c4dd24223cf49d6da075aa53307f.png)
+![bild3](../media/d41b79772c9846fd8bf295c8451f8321.png)
+
+![bild4](../media/3d04fe6893ca104e4e593a0786cb3799.png)
 
 ---
 
-### 6.2.4 Installing Firmware
+### 6.2.3 ESP32-Entwicklungsumgebung auswählen
 
-Download link：\ https://micropython.org/download/esp32/
+Klicken Sie auf Python.exe, dann wählen Sie Interpreter konfigurieren
 
-Choose to download version V1.17
+![bild5](../media/30d66dba96cfabbe2bd3b6c858564ef2.png)
 
-![image7](../media/4f1f3b0568c3ae2ca3288431df340184.png)
+Wählen Sie MicroPython(ESP32) im Interpreter-Fenster aus
 
-Of course, we also provide the downloaded firmware, as shown below.
+![bild6](../media/5f92c4dd24223cf49d6da075aa53307f.png)
 
-![image-20250408113209943](../media/image-20250408113209943.png)
+---
 
-Burn MicroPython firmware
+### 6.2.4 Firmware installieren
 
-Connect the smart home to your computer with a USB.
+Download-Link：\ https://micropython.org/download/esp32/
 
-Click Install or update firmware
+Wählen Sie zum Herunterladen die Version V1.17
 
-![image8](../media/9b8470fee22b3a6aa4ac21d1e1d10eda.png)
+![bild7](../media/4f1f3b0568c3ae2ca3288431df340184.png)
 
-Select Port
+Natürlich stellen wir auch die heruntergeladene Firmware zur Verfügung, wie unten gezeigt.
 
-![image9](../media/d3bff3f1b25076733717273e94616088.png)
+![bild-20250408113209943](../media/image-20250408113209943.png)
 
-Click Browser to find the downloaded version V1.17 firmware
+MicroPython-Firmware flashen
 
-![image10](../media/ad4cfc202f014101ddd9f5373773635f.png)
+Verbinden Sie das Smart Home mit Ihrem Computer über USB.
 
-![image11](../media/aef61c4411d53f83685ad570c7d3a075.png)
+Klicken Sie auf Installieren oder Firmware aktualisieren
 
-Click install
+![bild8](../media/9b8470fee22b3a6aa4ac21d1e1d10eda.png)
 
-![image12](../media/507ff0c04761a509f729a8c4e88e4b27.png)
+Port auswählen
 
-Choose Port or WebREPL as the driver of ESP32 mainboard CH340(COM)
+![bild9](../media/d3bff3f1b25076733717273e94616088.png)
 
-![image13](../media/c1c4ae83635b2c0186b1985aeef844ae.png)
+Klicken Sie auf Durchsuchen, um die heruntergeladene Firmware-Version V1.17 zu finden
 
-![image14](../media/19514aef3fdd86fb2c033c6441d8ff6e.png)
+![bild10](../media/ad4cfc202f014101ddd9f5373773635f.png)
 
-The ESP32 environment has been installed.
+![bild11](../media/aef61c4411d53f83685ad570c7d3a075.png)
 
-Thonny interface
+Klicken Sie auf Install
 
-![image15](../media/c42ed7549ff7ff1f7deabd64710cb98e.png)
+![bild12](../media/507ff0c04761a509f729a8c4e88e4b27.png)
+
+Wählen Sie Port oder WebREPL als Treiber für das ESP32-Mainboard CH340(COM)
+
+![bild13](../media/c1c4ae83635b2c0186b1985aeef844ae.png)
+
+![bild14](../media/19514aef3fdd86fb2c033c6441d8ff6e.png)
+
+Die ESP32-Umgebung wurde installiert.
+
+Thonny-Oberfläche
+
+![bild15](../media/c42ed7549ff7ff1f7deabd64710cb98e.png)

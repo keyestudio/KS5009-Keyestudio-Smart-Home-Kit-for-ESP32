@@ -1,35 +1,32 @@
-### Project 1: Control LED
+### Projekt 1: LED steuern
 
-we will first learn how to control LED.
+Zuerst lernen wir, wie man eine LED steuert.
 
-![image16](../media/0cda68ae8719d9b6c1bb79d64160d31d.png)
+![Bild 16](../media/0cda68ae8719d9b6c1bb79d64160d31d.png)
 
-**Working Principle**
+**Funktionsprinzip**
 
-LED is also the light-emitting diode, which can be made into an
-electronic module. It will shine if we control pins to output high
-level, otherwise it will be off.
+Eine LED ist eine Leuchtdiode, die als elektronisches Modul ausgeführt sein kann. Sie leuchtet, wenn wir die Pins dazu bringen, einen High-Pegel auszugeben, andernfalls ist sie aus.
 
-**Parameters**
+**Parameter**
 
-| **Working voltage** | **DC 3~5V** |
+| **Betriebsspannung** | **DC 3~5V** |
 | --- | --- |
-| **Working current** | **<20mA** |
-| **Power** | **0.1W** |
+| **Betriebsstrom** | **<20mA** |
+| **Leistung** | **0.1W** |
 
-**Control Pin**
+**Steuerpin**
 
-| Yellow LED | 12 |
+| Gelbe LED | 12 |
 | --- | --- |
 | \ |   |
 
 
-#### Project 1.1 LED Flashing
+#### Projekt 1.1 LED blinken
 
-**Description**
+**Beschreibung**
 
-We can make the LED pin output high level and low level to make the LED
-flash.
+Wir können den LED-Pin so steuern, dass er High- und Low-Pegel ausgibt, damit die LED blinkt.
 
 **Test Code**
 
@@ -44,35 +41,30 @@ while True:
     led.value(0)# turn off led
     time.sleep(1)# delay 1s
 ```
-Open the sample code
+Öffne den Beispielcode
 
-![image17](../media/39658e26aad2c9794bd3db9df3c70732.png)
+![Bild 17](../media/39658e26aad2c9794bd3db9df3c70732.png)
 
-![image18](../media/166384572a1fa595858d933aea5af710.png)
+![Bild 18](../media/166384572a1fa595858d933aea5af710.png)
 
-**Test Result**
+**Testergebnis**
 
-Click the button
+Klicke auf die Schaltfläche
 
-![image19](../media/c5e28dda04f63745f59ef351025e82e8.png)
+![Bild 19](../media/c5e28dda04f63745f59ef351025e82e8.png)
 
-We can see that the yellow LED is flashing .
+Wir können sehen, dass die gelbe LED blinkt.
 
 
-#### Project 1.2 Breathing LED
+#### Projekt 1.2 Atmende LED
 
-**Description**
+**Beschreibung**
 
-A“breathing LED”is a phenomenon where an LED's brightness smoothly
-changes from dark to bright and back to dark, continuing to do so and
-giving the illusion of an LED“breathing. However, how to control LED’s
-brightness?
+Eine "atmende LED" ist ein Phänomen, bei dem die Helligkeit einer LED sanft von dunkel zu hell und wieder zurück zu dunkel wechselt, fortlaufend, sodass der Eindruck entsteht, die LED "atme". Aber wie steuert man die Helligkeit einer LED?
 
-It makes sense to take advantage of PWM. Output the number of high level
-and low level in unit time, the more time the high level occupies, the
-larger the PWM value, the brighter the LED.
+Hier bietet sich PWM an. Es wird in einer Zeiteinheit die Anzahl der High- und Low-Pegel ausgegeben — je mehr Zeit der High-Pegel einnimmt, desto größer der PWM-Wert und desto heller die LED.
 
-![image20](../media/704984700612966b997127cb9bde5c96.jpeg)
+![Bild 20](../media/704984700612966b997127cb9bde5c96.jpeg)
 
 **Test Code**
 
@@ -101,12 +93,10 @@ except:
 #deinit() needs to be called to turned OFF the timer. Otherwise, the PWM may fail to work next time.
     pwm.deinit()
 ```
-**Test Result**
+**Testergebnis**
 
-Click the button.
+Klicke auf den Button.
 
-![image21](../media/609b283e0909b5e5c14809c4ccf892ed.png)
+![Bild 21](../media/609b283e0909b5e5c14809c4ccf892ed.png)
 
-The LED gradually gets dimmer then brighter, cyclically, like human
-breathe.
-
+Die LED wird allmählich dunkler und dann wieder heller, zyklisch, wie beim menschlichen Atmen.

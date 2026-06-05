@@ -10,9 +10,10 @@
 
 
 
-6.3 Python Projects
+6.3 Python Projekte
 ---------------------------
 
+Der Code für alle Projekte ist im Resource-compression-package enthalten.
 
 .. toctree::
     :maxdepth: 2

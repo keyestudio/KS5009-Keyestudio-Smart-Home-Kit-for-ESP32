@@ -1,27 +1,21 @@
-### Project 12: WiFi
+### Projekt 12: WiFi
 
-The easiest way to access the Internet is to use a WiFi to connect. The
-ESP32 main control board comes with a WiFi module, making our smart home
-accessible to the Internet easily.
+Der einfachste Weg, auf das Internet zuzugreifen, ist die Verbindung über WiFi. Das ESP32 Hauptsteuerungsboard verfügt über ein WiFi-Modul, wodurch unser Smart Home einfach für das Internet zugänglich wird.
 
-![image48](../media/img-20250620091803.png)
+![Bild48](../media/img-20250620091803.png)
 
 
-#### Project 12.1 WiFi Station
+#### Projekt 12.1 WiFi-Station
 
-**Description**
+**Beschreibung**
 
-We connect the smart home to a LAN, which is the WiFi in your home or
-the hot spot of your phone. After the connection is successful, an
-address will be assigned. We will print the assigned address in the
-shell.
+Wir verbinden das Smart Home mit einem LAN, also dem WiFi in Ihrem Zuhause oder dem Hotspot Ihres Telefons. Nach erfolgreicher Verbindung wird eine Adresse zugewiesen. Wir geben die zugewiesene Adresse in der Shell aus.
 
-**Test Code**
+**Testcode**
 
-Note: ssiD and password in the code should be filled with your own WiFi
-name and password.
+Hinweis: ssiD und password im Code sollten mit Ihrem eigenen WiFi-Namen und Passwort ausgefüllt werden.
 
-![image49](../media/278cbdc272b5cc1a6461a7934eabe5c0.png)
+![Bild49](../media/278cbdc272b5cc1a6461a7934eabe5c0.png)
 
 ```python
 import time
@@ -52,10 +46,8 @@ try:
 except:
     sta_if.disconnect()
 ```
-**Test Result**
+**Testergebnis**
 
-If the WiFi is connected successfully, the serial monitor will print out
-the connected WiFi name and assigned IP address.
+Wenn das WiFi erfolgreich verbunden ist, gibt der serielle Monitor den verbundenen WiFi-Namen und die zugewiesene IP-Adresse aus.
 
-![image50](../media/8c021cf89562d7ee27a6446f54be17bf.png)
-
+![Bild50](../media/8c021cf89562d7ee27a6446f54be17bf.png)

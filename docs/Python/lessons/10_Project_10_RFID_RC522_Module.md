@@ -1,54 +1,39 @@
-### Project 10: RFID RC522 Module
+### Projekt 10: RFID RC522 Modul
 
-**Component Knowledge**
+**Komponentenwissen**
 
-Radio frequency identification, the card reader is composed of a radio
-frequency module and a high-level magnetic field. The Tag transponder is
-a sensing device, which doesn’t contain a battery. It only contains tiny
-integrated circuit chips and media for storing data and antennas for
-receiving and transmitting signals.
+Radiofrequenz-Identifikation: Das Kartenlesegerät besteht aus einem Radiofrequenzmodul und einem hochfrequenten Magnetfeld. Der Tag-Transponder ist ein Sensorsystem, das keine Batterie enthält. Er enthält lediglich kleine integrierte Schaltkreise zur Datenspeicherung und Antennen zum Empfangen und Senden von Signalen.
 
-To read the data in the tag, first put it into the reading range of the
-card reader. The reader will generate a magnetic field, which can
-produce electricity according to Lenz's law, then the RFID tag will
-supply power, thereby activating the device.
+Um die Daten im Tag zu lesen, bringen Sie ihn zunächst in die Lesereichweite des Kartenlesers. Der Leser erzeugt ein Magnetfeld, das nach dem Lenzschen Gesetz elektrische Energie erzeugen kann; der RFID-Tag versorgt sich dadurch selbst mit Strom und aktiviert so das Gerät.
 
-![image40](../media/982ac6a9da0e8f55465ca5a969ac0dfe.png)
+![Bild40](../media/982ac6a9da0e8f55465ca5a969ac0dfe.png)
 
-**Control Pins**
+**Steuerpins**
 
-Use IIC communication
+Verwenden Sie IIC-Kommunikation
 
 | SDA | SDA |
 | --- | --- |
 | SCL | SCL |
 
 
-#### Project 10.1 Open the Door
+#### Projekt 10.1 Tür öffnen
 
-Open the folder where the mfrc522_config.py , soft_iic.py and
-mfrc522_i2c.py are located
+Öffnen Sie den Ordner, in dem sich mfrc522_config.py, soft_iic.py und mfrc522_i2c.py befinden
 
-Open“Thonny”，click“This computer”→“D:”→“2. Python
-Projects”→“pj10_rc522_RFID”. Select “mfrc522_config.py”, right-click
-your mouse to select “\ **Upload to /**\ ”，wait for “mfrc522_config.py”
-to be uploaded to ESP32; and select “soft_iic.py”, right-click your
-mouse to select “\ **Upload to /**\ ”，wait for “soft_iic.py” to be
-uploaded to ESP32; and then select “mfrc522_i2c.py”, right-click your
-mouse to select “\ **Upload to /**\ ”，wait for “mfrc522_i2c.py” to be
-uploaded to ESP32.
+Öffnen Sie „Thonny“, klicken Sie auf „This computer“→„D:“→„2. Python Projects“→„pj10_rc522_RFID“. Wählen Sie „mfrc522_config.py“ aus, klicken Sie mit der rechten Maustaste und wählen Sie „\ **Upload to /**\ “, warten Sie, bis „mfrc522_config.py“ auf ESP32 hochgeladen wurde; wählen Sie „soft_iic.py“ aus, klicken Sie mit der rechten Maustaste und wählen Sie „\ **Upload to /**\ “, warten Sie, bis „soft_iic.py“ auf ESP32 hochgeladen wurde; und wählen Sie dann „mfrc522_i2c.py“ aus, klicken Sie mit der rechten Maustaste und wählen Sie „\ **Upload to /**\ “, warten Sie, bis „mfrc522_i2c.py“ auf ESP32 hochgeladen wurde.
 
-![image41](../media/img-20250603132607.png)
+![Bild41](../media/img-20250603132607.png)
 
-![image42](../media/img-20250603132647.png)
+![Bild42](../media/img-20250603132647.png)
 
-![image43](../media/img-20250603132729.png)
+![Bild43](../media/img-20250603132729.png)
 
-The saved name are mfrc522_config.py , soft_iic.py and mfrc522_i2c.py.
+Die gespeicherten Namen sind mfrc522_config.py, soft_iic.py und mfrc522_i2c.py.
 
-![image44](../media/img-20250603132756.png)
+![Bild44](../media/img-20250603132756.png)
 
-**Test Code**
+**Testcode**
 
 ```python
 from machine import Pin, PWM,I2C, Pin
@@ -91,12 +76,8 @@ while True:
         print("close")
     time.sleep(1)
 ```
-**Test Result**
+**Testergebnis**
 
-Close the provided card to the RFID induction area, the door will turn
-and open, and the shell shows "open". Click button 1 and the door turns
-and closes. However, when swiping another blue induction block, the
-shell shows "Error".
+Halten Sie die mitgelieferte Karte an den RFID-Erfassungsbereich, die Tür dreht sich und öffnet sich, und die Konsole zeigt "open" an. Drücken Sie Taste 1 und die Tür dreht sich und schließt. Wenn Sie jedoch mit einem anderen blauen Erkennungsblock wischen, zeigt die Konsole "Error" an.
 
-![image45](../media/03fd569d64704a7e9705c1891f4d4856.png)
-
+![Bild45](../media/03fd569d64704a7e9705c1891f4d4856.png)

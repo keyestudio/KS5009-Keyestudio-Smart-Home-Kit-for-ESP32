@@ -1,38 +1,34 @@
-### Project 7: Fan
+### Projekt 7: Lüfter
 
-**Description**
+**Beschreibung**
 
-In this project, we will learn how to make a small fan.
+In diesem Projekt lernen wir, wie man einen kleinen Lüfter baut.
 
-**Component Knowledge**
+**Komponentenkenntnisse**
 
-The small fan uses a 130 DC motor and safe fan blades. You can use PWM
-output to control the fan speed.
+Der kleine Lüfter verwendet einen 130 DC-Motor und sichere Lüfterblätter. Sie können den PWM-Ausgang verwenden, um die Lüftergeschwindigkeit zu steuern.
 
-![image33](../media/33da52918e88862a94035d61a9050f2e.png)
+![Bild33](../media/33da52918e88862a94035d61a9050f2e.png)
 
-**Control Method**
+**Steuerungsmethode**
 
-Two pins are required to control the motor of the fan, one for INA and
-two for INB. The PWM value range is 0~255. When the PWM output of the
-two pins is different, the fan can rotate.
+Zum Steuern des Lüftermotors werden zwei Pins benötigt, einer für INA und einer für INB. Der PWM-Wertbereich ist 0~255. Wenn der PWM-Ausgang der beiden Pins unterschiedlich ist, kann sich der Lüfter drehen.
 
-| INA - INB <= -45 | Rotate clockwise |
+| INA - INB <= -45 | Dreht im Uhrzeigersinn |
 | --- | --- |
-| INA - INB >= 45 | Rotate anticlockwise |
-| INA ==0, INB == 0 | Stop |
+| INA - INB >= 45 | Dreht gegen den Uhrzeigersinn |
+| INA ==0, INB == 0 | Stoppen |
 
-**Control Pins**
+**Steuerpins**
 
 | INA | 19 |
 | --- | --- |
 | INB | 18 |
 
 
-#### Project 7.1 Fan
+#### Projekt 7.1 Lüfter
 
-We can control the anticlockwise and clockwise rotation speed of the
-fan.
+Wir können die Drehgeschwindigkeit des Lüfters gegen den Uhrzeigersinn und im Uhrzeigersinn steuern.
 
 **Test Code**
 
@@ -67,14 +63,14 @@ except:
     INA.deinit()
     INB.deinit()
 ```
-**Test Result**
+**Testergebnis**
 
-The fan will rotate clockwise and anticlockwise at different speeds.
+Der Lüfter dreht sich mit unterschiedlichen Geschwindigkeiten im Uhrzeigersinn und gegen den Uhrzeigersinn.
 
 
-#### Project 7.2 Button Control Fan
+#### Projekt 7.2 Tastersteuerung des Lüfters
 
-Button one controls the fan switch.
+Taster 1 steuert den Lüfter.
 
 **Test Code**
 
@@ -110,8 +106,6 @@ except:
     INA.deinit()
     INB.deinit()
 ```
-**Test Result**
+**Testergebnis**
 
-Click button 1, the fan starts to rotate, the press the button 1 again,
-the fan stops.
-
+Drücken Sie Taster 1, dann beginnt der Lüfter zu drehen. Drücken Sie Taster 1 erneut, stoppt der Lüfter.

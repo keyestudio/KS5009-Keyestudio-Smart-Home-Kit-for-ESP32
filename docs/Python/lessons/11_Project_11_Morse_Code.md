@@ -1,22 +1,17 @@
-### Project 11: Morse Code
+### Projekt 11: Morsecode
 
-Morse code, also known as Morse password, is an on-again, off-again
-signal code that expresses different letters, numbers, and punctuation
-marks in different sequences. Now we use it as our password gate.
+Morsecode, auch als Morsepasswort bekannt, ist ein Ein-/Aus-Signalcodesystem, das verschiedene Buchstaben, Zahlen und Satzzeichen durch unterschiedliche Folgen ausdrückt. Jetzt verwenden wir ihn als unsere Zugangskontrolle.
 
-The Morse code corresponds to the following characters:
+Die Morsezeichen entsprechen den folgenden Zeichen:
 
-![image46](../media/1a5e70c0d091e2617acbfc274827b4fd.png)
+![Bild46](../media/1a5e70c0d091e2617acbfc274827b4fd.png)
 
 
-#### Project 11.1 Morse Code Open the Door
+#### Projekt 11.1 Morsecode: Tür öffnen
 
-**Description**
+**Beschreibung**
 
-We use ![image47](../media/9491f7768f28ee4901e6fdb83632c27c.png)\ as the correct password. What’s more, there is a
-button library file OneButton, which is very simple to click, double
-click, long press and other functions. For Morse password, click is “.”,
-long press and release is “-”.
+Wir verwenden ![Bild47](../media/9491f7768f28ee4901e6fdb83632c27c.png)\ als korrektes Passwort. Außerdem gibt es die Button-Bibliothek OneButton, die sehr einfache Funktionen wie Klick, Doppelklick, langes Drücken usw. unterstützt. Beim Morse-Passwort steht ein Klick für „.“, langes Drücken und Loslassen für „-“.
 
 **Test Code**
 
@@ -87,11 +82,6 @@ while True:
 ```
 **Test Result**
 
-At first, the LCD1602 displays "Enter password", then click or long
-press button 1 to tap the password. If we input the correct password
-"-.-", then click button 2, the door will open, and the LCD1602 will
-display "open".
+Zuerst zeigt die LCD1602 "Passwort eingeben" an. Drücken Sie dann Taste 1 kurz oder lang, um das Passwort einzugeben. Wenn wir das korrekte Passwort "-.-" eingeben und anschließend Taste 2 drücken, öffnet sich die Tür und die LCD1602 zeigt "geöffnet" an.
 
-If other incorrect passwords are entered, the door will be closed and
-the LCD1602 will display error, which shows “enter again” 2s later.
-
+Wenn ein anderes falsches Passwort eingegeben wird, bleibt die Tür geschlossen und die LCD1602 zeigt "Fehler" an, gefolgt von "erneut eingeben" 2 Sekunden später.

@@ -3,37 +3,27 @@
 ![image1](media/A1.jpeg)
 
 
-# 1. Description
+# 1. Beschreibung
 
-As the rapid development of the Internet grows, various intelligent
-devices are gradually integrated into our daily life. For example, we
-can use RFID to open the door. In addition, the kitchen is equipped with
-a gas detection alarm, which alerts people to the danger when dangerous
-gas and large smoke are detected. When it detects rain, it can
-automatically collect clothes and close windows. All kinds of electrical
-equipment can be controlled by mobile phone, control lights, fans, air
-conditioning and so on.
+Mit der rasanten Entwicklung des Internets werden verschiedene intelligente Geräte nach und nach in unser tägliches Leben integriert. Zum Beispiel können wir RFID verwenden, um die Tür zu öffnen. Außerdem ist die Küche mit einem Gaserkennungsalarm ausgestattet, der vor Gefahr warnt, wenn gefährliche Gase und starker Rauch erkannt werden. Wenn Regen erkannt wird, können Wäsche automatisch eingeholt und Fenster geschlossen werden. Verschiedene elektrische Geräte können per Mobiltelefon gesteuert werden, z. B. Lampen, Ventilatoren, Klimaanlagen und so weiter.
 
-In this connection, we seek to launch this smart home product with ESP32
-control, which has a host of sensors and modules as well as networking
-function, making the relevant knowledge of the Internet more accessible
-to you.
+In diesem Zusammenhang möchten wir dieses Smart-Home-Produkt mit ESP32-Steuerung vorstellen, das eine Vielzahl von Sensoren und Modulen sowie Netzwerkfunktionen bietet und das relevante Wissen des Internets für Sie zugänglicher macht.
 
 
-# 2. Features
+# 2. Eigenschaften
 
-1. Elegant appearance
-1. A host of sensor modules
-1. Mobile phone APP network control
-1. Morse password door
-1. It can automatically close windows
-1. RFID function
-1. C language and MicroPython
+1. Elegantes Erscheinungsbild
+1. Eine Vielzahl von Sensormodulen
+1. Netzwerksteuerung über Smartphone-App
+1. Tür mit Morse-Passwort
+1. Kann Fenster automatisch schließen
+1. RFID-Funktion
+1. Unterstützt C und MicroPython
 
 
-# 3. Kit list
+# 3. Kit-Liste
 
-| # | Picture | Name | QTY |
+| # | Bild | Name | Menge |
 | --- | --- | --- | --- |
 | 1 | ![image2](media/Wooden-Board.jpeg) | Wooden Board | 1 |
 | 2 | ![image3](media/Acrylic-Board.jpeg) | Acrylic Board | 1 |
@@ -76,38 +66,38 @@ to you.
 | 39 | ![image39](media/ABS-RFID-Key.png) | ABS RFID Key | 1 |
 
 
-# 4. How to install the smart home
+# 4. Wie man das Smart Home installiert
 
-**Step1**
-Components Required
+**Schritt 1**
+Benötigte Komponenten
 
 ![image40](media/A01.png)
 
-Installation Diagram
+Installationsdiagramm
 
 ![image41](media/A02.png)
 
-Prototype
+Prototyp
 
 ![image42](media/A03.png)
 
-**Step 2**
+**Schritt 2**
 
-Components Required
+Benötigte Komponenten
 
 ![image43](media/A04.png)
 
-Installation Diagram
+Installationsdiagramm
 
 ![image44](media/A05.png)
 
-Prototype
+Prototyp
 
 ![image45](media/A06.png)
 
-**Step 3**
+**Schritt 3**
 
-Components Required
+Benötigte Komponenten
 
 ![image46](media/A07.png)
 
@@ -115,82 +105,74 @@ Installation
 
 ![image47](media/A08.png)
 
-Prototype
+Prototyp
 
 ![image48](media/A09.png)
 
-**Step 4**
+**Schritt 4**
 
-Components Required
+Benötigte Komponenten
 
 ![image49](media/A10.png)
 
-Installation Diagram
+Installationsdiagramm
 
 ![image50](media/A11.png)
 
-Prototype
+Prototyp
 
 ![image51](media/A12.png)
 
-**Step 5**
+**Schritt 5**
 
-Components Required
+Benötigte Komponenten
 
 ![image52](media/A13.png)
 
-Installation Diagram
+Installationsdiagramm
 
 ![image53](media/A14.png)
 
-Prototype
+Prototyp
 
 ![image54](media/A15.png)
 
-**Step 6**
-
-Components Required
+**Schritt 6**
+Benötigte Komponenten
 
 ![image55](media/A16.png)
 
-Installation(Don’t tighten the self-locking nuts)
+Installation (Ziehen Sie die selbstsichernden Muttern nicht fest)
 
 ![image56](media/A17.png)
 
-Prototype
+Prototyp
 
 ![image57](media/A18.png)
 
-**Step 7**
+**Schritt 7**
 
-Components Required
+Benötigte Komponenten
 
 ![image58](media/A19.png)
 
-⚠️ **Special note:** Adjust servo of the window to 0 degree before
-installation
+⚠️ **Besondere Anmerkung:** Stellen Sie den Fenster-Servo vor der Installation auf 0 Grad ein
 
 | Servo | PCB |
 | --- | --- |
-| Brown line | G |
-| Red line | 5V |
-| Orange line | GPIO5 |
+| Braunes Kabel | G |
+| Rotes Kabel | 5V |
+| Oranges Kabel | GPIO5 |
 
-⚠️ **Especially Remind:** The following two methods can be chosen freely
-according to your own situation.
+⚠️ **Wichtiger Hinweis:** Die folgenden zwei Methoden können je nach Ihrer Situation frei gewählt werden.
 
-**Method 1：Arduino code**
+**Methode 1: Arduino-Code**
 
-⚠️ **Special note:** Before you write the code and upload it, you must
-install the Arduino IDE, please go to the link: `5. Arduino
-Tutorial <https://docs.keyestudio.com/projects/KS5009/en/latest/docs/Arduino/arduino.html>`__\ ，and
-then to see the part of **5.2 Getting started with Arduino** .
+⚠️ **Besondere Anmerkung:** Bevor Sie den Code schreiben und hochladen, müssen Sie die Arduino IDE installieren. Bitte rufen Sie den Link: `5. Arduino Tutorial <https://docs.keyestudio.com/projects/KS5009/en/latest/docs/Arduino/arduino.html>`__ auf und lesen Sie anschließend den Abschnitt **5.2 Getting started with Arduino**.
 
-How to get the code ?
+Wie erhält man den Code?
 
-In folder **..\\Resource compression package\\arduino Code** , open file
-**Initialization-of-window-servo-angle.ino** , or copy and paste the
-following test code into the Arduino IDE.
+Im Ordner **..\\Resource compression package\\arduino Code** öffnen Sie die Datei **Initialization-of-window-servo-angle.ino**, oder kopieren Sie den folgenden Testcode in die Arduino IDE.
 
 ![Img](./media/A20.png)
 
@@ -213,18 +195,13 @@ void loop() {
   // put your main code here, to run repeatedly:
 }
 ```
-**Method 2：MicroPython code**
+**Methode 2: MicroPython-Code**
 
-⚠️ **Special note:** Before you write the code and upload it, you must
-install the MicroPython IDE, please go to the link: `6. Python
-tutorial <https://docs.keyestudio.com/projects/KS5009/en/latest/docs/Python/Python.html>`__,
-and then to see the part of **6.2 get starter with Thonny** .
+⚠️ **Besondere Anmerkung:** Bevor Sie den Code schreiben und hochladen, müssen Sie die MicroPython IDE installieren. Bitte rufen Sie den Link: `6. Python tutorial <https://docs.keyestudio.com/projects/KS5009/en/latest/docs/Python/Python.html>`__ auf und lesen Sie anschließend den Abschnitt **6.2 get starter with Thonny**.
 
-How to get the code?
+Wie erhält man den Code?
 
-In folder **..\\Resource compression package\\MicroPython Code** , open
-file **Initialization-of-window-servo-angle.py** , or copy and paste the
-following test code into the Thonny IDE.
+Im Ordner **..\\Resource compression package\\MicroPython Code** öffnen Sie die Datei **Initialization-of-window-servo-angle.py**, oder kopieren Sie den folgenden Testcode in die Thonny IDE.
 
 ![image59](./media/A21.png)
 
@@ -255,310 +232,306 @@ time.sleep(1)
 
 # while True:
 ```
-After adjusting the angle of the window servo to 0°, proceed to install
-as shown in the following picture)
+Nachdem Sie den Winkel des Fenster-Servos auf 0° eingestellt haben, fahren Sie mit der Installation wie im folgenden Bild gezeigt fort)
 
 ![image60](media/wps1-1.jpg)
 
-Install M1.4*6MM self-tapping screws as shown below
+Installieren Sie M1.4*6MM selbstschneidende Schrauben wie unten gezeigt
 
 ![image61](media/wps2.jpg)
 
-Prototype
+Prototyp
 
 ![image62](media/A22.png)
 
-**Step 8**
+**Schritt 8**
 
-Components Required
+Benötigte Komponenten
 
 ![image63](media/A23.png)
 
-Installation Diagram
+Installationsdiagramm
 
 ![image64](media/A24.png)
 
-Prototype
+Prototyp
 
 ![image65](media/A25.png)
 
-**Step 9**
+**Schritt 9**
 
-Components Required
+Benötigte Komponenten
 
 ![image66](media/A26.png)
 
-Installation Diagram
+Installationsdiagramm
 
 ![image67](media/A27.png)
 
-Prototype
+Prototyp
 
 ![image68](media/A28.png)
 
-**Step 10**
-
-Components Required
+**Schritt 10**
+Benötigte Komponenten
 
 ![image69](media/A29.png)
 
-Installation Diagram
+Installationsdiagramm
 
 ![image70](media/A30.png)
 
-Prototype
+Prototyp
 
 ![image71](media/A31.png)
 
-**Step 11**
+**Schritt 11**
 
-Components Required
+Benötigte Komponenten
 
 ![image72](media/A32.png)
 
-Installation Diagram
+Installationsdiagramm
 
 ![image73](media/A33.png)
 
-Prototype
+Prototyp
 
 ![image74](media/A34.png)
 
-**Step 12**
+**Schritt 12**
 
-Components Required
+Benötigte Komponenten
 
 ![image75](media/A35.png)
 
-Installation Diagram
+Installationsdiagramm
 
 ![image76](media/A36.png)
 
-Prototype
+Prototyp
 
 ![image77](media/A37.png)
 
-**Step 13**
+**Schritt 13**
 
-Components Required
+Benötigte Komponenten
 
 ![image78](media/A38.png)
 
-Installation Diagram
+Installationsdiagramm
 
 ![image79](media/A39.png)
 
-Prototype
+Prototyp
 
 ![image80](media/A40.png)
 
-**Step 14**
+**Schritt 14**
 
-Components Required
+Benötigte Komponenten
 
 ![image81](media/A41.png)
 
-Installation Diagram
+Installationsdiagramm
 
 ![image82](media/A43.png)
 
-Prototype
+Prototyp
 
 ![image83](media/A44.png)
 
-**Step 15**
+**Schritt 15**
 
-Components Required
+Benötigte Komponenten
 
 ![image84](media/A45.png)
 
-Installation Diagram
+Installationsdiagramm
 
 ![image85](media/A46.png)
 
-Prototype
+Prototyp
 
 ![image86](media/A47.png)
 
-**Step 16**
+**Schritt 16**
 
-Components Required
+Benötigte Komponenten
 
 ![image87](media/A48.png)
 
-Installation Diagram
+Installationsdiagramm
 
 ![image88](media/A49.png)
 
-Prototype
+Prototyp
 
 ![image89](media/A50.png)
 
-**Step 17**
+**Schritt 17**
 
-Components Required
+Benötigte Komponenten
 
 ![image90](media/A51.png)
 
-Installation Diagram
+Installationsdiagramm
 
 ![image91](media/A52.png)
 
-Prototype
+Prototyp
 
 ![image92](media/A53.png)
 
-**Step 18**
+**Schritt 18**
 
-Components Required
+Benötigte Komponenten
 
 ![image93](media/A54.png)
 
-Installation Diagram
+Installationsdiagramm
 
 ![image94](media/A55.png)
 
-Prototype
+Prototyp
 
 ![image95](media/A56.png)
 
-**Step 19**
+**Schritt 19**
 
-Components Required
+Benötigte Komponenten
 
 ![image96](media/A57.png)
 
-Installation Diagram
+Installationsdiagramm
 
 ![image97](media/A58.png)
 
-Prototype
+Prototyp
 
 ![image98](media/A59.png)
 
-**Wiring Part**
+**Verdrahtungsteil**
 
-temperature and humidity to io17
+Temperatur und Luftfeuchtigkeit an io17
 
-3P connection line using short: 15cm
+3P-Verbindungskabel kurz verwenden: 15cm
 
 ![image99](./media/A60-1.png)
 
 ![image100](media/A60.png)
 
-yellow led module to io12
-
+gelbes LED-Modul an io12
 ![image101](./media/A61-1.png)
 
 ![image102](media/A61.png)
 
-steam sensor to the io34
+Dampfsensor an io34
 
-3P connection line using short: 15cm
+3P-Verbindungskabel, kurz: 15cm
 
 ![image103](./media/A62-1.png)
 
 ![image104](media/A62.png)
 
-fan (IN- to io18，IN+ to io19)
+Lüfter (IN- an io18，IN+ an io19)
 
-Dupont wires used: 4 dupont wires spread out
+Dupont-Kabel verwendet: 4 Dupont-Kabel verteilt
 
 ![image105](./media/A63-1.png)
 
 ![image106](media/A63.png)
 
-PIR motion sensor to the io14
+PIR-Bewegungssensor an io14
 
-3P connection line using short: 15cm
+3P-Verbindungskabel, kurz: 15cm
 
 ![image107](./media/A64-1.png)
 
 ![image108](media/A64.png)
 
-left button module to the io16
+linkes Tastenmodul an io16
 
-3P connection line using long wire: 20cm
+3P-Verbindungskabel, lang: 20cm
 
 ![image109](./media/A65-1.png)
 
 ![image110](media/A65.png)
 
-right button module to the io27
+rechtes Tastenmodul an io27
 
-3P connection line using long wire: 20cm
+3P-Verbindungskabel, lang: 20cm
 
 ![image111](./media/A66-1.png)
 
 ![image112](media/A66.png)
 
-RFID module to the IIC
+RFID-Modul an die IIC
 
-The 4P merged line
+Die 4P zusammengeführte Leitung
 
 ![image113](./media/A67-1.png)
 
 ![image114](media/A67.png)
 
-LCD1602 display to the IIC
+LCD1602-Display an die IIC
 
-The 4P merged line
+Die 4P zusammengeführte Leitung
 
 ![image115](./media/A68-1.png)
 
 ![image116](media/A68.png)
 
-6812RGB LED to the io26
+6812RGB-LED an io26
 
-3P connection line using short: 15cm
+3P-Verbindungskabel, kurz: 15cm
 
 ![image117](./media/A69-1.png)
 
 ![image118](media/A69.png)
 
-gas sensor to the io23
+Gassensor an io23
 
-3P connection line using long wire: 20cm
+3P-Verbindungskabel, lang: 20cm
 
 ![image119](./media/A70-1.png)
 
 ![image120](media/A70.png)
 
-buzzer sensor to the io25
+Buzzer-Sensor an io25
 
-3P connection line using long wire: 20cm
+3P-Verbindungskabel, lang: 20cm
 
 ![image121](./media/A71-1.png)
 
 ![image122](media/A71.png)
 
-servo controlling windows to io5
+Servo zur Steuerung der Fenster an io5
 
 ![image123](./media/A72-1.png)
 
 ![image124](media/A72.png)
 
-servo controlling doors to the io13
+Servo zur Steuerung der Türen an io13
 
 ![image125](./media/A73-1.png)
 
 ![image126](media/A73.png)
 
-power wiring
+Stromverkabelung
 
 ![image127](media/A74.jpeg)
 
-**Step 20**
+**Schritt 20**
 
-Components Required
+Benötigte Komponenten
 
 ![image128](media/A75.png)
 
-Installation Diagram
+Installationsdiagramm
 
 ![image129](media/A76.png)
 
-Prototype
+Prototyp
 
 ![image130](media/A77.png)
-

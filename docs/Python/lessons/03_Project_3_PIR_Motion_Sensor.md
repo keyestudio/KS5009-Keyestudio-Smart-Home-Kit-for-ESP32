@@ -1,27 +1,23 @@
-### Project 3: PIR Motion Sensor
+### Projekt 3: PIR-Bewegungssensor
 
-**Description**
+**Beschreibung**
 
-The PIR motion sensor has many application scenarios in daily life, such
-as automatic induction lamp of stairs, automatic induction faucet of
-washbasin, etc.
+Der PIR-Bewegungssensor hat viele Anwendungsszenarien im Alltag, wie automatische Treppenbeleuchtung, automatische berührungslose Armaturen am Waschbecken usw.
 
-It is also a digital sensor like buttons, which has two state values 0
-or 1. And it will be sensed when people are moving.
+Er ist ebenfalls ein digitaler Sensor wie Tasten, der zwei Zustandswerte 0 oder 1 hat. Er reagiert, wenn sich Personen bewegen.
 
-![image25](../media/c1518252606b111bfa66878a2bfcc965.png)
+![Bild25](../media/c1518252606b111bfa66878a2bfcc965.png)
 
-**Control Pin**
+**Steuerpin**
 
-| PIR motion sensor | 14 |
+| PIR-Bewegungssensor | 14 |
 | --- | --- |
 | \ |   |
 
 
-#### Project 3.1 Read the PIR Motion Sensor
+#### Projekt 3.1: Den PIR-Bewegungssensor auslesen
 
-We will print out the value of the PIR motion sensor through the serial
-monitor.
+Wir geben den Wert des PIR-Bewegungssensors über den seriellen Monitor aus.
 
 **Test Code**
 
@@ -39,17 +35,16 @@ while True:
         print("No one!")
     time.sleep(0.1)
 ```
-**Test Result**
+**Testergebnis**
 
-When you stand still in front of the sensor, the reading value is 0,
-move a little, it will change to 1.
+Wenn Sie still vor dem Sensor stehen, ist der Messwert 0; bewegen Sie sich ein wenig, ändert er sich auf 1.
 
-![image26](../media/f8c6be9a6ad7a6423c1fa1456f771406.png)
+![Bild26](../media/f8c6be9a6ad7a6423c1fa1456f771406.png)
 
 
-#### Project 3.2 PIR Motion Sensor
+#### Projekt 3.2: PIR-Bewegungssensor
 
-If someone moves in front of the sensor, the LED will light up.
+Bewegt sich jemand vor dem Sensor, leuchtet die LED auf.
 
 **Test Code**
 
@@ -69,8 +64,6 @@ while True:
         led.value(0)
     time.sleep(0.1)
 ```
-**Test Result**
+**Testergebnis**
 
-Move your hand in front of the sensor, the LED will turn on. After a few
-seconds of immobility, the LED will turn off.
-
+Bewegen Sie Ihre Hand vor dem Sensor, die LED schaltet sich ein. Nach einigen Sekunden ohne Bewegung schaltet sie sich wieder aus.

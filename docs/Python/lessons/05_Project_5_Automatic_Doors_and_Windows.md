@@ -1,46 +1,26 @@
-### Project 5: Automatic Doors and Windows
+### Projekt 5: Automatische Türen und Fenster
 
-**Description**
+**Beschreibung**
 
-Automatic doors and windows need power device, which will become more
-automatic with a 180 degree servo and some sensors. Adding a raindrop
-sensor, you can achieve the effect of closing windows automatically when
-raining. If adding a RFID, we can realize the effect of swiping to open
-the door and so on.
+Automatische Türen und Fenster benötigen ein Antriebsgerät, das mit einem 180° Servo und einigen Sensoren automatischer wird. Mit einem Regensensor können Fenster bei Regen automatisch geschlossen werden. Wird ein RFID hinzugefügt, kann man beispielsweise per Auflegen die Tür öffnen.
 
-**Component Knowledge**
+**Komponentenwissen**
 
 **Servo:**
 
-Servo is a position servo driver device consists of a housing, a circuit
-board, a coreless motor, a gear and a position detector.
+Ein Servo ist ein Positionsantriebsgerät, das aus einem Gehäuse, einer Leiterplatte, einem kernlosen Motor, einem Getriebe und einem Positionsdetektor besteht.
 
-Its working principle is that the servo receives the signal sent by MCU
-or receiver and produces a reference signal with a period of 20ms and
-width of 1.5ms, then compares the acquired DC bias voltage to the
-voltage of the potentiometer and obtain the voltage difference output.
+Sein Funktionsprinzip ist, dass der Servo das vom MCU oder Empfänger gesendete Signal empfängt und ein Referenzsignal mit einer Periode von 20ms und einer Breite von 1.5ms erzeugt, dann die erfasste Gleichspannungs-Offsetspannung mit der Spannung des Potentiometers vergleicht und die Spannungsdifferenz zur Ausgabe bringt.
 
-The IC on the circuit board judges the direction of rotation, and then
-drives the coreless motor to start rotation. The power is transmitted to
-the swing arm through the reduction gear, and the signal is sent back by
-the position detector to judge whether the positioning has been reached,
-which is suitable for those control systems that require constant angle
-change and can be maintained.
+Der IC auf der Leiterplatte beurteilt die Drehrichtung und treibt dann den kernlosen Motor zum Start an. Die Kraft wird über das Untersetzungsgetriebe auf den Schwenkarm übertragen, und die Rückmeldung wird vom Positionsdetektor gesendet, um zu prüfen, ob die Position erreicht ist. Das ist geeignet für Steuerungssysteme, die eine konstante Winkeländerung benötigen und gehalten werden können.
 
-When the motor speed is constant, the potentiometer is driven to rotate
-through the cascade reduction gear, which leads that the voltage
-difference is 0, and the motor stops rotating. Generally, the angle
-range of servo rotation is 0° --180 °.
+Wenn die Motordrehzahl konstant ist, wird das Potentiometer über das gestufte Untersetzungsgetriebe angetrieben, wodurch die Spannungsdifferenz 0 wird und der Motor aufhört zu drehen. Allgemein liegt der Drehbereich eines Servos bei 0°–180°.
 
-The pulse period of the control servo is 20ms, the pulse width is 0.5ms
-~ 2.5ms, and the corresponding position is -90°~ +90°. Here is an
-example of a 180° servo:
+Die Impulsperiode des Steuer-Servos beträgt 20ms, die Impulsbreite 0.5ms ~ 2.5ms und die entsprechende Position -90° ~ +90°. Hier ein Beispiel für einen 180° Servo:
 
 ![image28](../media/708316fde05c62113a3024e0efb0c237.jpeg)
 
-In general, servo has three lines in brown, red and orange. The brown
-wire is grounded, the red one is a positive pole line and the orange one
-is a signal line.
+Im Allgemeinen hat ein Servo drei Leitungen in Braun, Rot und Orange. Die braune Leitung ist Masse, die rote ist die Versorgungsspannung und die orange ist die Signalleitung.
 
 ![image29](../media/35084ae289a08e35bdb8c89ceb134ba4.png)
 
@@ -48,12 +28,12 @@ is a signal line.
 
 **Pin**
 
-| The servo of the window | 5 |
+| Der Servo des Fensters | 5 |
 | --- | --- |
-| The servo of the door | 13 |
+| Der Servo der Tür | 13 |
 
 
-#### Project 5.1 Control the Door
+#### Projekt 5.1 Tür steuern
 
 **Test Code**
 
@@ -83,23 +63,20 @@ while True:
     pwm.duty(angle_180)
     time.sleep(1)
 ```
-**Test Result**
+**Testergebnis**
 
-The servo of the door turns with the door, back and forth
+Der Servo der Tür bewegt sich zusammen mit der Tür hin und her.
 
 
-#### Project 5.2 Close the Window
+#### Projekt 5.2 Fenster schließen
 
-**Description**
+**Beschreibung**
 
-We will work to use a servo and a raindrop sensor to make an device
-closing windows automatically when raining.
+Wir werden einen Servo und einen Regensensor verwenden, um ein Gerät zu bauen, das Fenster bei Regen automatisch schließt.
 
-**Component Knowledge**
+**Komponentenwissen**
 
-**Raindrop Sensor:** This is an analog input module, the greater the
-area covered by water on the detection surface, the greater the value
-returned (range 0~4096).
+**Regensensor:** Dies ist ein analoges Eingangsmodul; je größer die von Wasser bedeckte Fläche auf der Messoberfläche ist, desto größer ist der zurückgegebene Wert (Bereich 0~4096).
 
 **Test Code**
 
@@ -130,9 +107,6 @@ try:
 except:
     pass
 ```
-**Test Result**
+**Testergebnis**
 
-At first, the window opens automatically, and when you touch the
-raindrop sensor with your hand (which has water on the skin), the window
-will close.
-
+Zuerst öffnet sich das Fenster automatisch, und wenn Sie den Regensensor mit Ihrer Hand (die Wasser auf der Haut hat) berühren, schließt sich das Fenster.

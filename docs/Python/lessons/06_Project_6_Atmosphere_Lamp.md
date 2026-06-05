@@ -1,33 +1,20 @@
-### Project 6: Atmosphere Lamp
+### Projekt 6: Atmosphärenlampe
 
 **Description**
 
-The atmosphere lamp of smart home is 4 SK6812RGB LEDs. RGB LED belongs
-to a simple luminous module, which can adjust the color to bring out the
-lamp effect of different colors. Furthermore, it can be widely used in
-buildings, bridges, roads, gardens, courtyards, floors and other fields
-of decorative lighting and venue layout, Christmas, Halloween,
-Valentine's Day, Easter, National Day as well as other festivals during
-the atmosphere and other scenes.
+Die Atmosphärenlampe des Smart Home besteht aus 4 SK6812RGB LEDs. RGB LED gehört zu einem einfachen Leuchtmodul, das die Farbe einstellen kann, um verschiedene Lampeneffekte zu erzeugen. Darüber hinaus kann es in Gebäuden, Brücken, Straßen, Gärten, Höfen, Etagen und anderen Bereichen der dekorativen Beleuchtung und Veranstaltungsanordnung sowie bei Weihnachten, Halloween, Valentinstag, Ostern, Nationalfeiertagen und anderen Festen weit verbreitet eingesetzt werden, um Atmosphäre und andere Szenen zu schaffen.
 
-In this experiment, we will make various lighting effects.
+In diesem Experiment werden wir verschiedene Lichteffekte erzeugen.
 
 **Component Knowledge**
 
-From the schematic diagram, we can see that these four RGB LEDs are all
-connected in series. In fact, no matter how many they are, we can use a
-pin to control a RGB LED and let it display any color. Each RGBLED is an
-independent pixel, composed of R, G and B colors, which can achieve 256
-levels of brightness display and complete the full true color display of
-16777216 colors.
+Aus dem Schaltplan ist ersichtlich, dass diese vier RGB LEDs alle in Reihe geschaltet sind. Tatsächlich können wir, egal wie viele es sind, eine einzige Pin verwenden, um eine RGB LED zu steuern und sie in jeder Farbe anzeigen zu lassen. Jede RGBLED ist ein unabhängiges Pixel, das aus den Farben R, G und B besteht und 256 Helligkeitsstufen erreichen kann und so die vollständige True-Color-Anzeige von 16777216 Farben ermöglicht.
 
-What’s more, the pixel point contains a data latch signal shaping
-amplifier drive circuit and a signal shaping circuit, which effectively
-ensures the color of the pixel point light is highly consistent.
+Außerdem enthält der Pixelpunkt eine Datenlatch-Signalformungs-, Verstärkeransteuerungs- und Signalformungsschaltung, die effektiv sicherstellt, dass die Farbe der Pixelbeleuchtung sehr gleichmäßig ist.
 
-![image31](../media/86e292d0666046b72a1e0e68adfb17e8.png)
+![Bild 31](../media/86e292d0666046b72a1e0e68adfb17e8.png)
 
-![image32](../media/c0df93f61c6b9272f62b1847ccfbdb10.png)
+![Bild 32](../media/c0df93f61c6b9272f62b1847ccfbdb10.png)
 
 **Pin**
 
@@ -36,9 +23,9 @@ ensures the color of the pixel point light is highly consistent.
 | \ |   |
 
 
-#### Project 6.1 RGB Sk6812
+#### Projekt 6.1 RGB Sk6812
 
-We will control SK6812 to display various lighting effects.
+Wir werden SK6812 steuern, um verschiedene Lichteffekte anzuzeigen.
 
 **Test Code**
 
@@ -72,15 +59,14 @@ while True:
 ```
 **Test Result**
 
-The atmosphere lamps of the smart home will display red,greenish blue as
-well as white.
+Die Atmosphärenlampen des Smart Home werden Rot, Grün, Blau sowie Weiß anzeigen.
 
 
-#### Project 6.2 Button Control Sk6812
+#### Projekt 6.2 Button Control Sk6812
 
 **Description**
 
-There are two switch buttons to change the color of the atmosphere lamp.
+Es gibt zwei Tasten, um die Farbe der Atmosphärenlampe zu ändern.
 
 **Test Code**
 
@@ -151,6 +137,4 @@ while True:
 ```
 **Test Result**
 
-We can switch the color of the atmosphere lamp by clicking buttons 1 and
-2.
-
+Wir können die Farbe der Atmosphärenlampe durch Drücken der Tasten 1 und 2 umschalten.

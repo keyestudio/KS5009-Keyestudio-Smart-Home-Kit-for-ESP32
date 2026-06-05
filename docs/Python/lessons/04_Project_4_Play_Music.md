@@ -1,34 +1,29 @@
-### Project 4: Play Music
+### Projekt 4: Musik abspielen
 
-**Description**
+**Beschreibung**
 
-There is a audio power amplifier element in the car expansion board,
-which is as an external amplification equipment to play music.
+Auf der Erweiterungsplatine des Fahrzeugs befindet sich ein Audio-Leistungsverstärker, der als externes Verstärkungsgerät zum Abspielen von Musik dient.
 
-In this project, we will work to play a piece of music by using it.
+In diesem Projekt werden wir damit ein Musikstück abspielen.
 
-**Component Knowledge**
+**Komponentenwissen**
 
-**Passive Buzzer:**
+**Passiver Summer:**
 
-The audio power amplifier (like the passive buzzer) does not have
-internal oscillation. When controlling, we need to input square waves of
-different frequencies to the positive pole of the component and ground
-the negative pole to control the power amplifier to chime sounds of
-different frequencies.
+Der Audio-Leistungsverstärker (wie der passive Summer) hat keine interne Schwingung. Bei der Steuerung müssen wir Rechtecksignale mit unterschiedlichen Frequenzen an den positiven Pol der Komponente einspeisen und den negativen Pol auf Masse legen, um den Leistungsverstärker Töne unterschiedlicher Frequenzen erzeugen zu lassen.
 
-![image27](../media/2e6fd6b7975ef84ab94eee896161347b.png)
+![Bild 27](../media/2e6fd6b7975ef84ab94eee896161347b.png)
 
-**Control Pin**
+**Steuerpin**
 
-| Passive Buzzer | 25 |
+| Passiver Summer | 25 |
 | --- | --- |
 | \ |   |
 
 
-#### Project 4.1 Play Happy Birthday
+#### Projekt 4.1 Happy Birthday abspielen
 
-**Test Code**
+**Testcode**
 
 ```python
 from machine import Pin, PWM
@@ -82,7 +77,6 @@ buzzer.freq(532)
 sleep(0.5)
 buzzer.duty(0)
 ```
-**Test Result**
+**Testergebnis**
 
-The passive buzzer will play happy Birthday.
-
+Der passive Summer spielt "Happy Birthday".

@@ -1,16 +1,14 @@
-### Project 8: LCD1602 Display
+### Projekt 8: LCD1602-Display
 
 **Description**
 
-As we all know, screen is one of the best ways for people to interact
-with electronic devices.
+Wie wir alle wissen, ist ein Bildschirm eine der besten Möglichkeiten für Menschen, mit elektronischen Geräten zu interagieren.
 
 **Component Knowledge**
 
-1602 is a line that can display 16 characters. There are two lines,
-which use IIC communication protocol.
+1602 ist ein Modul, das 16 Zeichen pro Zeile darstellen kann. Es verfügt über zwei Zeilen und verwendet das IIC-Kommunikationsprotokoll.
 
-![image34](../media/066e093f1711ada67d3309ddc9bdc66e.png)
+![Bild34](../media/066e093f1711ada67d3309ddc9bdc66e.png)
 
 **Control Pins**
 
@@ -19,30 +17,25 @@ which use IIC communication protocol.
 | SCL | SCL |
 
 
-#### Project 8.1 LCD 1602 Display Characters
+#### Projekt 8.1: Anzeige von Zeichen auf dem LCD1602
 
 **Description**
 
-We will use library file i2c_lcd.py and lcd_api.py, which should be
-saved in the ESP32 memory.
+Wir verwenden die Bibliotheksdateien i2c_lcd.py und lcd_api.py, die im ESP32-Speicher gespeichert werden sollten.
 
-![image35](../media/b5d74645d450d329aded48064bd599c8.png)
+![Bild35](../media/b5d74645d450d329aded48064bd599c8.png)
 
-**Operations**
+**Vorgehensweise**
 
-Open“Thonny”，click“This computer”→“D:”→“2. Python
-Projects”→“pj8_1_lcd1602”. Select “i2c_lcd.py”, right-click your mouse
-to select “\ **Upload to /**\ ”，wait for “i2c_lcd.py” to be uploaded to
-ESP32; and then select “lcd_api.py”, right-click your mouse to select
-“\ **Upload to /**\ ”，wait for “lcd_api.py” to be uploaded to ESP32.
+Öffnen Sie „Thonny“, klicken Sie auf „Dieser Computer“ → „D:“ → „2. Python Projects“ → „pj8_1_lcd1602“. Wählen Sie „i2c_lcd.py“ aus, klicken Sie mit der rechten Maustaste und wählen Sie „\ **Hochladen nach /**\ “, warten Sie, bis „i2c_lcd.py“ auf ESP32 hochgeladen wurde; dann wählen Sie „lcd_api.py“ aus, klicken Sie mit der rechten Maustaste und wählen Sie „\ **Hochladen nach /**\ “, warten Sie, bis „lcd_api.py“ auf ESP32 hochgeladen wurde.
 
-![Img](../media/img-20250603131246.png)
+![Bild](../media/img-20250603131246.png)
 
-![image36](../media/img-20250603131916.png)
+![Bild36](../media/img-20250603131916.png)
 
-The saved name are i2c_lcd.py and lcd_api.py
+Die gespeicherten Namen sind i2c_lcd.py und lcd_api.py
 
-![image37](../media/img-20250603132138.png)
+![Bild37](../media/img-20250603132138.png)
 
 **Test Code**
 
@@ -95,31 +88,26 @@ lcd.putstr('keyestudio')
 ```
 **Test Result**
 
-The first line of the LCD1602 shows hello and the second line shows
-keyestudio.
+Die erste Zeile des LCD1602 zeigt 'Hello' und die zweite Zeile zeigt 'keyestudio'.
 
 
-#### Project 8.2 Dangerous Gas Alarm
+#### Projekt 8.2 Alarm bei gefährlichen Gasen
 
 **Description**
 
-When a gas sensor detects a high concentration of dangerous gas, the
-buzzer will sound an alarm and the display will show dangerous.
+Wenn ein Gassensor eine hohe Konzentration gefährlicher Gase erkennt, ertönt der Summer als Alarm und die Anzeige zeigt dangerous an.
 
 **Component Knowledge**
 
 **MQ2 Smoke Sensor**:
 
-It is a gas leak monitoring device for homes and factories, which is
-suitable for liquefied gas, benzene, alkyl, alcohol, hydrogen as well as
-smoke detection. Our sensor leads to digital pin D and analog output pin
-A, which is connected to D as a digital sensor in this project .
+Es ist ein Gerät zur Überwachung von Gaslecks für Haushalte und Fabriken, geeignet zur Erkennung von Flüssiggas, Benzin, Alkyl, Alkohol, Wasserstoff sowie Rauch. Unser Sensor hat einen digitalen Anschluss D und einen analogen Ausgang A; in diesem Projekt wird er als digitaler Sensor an D angeschlossen.
 
-![image38](../media/4550c4935e6c08e595a1e8707b54b551.png)
+![Bild38](../media/4550c4935e6c08e595a1e8707b54b551.png)
 
 **Control Pin**
 
-| Gas Sensor | 23 |
+| Gassensor | 23 |
 | --- | --- |
 | \ |   |
 
@@ -158,8 +146,4 @@ while True:
 ```
 **Test Result**
 
-The screen displays "safety" in normal state. However, when the gas
-sensor detects some dangerous gases, such as carbon monoxide, at a
-certain concentration, the buzzer will sound an alarm and the screen
-displays "dangerous".
-
+Im Normalzustand zeigt der Bildschirm 'safety' an. Wenn der Gassensor jedoch gefährliche Gase wie Kohlenmonoxid in einer bestimmten Konzentration erkennt, ertönt der Summer als Alarm und der Bildschirm zeigt 'dangerous' an.
