@@ -1,33 +1,29 @@
-### Progetto 4: Riprodurre musica
+### Project 4: 音楽を再生
 
-**Descrizione**
+**説明**
 
-Sulla scheda di espansione per auto è presente un elemento amplificatore audio,
-che funge da dispositivo di amplificazione esterno per riprodurre musica.
+車用拡張ボードにはオーディオパワーアンプ素子が搭載されており、外部の増幅装置として音楽を再生します。
 
-In questo progetto useremo questo elemento per riprodurre un brano musicale.
+このプロジェクトでは、それを使って曲を再生します。
 
-**Conoscenze sul componente**
+**部品の知識**
 
-**Cicalino passivo:**
+**パッシブブザー：**
 
-L'amplificatore audio (come il cicalino passivo) non dispone di
-oscillazione interna. Per il controllo è necessario inviare onde quadre di
-diverse frequenze al polo positivo del componente e collegare a massa
-il polo negativo per far suonare l'amplificatore a frequenze diverse.
+オーディオパワーアンプ（パッシブブザーなど）には内部発振回路がありません。制御する際は、部品の正極に異なる周波数の矩形波を入力し、負極を接地して、パワーアンプに異なる周波数の音を鳴らすよう制御する必要があります。
 
-![immagine27](../media/2e6fd6b7975ef84ab94eee896161347b.png)
+![画像27](../media/2e6fd6b7975ef84ab94eee896161347b.png)
 
-**Pin di controllo**
+**制御ピン**
 
-| Cicalino passivo | 25 |
+| パッシブブザー | 25 |
 | --- | --- |
 | \ |   |
 
 
-#### Progetto 4.1 Riprodurre Happy Birthday
+#### Project 4.1 ハッピーバースデーを再生
 
-**Codice di test**
+**テストコード**
 
 ```python
 from machine import Pin, PWM
@@ -81,6 +77,6 @@ buzzer.freq(532)
 sleep(0.5)
 buzzer.duty(0)
 ```
-**Risultato del test**
+**テスト結果**
 
-Il cicalino passivo riprodurrà Happy Birthday.
+パッシブブザーが「ハッピーバースデー」を再生します。

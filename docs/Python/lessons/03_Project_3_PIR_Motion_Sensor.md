@@ -1,25 +1,25 @@
-### Progetto 3: PIR Motion Sensor
+### プロジェクト 3: PIRモーションセンサー
 
-**Descrizione**
+**説明**
 
-Il PIR motion sensor ha molti scenari di applicazione nella vita quotidiana, come l'illuminazione automatica delle scale, il rubinetto a induzione automatica del lavabo, ecc.
+PIRモーションセンサーは、階段の自動点灯や洗面台の自動水栓など、日常生活で多くの応用例があります。
 
-È anche un sensore digitale come i pulsanti, che ha due valori di stato 0 o 1. E verrà rilevato quando le persone si muovono.
+ボタンのようなデジタルセンサーで、状態は0か1の二値です。人が動いているときに検知されます。
 
-![immagine25](../media/c1518252606b111bfa66878a2bfcc965.png)
+![画像25](../media/c1518252606b111bfa66878a2bfcc965.png)
 
-**Pin di controllo**
+**制御ピン**
 
-| PIR motion sensor | 14 |
+| PIRモーションセンサー | 14 |
 | --- | --- |
 | \ |   |
 
 
-#### Progetto 3.1 Leggere il PIR Motion Sensor
+#### プロジェクト 3.1 PIRモーションセンサーの読み取り
 
-Visualizzeremo il valore del PIR motion sensor sul monitor seriale.
+シリアルモニタを通してPIRモーションセンサーの値を出力します。
 
-**Codice di prova**
+**テストコード**
 
 ```python
 from machine import Pin
@@ -35,18 +35,18 @@ while True:
         print("No one!")
     time.sleep(0.1)
 ```
-**Risultato del test**
+**テスト結果**
 
-Quando stai fermo davanti al sensore, il valore letto è 0; muoviti un po', cambierà a 1.
+センサーの前にじっと立っていると読み取り値は0で、少し動くと1に変わります。
 
-![immagine26](../media/f8c6be9a6ad7a6423c1fa1456f771406.png)
+![画像26](../media/f8c6be9a6ad7a6423c1fa1456f771406.png)
 
 
-#### Progetto 3.2 PIR Motion Sensor
+#### プロジェクト 3.2 PIRモーションセンサー
 
-Se qualcuno si muove davanti al sensore, il LED si accenderà.
+誰かがセンサーの前で動くと、LEDが点灯します。
 
-**Codice di prova**
+**テストコード**
 
 ```python
 from machine import Pin
@@ -64,6 +64,6 @@ while True:
         led.value(0)
     time.sleep(0.1)
 ```
-**Risultato del test**
+**テスト結果**
 
-Muovi la mano davanti al sensore, il LED si accenderà. Dopo alcuni secondi di inattività, il LED si spegnerà.
+センサーの前で手を動かすとLEDが点灯します。数秒間動きがないと、LEDは消灯します。

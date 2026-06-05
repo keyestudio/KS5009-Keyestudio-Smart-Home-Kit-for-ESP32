@@ -1,41 +1,41 @@
-### Progetto 5: Porte e Finestre Automatiche
+### Project 5: 自動ドアと窓
 
-**Descrizione**
+**説明**
 
-Porte e finestre automatiche necessitano di un dispositivo motorizzato, che può diventare più automatico con un servo da 180 gradi e alcuni sensori. Aggiungendo un sensore di pioggia, è possibile ottenere l'effetto di chiudere automaticamente le finestre quando piove. Se si aggiunge un RFID, possiamo realizzare l'effetto di strisciare una tessera per aprire la porta e così via.
+自動ドアや窓は電動化が必要で、180度のServoといくつかのセンサーを使うことでより自動化できます。雨滴センサーを追加すれば、雨が降ったときに自動的に窓を閉めることができます。RFIDを追加すれば、カードをかざしてドアを開けるといった機能を実現できます。
 
-**Conoscenze sui componenti**
+**コンポーネントの知識**
 
 **Servo:**
 
-Servo è un dispositivo driver di posizionamento che consiste in un involucro, una scheda elettronica, un motore senza nucleo, un ingranaggio e un rilevatore di posizione.
+Servoは筐体、回路基板、コアレスモーター、ギア、位置検出器で構成される位置制御用のドライバ装置です。
 
-Il suo principio di funzionamento è che il servo riceve il segnale inviato dal MCU o dal ricevitore e genera un segnale di riferimento con periodo di 20ms e larghezza di 1.5ms, quindi confronta la tensione di polarizzazione continua acquisita con la tensione del potenziometro e ottiene la differenza di tensione in uscita.
+その動作原理は、ServoがMCUや受信機から送られた信号を受信し、周期20ms・幅1.5msの基準信号を生成し、取得した直流バイアス電圧とポテンショメータの電圧を比較して電圧差を出力することです。
 
-L'IC sulla scheda giudica la direzione di rotazione, e poi aziona il motore senza nucleo per avviare la rotazione. La potenza viene trasmessa al braccio oscillante attraverso l'ingranaggio di riduzione, e il segnale viene restituito dal rilevatore di posizione per verificare se il posizionamento è stato raggiunto, il che è adatto per quei sistemi di controllo che richiedono un cambiamento angolare preciso e che possono essere mantenuti.
+基板上のICは回転方向を判断し、コアレスモーターを駆動して回転を開始します。減速ギアを介して出力がスイングアームに伝えられ、位置検出器によって信号が返され、所定の位置に達したかどうかを判断します。これは一定角度の変化が必要で維持できる制御システムに適しています。
 
-Quando la velocità del motore è costante, il potenziometro viene fatto ruotare attraverso il riduttore a cascata, il che porta la differenza di tensione a 0, e il motore smette di ruotare. Generalmente, l'intervallo di rotazione del servo è 0° --180°.
+モーターの速度が一定になると、カスケード減速ギアを介してポテンショメータが回転され、電圧差が0になりモーターが回転を停止します。一般に、Servoの回転角度範囲は0°～180°です。
 
-Il periodo dell'impulso di controllo del servo è 20ms, la larghezza dell'impulso è 0.5ms ~ 2.5ms, e la posizione corrispondente è -90°~ +90°. Ecco un esempio di un servo a 180°:
+制御Servoのパルス周期は20ms、パルス幅は0.5ms～2.5msで、対応する位置は-90°～+90°です。以下は180°Servoの例です:
 
-![immagine28](../media/708316fde05c62113a3024e0efb0c237.jpeg)
+![画像28](../media/708316fde05c62113a3024e0efb0c237.jpeg)
 
-In generale, il servo ha tre fili di colore marrone, rosso e arancione. Il filo marrone è collegato a massa, quello rosso è il polo positivo e quello arancione è il filo di segnale.
+一般的にServoは茶色、赤、橙の3本の線があります。茶色の線は接地、赤は電源線、橙は信号線です。
 
-![immagine29](../media/35084ae289a08e35bdb8c89ceb134ba4.png)
+![画像29](../media/35084ae289a08e35bdb8c89ceb134ba4.png)
 
-![immagine30](../media/6cbf6f177ea204f7632b872497fde010.png)
+![画像30](../media/6cbf6f177ea204f7632b872497fde010.png)
 
 **Pin**
 
-| Servo della finestra | 5 |
+| 窓の Servo | 5 |
 | --- | --- |
-| Servo della porta | 13 |
+| 扉の Servo | 13 |
 
 
-#### Progetto 5.1 Controllo della porta
+#### Project 5.1 ドアを制御する
 
-**Codice di test**
+**テストコード**
 
 ```python
 from machine import Pin, PWM
@@ -63,22 +63,22 @@ while True:
     pwm.duty(angle_180)
     time.sleep(1)
 ```
-**Risultato del test**
+**テスト結果**
 
-Il servo della porta si muove insieme alla porta, avanti e indietro
+扉のServoは扉と一緒に前後に回転します。
 
 
-#### Progetto 5.2 Chiusura della finestra
+#### Project 5.2 窓を閉める
 
-**Descrizione**
+**説明**
 
-Lavoreremo per utilizzare un servo e un sensore di pioggia per realizzare un dispositivo che chiude automaticamente le finestre quando piove.
+ここでは、Servoと雨滴センサーを使って、雨のときに自動で窓を閉める装置を作ります。
 
-**Conoscenze sui componenti**
+**コンポーネントの知識**
 
-**Sensore di pioggia:** Questo è un modulo di ingresso analogico: maggiore è l'area coperta dall'acqua sulla superficie di rilevamento, maggiore è il valore restituito (intervallo 0~4096).
+**雨滴センサー:** これはアナログ入力モジュールで、検出面に水が広く付着しているほど返される値が大きくなります（範囲 0~4096）。
 
-**Codice di test**
+**テストコード**
 
 ```python
 # Import Pin, ADC and DAC modules.
@@ -107,6 +107,6 @@ try:
 except:
     pass
 ```
-**Risultato del test**
+**テスト結果**
 
-All'inizio la finestra si apre automaticamente, e quando tocchi il sensore di pioggia con la mano (che ha acqua sulla pelle), la finestra si chiuderà.
+最初は窓が自動で開き、手（肌に水が付いている状態）で雨滴センサーに触れると、窓が閉まります。

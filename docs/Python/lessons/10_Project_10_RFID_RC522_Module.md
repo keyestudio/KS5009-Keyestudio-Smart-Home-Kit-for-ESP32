@@ -1,39 +1,39 @@
-### Progetto 10: Modulo RFID RC522
+### Project 10: RFID RC522 Module
 
-**Informazioni sul componente**
+**Component Knowledge**
 
-L'identificazione a radiofrequenza, il lettore di tessere è composto da un modulo a radiofrequenza e da un campo magnetico. Il transponder Tag è un dispositivo sensore che non contiene una batteria. Contiene solo piccoli circuiti integrati e supporti per l'archiviazione dei dati e antenne per ricevere e trasmettere segnali.
+Radio frequency identification、カードリーダーは無線周波数モジュールと高レベルの磁場で構成されています。Tag transponderはバッテリを含まないセンシングデバイスです。小さな集積回路チップとデータ保存用の媒体、信号の受信・送信用アンテナのみを含みます。
 
-Per leggere i dati nel tag, prima posizionarlo nell'area di lettura del lettore di tessere. Il lettore genererà un campo magnetico, che può produrre elettricità secondo la legge di Lenz, quindi il tag RFID fornirà alimentazione, attivando così il dispositivo.
+タグ内のデータを読み取るには、まずタグをカードリーダーの読み取り範囲に入れます。リーダーは磁場を生成し、レンツの法則に従って電力を発生させることができ、RFIDタグは電力を供給してデバイスを動作させます。
 
-![immagine40](../media/982ac6a9da0e8f55465ca5a969ac0dfe.png)
+![画像40](../media/982ac6a9da0e8f55465ca5a969ac0dfe.png)
 
-**Pin di controllo**
+**Control Pins**
 
-Utilizzare la comunicazione IIC
+Use IIC communication
 
 | SDA | SDA |
 | --- | --- |
 | SCL | SCL |
 
 
-#### Progetto 10.1 Aprire la porta
+#### Project 10.1 Open the Door
 
-Aprire la cartella in cui si trovano mfrc522_config.py, soft_iic.py e mfrc522_i2c.py
+mfrc522_config.py、soft_iic.py、mfrc522_i2c.py があるフォルダーを開きます
 
-Aprire “Thonny”, cliccare “This computer”→“D:”→“2. Python Projects”→“pj10_rc522_RFID”. Selezionare “mfrc522_config.py”, fare clic con il tasto destro del mouse e selezionare “\ **Upload to /**\ ”, attendere che “mfrc522_config.py” venga caricato su ESP32; selezionare “soft_iic.py”, fare clic con il tasto destro del mouse e selezionare “\ **Upload to /**\ ”, attendere che “soft_iic.py” venga caricato su ESP32; infine selezionare “mfrc522_i2c.py”, fare clic con il tasto destro del mouse e selezionare “\ **Upload to /**\ ”, attendere che “mfrc522_i2c.py” venga caricato su ESP32.
+“Thonny”を開き、“This computer”→“D:”→“2. Python Projects”→“pj10_rc522_RFID” をクリックします。 “mfrc522_config.py”を選択し、右クリックして“\ **Upload to /**\ ”を選択し、mfrc522_config.py が ESP32 にアップロードされるのを待ちます；次に “soft_iic.py” を選択し、右クリックして“\ **Upload to /**\ ”を選択し、soft_iic.py が ESP32 にアップロードされるのを待ちます；その後 “mfrc522_i2c.py” を選択し、右クリックして“\ **Upload to /**\ ”を選択し、mfrc522_i2c.py が ESP32 にアップロードされるのを待ちます。
 
-![immagine41](../media/img-20250603132607.png)
+![画像41](../media/img-20250603132607.png)
 
-![immagine42](../media/img-20250603132647.png)
+![画像42](../media/img-20250603132647.png)
 
-![immagine43](../media/img-20250603132729.png)
+![画像43](../media/img-20250603132729.png)
 
-I nomi salvati sono mfrc522_config.py, soft_iic.py e mfrc522_i2c.py.
+保存された名前は mfrc522_config.py、soft_iic.py、mfrc522_i2c.py です。
 
-![immagine44](../media/img-20250603132756.png)
+![画像44](../media/img-20250603132756.png)
 
-**Codice di test**
+**Test Code**
 
 ```python
 from machine import Pin, PWM,I2C, Pin
@@ -76,8 +76,8 @@ while True:
         print("close")
     time.sleep(1)
 ```
-**Risultato del test**
+**Test Result**
 
-Avvicinando la tessera fornita all'area di induzione RFID, la porta ruota e si apre, e la console mostra "open". Premendo il pulsante 1 la porta ruota e si chiude. Tuttavia, passando un altro blocco di induzione blu, la console mostra "Error".
+付属のカードをRFIDの感知領域に近づけると、ドアが回転して開き、シェルに "open" と表示されます。ボタン1を押すとドアが回転して閉じます。しかし、別の青い誘導ブロックをスワイプすると、シェルには "Error" と表示されます。
 
-![immagine45](../media/03fd569d64704a7e9705c1891f4d4856.png)
+![画像45](../media/03fd569d64704a7e9705c1891f4d4856.png)

@@ -1,43 +1,43 @@
-### Progetto 8: Display LCD1602
+### プロジェクト 8: LCD1602 ディスプレイ
 
-**Descrizione**
+**説明**
 
-Come sappiamo, lo schermo è uno dei modi migliori per interagire con i dispositivi elettronici.
+ご存知の通り、画面は人が電子機器とやり取りするための最良の方法の一つです。
 
-**Informazioni sul componente**
+**コンポーネントの知識**
 
-1602 è una serie che può visualizzare 16 caratteri. Ci sono due righe, che usano il protocollo di comunicazione IIC.
+1602は16文字を表示できる表示モジュールです。2行あり、IIC通信プロトコルを使用します。
 
-![immagine34](../media/066e093f1711ada67d3309ddc9bdc66e.png)
+![画像34](../media/066e093f1711ada67d3309ddc9bdc66e.png)
 
-**Pin di controllo**
+**制御ピン**
 
 | SDA | SDA |
 | --- | --- |
 | SCL | SCL |
 
 
-#### Progetto 8.1: Caratteri del display LCD1602
+#### プロジェクト 8.1 LCD 1602 表示文字
 
-**Descrizione**
+**説明**
 
-Useremo i file di libreria i2c_lcd.py e lcd_api.py, che devono essere salvati nella memoria dell'ESP32.
+ライブラリファイル i2c_lcd.py と lcd_api.py を使用します。これらは ESP32 のメモリに保存してください。
 
-![immagine35](../media/b5d74645d450d329aded48064bd599c8.png)
+![画像35](../media/b5d74645d450d329aded48064bd599c8.png)
 
-**Operazioni**
+**操作**
 
-Aprire “Thonny”, fare clic su “This computer”→“D:”→“2. Python Projects”→“pj8_1_lcd1602”. Selezionare “i2c_lcd.py”, fare clic con il tasto destro del mouse per selezionare “\ **Upload to /**\ ”, attendere che “i2c_lcd.py” venga caricato sull'ESP32; poi selezionare “lcd_api.py”, fare clic con il tasto destro del mouse per selezionare “\ **Upload to /**\ ”, attendere che “lcd_api.py” venga caricato sull'ESP32.
+Thonny を開き、"This computer"→"D:"→"2. Python Projects"→"pj8_1_lcd1602" をクリックします。"i2c_lcd.py" を選択し、右クリックして “\ **Upload to /**\ ” を選択し、"i2c_lcd.py" が ESP32 にアップロードされるのを待ちます。次に "lcd_api.py" を選択し、右クリックして “\ **Upload to /**\ ” を選択し、"lcd_api.py" が ESP32 にアップロードされるのを待ちます。
 
-![Immagine](../media/img-20250603131246.png)
+![画像](../media/img-20250603131246.png)
 
-![immagine36](../media/img-20250603131916.png)
+![画像36](../media/img-20250603131916.png)
 
-I nomi salvati sono i2c_lcd.py e lcd_api.py
+保存された名前は i2c_lcd.py と lcd_api.py です
 
-![immagine37](../media/img-20250603132138.png)
+![画像37](../media/img-20250603132138.png)
 
-**Codice di prova**
+**テストコード**
 
 ```python
 from time import sleep_ms, ticks_ms
@@ -86,32 +86,33 @@ lcd.putstr('keyestudio')
 #lcd.custom_char(0, happy_face)
 #lcd.putchar(chr(0))
 ```
-**Risultato del test**
 
-La prima riga del LCD1602 mostra 'Hello' e la seconda riga mostra 'keyestudio'.
+**テスト結果**
+
+LCD1602の1行目に hello が表示され、2行目に keyestudio が表示されます。
 
 
-#### Progetto 8.2 Allarme gas pericoloso
+#### プロジェクト 8.2 危険ガスアラーム
 
-**Descrizione**
+**説明**
 
-Quando un sensore di gas rileva un'alta concentrazione di gas pericoloso, il buzzer emetterà un allarme e il display mostrerà 'dangerous'.
+ガスセンサーが高濃度の危険ガスを検知すると、ブザーが鳴りアラームを発し、ディスプレイに "dangerous" と表示されます。
 
-**Informazioni sul componente**
+**コンポーネントの知識**
 
-**Sensore di fumo MQ2**:
+**MQ2 スモークセンサー**:
 
-È un dispositivo di monitoraggio delle perdite di gas per abitazioni e fabbriche, adatto al rilevamento di gas liquefatti, benzene, alcani, alcoli, idrogeno e fumo. Il nostro sensore ha un'uscita digitale D e un'uscita analogica A; in questo progetto è collegato a D come sensore digitale.
+家庭や工場のガス漏れ監視用デバイスで、液化ガス、ベンゼン、アルキル、アルコール、水素および煙の検出に適しています。本センサーはデジタルピン D とアナログ出力ピン A を持ち、本プロジェクトではデジタルセンサーとして D に接続しています。
 
-![immagine38](../media/4550c4935e6c08e595a1e8707b54b551.png)
+![画像38](../media/4550c4935e6c08e595a1e8707b54b551.png)
 
-**Pin di controllo**
+**制御ピン**
 
-| Sensore di gas | 23 |
+| ガスセンサー | 23 |
 | --- | --- |
 | \ |   |
 
-**Codice di prova**
+**テストコード**
 
 ```python
 from time import sleep_ms, ticks_ms
@@ -144,6 +145,7 @@ while True:
         lcd.putstr('dangerous')
     time.sleep(0.1) #delay 0.1s
 ```
-**Risultato del test**
 
-Lo schermo visualizza 'safety' nello stato normale. Tuttavia, quando il sensore di gas rileva gas pericolosi, come monossido di carbonio, a una certa concentrazione, il buzzer emetterà un allarme e lo schermo mostrerà 'dangerous'.
+**テスト結果**
+
+通常時は画面に "safety" と表示されます。しかし、ガスセンサーが一酸化炭素などの危険なガスをある濃度で検出すると、ブザーが鳴り、画面には "dangerous" と表示されます。

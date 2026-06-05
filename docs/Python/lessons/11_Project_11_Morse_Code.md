@@ -1,19 +1,19 @@
-### Progetto 11: Codice Morse
+### プロジェクト11: モールス信号
 
-Il codice Morse, noto anche come Morse password, è un codice a segnali acceso-spento che esprime diverse lettere, numeri e segni di punteggiatura in sequenze differenti. Ora lo usiamo come cancellino di accesso.
+モールス信号（Morse code）はモールス記号とも呼ばれ、オンとオフの信号で文字、数字、句読点などを異なる配列で表現する符号です。ここではこれをパスワードゲートとして使用します。
 
-Il codice Morse corrisponde ai seguenti caratteri:
+The Morse code corresponds to the following characters:
 
-![immagine46](../media/1a5e70c0d091e2617acbfc274827b4fd.png)
+![画像46](../media/1a5e70c0d091e2617acbfc274827b4fd.png)
 
 
-#### Progetto 11.1 Apertura della porta con codice Morse
+#### プロジェクト11.1 モールス信号でドアを開ける
 
-**Descrizione**
+**説明**
 
-Usiamo ![immagine47](../media/9491f7768f28ee4901e6fdb83632c27c.png) come password corretta. Inoltre è presente un file di libreria per pulsanti OneButton, che rende molto semplice gestire clic singoli, doppio clic, pressione lunga e altre funzioni. Per la password Morse, il clic breve corrisponde a “.”, la pressione lunga e rilascio corrisponde a “-”.
+正しいパスワードとして ![画像47](../media/9491f7768f28ee4901e6fdb83632c27c.png) を使用します。さらに、OneButtonというボタン用ライブラリファイルがあり、クリック、ダブルクリック、長押しなどの機能を簡単に扱えます。モールスパスワードでは、クリックが「.」、長押しして離すのが「-」です。
 
-**Codice di test**
+**Test Code**
 
 ```python
 # Import machine, time and dht modules.
@@ -80,8 +80,8 @@ while True:
             lcd.putstr("enter again")
             password = ""  # Clear password
 ```
-**Risultato del test**
+**テスト結果**
 
-All'inizio, l'LCD1602 visualizza "Enter password", poi premere brevemente o tenere premuto il pulsante 1 per inserire il codice. Se inseriamo la password corretta "-.-" e poi premiamo il pulsante 2, la porta si aprirà e l'LCD1602 visualizzerà "aperto".
+最初にLCD1602には "Enter password" と表示され、ボタン1をクリックまたは長押ししてパスワードを入力します。正しいパスワード "-.-" を入力してボタン2を押すと、ドアが開き、LCD1602には "open" と表示されます。
 
-Se vengono inserite altre password errate, la porta rimarrà chiusa e l'LCD1602 visualizzerà "errore", che mostrerà "inserire nuovamente" dopo 2s.
+もし他の誤ったパスワードが入力された場合、ドアは閉じられ、LCD1602には "error" と表示され、2秒後に "enter again" と表示されます。

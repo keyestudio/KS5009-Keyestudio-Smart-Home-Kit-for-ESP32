@@ -1,4 +1,4 @@
-5. Arduino Tutorial
+5. Arduino チュートリアル
 =============================
 
 .. toctree::
@@ -10,14 +10,14 @@
 
 
 
-5.4 Arduino Progetti
+5.4 Arduino プロジェクト
 ---------------------------
 
-Il codice è fornito per tutti i progetti ed è disponibile nel pacchetto risorse 5.1
+すべてのプロジェクトのコードは提供されており、5.1 のリソースパックで入手できます
 
-Bene, andiamo subito ai nostri progetti. Ti faremo conoscere a fondo la smart home a partire dai sensori più semplici.
+それではプロジェクトに入りましょう。シンプルなセンサーからスマートホームの仕組みを深く理解していきます。
 
-**Nota: In questo corso, l'interfaccia di ogni sensore / modulo contrassegnata con (G,-, GND) indica il polo negativo, G è collegato a G, - o GND dello shield sensore o della scheda di controllo; “V” è il polo positivo ed è collegato con V, VCC o 5V.**
+**注意: 本コースでは、各センサー／モジュールのインターフェースに (G,-, GND) と記載されている場合は負極を示し、G はセンサーシールドまたはコントロールボードの G、- または GND に接続されます；「V」は正極で、V、VCC または 5V に接続されます。**
 
 .. toctree::
     :maxdepth: 2

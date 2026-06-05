@@ -1,21 +1,21 @@
-### Progetto 9: Sensore di Temperatura e Umidità
+### プロジェクト9: 温湿度センサー
 
-**Conoscenza del componente**
+**コンポーネントの知識**
 
-La sua modalità di comunicazione è a dati seriali e bus singolo. L'intervallo di misura della temperatura è -20 ~ +60℃, la precisione è ±2℃. L'intervallo di umidità è 5 ~ 95%RH, la precisione è ±5%RH.
+通信方式はシリアルデータとシングルバスです。温度測定範囲は -20 ~ +60℃、精度は ±2℃です。湿度測定範囲は 5 ~ 95%RH、精度は ±5%RH です。
 
-![immagine39](../media/0b9c44c3e4f3706638b9cf15871b861c.png)
+![画像39](../media/0b9c44c3e4f3706638b9cf15871b861c.png)
 
-**Pin di controllo**
+**制御ピン**
 
-| Sensore di temperatura e umidità | 17 |
+| 温湿度センサー | 17 |
 | --- | --- |
 | \ |   |
 
 
-#### Progetto 9.1 Tester di temperatura e umidità
+#### プロジェクト9.1 温湿度テスター
 
-**Codice di test**
+**テストコード**
 
 ```python
 # Import machine, time and dht modules.
@@ -45,6 +45,6 @@ while True:
     lcd.putstr('H= {}'.format(DHT.humidity()))
     time.sleep_ms(1000)
 ```
-**Risultato del test**
+**テスト結果**
 
-La LCD1602 visualizza la temperatura (T = ** °C) e l'umidità (H = ** %RH). Quando si soffia sul sensore T/H, si può vedere che l'umidità aumenta.
+LCD1602 は温度（T = \*\* ° C）と湿度（H = \*\* %RH）を表示します。温湿度センサーに息を吹きかけると、湿度が上昇するのが確認できます。

@@ -1,29 +1,29 @@
-### Progetto 2: Lampada da tavolo
+### プロジェクト2: テーブルランプ
 
-**Descrizione**
+**説明**
 
-La comune lampada da tavolo usa luci LED e pulsanti, che possono controllare l'accensione e lo spegnimento premendo il pulsante.
+一般的なテーブルランプはLEDとボタンを使い、ボタンを押すことでランプのオン/オフを制御できます。
 
-**Principio del pulsante**
+**ボタンの原理**
 
-Il modulo pulsante è un sensore digitale, che può leggere solo 0 o 1. Quando il modulo non è premuto, è in stato ad alto livello, cioè 1; quando è premuto, è a basso livello 0.
+ボタンモジュールはデジタルセンサーで、0か1しか読み取れません。モジュールが押されていないときは高レベル（1）で、押されると低レベル（0）になります。
 
-![immagine22](../media/41f565d4f355abb96e105119660e80ba.png)
+![画像22](../media/41f565d4f355abb96e105119660e80ba.png)
 
-**Pin del pulsante**
+**ボタンのピン**
 
-| **Pulsante 1** | **16** |
+| **ボタン1** | **16** |
 | --- | --- |
-| **Pulsante 2** | **27** |
+| **ボタン2** | **27** |
 
 
-#### Progetto 2.1 Leggere il pulsante
+#### プロジェクト2.1 ボタンの読み取り
 
-**Descrizione**
+**説明**
 
-Lavoreremo per leggere il valore di stato del pulsante e visualizzarlo sul monitor seriale, in modo da vederlo in modo intuitivo.
+ボタンの状態値を読み取り、それをシリアルモニタに表示して直感的に確認します。
 
-**Codice di prova**
+**テストコード**
 
 ```python
 from machine import Pin
@@ -39,22 +39,22 @@ while True:
     print("button2 =",btnVal2)
     time.sleep(0.1) #delay 0.1s
 ```
-**Risultato del test**
+**テスト結果**
 
-Clicca il pulsante di esecuzione, poi vedrai i valori di stato di button1 e button2 stampati nella shell. Premi il pulsante e vedrai la variazione dei valori di stato.
+実行ボタンをクリックすると、button1とbutton2の状態値がシェルに表示されます。スマートホームのボタンを押すと、状態値の変化が確認できます。
 
-![immagine23](../media/1b984da67c0e89a72a9601c39362567d.png)
+![画像23](../media/1b984da67c0e89a72a9601c39362567d.png)
 
 
-#### Progetto 2.2. Lampada da tavolo
+#### プロジェクト2.2 テーブルランプ
 
-**Descrizione**
+**説明**
 
-Per una comune lampada da tavolo semplice, premendo il pulsante si accende, premendolo di nuovo si spegne.
+一般的なシンプルなテーブルランプは、ボタンを押すと点灯し、もう一度押すと消灯します。
 
-**Codice di prova**
+**テストコード**
 
-Calcolando il numero di volte che il pulsante è stato premuto e prendendo il resto della divisione per 2, si ottengono i due stati 0 o 1.
+ボタンが押された回数を数え、2で割った余りをとることで、0または1の2状態を得ることができます。
 
 ```python
 from machine import Pin
@@ -81,8 +81,8 @@ while True:
         led.value(0)
     time.sleep(0.1) #delay 0.1s
 ```
-**Risultato del test**
+**テスト結果**
 
-La shell stamperà il numero di volte che il pulsante è stato premuto; premendo il pulsante una volta, il LED si accende; premendolo di nuovo, si spegne.
+シェルにはボタンが押された回数が表示されます。ボタンを1回押すとLEDが点灯し、もう1回押すと消灯します。
 
-![immagine24](../media/1bc079eabd93cb2e8a8e15f0ab7f1367.png)
+![画像24](../media/1bc079eabd93cb2e8a8e15f0ab7f1367.png)

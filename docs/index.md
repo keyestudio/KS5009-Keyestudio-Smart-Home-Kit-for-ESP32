@@ -3,27 +3,27 @@
 ![image1](media/A1.jpeg)
 
 
-# 1. Descrizione
+# 1. 説明
 
-Con il rapido sviluppo di Internet, vari dispositivi intelligenti sono gradualmente integrati nella nostra vita quotidiana. Ad esempio, possiamo usare RFID per aprire la porta. Inoltre, la cucina è dotata di un allarme rilevatore di gas, che avvisa le persone del pericolo quando vengono rilevati gas pericolosi o grandi quantità di fumo. Quando rileva la pioggia, può raccogliere automaticamente i panni e chiudere le finestre. Tutti i tipi di apparecchi elettrici possono essere controllati tramite telefono cellulare, come luci, ventilatori, aria condizionata e così via.
+インターネットの急速な発展に伴い、さまざまなスマート機器が私たちの日常生活に徐々に統合されてきています。例えば、RFIDを使ってドアを開けることができます。また、キッチンにはガス検知アラームが備えられ、危険なガスや大量の煙を検知したときに警告を出します。雨を検知すると、自動で洗濯物を取り込み窓を閉めることができます。あらゆる電気機器はスマートフォンで制御でき、照明、ファン、エアコンなどを操作できます。
 
-In questo contesto, desideriamo lanciare questo prodotto per la smart home con controllo ESP32, che dispone di numerosi sensori e moduli oltre alla funzione di rete, rendendo le conoscenze relative a Internet più accessibili per voi.
-
-
-# 2. Caratteristiche
-
-1. Aspetto elegante
-1. Un'ampia gamma di moduli sensore
-1. Controllo di rete tramite app per smartphone
-1. Porta con password Morse
-1. Può chiudere automaticamente le finestre
-1. Funzione RFID
-1. C language e MicroPython
+このような背景から、ESP32制御のこのスマートホーム製品を発売します。多数のセンサーやモジュール、およびネットワーク機能を備えており、インターネットに関する関連知識をより身近に感じられるようになります。
 
 
-# 3. Lista del kit
+# 2. 特徴
 
-| # | Immagine | Nome | Q.tà |
+1. エレガントな外観  
+1. 多数のセンサーモジュール  
+1. スマートフォンアプリによるネットワーク制御  
+1. モールス信号によるパスワードドア  
+1. 自動で窓を閉めることができる  
+1. RFID機能  
+1. C言語とMicroPython対応
+
+
+# 3. キット内容
+
+| # | Picture | Name | QTY |
 | --- | --- | --- | --- |
 | 1 | ![image2](media/Wooden-Board.jpeg) | Wooden Board | 1 |
 | 2 | ![image3](media/Acrylic-Board.jpeg) | Acrylic Board | 1 |
@@ -66,113 +66,109 @@ In questo contesto, desideriamo lanciare questo prodotto per la smart home con c
 | 39 | ![image39](media/ABS-RFID-Key.png) | ABS RFID Key | 1 |
 
 
-# 4. Come installare la smart home
+# 4. スマートホームの取り付け方法
 
-**Passo 1**
-Componenti necessari
+**Step1**  
+必要なコンポーネント
 
 ![image40](media/A01.png)
 
-Schema di installazione
+取り付け図
 
 ![image41](media/A02.png)
 
-Prototipo
+プロトタイプ
 
 ![image42](media/A03.png)
 
-**Passo 2**
-
-Componenti necessari
+**Step 2**  
+必要なコンポーネント
 
 ![image43](media/A04.png)
 
-Schema di installazione
+取り付け図
 
 ![image44](media/A05.png)
 
-Prototipo
+プロトタイプ
 
 ![image45](media/A06.png)
 
-**Passo 3**
-
-Componenti necessari
+**Step 3**  
+必要なコンポーネント
 
 ![image46](media/A07.png)
 
-Installazione
+取り付け
 
 ![image47](media/A08.png)
 
-Prototipo
+プロトタイプ
 
 ![image48](media/A09.png)
 
-**Passo 4**
-
-Componenti necessari
+**Step 4**  
+必要なコンポーネント
 
 ![image49](media/A10.png)
 
-Schema di installazione
+取り付け図
 
 ![image50](media/A11.png)
 
-Prototipo
+プロトタイプ
 
 ![image51](media/A12.png)
 
-**Passo 5**
-
-Componenti necessari
+**Step 5**  
+必要なコンポーネント
 
 ![image52](media/A13.png)
 
-Schema di installazione
+取り付け図
 
 ![image53](media/A14.png)
 
-Prototipo
+プロトタイプ
 
 ![image54](media/A15.png)
 
-**Passo 6**
-Componenti necessari
+**Step 6**
+必要な部品
 
 ![image55](media/A16.png)
 
-Installazione (Non stringere i dadi autobloccanti)
+取り付け（セルフロックナットを締めないでください）
 
 ![image56](media/A17.png)
 
-Prototipo
+プロトタイプ
 
 ![image57](media/A18.png)
 
-**Passo 7**
+**ステップ7**
 
-Componenti necessari
+必要な部品
 
 ![image58](media/A19.png)
 
-⚠️ **Nota speciale:** Regolare il servo della finestra a 0 gradi prima dell'installazione
+⚠️ **特別注意:** 取り付け前に窓のサーボを0度に調整してください
 
-| Servo | PCB |
+| サーボ | PCB |
 | --- | --- |
-| Filo marrone | G |
-| Filo rosso | 5V |
-| Filo arancione | GPIO5 |
+| 茶色の線 | G |
+| 赤い線 | 5V |
+| オレンジの線 | GPIO5 |
 
-⚠️ **Promemoria importante:** Le due seguenti modalità possono essere scelte liberamente in base alla tua situazione.
+⚠️ **特に注意:** 以下の2つの方法から、ご自身の状況に合わせて自由に選択できます。
 
-**Metodo 1：codice Arduino**
+**方法1：Arduinoコード**
 
-⚠️ **Nota speciale:** Prima di scrivere il codice e caricarlo, devi installare l'Arduino IDE, per favore vai al link: `5. Arduino Tutorial <https://docs.keyestudio.com/projects/KS5009/en/latest/docs/Arduino/arduino.html>`__\ ，e poi consulta la parte di **5.2 Getting started with Arduino** .
+⚠️ **特別注意:** コードを書いてアップロードする前に、Arduino IDEをインストールする必要があります。リンク `5. Arduino Tutorial <https://docs.keyestudio.com/projects/KS5009/en/latest/docs/Arduino/arduino.html>`__\ にアクセスし、**5.2 Getting started with Arduino** の部分を参照してください。
 
-Come ottenere il codice?
+コードはどのように入手しますか？
 
-Nella cartella **..\\Resource compression package\\arduino Code** , apri il file **Initialization-of-window-servo-angle.ino** , oppure copia e incolla il seguente codice di prova nell'Arduino IDE.
+フォルダ **..\\Resource compression package\\arduino Code** にある **Initialization-of-window-servo-angle.ino** ファイルを開くか、以下のテストコードをArduino IDEにコピー＆ペーストしてください。
 
 ![Img](./media/A20.png)
 
@@ -195,13 +191,13 @@ void loop() {
   // put your main code here, to run repeatedly:
 }
 ```
-**Metodo 2：codice MicroPython**
+**方法2：MicroPythonコード**
 
-⚠️ **Nota speciale:** Prima di scrivere il codice e caricarlo, devi installare l'IDE MicroPython, vai al link: `6. Python tutorial <https://docs.keyestudio.com/projects/KS5009/en/latest/docs/Python/Python.html>`__, e poi consulta la parte di **6.2 get starter with Thonny** .
+⚠️ **特別注意:** コードを書いてアップロードする前に、MicroPython IDEをインストールする必要があります。リンク `6. Python tutorial <https://docs.keyestudio.com/projects/KS5009/en/latest/docs/Python/Python.html>`__, にアクセスし、**6.2 get starter with Thonny** の部分を参照してください。
 
-Come ottenere il codice?
+コードはどのように入手しますか？
 
-Nella cartella **..\\Resource compression package\\MicroPython Code** , apri il file **Initialization-of-window-servo-angle.py** , oppure copia e incolla il seguente codice di prova nell'IDE Thonny.
+フォルダ **..\\Resource compression package\\MicroPython Code** にある **Initialization-of-window-servo-angle.py** ファイルを開くか、以下のテストコードをThonny IDEにコピー＆ペーストしてください。
 
 ![image59](./media/A21.png)
 
@@ -232,306 +228,306 @@ time.sleep(1)
 
 # while True:
 ```
-Dopo aver regolato l'angolo del servo della finestra a 0°, procedere all'installazione come mostrato nella seguente immagine)
+窓のサーボの角度を0°に調整した後、次の写真のように取り付けを進めてください)
 
 ![image60](media/wps1-1.jpg)
 
-Installare le viti autofilettanti M1.4*6MM come mostrato di seguito
+以下のようにM1.4*6MMのタッピングねじを取り付けます
 
 ![image61](media/wps2.jpg)
 
-Prototipo
+プロトタイプ
 
 ![image62](media/A22.png)
 
-**Passo 8**
+**ステップ8**
 
-Componenti necessari
+必要な部品
 
 ![image63](media/A23.png)
 
-Diagramma di installazione
+取り付け図
 
 ![image64](media/A24.png)
 
-Prototipo
+プロトタイプ
 
 ![image65](media/A25.png)
 
-**Passo 9**
+**ステップ9**
 
-Componenti necessari
+必要な部品
 
 ![image66](media/A26.png)
 
-Diagramma di installazione
+取り付け図
 
 ![image67](media/A27.png)
 
-Prototipo
+プロトタイプ
 
 ![image68](media/A28.png)
 
-**Passo 10**
-Componenti necessari
+**ステップ10**
+必要なコンポーネント
 
 ![image69](media/A29.png)
 
-Diagramma di installazione
+取り付け図
 
 ![image70](media/A30.png)
 
-Prototipo
+プロトタイプ
 
 ![image71](media/A31.png)
 
-**Passo 11**
+**ステップ 11**
 
-Componenti necessari
+必要なコンポーネント
 
 ![image72](media/A32.png)
 
-Diagramma di installazione
+取り付け図
 
 ![image73](media/A33.png)
 
-Prototipo
+プロトタイプ
 
 ![image74](media/A34.png)
 
-**Passo 12**
+**ステップ 12**
 
-Componenti necessari
+必要なコンポーネント
 
 ![image75](media/A35.png)
 
-Diagramma di installazione
+取り付け図
 
 ![image76](media/A36.png)
 
-Prototipo
+プロトタイプ
 
 ![image77](media/A37.png)
 
-**Passo 13**
+**ステップ 13**
 
-Componenti necessari
+必要なコンポーネント
 
 ![image78](media/A38.png)
 
-Diagramma di installazione
+取り付け図
 
 ![image79](media/A39.png)
 
-Prototipo
+プロトタイプ
 
 ![image80](media/A40.png)
 
-**Passo 14**
+**ステップ 14**
 
-Componenti necessari
+必要なコンポーネント
 
 ![image81](media/A41.png)
 
-Diagramma di installazione
+取り付け図
 
 ![image82](media/A43.png)
 
-Prototipo
+プロトタイプ
 
 ![image83](media/A44.png)
 
-**Passo 15**
+**ステップ 15**
 
-Componenti necessari
+必要なコンポーネント
 
 ![image84](media/A45.png)
 
-Diagramma di installazione
+取り付け図
 
 ![image85](media/A46.png)
 
-Prototipo
+プロトタイプ
 
 ![image86](media/A47.png)
 
-**Passo 16**
+**ステップ 16**
 
-Componenti necessari
+必要なコンポーネント
 
 ![image87](media/A48.png)
 
-Diagramma di installazione
+取り付け図
 
 ![image88](media/A49.png)
 
-Prototipo
+プロトタイプ
 
 ![image89](media/A50.png)
 
-**Passo 17**
+**ステップ 17**
 
-Componenti necessari
+必要なコンポーネント
 
 ![image90](media/A51.png)
 
-Diagramma di installazione
+取り付け図
 
 ![image91](media/A52.png)
 
-Prototipo
+プロトタイプ
 
 ![image92](media/A53.png)
 
-**Passo 18**
+**ステップ 18**
 
-Componenti necessari
+必要なコンポーネント
 
 ![image93](media/A54.png)
 
-Diagramma di installazione
+取り付け図
 
 ![image94](media/A55.png)
 
-Prototipo
+プロトタイプ
 
 ![image95](media/A56.png)
 
-**Passo 19**
+**ステップ 19**
 
-Componenti necessari
+必要なコンポーネント
 
 ![image96](media/A57.png)
 
-Diagramma di installazione
+取り付け図
 
 ![image97](media/A58.png)
 
-Prototipo
+プロトタイプ
 
 ![image98](media/A59.png)
 
-**Parte di cablaggio**
+**配線パート**
 
-Collegare il sensore di temperatura e umidità a io17
+温度・湿度を io17 に接続
 
-Usare un cavo di collegamento 3P corto: 15cm
+3P 接続線は短いものを使用：15cm
 
 ![image99](./media/A60-1.png)
 
 ![image100](media/A60.png)
 
-Collegare il modulo LED giallo a io12
+黄色のLEDモジュールを io12 に接続
 ![image101](./media/A61-1.png)
 
 ![image102](media/A61.png)
 
-sensore di vapore a io34
+蒸気センサーを io34 に接続
 
-Linea di connessione 3P, corta: 15cm
+3P 接続線（短）：15cm
 
 ![image103](./media/A62-1.png)
 
 ![image104](media/A62.png)
 
-ventola (IN- to io18，IN+ to io19)
+ファン（IN- を io18 に、IN+ を io19 に）
 
-Cavi Dupont usati: 4 cavi Dupont distribuiti
+使用した Dupont ワイヤー: 4本（分岐して使用）
 
 ![image105](./media/A63-1.png)
 
-![image106](./media/A63.png)
+![image106](media/A63.png)
 
-sensore di movimento PIR a io14
+PIR モーションセンサーを io14 に接続
 
-Linea di connessione 3P, corta: 15cm
+3P 接続線（短）：15cm
 
 ![image107](./media/A64-1.png)
 
-![image108](./media/A64.png)
+![image108](media/A64.png)
 
-modulo pulsante sinistro a io16
+左ボタンモジュールを io16 に接続
 
-Linea di connessione 3P, filo lungo: 20cm
+3P 接続線（長）：20cm
 
 ![image109](./media/A65-1.png)
 
-![image110](./media/A65.png)
+![image110](media/A65.png)
 
-modulo pulsante destro a io27
+右ボタンモジュールを io27 に接続
 
-Linea di connessione 3P, filo lungo: 20cm
+3P 接続線（長）：20cm
 
 ![image111](./media/A66-1.png)
 
-![image112](./media/A66.png)
+![image112](media/A66.png)
 
-modulo RFID all'IIC
+RFID モジュールを IIC に接続
 
-La linea 4P unificata
+4P 結合線
 
 ![image113](./media/A67-1.png)
 
-![image114](./media/A67.png)
+![image114](media/A67.png)
 
-display LCD1602 all'IIC
+LCD1602 ディスプレイを IIC に接続
 
-La linea 4P unificata
+4P 結合線
 
 ![image115](./media/A68-1.png)
 
-![image116](./media/A68.png)
+![image116](media/A68.png)
 
-LED 6812RGB a io26
+6812RGB LED を io26 に接続
 
-Linea di connessione 3P, corta: 15cm
+3P 接続線（短）：15cm
 
 ![image117](./media/A69-1.png)
 
-![image118](./media/A69.png)
+![image118](media/A69.png)
 
-sensore di gas a io23
+ガスセンサーを io23 に接続
 
-Linea di connessione 3P, filo lungo: 20cm
+3P 接続線（長）：20cm
 
 ![image119](./media/A70-1.png)
 
-![image120](./media/A70.png)
+![image120](media/A70.png)
 
-buzzer (sensore) a io25
+ブザーセンサーを io25 に接続
 
-Linea di connessione 3P, filo lungo: 20cm
+3P 接続線（長）：20cm
 
 ![image121](./media/A71-1.png)
 
 ![image122](./media/A71.png)
 
-servo per il controllo delle finestre a io5
+窓用サーボを io5 に接続
 
 ![image123](./media/A72-1.png)
 
 ![image124](./media/A72.png)
 
-servo per il controllo delle porte a io13
+ドア用サーボを io13 に接続
 
 ![image125](./media/A73-1.png)
 
 ![image126](./media/A73.png)
 
-cablaggio di alimentazione
+電源配線
 
 ![image127](media/A74.jpeg)
 
-**Passo 20**
+**ステップ20**
 
-Componenti richiesti
+必要な部品
 
 ![image128](media/A75.png)
 
-Diagramma di installazione
+Installation Diagram
 
 ![image129](media/A76.png)
 
-Prototipo
+Prototype
 
 ![image130](media/A77.png)

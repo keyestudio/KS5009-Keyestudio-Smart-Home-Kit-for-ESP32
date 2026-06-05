@@ -1,33 +1,33 @@
-### Progetto 6: Lampada d'atmosfera
+### プロジェクト 6: 雰囲気ランプ
 
-**Descrizione**
+**説明**
 
-La lampada d'atmosfera della casa intelligente è composta da 4 SK6812RGB LED. Un RGB LED appartiene a un semplice modulo luminoso, che può regolare il colore per ottenere l'effetto luminario di diverse tonalità. Inoltre, può essere ampiamente utilizzata in edifici, ponti, strade, giardini, cortili, piani e altri campi di illuminazione decorativa e allestimento di locali, durante Natale, Halloween, San Valentino, Pasqua, la Festa nazionale nonché in altre festività e scene d'atmosfera.
+スマートホームの雰囲気ランプは4つのSK6812RGB LEDsで構成されています。RGB LEDは単純な発光モジュールで、色を調整してさまざまな色の照明効果を表現できます。さらに、建物、橋、道路、庭、中庭、フロアなどの装飾照明や会場演出、クリスマス、ハロウィン、バレンタインデー、イースター、国慶節などの祝祭時の演出といったさまざまなシーンで広く使用できます。
 
-In questo esperimento realizzeremo vari effetti di illuminazione.
+この実験では、さまざまなライティング効果を作成します。
 
-**Conoscenze sul componente**
+**コンポーネントについて**
 
-Dal diagramma schematico possiamo vedere che questi quattro RGB LED sono tutti collegati in serie. In realtà, indipendentemente dal loro numero, possiamo usare un pin per controllare un RGB LED e farlo visualizzare qualsiasi colore. Ogni RGBLED è un pixel indipendente, composto dai colori R, G e B, che può raggiungere 256 livelli di luminosità e completare la riproduzione a colori vera di 16777216 colori.
+回路図から、これら4つのRGB LEDsがすべて直列に接続されていることがわかります。実際には、個数がいくつであっても、1つのピンでRGB LEDを制御して任意の色を表示させることができます。各RGBLEDは独立したピクセルで、R、G、Bの各色で構成され、256段階の輝度表示を実現し、16777216色のフルフルカラー表示を完了できます。
 
-Inoltre, il pixel contiene un circuito driver amplificatore per il condizionamento del segnale di latch dei dati e un circuito di rimodellamento del segnale, che garantiscono efficacemente un'elevata coerenza del colore del punto luce.
+さらに、ピクセルはデータラッチ、信号整形/増幅のドライブ回路および信号整形回路を含んでおり、ピクセルの発色が高い一致性を保つことを効果的に保証します。
 
-![immagine31](../media/86e292d0666046b72a1e0e68adfb17e8.png)
+![図31](../media/86e292d0666046b72a1e0e68adfb17e8.png)
 
-![immagine32](../media/c0df93f61c6b9272f62b1847ccfbdb10.png)
+![図32](../media/c0df93f61c6b9272f62b1847ccfbdb10.png)
 
-**Pin**
+**ピン**
 
 | SK6812 | 26 |
 | --- | --- |
 | \ |   |
 
 
-#### Progetto 6.1 RGB Sk6812
+#### プロジェクト 6.1 RGB Sk6812
 
-Controlleremo gli SK6812 per mostrare vari effetti di illuminazione.
+SK6812を制御してさまざまなライティング効果を表示します。
 
-**Codice di test**
+**テストコード**
 
 ```python
 #Import Pin, neopiexl and time modules.
@@ -57,18 +57,18 @@ while True:
         time.sleep_ms(500)
     time.sleep_ms(500)
 ```
-**Risultato del test**
+**テスト結果**
 
-Le lampade d'atmosfera della casa intelligente mostreranno rosso, verde, blu e bianco.
+スマートホームの雰囲気ランプは赤、緑、青、および白を表示します。
 
 
-#### Progetto 6.2 Controllo con pulsanti Sk6812
+#### プロジェクト 6.2 Sk6812のボタン制御
 
-**Descrizione**
+**説明**
 
-Ci sono due pulsanti a interruttore per cambiare il colore della lampada d'atmosfera.
+雰囲気ランプの色を切り替えるためのスイッチボタンが2つあります。
 
-**Codice di test**
+**テストコード**
 
 ```python
 #Import Pin, neopiexl and time modules.
@@ -135,6 +135,6 @@ while True:
     elif(count == 4):
         func_color(4)
 ```
-**Risultato del test**
+**テスト結果**
 
-Possiamo cambiare il colore della lampada d'atmosfera premendo i pulsanti 1 e 2.
+ボタン1とボタン2を押すことで雰囲気ランプの色を切り替えられます。

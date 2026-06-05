@@ -1,36 +1,36 @@
-### Progetto 7: Ventola
+### プロジェクト 7: ファン
 
-**Descrizione**
+**説明**
 
-In questo progetto impareremo come realizzare una piccola ventola.
+このプロジェクトでは、小型ファンの作り方を学びます。
 
-**Conoscenze sui componenti**
+**コンポーネントの知識**
 
-La piccola ventola utilizza un motore DC 130 e pale della ventola sicure. Puoi usare l'uscita PWM per controllare la velocità della ventola.
+この小型ファンは130のDCモーターと安全なファンブレードを使用します。PWM出力を使用してファンの速度を制御できます。
 
-![immagine33](../media/33da52918e88862a94035d61a9050f2e.png)
+![画像33](../media/33da52918e88862a94035d61a9050f2e.png)
 
-**Metodo di controllo**
+**制御方法**
 
-Sono necessari due pin per controllare il motore della ventola, uno per INA e due per INB. L'intervallo di valori PWM è 0~255. Quando l'uscita PWM dei due pin è diversa, la ventola può ruotare.
+ファンのモーターを制御するには2つのピンが必要で、1つはINA用、もう1つはINB用です。PWMの値の範囲は0~255です。2つのピンのPWM出力が異なると、ファンは回転します。
 
-| INA - INB <= -45 | Ruota in senso orario |
+| INA - INB <= -45 | 時計回りに回転する |
 | --- | --- |
-| INA - INB >= 45 | Ruota in senso antiorario |
-| INA ==0, INB == 0 | Si ferma |
+| INA - INB >= 45 | 反時計回りに回転する |
+| INA ==0, INB == 0 | 停止 |
 
-**Pin di controllo**
+**制御ピン**
 
 | INA | 19 |
 | --- | --- |
 | INB | 18 |
 
 
-#### Progetto 7.1 Ventola
+#### プロジェクト 7.1: ファン
 
-Possiamo controllare la velocità di rotazione della ventola in senso antiorario e orario.
+ファンの反時計回りおよび時計回りの回転速度を制御できます。
 
-**Codice di test**
+**テストコード**
 
 ```python
 from machine import Pin,PWM
@@ -63,16 +63,16 @@ except:
     INA.deinit()
     INB.deinit()
 ```
-**Risultato del test**
+**テスト結果**
 
-La ventola ruoterà in senso orario e antiorario a velocità diverse.
+ファンは異なる速度で時計回りおよび反時計回りに回転します。
 
 
-#### Progetto 7.2 Controllo della ventola con pulsante
+#### プロジェクト 7.2: ボタン制御ファン
 
-Il pulsante 1 controlla l'accensione/spegnimento della ventola.
+ボタン1がファンのスイッチを制御します。
 
-**Codice di test**
+**テストコード**
 
 ```python
 from machine import Pin,PWM
@@ -106,6 +106,6 @@ except:
     INA.deinit()
     INB.deinit()
 ```
-**Risultato del test**
+**テスト結果**
 
-Premendo il pulsante 1, la ventola inizia a ruotare; premendo di nuovo il pulsante 1, la ventola si ferma.
+ボタン1を押すとファンが回転を開始し、再度ボタン1を押すとファンが停止します。

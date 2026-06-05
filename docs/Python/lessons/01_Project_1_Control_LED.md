@@ -1,34 +1,34 @@
-### Progetto 1: Controllare il LED
+### Project 1: LEDの制御
 
-impareremo prima come controllare il LED.
+we will first learn how to control LED.
 
-![immagine16](../media/0cda68ae8719d9b6c1bb79d64160d31d.png)
+![画像16](../media/0cda68ae8719d9b6c1bb79d64160d31d.png)
 
-**Principio di funzionamento**
+**動作原理**
 
-LED è anche il diodo emettitore di luce, che può essere realizzato in un modulo elettronico. Brillerà se controlliamo i pin per emettere livello alto, altrimenti sarà spento.
+LEDは光を放つダイオードで、電子モジュールにすることができます。ピンを制御して高レベルを出力すると光り、そうでなければ消灯します。
 
-**Parametri**
+**パラメータ**
 
-| **Tensione di funzionamento** | **DC 3~5V** |
+| **動作電圧** | **DC 3~5V** |
 | --- | --- |
-| **Corrente di lavoro** | **<20mA** |
-| **Potenza** | **0.1W** |
+| **動作電流** | **<20mA** |
+| **消費電力** | **0.1W** |
 
-**Pin di controllo**
+**制御ピン**
 
-| LED giallo | 12 |
+| 黄色 LED | 12 |
 | --- | --- |
 | \ |   |
 
 
-#### Progetto 1.1 Lampeggio del LED
+#### Project 1.1 LED 点滅
 
-**Descrizione**
+**説明**
 
-Possiamo far sì che il pin del LED produca livello alto e livello basso per far lampeggiare il LED.
+LEDのピンを高レベルと低レベルに出力させることでLEDを点滅させることができます。
 
-**Codice di test**
+**テストコード**
 
 ```python
 from machine import Pin
@@ -41,32 +41,32 @@ while True:
     led.value(0)# turn off led
     time.sleep(1)# delay 1s
 ```
-Aprire il codice di esempio
+Open the sample code
 
-![immagine17](../media/39658e26aad2c9794bd3db9df3c70732.png)
+![画像17](../media/39658e26aad2c9794bd3db9df3c70732.png)
 
-![immagine18](../media/166384572a1fa595858d933aea5af710.png)
+![画像18](../media/166384572a1fa595858d933aea5af710.png)
 
-**Risultato del test**
+**テスト結果**
 
-Fare clic sul pulsante
+Click the button
 
-![immagine19](../media/c5e28dda04f63745f59ef351025e82e8.png)
+![画像19](../media/c5e28dda04f63745f59ef351025e82e8.png)
 
-Possiamo vedere che il LED giallo sta lampeggiando.
+黄色のLEDが点滅しているのが確認できます。
 
 
-#### Progetto 1.2 LED a effetto “respirazione”
+#### Project 1.2 ブリージングLED
 
-**Descrizione**
+**説明**
 
-Un "LED respirante" è un fenomeno in cui la luminosità di un LED cambia gradualmente da scuro a luminoso e poi di nuovo a scuro, continuando a farlo e dando l'illusione che il LED stia "respirando". Tuttavia, come controllare la luminosità del LED?
+「ブリージングLED」とは、LEDの明るさが暗から明へ、そして再び暗へと滑らかに変化し続ける現象で、まるでLEDが呼吸しているかのような錯覚を与えます。しかし、LEDの明るさはどのように制御すればよいでしょうか？
 
-Conviene sfruttare il PWM. Si regola la quantità di tempo in cui il segnale rimane alto e basso in un'unità di tempo: più tempo occupa il livello alto, maggiore è il valore PWM e più luminoso sarà il LED.
+PWMを利用するのが合理的です。単位時間内の高レベルと低レベルの出力時間比を出力します。高レベルが占める時間が長いほどPWM値は大きくなり、LEDはより明るくなります。
 
-![immagine20](../media/704984700612966b997127cb9bde5c96.jpeg)
+![画像20](../media/704984700612966b997127cb9bde5c96.jpeg)
 
-**Codice di test**
+**テストコード**
 
 ```python
 import time
@@ -93,10 +93,10 @@ except:
 #deinit() needs to be called to turned OFF the timer. Otherwise, the PWM may fail to work next time.
     pwm.deinit()
 ```
-**Risultato del test**
+**テスト結果**
 
-Fare clic sul pulsante.
+Click the button.
 
-![immagine21](../media/609b283e0909b5e5c14809c4ccf892ed.png)
+![画像21](../media/609b283e0909b5e5c14809c4ccf892ed.png)
 
-Il LED si attenua e si illumina gradualmente, ciclicamente, come se respirasse.
+LEDは徐々に暗くなり、再び明るくなることを周期的に繰り返し、人の呼吸のような動きをします。
